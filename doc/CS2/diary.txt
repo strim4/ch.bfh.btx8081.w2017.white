@@ -1,11 +1,11 @@
 
-20.10.2017: Aufgabenstrellung erhalten
+20.10.2017: Aufgabenstellung erhalten
 
 
 
 Wir entwicklen eine Webapp, welche Menschen mit Depressionen unterstützen soll.
 
-TASK1
+TASK1 von 20.10 - 02.11
 ____________________
 
 In der ersten Projektphase sollen use cases und user requirements im Sinne von design thinking gefunden evaluiert werden.
