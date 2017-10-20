@@ -1,7 +1,12 @@
 
 20.10.2017: Aufgabenstrellung erhalten
 
+
+
 Wir entwicklen eine Webapp, welche Menschen mit Depressionen unterstützen soll.
+
+TASK1
+____________________
 
 In der ersten Projektphase sollen use cases und user requirements im Sinne von design thinking gefunden evaluiert werden.
 Diese Phase soll durch ein Interview, vorzugsweise mit einem Menschen mit Depressionen oder aber einer indirekt
@@ -12,4 +17,4 @@ Es können und sollen auch weitere Quellen, wie z.B. Fachliteratur verwendet werd
 Aus diesem Projektschritt sollen bereits erste Ideen für eine App entstehen. In Textform oder bereits mit
 Scetches für Screens.
 
-Zeit
+Die Ergebnisse werrden am 02.11 in Form einer 10-minütigen Präsentation vorgestellt.
