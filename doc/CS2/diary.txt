@@ -3,18 +3,18 @@
 
 
 
-Wir entwicklen eine Webapp, welche Menschen mit Depressionen unterstützen soll.
+Wir entwicklen eine Webapp, welche Menschen mit Depressionen unterstÃ¼tzen soll.
 
 TASK1 von 20.10 - 02.11
 ____________________
 
-In der ersten Projektphase sollen use cases und user requirements im Sinne von design thinking gefunden evaluiert werden.
+In der ersten Projektphase sollen use cases und user requirements im Sinne von design thinking  evaluiert werden.
 Diese Phase soll durch ein Interview, vorzugsweise mit einem Menschen mit Depressionen oder aber einer indirekt
-betroffenen Person (Angehörige, Fachpersonal, usw.), durchgeführt werden.
+betroffenen Person (AngehÃ¶rige, Fachpersonal, usw.), durchgefÃ¼hrt werden.
 
-Es können und sollen auch weitere Quellen, wie z.B. Fachliteratur verwendet werden.
+Es kÃ¶nnen und sollen auch weitere Quellen, wie z.B. Fachliteratur verwendet werden.
 
-Aus diesem Projektschritt sollen bereits erste Ideen für eine App entstehen. In Textform oder bereits mit
-Scetches für Screens.
+Aus diesem Projektschritt sollen bereits erste Ideen fÃ¼r eine App entstehen. In Textform oder bereits mit
+Scetches fÃ¼r Screens.
 
-Die Ergebnisse werrden am 02.11 in Form einer 10-minütigen Präsentation vorgestellt.
+Die Ergebnisse werrden am 02.11 in Form einer 10-minÃ¼tigen PrÃ¤sentation vorgestellt.
