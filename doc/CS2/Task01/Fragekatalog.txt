@@ -2,15 +2,15 @@ Fragenkatalog:
 
 Allgemeines:
 - Seit wann leiden Sie an Depressionen?
-- Wie äusserte sich das zum ersten Mal / wie entwickelte sich diese Krankheit bei Ihnen?
-- Wie äussert sich die Krankheit bei ihnen im Alltag?
+- Wie Ã¤usserte sich das zum ersten Mal / wie entwickelte sich diese Krankheit bei Ihnen?
+- Wie Ã¤ussert sich die Krankheit bei ihnen im Alltag?
 - Welche Auswirkungen hat die Erkrankung auf Ihr Berufsleben?
 - was sind die typischen Auswirkungen auf Sie und Ihre Umwelt?
 - wohnen Sie alleine oder mit jemandem zusammen?
 - Vor welche Herausforderungen stellt Sie diese Krankheit?
 - Weiss das umfeld bescheid?
 - Wie reagiert das Umfeld?
-- Was löst bei Ihnen meistens die depressive Episode aus? => geschieht das sehr spontan oder merken Sie das jeweils kommen?
+- Was lÃ¶st bei Ihnen meistens die depressive Episode aus? => geschieht das sehr spontan oder merken Sie das jeweils kommen?
 
 
 Behandlung:
@@ -20,11 +20,13 @@ Behandlung:
 - Sind sie momentan in der Therapie?
 - Gibt es irgendwelche Mittel abseits der verordneten Therapie die Ihnen helfen?
 - Was hilft Ihnen beim Ausbruch einer depressiven Episode am besten?
-- Welche Therapieformen haben Sie schon ausprobiert? => Wirkungen, Verbesserungen, Veränderungen?
-- Wo werden sie hauptsächlich behandelt, Klinik, Psychologe, Psychiater?
-- Wie oft sind Sie in Behandlung? => Sind konkrete Behandlungsschritte vorgesehen? => Was erwarten Sie sich davon?
+- Welche Therapieformen haben Sie schon ausprobiert? => Wirkungen, Verbesserungen, VerÃ¤nderungen?
+- Wo werden sie hauptsÃ¤chlich behandelt, Klinik, Psychologe, Psychiater?
+- Wie oft sind Sie in Behandlung? => Sind konkrete Behandlungsschritte vorgesehen? => Was erhoffen Sie sich davon?
 
 
 
-- Was könnten Sie sich als unterstützende Hilfe in ihrem Alltag vorstellen?
-- Könnten Sie es sich vorstellen, dass eine App Sie dabei unterstützen könnte?
+- Was kÃ¶nnten Sie sich als unterstÃ¼tzende Hilfe in ihrem Alltag vorstellen?
+- KÃ¶nnten Sie es sich vorstellen, dass eine App Sie dabei unterstÃ¼tzen kÃ¶nnte?
+- tauschen Sie sich mit anderen Betroffen Ã¼ber Ihre Erkrankung aus? Wenn ja in welchem Rahmen?
+- Finden Sie, dass Sie von Ihrem Umfeld genug UnterstÃ¼tzung erhalten?
