@@ -1,4 +1,4 @@
-Fragenkatalog:
+﻿Fragenkatalog:
 
 Allgemeines:
 - Seit wann leiden Sie an Depressionen?
