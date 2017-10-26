@@ -19,10 +19,12 @@ Scetches für Screens.
 
 Die Ergebnisse werrden am 02.11 in Form einer 10-minütigen Präsentation vorgestellt.
 
-SB am 23.10.2017 Fragenkatalog erweitert und an eine Person gesendet, welche aktuell an Depressionen leidet
-24.10.2017 Fragenkatalog abgeändert und an eine Person gesendet, welche an Depressionen litt.
-24.10.2017 die 5 Dokumente erstellt, welche am Morgen vom 25.10.2017 commitet wurden
-26.10.2017 beide Fragebogen ausgefüllt zurück erhalten (nachfragen erst jetzt dann möglich, da für beide Personen
-ein Treffen nicht möglich war...) anonymisiert und commitet.
-=> Eine Person könnte eventuell zum Testen und Beurteilen unserer Prototypen beigezogen werden
 
+
+26.10.2017
+1. Team auf denselben Wissensstand gebracht (Ergebnisse der Interviews, Recherche)
+2. In Scope, Out of Scope definiert
+3. Funktionen der Anwendung definiert
+4. Drei Personas definiert (2 w, 1m)
+5. Storyboard Ideen definieren und auf Gruppe aufteilen
+6. Jedes Teammitglied arbeitet je 2 SB grafisch aus
