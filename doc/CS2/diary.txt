@@ -17,20 +17,19 @@ Es können und sollen auch weitere Quellen, wie z.B. Fachliteratur verwendet wer
 Aus diesem Projektschritt sollen bereits erste Ideen für eine App entstehen. In Textform oder bereits mit
 Scetches für Screens.
 
-Die Ergebnisse werrden am 02.11 in Form einer 10-minütigen Präsentation vorgestellt.
+Die Ergebnisse werden am 02.11 in Form einer 10-minütigen Präsentation vorgestellt.
 
 
-
-26.10.2017
-1. Team auf denselben Wissensstand gebracht (Ergebnisse der Interviews, Recherche)
-2. In Scope, Out of Scope definiert
-3. Funktionen der Anwendung definiert
-4. Drei Personas definiert (2 w, 1m)
-5. Storyboard Ideen definieren und auf Gruppe aufteilen
-6. Jedes Teammitglied arbeitet je 2 SB grafisch aus
-
-27.10.2017
-To Do im Team:
-- Jeder wählt zwei der zwölf Storyboardvorschläge (erarbeitet am 26.10.2017) aus und erstellt ein Skecht
-- Die drei besten /geeignetsten Sketches werden mit storyboardthat.com umgesetz (für präsi)
-- Aufteilung wer macht was über das Wochenende (Sketches umsetzen) (Storyboard, PDF, CardBoard-Prototype, sonstiges)
+27.10.2017 Aufgabenverteilung und Meilensteine gesetzt:
+Aufgabenverteilung; => siehe dazu auch Docs alles was im Docs grün hervorgehoben ist muss noch erledigt werden...
+Milena: Prototypen
+Moritz: Evaluationsfragen // Persona
+Sandra: Prototypen + Evaluationsfragen an Interviewpersonen senden
+ALLE: Prototypen + Evaluationsfragen herumzeigen und Rückmeldungen einholen
+Chantal: Storyboards // Persona // zweiterblick für Literaturrecherche
+Zoran: Mainfeatures ausformulieren
+Silvan: mindestens 2 Storyboards erstellen
+Meilensteine:
+Montag 24:00 alles fertig
+Dienstag 24:00 alles korrekturgelesen und korrigiert
+Mittwoch PDF und Präsentation erstellen
