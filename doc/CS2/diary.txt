@@ -26,10 +26,10 @@ Milena: Prototypen
 Moritz: Evaluationsfragen // Persona
 Sandra: Prototypen + Evaluationsfragen an Interviewpersonen senden
 ALLE: Prototypen + Evaluationsfragen herumzeigen und Rückmeldungen einholen
-Chantal: Storyboards // Persona // zweiterblick für Literaturrecherche
+Chantal: Storyboards // Persona // Literaturrecherche: Apps auf dem Markt
 Zoran: Mainfeatures ausformulieren
 Silvan: mindestens 2 Storyboards erstellen
 Meilensteine:
 Montag 24:00 alles fertig
-Dienstag 24:00 alles korrekturgelesen und korrigiert
+Dienstag 24:00 alles korrektur gelesen und korrigiert
 Mittwoch PDF und Präsentation erstellen
