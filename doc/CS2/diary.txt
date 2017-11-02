@@ -19,17 +19,11 @@ Scetches für Screens.
 
 Die Ergebnisse werden am 02.11 in Form einer 10-minütigen Präsentation vorgestellt.
 
+Detailbeschrieb zu Task1 siehe Dokument Aufgabenstellung_Task1.docx
+Im Ordner Task01 auf dem GIT wurden alle Dokumente ausser die ausgefüllten Interviews gelöscht.
 
-27.10.2017 Aufgabenverteilung und Meilensteine gesetzt:
-Aufgabenverteilung; => siehe dazu auch Docs alles was im Docs grün hervorgehoben ist muss noch erledigt werden...
-Milena: Prototypen
-Moritz: Evaluationsfragen // Persona
-Sandra: Prototypen + Evaluationsfragen an Interviewpersonen senden
-ALLE: Prototypen + Evaluationsfragen herumzeigen und Rückmeldungen einholen
-Chantal: Storyboards // Persona // Literaturrecherche: Apps auf dem Markt
-Zoran: Mainfeatures ausformulieren
-Silvan: mindestens 2 Storyboards erstellen
-Meilensteine:
-Montag 24:00 alles fertig
-Dienstag 24:00 alles korrektur gelesen und korrigiert
-Mittwoch PDF und Präsentation erstellen
+Präsentation am 02.11.2017 gehalten
+Bericht und Präsentation auf dem GIT abgelegt, Task01 ist somit vollständig abgeschlossen.
+
+TASK2 von 02.11 - ??.11.
+____________________
