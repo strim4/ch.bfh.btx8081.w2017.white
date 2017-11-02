@@ -25,5 +25,14 @@ Im Ordner Task01 auf dem GIT wurden alle Dokumente ausser die ausgefüllten Inte
 Präsentation am 02.11.2017 gehalten
 Bericht und Präsentation auf dem GIT abgelegt, Task01 ist somit vollständig abgeschlossen.
 
-TASK2 von 02.11 - ??.11.
+TASK2 von 02.11 - 16.11.
 ____________________
+
+In der zweiten Projektphase sollen ein UML-Domainmodell und zwei Sequenzdiagramme
+a) Wenn der Benutzer bestimmte Informationen aktualisiert
+b) Wenn das System den Benutzer über ein bestimmtes Ereignis informiert
+entworfen werden.
+Falls notwendig soll das UML-Klassenmodell, um die Attribute und Operationen,
+welche für die Sequenzdiagramme benötigt werden, ergänzt werden.
+
+Die Ergebnisse werden am 16.11.2017 in Form einer 10-minütigen Präsentation vorgestellt.
