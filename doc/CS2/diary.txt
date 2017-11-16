@@ -36,3 +36,9 @@ Falls notwendig soll das UML-Klassenmodell, um die Attribute und Operationen,
 welche für die Sequenzdiagramme benötigt werden, ergänzt werden.
 
 Die Ergebnisse werden am 16.11.2017 in Form einer 10-minütigen Präsentation vorgestellt.
+
+Präsentation am 16.11.2017 gehalten.
+Präsentation und weitere Dokumente auf GIT abgelegt, Task02 ist somit vollständig abgeschlossen.
+
+TASK3 von 16.11.- ??.??.
+____________________
