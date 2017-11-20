@@ -40,5 +40,47 @@ Die Ergebnisse werden am 16.11.2017 in Form einer 10-minütigen Präsentation vo
 Präsentation am 16.11.2017 gehalten.
 Präsentation und weitere Dokumente auf GIT abgelegt, Task02 ist somit vollständig abgeschlossen.
 
-TASK3 von 16.11.- ??.??.
+TASK3 von 16.11.- 23.11.
+____________________
+In der dritten Projektphase soll die Softwarearchitektur modelliert werden
+High-Level: UML-Komponente und Deployment-Diagramm
+detailliert: UML-Klassendiagramm für die Hauptansicht unserer Anwendung
+Unter Berücksichtigung von:
+Systemanforderungen
+inklusive der Notwendigkeit einer dauerhaften Datenspeicherung
+architektonische Entwurfsmuster
+das Vaadin-Rahmenwerk
+
+Die Ergebnisse werden am 23.11.2017 in Form einer 5-minütigen Präsentation vorgestellt.
+
+
+
+
+TASK4 von 16.11.- 23.11.
+____________________
+Von nun abeiten wir im Scrum-Modus. Die Rollen sind wie folgt verteilt:
+Entwickler = wir
+Scrum Master = der erfahrenste Entwickler unserer Gruppe für den ersten Sprint wurde
+Silvan Hostettler gewählt, wenn wir wollen, können wir pro Sprint wechseln.
+Produkteigentümer = Herr Vogel
+Basierend auf unseren bisherigen Projektergebnissen nehmen wir jetzt folgende Schritte vor:
+Produktplanungssitzung, was zu einem Produkthandbuch führt, das die
+Benutzeranforderungen und Szenarien reflektiert
+Prioritäten im Konsens mit dem Produkteigentümer definiert
+Sprint-Planungstreffen mit dem Ergebnis eines ersten allgemeinen Sprint-Handbuches
+Übersetzen von Produkt Backlog-Elementen in Low-Level-Implementierungsaufgaben
+Aus diesen erfolg die Planung unseres ersten Sprints
+
+Ressourcenplanung
+30 Arbeitsstunden / Teammitglied insgesamt bis zum Ende des Semesters
+Sprint 1: 9hours / Teammitglied
+Sprint 2: 12 Stunden / Teammitglied
+Sprint 3: 9hours / Teammitglied
+
+Die Ergebnisse werden am 23.11.2017 in Form einer 5-minütigen Präsentation vorgestellt.
+
+
+
+
+TASK5 von 23.11.- ??.??.
 ____________________
