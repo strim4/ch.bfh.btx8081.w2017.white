@@ -8,10 +8,10 @@ public class BasePresenter {
 	private BaseModel model;
 	private BaseView view;
 
-	public BasePresenter(BaseModel model, BaseView view) {
-		this.model = model;
-		this.view = view;
-	}
+//	public BasePresenter(BaseModel model, BaseView view) {
+//		this.model = model;
+//		this.view = view;
+//	}
 	
 	// TODO Handling click events
 
