@@ -15,6 +15,8 @@ public class BaseView {
 		// TODO Button Informationen
 		
 		// TODO Button Tipps
+		
+		// TODO Button Einstellungen
 	}
 
 }
