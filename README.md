@@ -1,8 +1,8 @@
 moody
 ==============
 
-Template for a simple Vaadin application that only requires a Servlet 3.0 container to run.
-
+Moody is a Web-App to help people who are suffering from depression.
+This project was conducted as part of a module at the University of Applied Science Berne.
 
 Workflow
 ========
