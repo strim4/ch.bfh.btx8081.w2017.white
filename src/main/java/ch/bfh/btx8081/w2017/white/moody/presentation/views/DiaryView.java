@@ -1,8 +1,11 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Label;
+
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryPresenter;
 
 /**
  * This class is the view of the Diary screen
@@ -14,6 +17,8 @@ import com.vaadin.ui.Label;
  */
 
 public class DiaryView extends BaseView{
+	
+	//private DiaryPresenter presenter = null;
 	
 	public DiaryView(){
 	GridLayout layout = new GridLayout(3, 4); //first columns, than rows
@@ -30,12 +35,19 @@ public class DiaryView extends BaseView{
 	
 
 	layout.addComponent(newText, 1, 2);
+	layout.setComponentAlignment(newText, Alignment.TOP_CENTER);
 	layout.addComponent(newPic, 2, 2);
+	layout.setComponentAlignment(newPic, Alignment.TOP_CENTER);
 	layout.addComponent(newActivity, 3, 2);
+	layout.setComponentAlignment(newActivity, Alignment.TOP_CENTER);
 	layout.addComponent(ListDiaryElements, 1, 3);
+	layout.setComponentAlignment(ListDiaryElements, Alignment.TOP_CENTER);
 	
 	Button back = new Button("Zurueck"); //Back to Main View
 	layout.addComponent(back, 1, 4);
+	layout.setComponentAlignment(back, Alignment.TOP_CENTER);
+	
+	// TODO Handling click event
 	
 	}
 
