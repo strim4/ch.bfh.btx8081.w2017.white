@@ -14,7 +14,7 @@ import com.vaadin.ui.Label;
 public class ActivityView {
 
 	public ActivityView(){
-		GridLayout layout = new GridLayout(1, 4);
+		GridLayout layout = new GridLayout(1, 5);
 		Label activity = new Label("Neue Aktivitaet");
 		layout.addComponent(activity, 1, 1);
 		
@@ -24,5 +24,11 @@ public class ActivityView {
 		//layout.addComponent(component, 1, 3);
 		Button newActivity = new Button("Neue erstellen");
 		layout.addComponent(newActivity, 1, 4);
+		
+		//Save or Cancel the new Diary Input
+		Button save = new Button("Speichern");
+		layout.addComponent(save, 1, 5);
+		Button cancel = new Button("Abbrechen");
+		layout.addComponent(cancel, 2, 5);
 	}
 }

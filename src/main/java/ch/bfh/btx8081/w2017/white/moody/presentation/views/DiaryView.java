@@ -16,7 +16,7 @@ import com.vaadin.ui.Label;
 public class DiaryView extends BaseView{
 	
 	public DiaryView(){
-	GridLayout layout = new GridLayout(3, 3); //first columns, than rows
+	GridLayout layout = new GridLayout(3, 4); //first columns, than rows
 	Label diary = new Label("Tagebuch");
 	layout.addComponent(diary, 2, 1);
 	
@@ -27,11 +27,15 @@ public class DiaryView extends BaseView{
 	Button newPic = new Button("Neues Foto");
 	Button newActivity = new Button("Neue Aktivitaet");
 	Button ListDiaryElements = new Button("Alte Eintraege");
+	
 
 	layout.addComponent(newText, 1, 2);
 	layout.addComponent(newPic, 2, 2);
 	layout.addComponent(newActivity, 3, 2);
 	layout.addComponent(ListDiaryElements, 1, 3);
+	
+	Button back = new Button("Zurueck"); //Back to Main View
+	layout.addComponent(back, 1, 4);
 	
 	}
 
