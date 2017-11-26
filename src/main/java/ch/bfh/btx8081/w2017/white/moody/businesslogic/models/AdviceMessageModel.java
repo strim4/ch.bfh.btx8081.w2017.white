@@ -13,7 +13,7 @@ public class AdviceMessageModel extends BaseModel{
 	
 	
 	
-	}
+	
 
 	
 }
