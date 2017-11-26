@@ -12,6 +12,10 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BaseModel;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.BasePresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.BaseView;
+
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
  * (or tab) or some part of an HTML page where a Vaadin application is embedded.
@@ -19,12 +23,19 @@ import com.vaadin.ui.VerticalLayout;
  * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be 
  * overridden to add component to the user interface and initialize non-component functionality.
  */
+@SuppressWarnings("serial")
 @Theme("mytheme")
 public class MyUI extends UI {
+	
+	//BaseModel model = new BaseModel();
+	BaseView view = new BaseView();
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        final VerticalLayout layout = new VerticalLayout();
+    	
+    	//BasePresenter presenter = BasePresenter(model, view);
+    			
+        final VerticalLayout layout = new VerticalLayout(); //view
         
         final TextField name = new TextField();
         name.setCaption("Moody");
