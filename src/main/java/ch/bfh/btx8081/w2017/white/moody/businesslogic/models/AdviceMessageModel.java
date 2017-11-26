@@ -1,6 +1,6 @@
 package ch.bfh.btx8081.w2017.white.moody.businesslogic.models;
 
-import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.AdviceMessage;
 
 /**
  * @author Roberto Tangarife
