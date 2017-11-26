@@ -1,29 +1,29 @@
 ﻿
 20.10.2017: Aufgabenstellung erhalten
 
+Wir entwicklen eine Web-App, welche Menschen mit Depressionen unterstützen soll.
 
-
-Wir entwicklen eine Webapp, welche Menschen mit Depressionen unterstützen soll.
 
 TASK1 von 20.10 - 02.11
 ____________________
 
-In der ersten Projektphase sollen use cases und user requirements im Sinne von design thinking  evaluiert werden.
+In der ersten Projektphase sollen Use Cases und User Requirements im Sinne von Design Thinking  evaluiert werden.
 Diese Phase soll durch ein Interview, vorzugsweise mit einem Menschen mit Depressionen oder aber einer indirekt
 betroffenen Person (Angehörige, Fachpersonal, usw.), durchgeführt werden.
 
 Es können und sollen auch weitere Quellen, wie z.B. Fachliteratur verwendet werden.
 
-Aus diesem Projektschritt sollen bereits erste Ideen für eine App entstehen. In Textform oder bereits mit
-Scetches für Screens.
+Aus diesem Projektschritt sollen bereits erste Ideen für eine App entstehen. I
+n Textform oder bereits mit Scetches für Screens.
 
-Die Ergebnisse werden am 02.11 in Form einer 10-minütigen Präsentation vorgestellt.
+Die Ergebnisse werden am 2.11. in Form einer 10-minütigen Präsentation vorgestellt.
 
 Detailbeschrieb zu Task1 siehe Dokument Aufgabenstellung_Task1.docx
 Im Ordner Task01 auf dem GIT wurden alle Dokumente ausser die ausgefüllten Interviews gelöscht.
 
 Präsentation am 02.11.2017 gehalten
 Bericht und Präsentation auf dem GIT abgelegt, Task01 ist somit vollständig abgeschlossen.
+
 
 TASK2 von 02.11 - 16.11.
 ____________________
@@ -40,6 +40,7 @@ Die Ergebnisse werden am 16.11.2017 in Form einer 10-minütigen Präsentation vo
 Präsentation am 16.11.2017 gehalten.
 Präsentation und weitere Dokumente auf GIT abgelegt, Task02 ist somit vollständig abgeschlossen.
 
+
 TASK3 von 16.11.- 23.11.
 ____________________
 In der dritten Projektphase soll die Softwarearchitektur modelliert werden
@@ -54,11 +55,9 @@ das Vaadin-Rahmenwerk
 Die Ergebnisse werden am 23.11.2017 in Form einer 5-minütigen Präsentation vorgestellt.
 
 
-
-
 TASK4 von 16.11.- 23.11.
 ____________________
-Von nun abeiten wir im Scrum-Modus. Die Rollen sind wie folgt verteilt:
+Von nun an arbeiten wir im Scrum-Modus. Die Rollen sind wie folgt verteilt:
 Entwickler = wir
 Scrum Master = der erfahrenste Entwickler unserer Gruppe für den ersten Sprint wurde
 Silvan Hostettler gewählt, wenn wir wollen, können wir pro Sprint wechseln.
@@ -69,18 +68,20 @@ Benutzeranforderungen und Szenarien reflektiert
 Prioritäten im Konsens mit dem Produkteigentümer definiert
 Sprint-Planungstreffen mit dem Ergebnis eines ersten allgemeinen Sprint-Handbuches
 Übersetzen von Produkt Backlog-Elementen in Low-Level-Implementierungsaufgaben
-Aus diesen erfolg die Planung unseres ersten Sprints
+Aus diesem erfolgt die Planung unseres ersten Sprints:
 
 Ressourcenplanung
 30 Arbeitsstunden / Teammitglied insgesamt bis zum Ende des Semesters
-Sprint 1: 9hours / Teammitglied
+Sprint 1: 9 Stunden / Teammitglied
 Sprint 2: 12 Stunden / Teammitglied
-Sprint 3: 9hours / Teammitglied
+Sprint 3: 9 Stunden / Teammitglied
 
 Die Ergebnisse werden am 23.11.2017 in Form einer 5-minütigen Präsentation vorgestellt.
 
 
-
-
-TASK5 von 23.11.- ??.??.
+TASK5 von 23.11.- 01.05.
 ____________________
+Umsetzung des 1. Sprints. 
+Einteilung via. Scrum Plan.
+
+Die Ergebnisse werden am 1.12.2017 präsentiert.
