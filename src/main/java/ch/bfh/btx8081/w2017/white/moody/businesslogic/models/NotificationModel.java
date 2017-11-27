@@ -25,6 +25,7 @@ public class NotificationModel {
 	}
 	*/
 	
+	// finds particular notification inside of the list by its id
 	public Notification findById(int id)
 	{
 		for(Notification notification: notifications)
