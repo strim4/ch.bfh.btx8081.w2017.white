@@ -6,7 +6,7 @@ package ch.bfh.btx8081.w2017.white.moody.businesslogic.models;
  * Allows the use of generic methods for initialization and navigation
  */
 
-public abstract class BaseModel {
+public class BaseModel {
 	
 	public BaseModel(){
 		
