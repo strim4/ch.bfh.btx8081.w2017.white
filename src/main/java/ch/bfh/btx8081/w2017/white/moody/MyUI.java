@@ -27,32 +27,28 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.BaseView;
 @Theme("mytheme")
 public class MyUI extends UI {
 	
+	
+		final String HEIGHT = "";
+		final String WIDTH = "";
+	
 	//BaseModel model = new BaseModel();
 	BaseView view = new BaseView();
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
     	
-    	//BasePresenter presenter = BasePresenter(model, view);
-    			
-        final VerticalLayout layout = new VerticalLayout(); //view
-        
-        final TextField name = new TextField();
-        name.setCaption("Moody");
+   	 final VerticalLayout layout = new VerticalLayout();
+       layout.setHeight(HEIGHT);
+       layout.setWidth(WIDTH);
+       layout.setMargin(false);
+       layout.setSpacing(false);
+       setContent(layout);
+       
+      
+   }
 
-        Button button = new Button("Click Me");
-        button.addClickListener(e -> {
-            layout.addComponent(new Label("Thanks " + name.getValue() 
-                    + ", it works!"));
-        });
-        
-        layout.addComponents(name, button);
-        
-        setContent(layout);
+   @WebServlet(urlPatterns = "/*", name = "Moody", asyncSupported = true)
+   @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
+   public static class HealthVisAppUIServlet extends VaadinServlet {
+   }
     }
-
-    @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
-    @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
-    public static class MyUIServlet extends VaadinServlet {
-    }
-}

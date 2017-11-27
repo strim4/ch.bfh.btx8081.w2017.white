@@ -16,7 +16,7 @@ public class QuestionsView extends BaseView {
 
 	public QuestionsView() {
 		GridLayout layout = new GridLayout(2, 3); // first columns, than rows
-		Label questions = new Label("Guten Tag NAME, hier Deine t‰glichen Fragen"); // Name sollte aus der DB kommen
+		Label questions = new Label("Guten Tag NAME, hier Deine t√§glichen Fragen"); // Name sollte aus der DB kommen
 		// nach NAME, sollte eine neue Zeile beginnen
 		layout.addComponent(questions, 2, 1);
 
