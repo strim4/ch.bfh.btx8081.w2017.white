@@ -3,10 +3,12 @@ package ch.bfh.btx8081.w2017.white.moody.businesslogic.models;
 import java.util.Calendar;
 
 /**
- * @author Stajz1 Timer for push Notifications
+ * @author Stajz1 
+ * Timer for push Notifications
+ * Last modified 27.11.2017
  * 
- *         Last modified 26.11.2017
- * 
+ * it allows the notifications to be pushed uppon the different
+ * time of the day
  * 
  */
 
