@@ -9,7 +9,7 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Notification;
  * @author Zoran
  * Model for Notifications
  * Stores different notifications in a List.
- * Last Edit: 23.11.17
+ * Last Edit: 27.11.17
  */
 
 public class NotificationModel {
