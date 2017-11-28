@@ -7,7 +7,7 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.presenter;
  * LastEdit: 26.11.17
  */
 
-public class QuestionsPresenter extends BasePresenter {
+//public class QuestionsPresenter extends BasePresenter {
 	/*private QuestionsModel questionsModel;
 	private QuestionsView questionsView;
 
@@ -15,4 +15,4 @@ public class QuestionsPresenter extends BasePresenter {
 		this.questionsModel = questionsModel;
 		this.questionsView = questionsView;
 	}*/
-}
+//}
