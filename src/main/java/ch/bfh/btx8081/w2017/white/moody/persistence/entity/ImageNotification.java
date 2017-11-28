@@ -17,8 +17,8 @@ public class ImageNotification extends Notification {
 		imagePath = "";
 	}
 
-	public ImageNotification(String title, String imagePath) {
-		super(title);
+	public ImageNotification(String title, String description, String imagePath) {
+		super(title, description);
 		this.imagePath = imagePath;
 	}
 

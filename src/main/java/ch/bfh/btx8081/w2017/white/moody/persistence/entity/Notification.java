@@ -6,7 +6,7 @@ import java.util.Date;
  * @author Milena
  * @author Zoran 
  * Notification Class 
- * Last Edit: 27.11.17
+ * Last Edit: 28.11.17
  * 
  * it represents the Superclass for all Notifications
  */
@@ -18,23 +18,22 @@ public abstract class Notification {
 	protected Date date;
 	// it allows to check if notification has been sent
 	protected boolean isSent;
-
-	// private String description;
+	protected String description;
 
 	public Notification() {
-		id = -1;
-		title = "Der Titel";
-		date = new Date();
-		isSent = false;
-		// description = "Die Beschreibung";
+		this.id = -1;
+		this.title = "Der Titel";
+		this.date = new Date();
+		this.isSent = false;
+		this.description = "Die Beschreibung";
 	}
 
-	public Notification(String title) {
+	public Notification(String title, String description) {
 		this.title = title;
 		this.date = new Date();
 		this.id = -1;
 		this.isSent = false;
-		// this.description = description;
+		this.description = description;
 	}
 
 	public String getTitle() {
@@ -53,9 +52,10 @@ public abstract class Notification {
 		return isSent;
 	}
 
-	/*
-	 * public String getDescription(){ return description; }
-	 */
+	public String getDescription() {
+		return description;
+	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
@@ -72,9 +72,8 @@ public abstract class Notification {
 		this.isSent = isSent;
 	}
 
-	/*
-	 * public void setDescription(String description){ this.description=description;
-	 * }
-	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 }
