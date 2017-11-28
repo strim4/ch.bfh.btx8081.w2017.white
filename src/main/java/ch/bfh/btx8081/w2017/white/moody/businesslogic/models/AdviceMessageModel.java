@@ -13,7 +13,7 @@ public class AdviceMessageModel extends BaseModel{
 	
 	
 	
-	
+}//Habe da Mal noch diese Klammer hinzugefügt, dass es keinen Fehler mehr anzeigt :)	
 
 	
-}
+
