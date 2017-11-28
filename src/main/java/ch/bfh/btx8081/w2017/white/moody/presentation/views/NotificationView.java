@@ -37,30 +37,16 @@ public class NotificationView extends BaseView {
 		super.content.addComponent(notification);
 		super.content.setComponentAlignment(notification, Alignment.MIDDLE_CENTER);
 
-		Button buttonText = new Button("", new Button.ClickListener() {
+		Button buttonNotification = new Button("", new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
-				// presenter.navigateBack();
 			}
 		});
 
-		buttonText.setWidth(BUTTON_WIDTH);
-		buttonText.setHeight(BUTTON_HEIGHT);
-		buttonText.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_CLOSE);
-		super.content.addComponent(buttonText);
-		super.content.setComponentAlignment(buttonText, Alignment.BOTTOM_RIGHT);
+		buttonNotification.setWidth(BUTTON_WIDTH);
+		buttonNotification.setHeight(BUTTON_HEIGHT);
+		buttonNotification.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_CLOSE);
+		super.content.addComponent(buttonNotification);
+		super.content.setComponentAlignment(buttonNotification, Alignment.BOTTOM_RIGHT);
 	}
 }
-
-/**
- * public NotificationView() { GridLayout layout = new GridLayout(1, 2); //
- * first columns, than rows Label notifications = new Label("");
- * layout.addComponent(notifications, 2, 1);
- * 
- * /** Button for close the notification screen
- */
-/**
- * Button newClose = new Button("schliessen");
- * 
- * layout.addComponent(newClose, 1, 2); }
- */
