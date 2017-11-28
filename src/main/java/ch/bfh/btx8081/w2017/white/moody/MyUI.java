@@ -38,6 +38,7 @@ public class MyUI extends UI {
     	setWidth(HEIGHT);
     	setHeight(HEIGHT);
     	
+    	//habe dies in die BaseView genommen, hoffe das ist gut so
 //   	 final VerticalLayout layout = new VerticalLayout();
 //       layout.setHeight(HEIGHT);
 //       layout.setWidth(WIDTH);
