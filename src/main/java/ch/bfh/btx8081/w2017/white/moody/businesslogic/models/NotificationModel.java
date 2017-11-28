@@ -12,9 +12,13 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Notification;
  * Last Edit: 27.11.17
  */
 
-public class NotificationModel {
+public class NotificationModel extends BaseModel{
 	
 	private List<Notification> notifications;
+	
+	public NotificationModel() {
+		super();
+	}
 	
 	public String getNotificationTitle(int number){
 		return notifications.get(number).getTitle();
