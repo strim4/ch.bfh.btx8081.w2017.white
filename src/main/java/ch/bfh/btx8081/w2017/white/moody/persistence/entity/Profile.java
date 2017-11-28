@@ -1,5 +1,11 @@
 package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
 
+/**
+ * @author Roberto
+ * Profile (including name, contact details)
+ * Last edit: 28.11.17
+ */
+
 public class Profile {
 	private String firstName;
 	private String lastName;
