@@ -4,7 +4,12 @@ import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
-
+/**
+ * This class is the view of the smiley question.
+ * 
+ * @author Sandra
+ * Last Edit: 28.11.17
+ */
 public class QuestionsSmileyView extends QuestionsView {
 	
 	private static final String BUTTON_WIDTH = "160px";

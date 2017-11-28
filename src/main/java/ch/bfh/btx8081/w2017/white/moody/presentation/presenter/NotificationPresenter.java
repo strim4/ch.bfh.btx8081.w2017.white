@@ -17,16 +17,3 @@ public class NotificationPresenter extends BasePresenter {
 		super(notificationModel, notificationView);
 	}
 }
-
-// private NotificationModel notificationModel;
-// private NotificationView notificationView;
-
-// public NotificationPresenter(NotificationModel notificationModel,
-// NotificationView notificationView) {
-// super(notificationModel, notificationView);
-
-// Da Superkonstruktor Base presenter notificationModel und Notification View
-// sowieso verlangt, muss es nicht noch einmal instanziert werden
-
-// this.notificationModel = notificationModel;
-// this.notificationView = notificationView;
