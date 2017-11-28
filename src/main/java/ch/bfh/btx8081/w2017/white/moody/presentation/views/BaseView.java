@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
+import com.vaadin.navigator.View;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -8,7 +9,7 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2017.white.moody.MyUI;
 
 @SuppressWarnings("serial")
-public class BaseView extends VerticalLayout{
+public class BaseView extends VerticalLayout implements View{
 	
 	protected VerticalLayout header = new VerticalLayout();
 	protected VerticalLayout content = new VerticalLayout();
