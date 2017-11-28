@@ -1,29 +1,66 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
+import com.vaadin.server.ThemeResource;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Button.ClickEvent;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPresenter;
 
 /**
  * This class is the view of the Notification screen on this screen the user
  * recive everyday a notification.
  * 
  * @author Sandra
- * Last Edit: 26.11.17
+ * Last Edit: 28.11.17
  */
 
 public class NotificationView extends BaseView {
 
+	private NotificationPresenter presenter = null;
+
+	private static final String BUTTON_WIDTH = "160px";
+	private static final String BUTTON_HEIGHT = "160px";
+
+	private static final String BUTTON_CLOSE = "CLOSE";
+
 	public NotificationView() {
-		GridLayout layout = new GridLayout(1, 2); // first columns, than rows
-		Label notifications = new Label("");
-		layout.addComponent(notifications, 2, 1);
+		super();
 
-		/**
-		 * Button for close the notification screen
-		 */
-		Button newClose = new Button("schliessen");
+		this.createButtons();
+	}
 
-		layout.addComponent(newClose, 1, 2);
+	@SuppressWarnings("serial")
+	private void createButtons() {
+
+		Label notification = new Label();
+		super.content.addComponent(notification);
+		super.content.setComponentAlignment(notification, Alignment.MIDDLE_CENTER);
+
+		Button buttonText = new Button("", new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// presenter.navigateBack();
+			}
+		});
+
+		buttonText.setWidth(BUTTON_WIDTH);
+		buttonText.setHeight(BUTTON_HEIGHT);
+		buttonText.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_CLOSE);
+		super.content.addComponent(buttonText);
+		super.content.setComponentAlignment(buttonText, Alignment.BOTTOM_RIGHT);
 	}
 }
+
+/**
+ * public NotificationView() { GridLayout layout = new GridLayout(1, 2); //
+ * first columns, than rows Label notifications = new Label("");
+ * layout.addComponent(notifications, 2, 1);
+ * 
+ * /** Button for close the notification screen
+ */
+/**
+ * Button newClose = new Button("schliessen");
+ * 
+ * layout.addComponent(newClose, 1, 2); }
+ */
