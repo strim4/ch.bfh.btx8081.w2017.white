@@ -12,7 +12,7 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
 public class ProfileModel extends BaseModel{
 	
 	
-} //Habe da Mal noch diese Klammer hinzugefügt, dass es keinen Fehler mehr anzeigt :)
+} //Habe da Mal noch diese Klammer hinzugefügt, dass es keinen Fehler mehr anzeigt :) // Danke ;)
 	
 
 	
