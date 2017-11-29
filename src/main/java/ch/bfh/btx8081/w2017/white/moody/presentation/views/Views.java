@@ -16,5 +16,15 @@ public class Views {
 	
 	public static final String DIARYELEMENTLIST_VIEW = "diaryElementList";
 	
+	public static final String NOTIFICATION_VIEW = "notification";
+	
+	public static final String QUESTIONSSMILEY_VIEW = "questionssmiley";
+	
+	public static final String QUESTIONSYESNO_VIEW = "questionsyesno";
+	
+	public static final String QUESTIONS_VIEW = "questions";
+
+	
 	//TODO restliche Views einbauen
+
 }
