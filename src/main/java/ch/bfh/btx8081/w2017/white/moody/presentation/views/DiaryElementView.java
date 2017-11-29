@@ -4,6 +4,7 @@ import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.GridLayout;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Button.ClickEvent;
 
@@ -12,7 +13,7 @@ import com.vaadin.ui.Button.ClickEvent;
  * The Element could be an activity, a text or a picture element of the diary.
  * 
  * @author Chantal
- * Last edit: 26.11.17
+ * Last edit: 29.11.17
  *
  */
 @SuppressWarnings("serial")
@@ -35,7 +36,11 @@ public class DiaryElementView extends DiaryView{
 	
 	private void createButtons(){
 		
-		Button buttonDelete = new Button("", new Button.ClickListener() {
+		HorizontalLayout menue = new HorizontalLayout();
+		super.content.addComponent(menue);
+		super.content.setComponentAlignment(menue, Alignment.MIDDLE_CENTER);
+		
+		Button buttonDelete = new Button("Löschen", new Button.ClickListener() {//Text entfernen, sobald Icons funktionieren
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO	
@@ -43,11 +48,11 @@ public class DiaryElementView extends DiaryView{
 		});
 		buttonDelete.setWidth(BUTTON_WIDTH);
 		buttonDelete.setHeight(BUTTON_HEIGHT);
-		buttonDelete.setIcon(new ThemeResource("images/deleteIcon.png"), BUTTON_DELETE);
-		super.content.addComponent(buttonDelete);
-		super.content.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);
+		//buttonDelete.setIcon(new ThemeResource("images/deleteIcon.png"), BUTTON_DELETE);
+		menue.addComponent(buttonDelete);
+		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);
 	
-		Button buttonBack = new Button("", new Button.ClickListener() {
+		Button buttonBack = new Button("Zurück", new Button.ClickListener() {//Text entfernen, sobald Icons funktionieren
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO		
@@ -55,9 +60,9 @@ public class DiaryElementView extends DiaryView{
 		});
 		buttonBack.setWidth(BUTTON_WIDTH);
 		buttonBack.setHeight(BUTTON_HEIGHT);
-		buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);
-		super.content.addComponent(buttonBack);
-		super.content.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
+		//buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);
+		menue.addComponent(buttonBack);
+		menue.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
 	
 		
 //		GridLayout layout = new GridLayout(1, 2);

@@ -4,6 +4,7 @@ import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.GridLayout;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.Button.ClickEvent;
@@ -16,7 +17,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryPresenter;
  * or open the list of the already recorded Diary Elements.
  * 
  * @author Chantal
- * Last Edit: 28.11.17
+ * Last Edit: 29.11.17
  */
 
 public class DiaryView extends BaseView{
@@ -42,63 +43,52 @@ public class DiaryView extends BaseView{
 	@SuppressWarnings("serial")
 	private void createButtons(){
 		
-		Button buttonText = new Button("", new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// presenter.navigateBack();	
-			}
-		});
+		HorizontalLayout newDiaryElement = new HorizontalLayout();
+		super.content.addComponent(newDiaryElement);
+		super.setComponentAlignment(newDiaryElement, Alignment.MIDDLE_CENTER);
+		
+		Button buttonText = new Button("Neuer Text-Eintrag");//Text entfernen, sobal Icon funktioniert
+		//buttonText.addClickListener(this);
+		buttonText.setId("buttonText");
 		buttonText.setWidth(BUTTON_WIDTH);
 		buttonText.setHeight(BUTTON_HEIGHT);
-		buttonText.setIcon(new ThemeResource("images/textIcon.png"), BUTTON_TEXT);
-		super.content.addComponent(buttonText);
-		super.content.setComponentAlignment(buttonText, Alignment.MIDDLE_CENTER);
+		//buttonText.setIcon(new ThemeResource("images/textIcon.png"), BUTTON_TEXT);
+		newDiaryElement.addComponent(buttonText);
+		newDiaryElement.setComponentAlignment(buttonText, Alignment.MIDDLE_CENTER);
 	
-		Button buttonPic = new Button("", new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// presenter.navigateBack();	
-			}
-		});
+		Button buttonPic = new Button("Neuer Foto-Eintrag"); //Text entfernen, sobal Icon funktioniert
+		//buttonPic.addListener(this);
+		buttonPic.setId("buttonPic");
 		buttonPic.setWidth(BUTTON_WIDTH);
 		buttonPic.setHeight(BUTTON_HEIGHT);
-		buttonPic.setIcon(new ThemeResource("images/picIcon.png"), BUTTON_PIC);
-		super.content.addComponent(buttonPic);
-		super.content.setComponentAlignment(buttonPic, Alignment.MIDDLE_CENTER);
+		//buttonPic.setIcon(new ThemeResource("images/picIcon.png"), BUTTON_PIC);
+		newDiaryElement.addComponent(buttonPic);
+		newDiaryElement.setComponentAlignment(buttonPic, Alignment.MIDDLE_CENTER);
 	
-		Button buttonActivity = new Button("", new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// presenter.navigateBack();	
-			}
-		});
+		Button buttonActivity = new Button("Neuer Aktivitäts-Eintrag");//Text entfernen, sobal Icon funktioniert
+		//buttonActivity.addListener(this);
+		buttonActivity.setId("buttonActivity");
 		buttonActivity.setWidth(BUTTON_WIDTH);
 		buttonActivity.setHeight(BUTTON_HEIGHT);
-		buttonActivity.setIcon(new ThemeResource("images/activityIcon.png"), BUTTON_ACTIVITY);
-		super.content.addComponent(buttonActivity);
-		super.content.setComponentAlignment(buttonActivity, Alignment.MIDDLE_CENTER);
+		//buttonActivity.setIcon(new ThemeResource("images/activityIcon.png"), BUTTON_ACTIVITY);
+		newDiaryElement.addComponent(buttonActivity);
+		newDiaryElement.setComponentAlignment(buttonActivity, Alignment.MIDDLE_CENTER);
 	
-		Button buttonList = new Button("", new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// presenter.navigateBack();	
-			}
-		});
-		buttonList.setWidth(BUTTON_WIDTH);
+		Button buttonList = new Button("Alte Einträge");//Text entfernen, sobal Icon funktioniert
+		//buttonList.addListener(this);
+		buttonList.setId("buttonList");
+		buttonList.setWidth("500px");
 		buttonList.setHeight(BUTTON_HEIGHT);
-		buttonList.setIcon(new ThemeResource("images/listIcon.png"), BUTTON_LIST);
+		//buttonList.setIcon(new ThemeResource("images/listIcon.png"), BUTTON_LIST);
 		super.content.addComponent(buttonList);
 		super.content.setComponentAlignment(buttonList, Alignment.MIDDLE_CENTER);
 	
-		Button buttonBack = new Button("", new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// presenter.navigateBack();	
-			}
-		});
-		buttonBack.setWidth(BUTTON_WIDTH);
+		Button buttonBack = new Button("Zurück");//Text entfernen, sobal Icon funktioniert
+		//buttonList.addListener(this);
+		buttonBack.setId("buttonBack");
+		buttonBack.setWidth("500px");
 		buttonBack.setHeight(BUTTON_HEIGHT);
-		buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);
+		//buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);
 		super.content.addComponent(buttonBack);
 		super.content.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
 	
@@ -135,5 +125,4 @@ public class DiaryView extends BaseView{
 //	// TODO Handling click event
 //	
 //	}
-
 }

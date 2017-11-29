@@ -11,7 +11,7 @@ import com.vaadin.ui.Button.ClickEvent;
  * This Class shows a list of the recorded Diary Elements.
  * 
  * @author Chantal
- * Last Edit: 26.11.17
+ * Last Edit: 29.11.17
  */
 
 @SuppressWarnings("serial")
@@ -33,7 +33,7 @@ public class DiaryElementListView extends DiaryView{
 	
 	private void createButtons(){
 		
-		Button buttonBack = new Button("", new Button.ClickListener() {
+		Button buttonBack = new Button("Zurück", new Button.ClickListener() {//Text entfernen, sobald Icon funktioniert
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO		
@@ -41,7 +41,7 @@ public class DiaryElementListView extends DiaryView{
 		});
 		buttonBack.setWidth(BUTTON_WIDTH);
 		buttonBack.setHeight(BUTTON_HEIGHT);
-		buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);
+		//buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);
 		super.content.addComponent(buttonBack);
 		super.content.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
 
