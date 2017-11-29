@@ -7,10 +7,11 @@ package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
  */
 
 public class Profile {
+	private int id;
 	private String firstName;
 	private String lastName;
-	private int age;
-	private Gender gender;
+	private DateTime birthdate;
+	private char gender;
 	private String address;
 	private String houseDoctor;
 	// private String desease; bin nicht sicher ob das auch gebraucht wird.
@@ -18,6 +19,10 @@ public class Profile {
 	
 	public Profile() {
 	
+	public int getId() {
+		return id;
+	}
+		
 	public String getFirstName() {
 		return firstName;
 	}
@@ -26,11 +31,11 @@ public class Profile {
 		return lastName;
 	}
 	
-	public int getAge() {
-		return age;
+	public DateTime getBirthdate() {
+		return birthdate;
 	}
 	
-	public Gender getGender() {
+	public char getGender() {
 		return gender;
 	}
 	
@@ -51,7 +56,11 @@ public class Profile {
 	 * public String getTherapy() {
 	 * return therapy;
 	 * }
-	 */
+	*/ 
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -61,11 +70,11 @@ public class Profile {
 		this.lastName = lastName;
 	}
 	
-	public void setAge(int age) {
-		this.age = age;
+	public void setBirthdate(DateTime birthdate) {
+		this.birthdate = birthdate;
 	}
 	
-	public void setGender(Gender gender) {
+	public void setGender(char gender) {
 		this.gender = gender;
 	}
 	
@@ -88,4 +97,5 @@ public class Profile {
 	 * this.therapy = therapy;
 	 * }
 	 */
+	}
 }
