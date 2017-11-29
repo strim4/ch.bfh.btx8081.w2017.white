@@ -40,24 +40,18 @@ public class DiaryElementView extends DiaryView{
 		super.content.addComponent(menue);
 		super.content.setComponentAlignment(menue, Alignment.MIDDLE_CENTER);
 		
-		Button buttonDelete = new Button("Löschen", new Button.ClickListener() {//Text entfernen, sobald Icons funktionieren
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO	
-			}
-		});
+		Button buttonDelete = new Button("Löschen");//Text entfernen, sobald Icon funktioniert
+		//buttonDelete.addClickListener(this);
+		buttonDelete.setId("buttonDelete");
 		buttonDelete.setWidth(BUTTON_WIDTH);
 		buttonDelete.setHeight(BUTTON_HEIGHT);
 		//buttonDelete.setIcon(new ThemeResource("images/deleteIcon.png"), BUTTON_DELETE);
 		menue.addComponent(buttonDelete);
 		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);
 	
-		Button buttonBack = new Button("Zurück", new Button.ClickListener() {//Text entfernen, sobald Icons funktionieren
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO		
-			}
-		});
+		Button buttonBack = new Button("Zurück");//Text entfernen, sobald Icon funktioniert
+		//buttonBack.addClickListener(this);
+		buttonBack.setId("buttonBack");
 		buttonBack.setWidth(BUTTON_WIDTH);
 		buttonBack.setHeight(BUTTON_HEIGHT);
 		//buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);

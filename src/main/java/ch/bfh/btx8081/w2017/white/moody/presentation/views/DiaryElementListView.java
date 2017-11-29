@@ -33,12 +33,9 @@ public class DiaryElementListView extends DiaryView{
 	
 	private void createButtons(){
 		
-		Button buttonBack = new Button("Zurück", new Button.ClickListener() {//Text entfernen, sobald Icon funktioniert
-			@Override
-			public void buttonClick(ClickEvent event) {
-				// TODO		
-			}
-		});
+		Button buttonBack = new Button("Zurück");//Text entfernen, sobald Icon funktioniert
+		//buttonBack.addClickListener(this);
+		buttonBack.setId("buttonBack");
 		buttonBack.setWidth(BUTTON_WIDTH);
 		buttonBack.setHeight(BUTTON_HEIGHT);
 		//buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);

@@ -57,7 +57,7 @@ public class DiaryView extends BaseView{
 		newDiaryElement.setComponentAlignment(buttonText, Alignment.MIDDLE_CENTER);
 	
 		Button buttonPic = new Button("Neuer Foto-Eintrag"); //Text entfernen, sobal Icon funktioniert
-		//buttonPic.addListener(this);
+		//buttonPic.addClickListener(this);
 		buttonPic.setId("buttonPic");
 		buttonPic.setWidth(BUTTON_WIDTH);
 		buttonPic.setHeight(BUTTON_HEIGHT);
@@ -66,7 +66,7 @@ public class DiaryView extends BaseView{
 		newDiaryElement.setComponentAlignment(buttonPic, Alignment.MIDDLE_CENTER);
 	
 		Button buttonActivity = new Button("Neuer Aktivitäts-Eintrag");//Text entfernen, sobal Icon funktioniert
-		//buttonActivity.addListener(this);
+		//buttonActivity.addClickListener(this);
 		buttonActivity.setId("buttonActivity");
 		buttonActivity.setWidth(BUTTON_WIDTH);
 		buttonActivity.setHeight(BUTTON_HEIGHT);
@@ -75,7 +75,7 @@ public class DiaryView extends BaseView{
 		newDiaryElement.setComponentAlignment(buttonActivity, Alignment.MIDDLE_CENTER);
 	
 		Button buttonList = new Button("Alte Einträge");//Text entfernen, sobal Icon funktioniert
-		//buttonList.addListener(this);
+		//buttonList.addClickListener(this);
 		buttonList.setId("buttonList");
 		buttonList.setWidth("500px");
 		buttonList.setHeight(BUTTON_HEIGHT);
@@ -84,7 +84,7 @@ public class DiaryView extends BaseView{
 		super.content.setComponentAlignment(buttonList, Alignment.MIDDLE_CENTER);
 	
 		Button buttonBack = new Button("Zurück");//Text entfernen, sobal Icon funktioniert
-		//buttonList.addListener(this);
+		//buttonList.addClickListener(this);
 		buttonBack.setId("buttonBack");
 		buttonBack.setWidth("500px");
 		buttonBack.setHeight(BUTTON_HEIGHT);

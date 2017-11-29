@@ -15,4 +15,6 @@ public class Views {
 	public static final String DIARYELEMENT_VIEW = "diaryElement";
 	
 	public static final String DIARYELEMENTLIST_VIEW = "diaryElementList";
+	
+	//TODO restliche Views einbauen
 }

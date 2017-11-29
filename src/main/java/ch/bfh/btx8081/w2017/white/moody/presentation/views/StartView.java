@@ -51,7 +51,7 @@ public class StartView extends BaseView{
 		
 		//Button for diary
 		Button buttonDiary = new Button("Tagebuch");//Text entfernen, sobald Icon funktioniert
-		//buttonDiary.addListener(this);
+		//buttonDiary.addClickListener(this);
 		buttonDiary.setId("buttonDiary");
 		buttonDiary.setWidth(BUTTON_WIDTH);
 		buttonDiary.setHeight(BUTTON_HEIGHT);
@@ -61,7 +61,7 @@ public class StartView extends BaseView{
 		
 		//Button for emergency contact
 		Button buttonContact = new Button("Notfall");//Text entfernen, sobald Icon funktioniert
-		//buttonContact.addListener(this);
+		//buttonContact.addClickListener(this);
 		buttonContact.setId("buttonContact");
 		buttonContact.setWidth(BUTTON_WIDTH);
 		buttonContact.setHeight(BUTTON_HEIGHT);
@@ -71,7 +71,7 @@ public class StartView extends BaseView{
 
 		//Button for mood barometer
 		Button buttonBarometer = new Button("Barometer");	//Text entfernen, sobald Icon funktioniert
-		//buttonBarometer.addListener(this);
+		//buttonBarometer.addClickListener(this);
 		buttonBarometer.setId("buttonBarometer");
 		buttonBarometer.setWidth(BUTTON_WIDTH);
 		buttonBarometer.setHeight(BUTTON_HEIGHT);
@@ -81,7 +81,7 @@ public class StartView extends BaseView{
 
 		//Button for relaxing exercises
 		Button buttonExercises = new Button("Übungen");//Text entfernen, sobald Icon funktioniert
-		//buttonExercises.addListener(this);
+		//buttonExercises.addClickListener(this);
 		buttonExercises.setId("buttonExercises");
 		buttonExercises.setWidth(BUTTON_WIDTH);
 		buttonExercises.setHeight(BUTTON_HEIGHT);
@@ -91,7 +91,7 @@ public class StartView extends BaseView{
 
 		//Button for informations about depression
 		Button buttonInformations = new Button("Informationen");//Text entfernen, sobald Icon funktioniert
-		//buttonInformations.addListener(this);
+		//buttonInformations.addClickListener(this);
 		buttonInformations.setId("buttonInformations");
 		buttonInformations.setWidth(BUTTON_WIDTH);
 		buttonInformations.setHeight(BUTTON_HEIGHT);
@@ -101,7 +101,7 @@ public class StartView extends BaseView{
 
 		//Button for tips
 		Button buttonTips = new Button("Tipps");//Text entfernen, sobald Icon funktioniert
-		//buttonTips.addListener(this);
+		//buttonTips.addClickListener(this);
 		buttonTips.setId("buttonTips");
 		buttonTips.setWidth(BUTTON_WIDTH);
 		buttonTips.setHeight(BUTTON_HEIGHT);
@@ -111,7 +111,7 @@ public class StartView extends BaseView{
 
 		//Button for general settings
 		Button buttonSettings = new Button("Einstellungen");//Text entfernen, sobald Icon funktioniert
-		//buttonSettings.addListener(this);
+		//buttonSettings.addClickListener(this);
 		buttonSettings.setId("buttonSettings");
 		buttonSettings.setWidth(BUTTON_WIDTH);
 		buttonSettings.setHeight(BUTTON_HEIGHT);
