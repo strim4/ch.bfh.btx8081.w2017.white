@@ -1,18 +1,28 @@
 package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
 
 
+import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.*;
 
 /**
  * @author Moritz
  * Superclass for DiaryElements
  * Provides common attributes for subclasses
  */
-public abstract class DiaryElement {
 
-	protected  int id;
-	protected  String name;
-	protected Date creationDate;
+@Entity
+@Table
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type")
+public abstract class DiaryElement  {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private  int id;
+	private  String name;
+	private Date creationDate;
 
 
 	public DiaryElement(int id, String name, Date creationDate) {
@@ -22,6 +32,8 @@ public abstract class DiaryElement {
 		
 
 	}
+	
+	public DiaryElement() {}
 
 
 
