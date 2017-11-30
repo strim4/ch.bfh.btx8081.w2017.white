@@ -38,7 +38,7 @@ public class DiaryTextPresenter implements ViewListener{
 			view.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
 			break;
 		case "buttonDelete":
-			//Loesch-Methode
+			//Lösch-Methode
 			break;
 		}
 	}

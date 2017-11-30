@@ -12,15 +12,15 @@ public class Views {
 	
 	public static final String DIARY_VIEW = "diary";
 	
-	public static final String DIARYTEXT_VIEW = "diaryText";
+	public static final String DIARYTEXT_VIEW = "text";
 	
-	public static final String DIARYPIC_VIEW = "diaryPic";
+	public static final String DIARYPIC_VIEW = "picture";
 	
 	public static final String ACTIVITY_VIEW = "activity";
 	
 	public static final String DIARYELEMENT_VIEW = "diaryElement";
 	
-	public static final String DIARYELEMENTLIST_VIEW = "diaryElementList";
+	public static final String DIARYELEMENTLIST_VIEW = "list";
 	
 	public static final String NOTIFICATION_VIEW = "notification";
 	

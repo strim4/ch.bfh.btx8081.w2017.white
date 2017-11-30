@@ -2,7 +2,6 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
@@ -19,12 +18,6 @@ import com.vaadin.ui.Button.ClickEvent;
 
 @SuppressWarnings("serial")
 public class DiaryView extends BaseView implements MoodyView{
-
-//	private static final String BUTTON_BACK = "BACK";
-//	private static final String BUTTON_TEXT = "TEXT";
-//	private static final String BUTTON_PIC = "PICTURE";
-//	private static final String BUTTON_ACTIVITY = "ACTIVITY";
-//	private static final String BUTTON_LIST = "LIST";
 	
 	private static final String BUTTON_WIDTH = "160px";
 	private static final String BUTTON_HEIGHT = "160px";
@@ -37,14 +30,16 @@ public class DiaryView extends BaseView implements MoodyView{
 		super.setTitle("Tagebuch");
 		
 		this.createButtons();
+		
+		super.setLayouts(0.35f, 0.65f, 0, 0);
 	}
 	
-
+	
 	private void createButtons(){
 		
 		HorizontalLayout newDiaryElement = new HorizontalLayout();
 		super.content.addComponent(newDiaryElement);
-		super.setComponentAlignment(newDiaryElement, Alignment.MIDDLE_CENTER);
+		super.content.setComponentAlignment(newDiaryElement, Alignment.MIDDLE_CENTER);
 		
 		Button buttonText = new Button("Neuer Text");//Text entfernen, sobal Icon funktioniert
 		buttonText.addClickListener(this);
@@ -64,7 +59,7 @@ public class DiaryView extends BaseView implements MoodyView{
 		newDiaryElement.addComponent(buttonPic);
 		newDiaryElement.setComponentAlignment(buttonPic, Alignment.MIDDLE_CENTER);
 	
-		Button buttonActivity = new Button("Neue Aktivitaet");//Text entfernen, sobal Icon funktioniert
+		Button buttonActivity = new Button("Neuer Aktivitaet");//Text entfernen, sobal Icon funktioniert
 		buttonActivity.addClickListener(this);
 		buttonActivity.setId("buttonActivity");
 		buttonActivity.setWidth(BUTTON_WIDTH);
@@ -105,4 +100,5 @@ public class DiaryView extends BaseView implements MoodyView{
 			listener.buttonClick(event);
 		}
 	}
+	
 }

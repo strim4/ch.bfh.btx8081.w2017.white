@@ -69,9 +69,8 @@ public class ActivityView extends DiaryView implements MoodyView{
 		newActivity.addClickListener(this);
 		newActivity.setId("newActivity");
 		newActivity.setWidth(BUTTON_WIDTH);
-		newActivity.setHeight(BUTTON_HEIGHT);
-		super.content.addComponent(newActivity);
-		super.content.setComponentAlignment(newActivity, Alignment.MIDDLE_CENTER);
+		activityChoice.addComponent(newActivity);
+		activityChoice.setComponentAlignment(newActivity, Alignment.BOTTOM_CENTER);
 		
 		HorizontalLayout menue = new HorizontalLayout();
 		super.content.addComponent(menue);
