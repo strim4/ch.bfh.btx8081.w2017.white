@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
@@ -13,7 +14,7 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue(value = "TE")
 
-public class DiaryText extends DiaryElement{
+public class DiaryText extends DiaryElement implements Serializable{
 	
 	private String note;
 

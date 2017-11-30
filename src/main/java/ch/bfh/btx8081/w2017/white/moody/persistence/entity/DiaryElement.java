@@ -16,7 +16,7 @@ import javax.persistence.*;
 @Table
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type")
-public abstract class DiaryElement  {
+public abstract class DiaryElement implements Serializable  {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
