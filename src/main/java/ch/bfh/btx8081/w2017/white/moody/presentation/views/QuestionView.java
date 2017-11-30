@@ -16,7 +16,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionsPresente
  * Last Edit: 28.11.17
  */
 
-public class QuestionsView extends BaseView {
+public class QuestionView extends BaseView {
 
 	private QuestionsPresenter presenter = null;
 
@@ -28,7 +28,7 @@ public class QuestionsView extends BaseView {
 	private static final String BUTTON_YES = "YES";
 	private static final String BUTTON_NO = "NO";
 
-	public QuestionsView() {
+	public QuestionView() {
 		super();
 		super.setTitle("Guten Tag %s \n hier Deine täglichen Fragen"); // Silvan, dieser Platzhalter ist für Dich, da
 																		// kommt der Name aus der DB hin...

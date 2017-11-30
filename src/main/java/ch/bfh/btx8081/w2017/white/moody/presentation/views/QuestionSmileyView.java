@@ -12,7 +12,7 @@ import com.vaadin.ui.Button.ClickEvent;
  * Last Edit: 28.11.17
  */
 
-public class QuestionsSmileyView extends QuestionsView {
+public class QuestionSmileyView extends QuestionView {
 	
 	private static final String BUTTON_WIDTH = "160px";
 	private static final String BUTTON_HEIGHT = "160px";
@@ -23,7 +23,7 @@ public class QuestionsSmileyView extends QuestionsView {
 	private static final String BUTTON_HAPPY = "HAPPY";
 	private static final String BUTTON_VERYHAPPY = "VERYHAPPY";
 
-	public QuestionsSmileyView() {
+	public QuestionSmileyView() {
 		super();
 
 		this.createButtons();

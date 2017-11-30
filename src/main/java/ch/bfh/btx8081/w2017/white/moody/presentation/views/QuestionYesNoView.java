@@ -11,7 +11,7 @@ import com.vaadin.ui.Button.ClickEvent;
  * Last Edit: 28.11.17
  */
 
-public class QuestionsYesNoView extends QuestionsView {
+public class QuestionYesNoView extends QuestionView {
 
 	private static final String BUTTON_WIDTH = "160px";
 	private static final String BUTTON_HEIGHT = "160px";
@@ -19,7 +19,7 @@ public class QuestionsYesNoView extends QuestionsView {
 	private static final String BUTTON_YES = "YES";
 	private static final String BUTTON_NO = "NO";
 
-	public QuestionsYesNoView() {
+	public QuestionYesNoView() {
 		super();
 
 		this.createButtons();
