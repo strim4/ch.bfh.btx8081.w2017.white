@@ -6,7 +6,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Button.ClickEvent;
-import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionsPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter;
 
 /**
  * This class is the view of the Questions screen on this screen the user recive
@@ -18,7 +18,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionsPresente
 
 public class QuestionView extends BaseView {
 
-	private QuestionsPresenter presenter = null;
+	private QuestionPresenter presenter = null;
 
 	private static final String BUTTON_WIDTH = "160px";
 	private static final String BUTTON_HEIGHT = "160px";
