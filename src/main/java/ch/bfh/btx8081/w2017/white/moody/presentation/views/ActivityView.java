@@ -3,6 +3,7 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.DateField;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -35,7 +36,7 @@ public class ActivityView extends DiaryView{
 	
 	private void createButtons(){
 		
-		Label date = new Label("Datum");
+		DateField date = new DateField();
 		super.content.addComponent(date);
 		super.content.setComponentAlignment(date, Alignment.MIDDLE_CENTER);
 		

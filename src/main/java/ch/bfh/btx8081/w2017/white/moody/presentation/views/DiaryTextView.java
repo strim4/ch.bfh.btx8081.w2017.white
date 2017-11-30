@@ -5,9 +5,11 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.RichTextArea;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.DateField;
 
 /**
  * This class shows the creation of a new Diary Text Element.
@@ -35,11 +37,11 @@ public class DiaryTextView extends DiaryView{
 	
 	private void createButtons(){
 		
-		Label date = new Label("Datum");
+		DateField date = new DateField();
 		super.content.addComponent(date);
 		super.content.setComponentAlignment(date, Alignment.MIDDLE_CENTER);
 		
-		TextArea newText = new TextArea();
+		RichTextArea newText = new RichTextArea();
 		newText.setWidth("500px");
 		newText.setHeight("320px");
 		super.content.addComponent(newText);
