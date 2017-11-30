@@ -39,16 +39,6 @@ public class BasePresenter {
 		case "buttonTips":
 		case "buttonSettings":
 			
-		case "buttonQuestions":
-			view.getUI().getNavigator().navigateTo(Views.QUESTIONS_VIEW);
-			
-		case "buttonActivity":
-			view.getUI().getNavigator().navigateTo(Views.ACTIVITY_VIEW);
-			
-		case "buttonStartview":
-			view.getUI().getNavigator().navigateTo(Views.START_VIEW);
-			
-			
 		}
 	}
 }
