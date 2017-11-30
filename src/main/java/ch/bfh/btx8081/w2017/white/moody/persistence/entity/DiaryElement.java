@@ -12,11 +12,12 @@ import javax.persistence.*;
  * Provides common attributes for subclasses
  */
 
+@SuppressWarnings("serial")
 @Entity
 @Table
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type")
-public abstract class DiaryElement implements Serializable  {
+public class DiaryElement implements Serializable  {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

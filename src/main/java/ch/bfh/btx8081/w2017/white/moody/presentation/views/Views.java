@@ -1,5 +1,11 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
+/**
+ * MoodyView interface
+ * @author Chantal
+ * Last edit: 30.11.17
+ */
+
 public class Views {
 
 	public static final String START_VIEW = "";

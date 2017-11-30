@@ -12,9 +12,27 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.navigator.Navigator.ComponentContainerViewDisplay;
 
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BaseModel;
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.DiaryModel;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryElement;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ActivityPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.BasePresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryElementListPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryElementPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryPicPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryTextPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.ActivityView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.BaseView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryElementListView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryElementView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryPicView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryTextView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.StartView;
+
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -22,6 +40,10 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryView;
  * <p>
  * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be 
  * overridden to add component to the user interface and initialize non-component functionality.
+ * 
+ * @author Moritz
+ * @author Chantal
+ * Last edit: 30.11.17 
  */
 @SuppressWarnings("serial")
 @Theme("mytheme")
@@ -31,9 +53,25 @@ public class MyUI extends UI {
 		public final static String WIDTH = "";
 	
 		Navigator navigator;
-		BaseModel model;
-		BaseView view;
-		BasePresenter presenter;
+
+		//Base
+		BaseModel model = new BaseModel();
+		BaseView view = new BaseView();
+		StartView start = new StartView();
+		
+		//Diary
+		DiaryView diary = new DiaryView();
+		DiaryModel diaryModel = new DiaryModel();
+		
+		DiaryTextView text = new DiaryTextView();
+		DiaryText diaryText = new DiaryText();
+		DiaryPicView pic = new DiaryPicView();
+		DiaryPic diaryPic = new DiaryPic();
+		ActivityView activityView = new ActivityView();
+		Activity activity = new Activity();
+		DiaryElementListView list = new DiaryElementListView();
+		DiaryElement diaryElement = new DiaryElement();
+		DiaryElementView element = new DiaryElementView();
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -47,19 +85,25 @@ public class MyUI extends UI {
     		
     		ComponentContainerViewDisplay viewDisplay = new ComponentContainerViewDisplay(layout);
     		navigator = new Navigator(UI.getCurrent(), viewDisplay);
-    		model = new BaseModel();
-    		view = new BaseView();
-    		navigator.addView("", view);
-    		navigator.addView("Tagebuch", new DiaryView());
-    		presenter = new BasePresenter(model, view);
-    	
-    	//habe dies in die BaseView genommen, hoffe das ist gut so
-//   	 final VerticalLayout layout = new VerticalLayout();
-//       layout.setHeight(HEIGHT);
-//       layout.setWidth(WIDTH);
-//       layout.setMargin(false);
-//       layout.setSpacing(false);
-//       setContent(layout);
+    		
+    		navigator.addView("base", view);
+    		navigator.addView("", start);
+    		navigator.addView("diary", diary);
+    		
+  		navigator.addView("text", text);
+  		navigator.addView("picture", pic);
+   		navigator.addView("activity", activityView);
+    		navigator.addView("list", list);
+    		navigator.addView("element", element);
+    		
+    		new BasePresenter(model, start);
+    		new DiaryPresenter(diaryModel, diary);
+    		
+    		new DiaryTextPresenter(diaryText, text);
+    		new DiaryPicPresenter(diaryPic, pic);
+    		new ActivityPresenter(activity, activityView);
+    		new DiaryElementListPresenter(list);
+    		new DiaryElementPresenter(diaryElement, element);
        
    }
 

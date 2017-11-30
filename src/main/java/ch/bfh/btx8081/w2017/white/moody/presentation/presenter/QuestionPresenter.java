@@ -13,20 +13,21 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
  * @author Sandra LastEdit: 28.11.17
  */
 
+@SuppressWarnings("serial")
 public class QuestionPresenter extends BasePresenter {
 
 	public QuestionPresenter(BaseModel model, BaseView view) {
 		super(model, view);
 		// TODO Auto-generated constructor stub
 	}
-
 	
-	private QuestionModel questionModel;
+//	private QuestionModel questionModel; Wurde von Silvan gelöscht, daher auskommentiert???
 	private QuestionView questionView;
 
-	public QuestionPresenter(QuestionModel questionModel, QuestionView questionView) {
-		super(questionModel, questionView);
-	}
+	//Warum ein zweiter Konstruktor?
+//	public QuestionPresenter(QuestionModel questionModel, QuestionView questionView) {
+//		super(questionModel, questionView);
+//	}
 
 	public void buttonClick(ClickEvent event) {
 

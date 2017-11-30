@@ -4,22 +4,26 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryPicView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 
 /**
- * 
+ * DiaryPicture Presenter
  * @author Chantal
- * Last edit: 29.11.17
+ * Last edit: 30.11.17
  */
 
-public class DiaryPicPresenter {
+@SuppressWarnings("serial")
+public class DiaryPicPresenter implements ViewListener{
 	
+	@SuppressWarnings("unused")
 	private DiaryPic model;
 	private DiaryPicView view;
 	
 	public DiaryPicPresenter(DiaryPic model, DiaryPicView view) {
 		this.model = model;
 		this.view = view;
+		view.addListener(this);
 	}
 	
 	public void buttonClick(ClickEvent event) {

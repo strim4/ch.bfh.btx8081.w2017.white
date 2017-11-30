@@ -4,6 +4,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.DiaryModel;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 
 /**
@@ -11,21 +12,23 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
  * DiaryPresenter Class
  * Last Edit: 29.11.17
  */
-public class DiaryPresenter {
+@SuppressWarnings("serial")
+public class DiaryPresenter implements ViewListener{
 	
+	@SuppressWarnings("unused")
 	private DiaryModel diaryModel;
 	private DiaryView diaryView;
 	
 	public DiaryPresenter(DiaryModel diaryModel, DiaryView diaryView){
 		this.diaryModel = diaryModel;
 		this.diaryView = diaryView;
+		diaryView.addListener(this);
 	}
 	
 	public void buttonClick(ClickEvent event){
 		
 		String buttonID = event.getButton().getId();
 		
-		//TODO add links
 		switch(buttonID) {
 		case "buttonText":
 			diaryView.getUI().getNavigator().navigateTo(Views.DIARYTEXT_VIEW);
@@ -44,19 +47,4 @@ public class DiaryPresenter {
 			break;
 		}
 	}
-//		
-//		switch(){
-//		case "newText":
-//			diaryModel.createNewTextElement();
-//			break;
-//		case "newPic":
-//			diaryModel.createNewPicElement();
-//		case "newActivity":
-//			diaryModel.createNewActivityElement();
-//		case "ListDiaryElements":
-//			diaryModel.getElements();
-//		}
-//
-//	}
-
 }

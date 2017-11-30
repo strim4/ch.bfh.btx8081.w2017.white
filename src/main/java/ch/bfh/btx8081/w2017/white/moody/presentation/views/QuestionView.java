@@ -19,7 +19,7 @@ public class QuestionView extends BaseView {
 
 	public QuestionView() {
 		super();
-		super.setTitle("Guten Tag %s \n hier Deine taeglichen Fragen"); // Silvan, dieser Platzhalter ist für Dich, da
+		super.setTitle("Guten Tag %s \n hier Deine taeglichen Fragen"); // Silvan, dieser Platzhalter ist fï¿½r Dich, da
 																		// kommt der Name aus der DB hin...
 		this.createButtons();
 	}
