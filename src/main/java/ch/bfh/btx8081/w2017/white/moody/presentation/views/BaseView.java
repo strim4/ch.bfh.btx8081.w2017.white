@@ -1,5 +1,8 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.HorizontalLayout;
@@ -22,7 +25,11 @@ public class BaseView extends VerticalLayout implements View{
 		this.setBaseStyle();
 			
 	}
-		
+	
+
+	
+	private List<ViewListener> listeners= new ArrayList<ViewListener>();
+	
 	protected void setBaseStyle(){
 	
 		this.setWidth(MyUI.WIDTH);
@@ -71,6 +78,16 @@ public class BaseView extends VerticalLayout implements View{
 
         }
     }
+    
+	public void addListener(ViewListener listener){
+		listeners.add(listener);
+	}
+	
+	public void buttonClick(ClickEvent event){
+		for(ViewListener listener : this.listeners){
+			listener.buttonClick(event);
+		}
+	}
     
 //	@Override
 //	public void addListener(ViewListener listener) {

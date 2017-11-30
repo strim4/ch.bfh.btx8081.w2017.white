@@ -29,8 +29,8 @@ public class StartView extends BaseView implements MoodyView{
 	private static final String BUTTON_HEIGHT = "160px";
 	
 	//TODO evt in BaseView?
-	private List<ViewListener> listeners= new ArrayList<ViewListener>();
-	
+//	private List<ViewListener> listeners= new ArrayList<ViewListener>();
+//	
 	
 	public StartView(){
 		
@@ -126,14 +126,14 @@ public class StartView extends BaseView implements MoodyView{
 
 	}
 	//TODO erben von BaseView
-	public void addListener(ViewListener listener){
-		listeners.add(listener);
-	}
-	
-	public void buttonClick(ClickEvent event){
-		for(ViewListener listener : this.listeners){
-			listener.buttonClick(event);
-		}
-	}
+//	public void addListener(ViewListener listener){
+//		listeners.add(listener);
+//	}
+//	
+//	public void buttonClick(ClickEvent event){
+//		for(ViewListener listener : this.listeners){
+//			listener.buttonClick(event);
+//		}
+//	}
 
 }
