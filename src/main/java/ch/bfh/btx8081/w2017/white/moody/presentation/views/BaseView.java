@@ -5,6 +5,7 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.white.moody.MyUI;
 
@@ -70,4 +71,17 @@ public class BaseView extends VerticalLayout implements View{
 
         }
     }
+    
+//	@Override
+//	public void addListener(ViewListener listener) {
+//		listeners.add(listener);	
+//	}
+//
+//
+//	@Override
+//	public void buttonClick(ClickEvent event) {
+//		for (ViewListener listener : this.listeners) {
+//			listener.buttonClick(event);
+//		}
+//	}
 }
