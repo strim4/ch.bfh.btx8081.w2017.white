@@ -37,7 +37,7 @@ public class DiaryTextPresenter {
 			view.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
 			break;
 		case "buttonDelete":
-			//Lösch-Methode
+			//Loesch-Methode
 			break;
 		}
 	}

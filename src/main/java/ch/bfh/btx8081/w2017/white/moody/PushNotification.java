@@ -21,7 +21,7 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationGenerat
 @Theme("vaadinserverpush")
 public class PushNotification extends UI {
 
-	@WebServlet(value = "/*", asyncSupported = true)
+	@WebServlet(value = "/push/*", asyncSupported = true)
 	@VaadinServletConfiguration(productionMode = false, ui = PushNotification.class)
 	public static class Servlet extends VaadinServlet {
 	}

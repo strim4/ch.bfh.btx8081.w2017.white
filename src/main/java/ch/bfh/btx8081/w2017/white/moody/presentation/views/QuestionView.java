@@ -1,11 +1,8 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
-import com.vaadin.server.ThemeResource;
+
 import com.vaadin.ui.Alignment;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.Button.ClickEvent;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter;
 
 /**
@@ -20,17 +17,9 @@ public class QuestionView extends BaseView {
 
 	private QuestionPresenter presenter = null;
 
-	private static final String BUTTON_WIDTH = "160px";
-	private static final String BUTTON_HEIGHT = "160px";
-	
-	
-
-	private static final String BUTTON_YES = "YES";
-	private static final String BUTTON_NO = "NO";
-
 	public QuestionView() {
 		super();
-		super.setTitle("Guten Tag %s \n hier Deine täglichen Fragen"); // Silvan, dieser Platzhalter ist für Dich, da
+		super.setTitle("Guten Tag %s \n hier Deine taeglichen Fragen"); // Silvan, dieser Platzhalter ist für Dich, da
 																		// kommt der Name aus der DB hin...
 		this.createButtons();
 	}

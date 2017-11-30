@@ -18,11 +18,11 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPrese
 public class NotificationView extends BaseView {
 
 	private NotificationPresenter presenter = null;
+	
+	private static final String BUTTON_CLOSE = "CLOSE";
 
 	private static final String BUTTON_WIDTH = "160px";
-	private static final String BUTTON_HEIGHT = "160px";
-
-	private static final String BUTTON_CLOSE = "CLOSE";
+	private static final String BUTTON_HEIGHT = "160px";	
 
 	public NotificationView() {
 		super();
@@ -37,16 +37,13 @@ public class NotificationView extends BaseView {
 		super.content.addComponent(notification);
 		super.content.setComponentAlignment(notification, Alignment.MIDDLE_CENTER);
 
-		Button buttonNotification = new Button("", new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-			}
-		});
-
-		buttonNotification.setWidth(BUTTON_WIDTH);
-		buttonNotification.setHeight(BUTTON_HEIGHT);
-		buttonNotification.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_CLOSE);
-		super.content.addComponent(buttonNotification);
-		super.content.setComponentAlignment(buttonNotification, Alignment.BOTTOM_RIGHT);
+		Button buttonBack = new Button("Zurueck");//Text entfernen, sobald Icon funktioniert
+		//buttonList.addClickListener(this);
+		buttonBack.setId("buttonBack");
+		buttonBack.setWidth("500px");
+		buttonBack.setHeight(BUTTON_HEIGHT);
+		//buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);
+		super.content.addComponent(buttonBack);
+		super.content.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
 	}
 }
