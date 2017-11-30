@@ -20,7 +20,7 @@ public class QuestionPresenter extends BasePresenter {
 		// TODO Auto-generated constructor stub
 	}
 
-	/*
+	
 	private QuestionModel questionModel;
 	private QuestionView questionView;
 
@@ -36,5 +36,5 @@ public class QuestionPresenter extends BasePresenter {
 		case "buttonNotification": // wie muss ich den benennen? In der View hat es keinen Butten...
 			// Die Buttons sind im YES/NO und im Smiley....
 		}
-	}*/
+	}
 }
