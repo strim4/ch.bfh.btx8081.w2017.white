@@ -26,7 +26,7 @@ public class NotificationView extends BaseView {
 
 	public NotificationView() {
 		super();
-
+		super.setLayouts(0.35f, 0.65f, 0, 0);
 		this.createButtons();
 	}
 
