@@ -34,8 +34,20 @@ public class QuestionPresenter extends BasePresenter {
 		String buttonID = event.getButton().getId();
 
 		switch (buttonID) {
-		case "buttonNotification": // wie muss ich den benennen? In der View hat es keinen Butten...
-			// Die Buttons sind im YES/NO und im Smiley....
+		case "buttonYes":
+			break;
+		case "buttenNo":
+			break;
+		case "buttonVerySad":
+			break;
+		case "buttonSad":
+			break;
+		case "buttonNeutral":;
+		break;
+		case "buttonHappy":
+			break;
+		case "buttonVeryHappy":
+			break;
 		}
 	}
 }
