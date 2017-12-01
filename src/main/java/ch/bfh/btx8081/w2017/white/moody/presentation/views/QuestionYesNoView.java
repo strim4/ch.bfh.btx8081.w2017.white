@@ -44,7 +44,7 @@ public class QuestionYesNoView extends QuestionView {
 		contentRow.addComponents(buttonYes, buttonNo);
 		//contentRow.setContentAlignement(buttonYes, Alignement.BOTTOM_LEFT);
 		//contentRow.setContentAlignement(buttonNo, Alignement.BOTTOM_RIGHT);
-		contentRow.addComponent(contentRow);
+		content.addComponent(contentRow);
 
 		buttonYes.setWidth(BUTTON_WIDTH);
 		buttonYes.setHeight(BUTTON_HEIGHT);
