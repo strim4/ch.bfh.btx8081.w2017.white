@@ -38,6 +38,7 @@ public class NotificationView extends BaseView {
 		super.content.setComponentAlignment(notification, Alignment.MIDDLE_CENTER);
 
 		Button buttonBack = new Button("Zurueck");//Text entfernen, sobald Icon funktioniert
+		// ersetzen durch (BUTTON_CLOSE)
 		//buttonList.addClickListener(this);
 		buttonBack.setId("buttonBack");
 		buttonBack.setWidth("500px");
