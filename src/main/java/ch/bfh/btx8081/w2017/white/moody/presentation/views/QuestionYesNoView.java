@@ -1,14 +1,14 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
-import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.HorizontalLayout;
 
 /**
  * This class is the view of YES and NO questions.
  * 
  * @author Sandra
- * Last Edit: 28.11.17
+ * Last Edit: 01.12.17
  */
 
 public class QuestionYesNoView extends QuestionView {
@@ -28,23 +28,23 @@ public class QuestionYesNoView extends QuestionView {
 	@SuppressWarnings("serial")
 	private void createButtons() {
 		
-		Button buttonYes = new Button("", new Button.ClickListener() {
+		Button buttonYes = new Button(BUTTON_YES, new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
 			}
 		});
 		
-		super.content.addComponent(buttonYes);
-		super.content.setComponentAlignment(buttonYes, Alignment.BOTTOM_LEFT);
-
-		Button buttonNo = new Button("", new Button.ClickListener() {
+		Button buttonNo = new Button(BUTTON_NO, new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
 			}
 		});
 		
-		super.content.addComponent(buttonNo);
-		super.content.setComponentAlignment(buttonNo, Alignment.BOTTOM_RIGHT);
+		HorizontalLayout contentRow = new HorizontalLayout();
+		contentRow.addComponents(buttonYes, buttonNo);
+		//contentRow.setContentAlignement(buttonYes, Alignement.BOTTOM_LEFT);
+		//contentRow.setContentAlignement(buttonNo, Alignement.BOTTOM_RIGHT);
+		contentRow.addComponent(contentRow);
 
 		buttonYes.setWidth(BUTTON_WIDTH);
 		buttonYes.setHeight(BUTTON_HEIGHT);
