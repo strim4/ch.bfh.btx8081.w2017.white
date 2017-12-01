@@ -18,8 +18,9 @@ public class Profile {
 	private String lastName;
 	private Date birthdate;
 	private char gender;
-	private String address;
+	// private String address; bin nicht sicher ob das auch gebraucht wird.
 	private String houseDoctor;
+	private String houseDoctorPhone;
 	private String emergencyContact;
 	private String emergencyContactPhone;
 	// private String desease; bin nicht sicher ob das auch gebraucht wird.
@@ -48,12 +49,16 @@ public class Profile {
 		return gender;
 	}
 
-	public String getAddress() {
-		return address;
-	}
+	/*
+	 * public String getAddress() { return address; }
+	 */
 
 	public String getHouseDoctor() {
 		return houseDoctor;
+	}
+	
+	public String getHouseDoctorPhone() {
+		return houseDoctorPhone;
 	}
 	
 	public String getEmergencyContact() {
@@ -91,12 +96,16 @@ public class Profile {
 		this.gender = gender;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	/*
+	 * public void setAddress(String address) { this.address = address; }
+	 */
 
 	public void setHouseDoctor(String houseDoctor) {
 		this.houseDoctor = houseDoctor;
+	}
+	
+	public void setHouseDoctorPhone(String houseDoctorPhone) {
+		this.houseDoctorPhone = houseDoctorPhone;
 	}
 	
 	public void setEmergencyContact(String emergencyContact) {
