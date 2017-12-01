@@ -11,9 +11,4 @@ import com.vaadin.ui.Button.ClickEvent;
 
 public interface ViewListener extends ClickListener{
 
-	
-//	Work in progress
-//	  public void buttonClick(ClickEvent event) {
-//	        event.getButton().setCaption("Done!");
-//	    }
 }
