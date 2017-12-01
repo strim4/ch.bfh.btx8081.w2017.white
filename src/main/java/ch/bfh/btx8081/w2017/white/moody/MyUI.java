@@ -91,6 +91,10 @@ public class MyUI extends UI {
     		navigator = new Navigator(UI.getCurrent(), viewDisplay);
     		
     		navigator.addView("base", view);
+    		// navigator.addView("", new BaseView());
+    		// navigator.addView("Tagebuch", new StartView());
+    		// gemäss Nachforschungen auf https://vaadin.com/docs/v8/framework/advanced/advanced-navigator.html
+    		// da müssten wohl dann alle Views aufgeführt werden....
     		navigator.addView("", start);
     		navigator.addView("diary", diary);
     		
