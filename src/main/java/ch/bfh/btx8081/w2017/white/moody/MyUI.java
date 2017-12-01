@@ -49,8 +49,8 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.StartView;
 @Theme("mytheme")
 public class MyUI extends UI {
 	
-		public final static String HEIGHT = "";
-		public final static String WIDTH = "";
+		public final static String HEIGHT = "100%";
+		public final static String WIDTH = "100%";
 	
 		Navigator navigator;
 
@@ -81,7 +81,11 @@ public class MyUI extends UI {
     		
         	getPage().setTitle("Moody");
     		layout.setWidth(WIDTH);
-    		layout.setHeight(HEIGHT);
+    		layout.setHeight(null);
+    		layout.setResponsive(true);
+    		
+    		
+   
     		
     		ComponentContainerViewDisplay viewDisplay = new ComponentContainerViewDisplay(layout);
     		navigator = new Navigator(UI.getCurrent(), viewDisplay);
@@ -109,6 +113,6 @@ public class MyUI extends UI {
 
    @WebServlet(urlPatterns = "/*", name = "Moody", asyncSupported = true)
    @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
-   public static class HealthVisAppUIServlet extends VaadinServlet {
+   public static class MoodyUIServlet extends VaadinServlet {
    }
     }
