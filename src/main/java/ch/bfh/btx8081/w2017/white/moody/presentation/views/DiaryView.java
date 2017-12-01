@@ -59,7 +59,7 @@ public class DiaryView extends BaseView implements MoodyView{
 		newDiaryElement.addComponent(buttonPic);
 		newDiaryElement.setComponentAlignment(buttonPic, Alignment.MIDDLE_CENTER);
 	
-		Button buttonActivity = new Button("Neuer Aktivitaet");//Text entfernen, sobal Icon funktioniert
+		Button buttonActivity = new Button("Neuer Aktivität");//Text entfernen, sobal Icon funktioniert
 		buttonActivity.addClickListener(this);
 		buttonActivity.setId("buttonActivity");
 		buttonActivity.setWidth(BUTTON_WIDTH);
@@ -68,7 +68,7 @@ public class DiaryView extends BaseView implements MoodyView{
 		newDiaryElement.addComponent(buttonActivity);
 		newDiaryElement.setComponentAlignment(buttonActivity, Alignment.MIDDLE_CENTER);
 	
-		Button buttonList = new Button("Alte Eintraege");//Text entfernen, sobal Icon funktioniert
+		Button buttonList = new Button("Alte Einträge");//Text entfernen, sobal Icon funktioniert
 		buttonList.addClickListener(this);
 		buttonList.setId("buttonList");
 		buttonList.setWidth("500px");
@@ -77,8 +77,8 @@ public class DiaryView extends BaseView implements MoodyView{
 		super.content.addComponent(buttonList);
 		super.content.setComponentAlignment(buttonList, Alignment.MIDDLE_CENTER);
 	
-		Button buttonBack = new Button("Zurueck");//Text entfernen, sobal Icon funktioniert
-		buttonList.addClickListener(this);
+		Button buttonBack = new Button("Zurück");//Text entfernen, sobal Icon funktioniert
+		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
 		buttonBack.setWidth("500px");
 		buttonBack.setHeight(BUTTON_HEIGHT);

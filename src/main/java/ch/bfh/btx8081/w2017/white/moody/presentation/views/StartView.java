@@ -79,7 +79,7 @@ public class StartView extends BaseView implements MoodyView{
 		row1.setComponentAlignment(buttonBarometer, Alignment.MIDDLE_CENTER);
 
 		//Button for relaxing exercises
-		Button buttonExercises = new Button("Uebungen");//Text entfernen, sobald Icon funktioniert
+		Button buttonExercises = new Button("Übungen");//Text entfernen, sobald Icon funktioniert
 		buttonExercises.addClickListener(this);
 		buttonExercises.setId("buttonExercises");
 		buttonExercises.setWidth(BUTTON_WIDTH);

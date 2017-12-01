@@ -45,7 +45,7 @@ public class DiaryElementView extends DiaryView implements MoodyView{
 		super.content.addComponent(menue);
 		super.content.setComponentAlignment(menue, Alignment.MIDDLE_CENTER);
 		
-		Button buttonDelete = new Button("Loeschen");//Text entfernen, sobald Icon funktioniert
+		Button buttonDelete = new Button("Löschen");//Text entfernen, sobald Icon funktioniert
 		buttonDelete.addClickListener(this);
 		buttonDelete.setId("buttonDelete");
 		buttonDelete.setWidth(BUTTON_WIDTH);
@@ -54,7 +54,7 @@ public class DiaryElementView extends DiaryView implements MoodyView{
 		menue.addComponent(buttonDelete);
 		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);
 	
-		Button buttonBack = new Button("Zurueck");//Text entfernen, sobald Icon funktioniert
+		Button buttonBack = new Button("Zurück");//Text entfernen, sobald Icon funktioniert
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
 		buttonBack.setWidth(BUTTON_WIDTH);

@@ -43,10 +43,10 @@ public class DiaryTextView extends DiaryView implements MoodyView{
 		
 		HorizontalLayout datePosition = new HorizontalLayout();
 		super.content.addComponent(datePosition);
-		super.content.setComponentAlignment(datePosition, Alignment.MIDDLE_LEFT);
-		Label dateL = new Label("Datum auswaehlen: ");
+		super.content.setComponentAlignment(datePosition, Alignment.MIDDLE_CENTER);
+		Label dateL = new Label("Datum auswählen: ");
 		datePosition.addComponent(dateL);
-		datePosition.setComponentAlignment(dateL, Alignment.MIDDLE_RIGHT);
+		datePosition.setComponentAlignment(dateL, Alignment.MIDDLE_CENTER);
 		
 		DateField date = new DateField();
 		date.setWidth("350px");
@@ -81,7 +81,7 @@ public class DiaryTextView extends DiaryView implements MoodyView{
 		menue.addComponent(buttonDelete);
 		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);
 	
-		Button buttonBack = new Button("Zurueck");//Text entfernen, sobald Icon funktioniert
+		Button buttonBack = new Button("Zurück");//Text entfernen, sobald Icon funktioniert
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
 		buttonBack.setWidth(BUTTON_WIDTH);

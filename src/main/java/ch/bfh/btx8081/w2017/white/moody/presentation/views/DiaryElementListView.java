@@ -26,7 +26,7 @@ public class DiaryElementListView extends DiaryView implements MoodyView{
 
 	public DiaryElementListView(){
 		super();
-		super.setTitle("Alte Eintraege");
+		super.setTitle("Alte Einträge");
 		
 		super.content.removeAllComponents();
 		
@@ -37,7 +37,7 @@ public class DiaryElementListView extends DiaryView implements MoodyView{
 		
 		//TODO Jedes Listenelement als Button zum Öffnen des alten Eintrages --> DiaryElementView
 		
-		Button buttonBack = new Button("Zurueck");//Text entfernen, sobald Icon funktioniert
+		Button buttonBack = new Button("Zurück");//Text entfernen, sobald Icon funktioniert
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
 		buttonBack.setWidth(BUTTON_WIDTH);
