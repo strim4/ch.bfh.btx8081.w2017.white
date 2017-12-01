@@ -27,5 +27,5 @@ public class AdviceMessage {
 	public void setAdviceId(int adviceId) {
 		this.adviceId = adviceId;
 	}
-
 }
+
