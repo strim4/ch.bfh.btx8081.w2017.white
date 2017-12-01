@@ -85,6 +85,6 @@ public class QuestionSmileyView extends QuestionView {
 		
 		HorizontalLayout contentRow = new HorizontalLayout();
 		contentRow.addComponents(buttonVerySad, buttonSad, buttonNeutral, buttonHappy, buttonVeryHappy);
-		contentRow.addComponent(contentRow);
+		content.addComponent(contentRow);
 	}
 }
