@@ -16,11 +16,14 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter
 public class QuestionView extends BaseView {
 
 	private QuestionPresenter presenter = null;
+	
+	
 
 	public QuestionView() {
 		super();
 		super.setTitle("Guten Tag %s \n hier Deine taeglichen Fragen"); // Silvan, dieser Platzhalter ist f�r Dich, da
 																		// kommt der Name aus der DB hin...
+		super.setLayouts(0.35f, 0.65f, 0, 0);
 		this.createButtons();
 	}
 
