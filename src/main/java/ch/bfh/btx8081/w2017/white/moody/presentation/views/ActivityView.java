@@ -1,8 +1,11 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
@@ -15,27 +18,31 @@ import com.vaadin.ui.Button.ClickEvent;
  * This class shows the creation of a new Activity in the Diary.
  * 
  * @author Chantal
- * Last edit: 30.11.17
+ * Last edit: 03.12.17
  */
 
 @SuppressWarnings("serial")
-public class ActivityView extends DiaryView implements MoodyView{
+public class ActivityView extends BaseView implements MoodyView{
 	
-//	private static final String BUTTON_SAVE = "SAVE";
-//	private static final String BUTTON_DELETE = "DELETE";
-//	private static final String BUTTON_BACK = "BACK";
-	
-	private static final String BUTTON_WIDTH = "160px";
-	private static final String BUTTON_HEIGHT = "160px";
+	private static final String BUTTON_WIDTH = "120px";
+	private static final String BUTTON_HEIGHT = "120px";
 	
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 
+	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+	
+	Label dateL;
+	DateField date;
+	ComboBox<String> comboBox;
+	Button newActivity;
+	Button buttonSave;
+	Button buttonDelete;
+	Button buttonBack;
+	
 	public ActivityView(){
+		
 		super();
 		super.setTitle("Neue Aktivität");
-		
-		super.content.removeAllComponents();
-		
 		this.createButtons();
 	}
 	
@@ -61,7 +68,7 @@ public class ActivityView extends DiaryView implements MoodyView{
 		ComboBox<String> comboBox = new ComboBox<>("Aktivität");
 		comboBox.setItems("Spazieren", "TV schauen", "Wandern",
 		        "Klettern", "Schwimmen", "Ski fahren", "Kino");
-		comboBox.setWidth("330px");
+		comboBox.setWidth("360px");
 		activityChoice.addComponent(comboBox);
 		activityChoice.setComponentAlignment(comboBox, Alignment.MIDDLE_CENTER);
 
@@ -76,30 +83,30 @@ public class ActivityView extends DiaryView implements MoodyView{
 		super.content.addComponent(menue);
 		super.content.setComponentAlignment(menue, Alignment.MIDDLE_CENTER);
 		
-		Button buttonSave = new Button("Speichern");//Text entfernen, sobald Icon funktioniert
+		Button buttonSave = new Button("");
 		buttonSave.addClickListener(this);
 		buttonSave.setId("buttonSave");
 		buttonSave.setWidth(BUTTON_WIDTH);
 		buttonSave.setHeight(BUTTON_HEIGHT);
-		//buttonSave.setIcon(new ThemeResource("images/saveIcon.png"), BUTTON_SAVE);
+		buttonSave.setIcon(new FileResource(new File(basepath + "/VAADIN/images/saveIcon.png")));
 		menue.addComponent(buttonSave);
 		menue.setComponentAlignment(buttonSave, Alignment.MIDDLE_CENTER);
 	
-		Button buttonDelete = new Button("Abbruch");//Text entfernen, sobald Icon funktioniert
+		Button buttonDelete = new Button("");
 		buttonDelete.addClickListener(this);
 		buttonDelete.setId("buttonDelete");
 		buttonDelete.setWidth(BUTTON_WIDTH);
 		buttonDelete.setHeight(BUTTON_HEIGHT);
-		//buttonDelete.setIcon(new ThemeResource("images/deleteIcon.png"), BUTTON_DELETE);
+		buttonDelete.setIcon(new FileResource(new File(basepath + "/VAADIN/images/deleteIcon.png")));
 		menue.addComponent(buttonDelete);
 		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);
 	
-		Button buttonBack = new Button("Zurück");//Text entfernen, sobald Icon funktioniert
+		Button buttonBack = new Button("");
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
 		buttonBack.setWidth(BUTTON_WIDTH);
 		buttonBack.setHeight(BUTTON_HEIGHT);
-		//buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);
+		buttonBack.setIcon(new FileResource(new File(basepath + "/VAADIN/images/backIcon.png")));
 		menue.addComponent(buttonBack);
 		menue.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
 	

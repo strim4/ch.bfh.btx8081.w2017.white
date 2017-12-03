@@ -1,7 +1,11 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
@@ -13,24 +17,30 @@ import com.vaadin.ui.Button.ClickEvent;
  * or open the list of the already recorded Diary Elements.
  * 
  * @author Chantal
- * Last Edit: 30.11.17
+ * Last Edit: 03.12.17
  */
 
 @SuppressWarnings("serial")
 public class DiaryView extends BaseView implements MoodyView{
 	
-	private static final String BUTTON_WIDTH = "160px";
-	private static final String BUTTON_HEIGHT = "160px";
+	private static final String BUTTON_WIDTH = "120px";
+	private static final String BUTTON_HEIGHT = "120px";
 	
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
+	
+	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+	
+	Button buttonText;
+	Button buttonPic;
+	Button buttonActivity;
+	Button buttonList;
+	Button buttonBack;
 	
 	public DiaryView(){
 		
 		super();
 		super.setTitle("Tagebuch");
-		
 		this.createButtons();
-		
 		super.setLayouts(0.35f, 0.65f, 0, 0);
 	}
 	
@@ -41,48 +51,48 @@ public class DiaryView extends BaseView implements MoodyView{
 		super.content.addComponent(newDiaryElement);
 		super.content.setComponentAlignment(newDiaryElement, Alignment.MIDDLE_CENTER);
 		
-		Button buttonText = new Button("Neuer Text");//Text entfernen, sobal Icon funktioniert
+		Button buttonText = new Button("");
 		buttonText.addClickListener(this);
 		buttonText.setId("buttonText");
 		buttonText.setWidth(BUTTON_WIDTH);
 		buttonText.setHeight(BUTTON_HEIGHT);
-		//buttonText.setIcon(new ThemeResource("images/textIcon.png"), BUTTON_TEXT);
+		buttonText.setIcon(new FileResource(new File(basepath + "/VAADIN/images/textIcon.png")));
 		newDiaryElement.addComponent(buttonText);
 		newDiaryElement.setComponentAlignment(buttonText, Alignment.MIDDLE_CENTER);
 	
-		Button buttonPic = new Button("Neues Foto"); //Text entfernen, sobal Icon funktioniert
+		Button buttonPic = new Button("");
 		buttonPic.addClickListener(this);
 		buttonPic.setId("buttonPic");
 		buttonPic.setWidth(BUTTON_WIDTH);
 		buttonPic.setHeight(BUTTON_HEIGHT);
-		//buttonPic.setIcon(new ThemeResource("images/picIcon.png"), BUTTON_PIC);
+		buttonPic.setIcon(new FileResource(new File(basepath + "/VAADIN/images/picIcon.png")));
 		newDiaryElement.addComponent(buttonPic);
 		newDiaryElement.setComponentAlignment(buttonPic, Alignment.MIDDLE_CENTER);
 	
-		Button buttonActivity = new Button("Neuer Aktivität");//Text entfernen, sobal Icon funktioniert
+		Button buttonActivity = new Button("");
 		buttonActivity.addClickListener(this);
 		buttonActivity.setId("buttonActivity");
 		buttonActivity.setWidth(BUTTON_WIDTH);
 		buttonActivity.setHeight(BUTTON_HEIGHT);
-		//buttonActivity.setIcon(new ThemeResource("images/activityIcon.png"), BUTTON_ACTIVITY);
+		buttonActivity.setIcon(new FileResource(new File(basepath + "/VAADIN/images/activityIcon.png")));
 		newDiaryElement.addComponent(buttonActivity);
 		newDiaryElement.setComponentAlignment(buttonActivity, Alignment.MIDDLE_CENTER);
 	
-		Button buttonList = new Button("Alte Einträge");//Text entfernen, sobal Icon funktioniert
+		Button buttonList = new Button("");
 		buttonList.addClickListener(this);
 		buttonList.setId("buttonList");
-		buttonList.setWidth("500px");
+		buttonList.setWidth("380px");
 		buttonList.setHeight(BUTTON_HEIGHT);
-		//buttonList.setIcon(new ThemeResource("images/listIcon.png"), BUTTON_LIST);
+		buttonList.setIcon(new FileResource(new File(basepath + "/VAADIN/images/listIcon.png")));
 		super.content.addComponent(buttonList);
 		super.content.setComponentAlignment(buttonList, Alignment.MIDDLE_CENTER);
 	
-		Button buttonBack = new Button("Zurück");//Text entfernen, sobal Icon funktioniert
+		Button buttonBack = new Button("");
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
-		buttonBack.setWidth("500px");
+		buttonBack.setWidth("380px");
 		buttonBack.setHeight(BUTTON_HEIGHT);
-		//buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);
+		buttonBack.setIcon(new FileResource(new File(basepath + "/VAADIN/images/backIcon.png")));
 		super.content.addComponent(buttonBack);
 		super.content.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
 	

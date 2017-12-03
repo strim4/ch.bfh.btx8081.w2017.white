@@ -1,8 +1,11 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
@@ -15,27 +18,29 @@ import com.vaadin.ui.DateField;
  * This class shows the creation of a new Diary Text Element.
  * 
  * @author Chantal
- * Last edit: 30.11.17
+ * Last edit: 03.12.17
  */
 
 @SuppressWarnings("serial")
-public class DiaryTextView extends DiaryView implements MoodyView{
-
-//	private static final String BUTTON_SAVE = "SAVE";
-//	private static final String BUTTON_DELETE = "DELETE";
-//	private static final String BUTTON_BACK = "BACK";
+public class DiaryTextView extends BaseView implements MoodyView{
 	
-	private static final String BUTTON_WIDTH = "160px";
-	private static final String BUTTON_HEIGHT = "160px";
+	private static final String BUTTON_WIDTH = "120px";
+	private static final String BUTTON_HEIGHT = "120px";
 	
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
+	
+	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+	
+	Label dateL;
+	DateField date;
+	Button buttonSave;
+	Button buttonDelete;
+	Button buttonBack;
+	RichTextArea newText;
 	
 	public DiaryTextView(){
 		super();
 		super.setTitle("Neuer Texteintrag");
-		
-		super.content.removeAllComponents();
-		
 		this.createButtons();
 	}
 	
@@ -49,13 +54,13 @@ public class DiaryTextView extends DiaryView implements MoodyView{
 		datePosition.setComponentAlignment(dateL, Alignment.MIDDLE_CENTER);
 		
 		DateField date = new DateField();
-		date.setWidth("350px");
+		date.setWidth("360px");
 		datePosition.addComponent(date);
 		datePosition.setComponentAlignment(date, Alignment.MIDDLE_CENTER);
 		
 		RichTextArea newText = new RichTextArea();
 		newText.setWidth("500px");
-		newText.setHeight("320px");
+		newText.setHeight("500px");
 		super.content.addComponent(newText);
 		super.content.setComponentAlignment(newText, Alignment.MIDDLE_CENTER);
 		
@@ -63,34 +68,33 @@ public class DiaryTextView extends DiaryView implements MoodyView{
 		super.content.addComponent(menue);
 		super.content.setComponentAlignment(menue, Alignment.MIDDLE_CENTER);
 		
-		Button buttonSave = new Button("Speichern");//Text entfernen, sobald Icon funktioniert
+		Button buttonSave = new Button("");
 		buttonSave.addClickListener(this);
 		buttonSave.setId("buttonSave");
 		buttonSave.setWidth(BUTTON_WIDTH);
 		buttonSave.setHeight(BUTTON_HEIGHT);
-		//buttonSave.setIcon(new ThemeResource("images/saveIcon.png"), BUTTON_SAVE);
+		buttonSave.setIcon(new FileResource(new File(basepath + "/VAADIN/images/saveIcon.png")));
 		menue.addComponent(buttonSave);
 		menue.setComponentAlignment(buttonSave, Alignment.MIDDLE_CENTER);
 	
-		Button buttonDelete = new Button("Abbruch");//Text entfernen, sobald Icon funktioniert
+		Button buttonDelete = new Button("");
 		buttonDelete.addClickListener(this);
 		buttonDelete.setId("buttonDelete");
 		buttonDelete.setWidth(BUTTON_WIDTH);
 		buttonDelete.setHeight(BUTTON_HEIGHT);
-		//buttonDelete.setIcon(new ThemeResource("images/deleteIcon.png"), BUTTON_DELETE);
+		buttonDelete.setIcon(new FileResource(new File(basepath + "/VAADIN/images/deleteIcon.png")));
 		menue.addComponent(buttonDelete);
 		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);
 	
-		Button buttonBack = new Button("Zurück");//Text entfernen, sobald Icon funktioniert
+		Button buttonBack = new Button("");
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
 		buttonBack.setWidth(BUTTON_WIDTH);
 		buttonBack.setHeight(BUTTON_HEIGHT);
-		//buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);
+		buttonBack.setIcon(new FileResource(new File(basepath + "/VAADIN/images/backIcon.png")));
 		menue.addComponent(buttonBack);
 		menue.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
 
-		
 	}
 
 	@Override
