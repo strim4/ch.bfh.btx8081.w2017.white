@@ -38,7 +38,7 @@ public class BasePresenter implements ViewListener{
 			//view.getUI().getNavigator().navigateTo(Views.);
 			break;
 		case "buttonBarometer":
-			//view.getUI().getNavigator().navigateTo(Views.);
+			view.getUI().getNavigator().navigateTo(Views.BAROMETER_VIEW);
 			break;
 		case "buttonExercises":
 			//view.getUI().getNavigator().navigateTo(Views.);
