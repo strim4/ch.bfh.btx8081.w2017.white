@@ -1,12 +1,20 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
 import java.io.File;
-import com.vaadin.addon.charts.Chart;
+
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
+
+/**
+ * This class is the view of the Statistics screen on this screen the user can define his statistics
+ * for a month a half year and a year.
+ * 
+ * @author Sandra
+ * Last Edit: 05.12.17
+ */
 
 public class StatisticView extends BaseView {
 
@@ -52,9 +60,9 @@ public class StatisticView extends BaseView {
 		contentRow.addComponents(buttonMonat, button6Monate, buttonJahr);
 		content.addComponent(contentRow);
 
-		Chart statisticChart = new Chart();
-		super.content.addComponent(statisticChart);
-		super.content.setComponentAlignment(statisticChart, Alignment.MIDDLE_CENTER);
+		//Chart statisticChart = new Chart();
+		//super.content.addComponent(statisticChart);
+		//super.content.setComponentAlignment(statisticChart, Alignment.MIDDLE_CENTER);
 
 		Button buttonHome = new Button("");
 		buttonHome.setId("buttonHome");
