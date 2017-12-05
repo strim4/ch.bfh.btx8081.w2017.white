@@ -16,8 +16,6 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter
 public class QuestionView extends BaseView {
 
 	private QuestionPresenter presenter = null;
-	
-	
 
 	public QuestionView() {
 		super();

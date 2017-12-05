@@ -25,13 +25,15 @@ public class Views {
 	
 	public static final String NOTIFICATION_VIEW = "notification";
 	
-	public static final String QUESTIONSSMILEY_VIEW = "questionssmiley";
+	public static final String QUESTIONSMILEY_VIEW = "questionsmiley";
 	
-	public static final String QUESTIONSYESNO_VIEW = "questionsyesno";
+	public static final String QUESTIONYESNO_VIEW = "questionyesno";
 	
 	public static final String QUESTION_VIEW = "question";
 	
 	public static final String BAROMETER_VIEW = "barometer";
+	
+	public static final String STATISTIC_VIEW = "statistic";
 	
 	
 	//TODO restliche Views einbauen

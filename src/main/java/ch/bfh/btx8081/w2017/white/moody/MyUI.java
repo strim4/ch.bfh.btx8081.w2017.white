@@ -40,9 +40,9 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryTextView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.NotificationView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionSmileyView;
-import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionYesNoView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.StartView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.StatisticView;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser
@@ -92,7 +92,7 @@ public class MyUI extends UI {
 	BarometerModel barometerModel = new BarometerModel();
 
 	// Questions
-	QuestionView question = new QuestionView();
+	// QuestionView question = new QuestionView(); Wird nicht gebraucht, da dem User nur Yes/No und Smiley angezeigt werden
 	QuestionYesNoView questionYesNo = new QuestionYesNoView();
 	QuestionSmileyView questionSmiley = new QuestionSmileyView();
 	QuestionModel questionModel = new QuestionModel();
@@ -100,6 +100,10 @@ public class MyUI extends UI {
 	// Notification
 	NotificationView notification = new NotificationView();
 	NotificationModel notificationModel = new NotificationModel();
+	
+	//Statistic
+	StatisticView statistic = new StatisticView();
+	// StatisticModel statisticModel = new StatisticModel(); ist noch nicht erstellt; freischalten sobald es erstellt ist
 	
 	// NotificationUI
 	PushNotificationUI pNotificationUI;
@@ -129,11 +133,13 @@ public class MyUI extends UI {
 		navigator.addView("element", element);
 		navigator.addView("barometer", barometer);
 
-		navigator.addView("question", question);
+		// navigator.addView("question", question); Begründung siehe oben
 		navigator.addView("questionyesno", questionYesNo);
 		navigator.addView("questionsmiley", questionSmiley);
 
 		navigator.addView("notification", notification);
+		
+		navigator.addView("statistic", statistic);
 
 		new BasePresenter(model, start);
 		new DiaryPresenter(diaryModel, diary);
@@ -145,9 +151,12 @@ public class MyUI extends UI {
 		new DiaryElementPresenter(diaryElement, element);
 
 		new BarometerPresenter(barometerModel, barometer);
-		new QuestionPresenter(questionModel, question);
+		// new QuestionPresenter(questionModel, question); Begründung siehe oben
 		new QuestionPresenter(questionModel, questionYesNo);
 		new QuestionPresenter(questionModel, questionSmiley);
+		
+		//new StatisticPresenter(statisticModel, statistic); ist noch nicht erstellt; freischalten sobald es erstellt ist
+	
 
 		// NotificationUI launch with his concurrent Thread
 		pNotificationUI = new PushNotificationUI(UI.getCurrent(), layout);
