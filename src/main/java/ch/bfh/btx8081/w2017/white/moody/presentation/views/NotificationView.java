@@ -1,10 +1,12 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
-import com.vaadin.server.ThemeResource;
+import java.io.File;
+
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.Button.ClickEvent;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPresenter;
 
 /**
@@ -18,6 +20,8 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPrese
 public class NotificationView extends BaseView {
 
 	private NotificationPresenter presenter = null;
+	
+	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 	
 	private static final String BUTTON_HOME = "HOME";
 
@@ -41,7 +45,7 @@ public class NotificationView extends BaseView {
 		buttonHome.setId("buttonHome");
 		buttonHome.setWidth(BUTTON_WIDTH);
 		buttonHome.setHeight(BUTTON_HEIGHT);
-		buttonHome.setIcon(new ThemeResource("images/homeIcon.png"), BUTTON_HOME);
+		buttonHome.setIcon(new FileResource(new File (basepath +"/VAADIN/images/HomeIcon.png")));
 		super.content.addComponent(buttonHome);
 		super.content.setComponentAlignment(buttonHome, Alignment.MIDDLE_CENTER);
 	}

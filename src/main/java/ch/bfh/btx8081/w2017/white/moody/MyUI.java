@@ -130,8 +130,8 @@ public class MyUI extends UI {
 		navigator.addView("barometer", barometer);
 
 		navigator.addView("question", question);
-		navigator.addView("questionsyesno", questionYesNo);
-		navigator.addView("questionssmiley", questionSmiley);
+		navigator.addView("questionyesno", questionYesNo);
+		navigator.addView("questionsmiley", questionSmiley);
 
 		navigator.addView("notification", notification);
 

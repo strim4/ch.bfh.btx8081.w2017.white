@@ -39,7 +39,7 @@ public class BarometerView extends BaseView implements MoodyView{
 		super.content.addComponent(newBarometerElement);
 		super.content.setComponentAlignment(newBarometerElement, Alignment.MIDDLE_CENTER);
 		
-		Button buttonQuestions = new Button("Tägliche Fragen");//Text entfernen, sobal Icon funktioniert
+		Button buttonQuestions = new Button("Taegliche Fragen");//Text entfernen, sobal Icon funktioniert
 		buttonQuestions.addClickListener(this);
 		buttonQuestions.setId("buttonQuestions");
 		buttonQuestions.setWidth("500px");
@@ -48,7 +48,7 @@ public class BarometerView extends BaseView implements MoodyView{
 		newBarometerElement.addComponent(buttonQuestions);
 		newBarometerElement.setComponentAlignment(buttonQuestions, Alignment.MIDDLE_CENTER);
 	
-		Button buttonBack = new Button("Zurück");//Text entfernen, sobal Icon funktioniert
+		Button buttonBack = new Button("Zurueck");//Text entfernen, sobal Icon funktioniert
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
 		buttonBack.setWidth("500px");
