@@ -42,8 +42,6 @@ public class QuestionYesNoView extends QuestionView {
 		
 		HorizontalLayout contentRow = new HorizontalLayout();
 		contentRow.addComponents(buttonYes, buttonNo);
-		//contentRow.setContentAlignement(buttonYes, Alignement.BOTTOM_LEFT);
-		//contentRow.setContentAlignement(buttonNo, Alignement.BOTTOM_RIGHT);
 		content.addComponent(contentRow);
 
 		buttonYes.setWidth(BUTTON_WIDTH);
