@@ -13,6 +13,7 @@ import com.vaadin.ui.DateField;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.Upload;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Upload.Receiver;
@@ -37,10 +38,12 @@ public class DiaryPicView extends BaseView implements MoodyView{
 	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 	
 	Label dateL;
-	DateField date;
+	private DateField date;
 	Button buttonSave;
 	Button buttonDelete;
 	Button buttonBack;
+	private TextField name;
+	private Label lname;
 	
 	public DiaryPicView(){
 		
@@ -59,10 +62,19 @@ public class DiaryPicView extends BaseView implements MoodyView{
 		datePosition.addComponent(dateL);
 		datePosition.setComponentAlignment(dateL, Alignment.MIDDLE_CENTER);
 		
-		DateField date = new DateField();
+		date = new DateField();
 		date.setWidth("350px");
 		datePosition.addComponent(date);
 		datePosition.setComponentAlignment(date, Alignment.MIDDLE_CENTER);
+		
+		lname = new Label("Bezeichnung");
+		super.content.addComponent(lname);
+		super.content.setComponentAlignment(lname, Alignment.MIDDLE_CENTER);
+		
+		name = new TextField();
+		name.setWidth("500px");
+		super.content.addComponent(name);
+		super.content.setComponentAlignment(name, Alignment.MIDDLE_CENTER);
 		
 		
 		//Foto Upload
@@ -121,6 +133,18 @@ public class DiaryPicView extends BaseView implements MoodyView{
 		menue.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
 
 	}
+	
+	public String getNameValue() {
+		String cont = name.getValue();
+		return cont;
+	}
+
+	public String getDateValue() {
+     
+		String d =  date.getValue().toString();
+		return d;
+     
+	} 
 
 	@Override
 	public void addListener(ViewListener listener) {

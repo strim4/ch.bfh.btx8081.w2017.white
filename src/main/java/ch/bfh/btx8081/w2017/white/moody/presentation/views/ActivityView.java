@@ -12,6 +12,7 @@ import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.DateField;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.Button.ClickEvent;
 
 /**
@@ -32,12 +33,14 @@ public class ActivityView extends BaseView implements MoodyView{
 	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 	
 	Label dateL;
-	DateField date;
-	ComboBox<String> comboBox;
+	private DateField date;
+	private ComboBox<String> comboBox;
 	Button newActivity;
 	Button buttonSave;
 	Button buttonDelete;
 	Button buttonBack;
+	private TextField name;
+	private Label lname;
 	
 	public ActivityView(){
 		
@@ -55,17 +58,19 @@ public class ActivityView extends BaseView implements MoodyView{
 		datePosition.addComponent(dateL);
 		datePosition.setComponentAlignment(dateL, Alignment.MIDDLE_CENTER);
 		
-		DateField date = new DateField();
+		date = new DateField();
 		date.setWidth("350px");
 		datePosition.addComponent(date);
 		datePosition.setComponentAlignment(date, Alignment.MIDDLE_CENTER);
+		
+		
 		
 		HorizontalLayout activityChoice = new HorizontalLayout();
 		super.content.addComponent(activityChoice);
 		super.content.setComponentAlignment(activityChoice, Alignment.MIDDLE_CENTER);
 		
 //		//Aktivitaet auswaehlen wird noch angepasst --> Datenbank
-		ComboBox<String> comboBox = new ComboBox<>("Aktivität");
+		comboBox = new ComboBox<>("Aktivität");
 		comboBox.setItems("Spazieren", "TV schauen", "Wandern",
 		        "Klettern", "Schwimmen", "Ski fahren", "Kino");
 		comboBox.setWidth("360px");
@@ -78,6 +83,15 @@ public class ActivityView extends BaseView implements MoodyView{
 		newActivity.setWidth(BUTTON_WIDTH);
 		activityChoice.addComponent(newActivity);
 		activityChoice.setComponentAlignment(newActivity, Alignment.BOTTOM_CENTER);
+		
+		lname = new Label("Beschreibung der Aktivität:");
+		super.content.addComponent(lname);
+		super.content.setComponentAlignment(lname, Alignment.MIDDLE_CENTER);
+		
+		name = new TextField();
+		name.setWidth("500px");
+		super.content.addComponent(name);
+		super.content.setComponentAlignment(name, Alignment.MIDDLE_CENTER);
 		
 		HorizontalLayout menue = new HorizontalLayout();
 		super.content.addComponent(menue);
@@ -111,6 +125,24 @@ public class ActivityView extends BaseView implements MoodyView{
 		menue.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
 	
 	}
+	
+	public String getActivityValue() {
+		String a = comboBox.getValue();
+		return a;
+	}
+	
+	
+	public String getNameValue() {
+		String cont = name.getValue();
+		return cont;
+	}
+
+	public String getDateValue() {
+     
+		String d =  date.getValue().toString();
+		return d;
+     
+	} 
 	
 	@Override
 	public void addListener(ViewListener listener) {

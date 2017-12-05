@@ -19,11 +19,11 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryTextView;
 public class DiaryText extends DiaryElement implements Serializable{
 	
 	private String note;
-private 	DiaryTextView view;
 
-	public DiaryText(int id, String name,  String note, Date creationDate) {
-		super(id, name, creationDate);
-		this.note = view.getTFvalue();
+
+	public DiaryText(String name,  String note, String entrydate, Date creationDate ) {
+		super( name, creationDate, entrydate);
+		this.note = note;
 		
 	}
 	

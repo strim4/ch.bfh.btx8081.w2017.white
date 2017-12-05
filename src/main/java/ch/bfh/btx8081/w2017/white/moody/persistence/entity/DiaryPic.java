@@ -21,8 +21,8 @@ public class DiaryPic extends DiaryElement implements Serializable {
 	//private BufferedImage image;
 	private String description;
 
-	public DiaryPic(int id, String name, String description, BufferedImage image, Date creationDate) throws IOException {
-		super(id, name, creationDate);
+	public DiaryPic(String name, String description, BufferedImage image, Date creationDate, String entrydate) throws IOException {
+		super(name, creationDate, entrydate);
 		this.description = description;
 		//this.image = ImageIO.read(new File(name + ".png"));
 

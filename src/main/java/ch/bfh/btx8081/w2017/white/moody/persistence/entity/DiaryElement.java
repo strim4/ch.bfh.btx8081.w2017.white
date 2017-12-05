@@ -23,13 +23,20 @@ public class DiaryElement implements Serializable  {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private  int id;
 	private  String name;
+	private String entrydate;
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date creationDate;
 
 
-	public DiaryElement(int id, String name, Date creationDate) {
-		this.id = id;
+	
+	public DiaryElement(String name, Date creationDate, String entrydate) {
+
+
 		this.name = name;
+		this.entrydate = entrydate;
 		this.creationDate = new Date(creationDate.getTime());
+		
 		
 
 	}

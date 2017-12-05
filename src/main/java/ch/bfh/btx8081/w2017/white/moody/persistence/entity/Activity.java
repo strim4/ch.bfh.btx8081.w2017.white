@@ -17,8 +17,8 @@ public class Activity extends DiaryElement implements Serializable {
 	
 	private String description;
 
-	public Activity(int id, String name,  String description, Date creationDate) {
-		super(id, name,  creationDate);
+	public Activity(String name,  String description, String entrydate , Date creationDate) {
+		super(name,  creationDate, entrydate);
 		this.description = description;
 	}
 	

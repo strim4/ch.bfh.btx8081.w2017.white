@@ -1,8 +1,13 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.presenter;
 
+import java.util.Date;
+
+
+
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
+import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryTextView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
@@ -15,10 +20,13 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 
 @SuppressWarnings("serial")
 public class DiaryTextPresenter implements ViewListener{
+	
+	
 
 	@SuppressWarnings("unused")
 	private DiaryText model;
 	private DiaryTextView view;
+	
 	
 	public DiaryTextPresenter(DiaryText model, DiaryTextView view) {
 		this.model = model;
@@ -32,7 +40,11 @@ public class DiaryTextPresenter implements ViewListener{
 		
 		switch(buttonID) {
 		case "buttonSave":
-			//Speicher-Methode
+			
+			DiaryText dt = new DiaryText(view.getNameValue(), view.getTFValue(), view.getDateValue(), new Date());
+			DBManager dbm = new DBManager();
+		dbm.persistObject(dt);
+			
 			break;
 		case "buttonBack":
 			view.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
