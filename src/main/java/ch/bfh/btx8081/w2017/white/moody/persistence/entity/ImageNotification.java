@@ -8,7 +8,7 @@ package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
  * Last Edit: 27.11.2017
  */
 
-public class ImageNotification extends Notification {
+public class ImageNotification extends Anotification {
 
 	private String imagePath;
 

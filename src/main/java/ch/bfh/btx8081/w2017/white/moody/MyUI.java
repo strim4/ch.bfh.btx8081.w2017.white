@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2017.white.moody;
 
 import javax.servlet.annotation.WebServlet;
 
+import com.vaadin.annotations.Push;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.navigator.Navigator;
@@ -54,9 +55,10 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.StartView;
  * 
  * @author Moritz
  * @author Chantal
- * @author Milena
- * Last edit: 30.11.17
+ * @author Milena Last edit: 30.11.17
+ * @author Zoran Last edit: 05.12.2017
  */
+@Push
 @SuppressWarnings("serial")
 @Theme("mytheme")
 public class MyUI extends UI {
@@ -84,22 +86,24 @@ public class MyUI extends UI {
 	DiaryElementListView list = new DiaryElementListView();
 	DiaryElement diaryElement = new DiaryElement();
 	DiaryElementView element = new DiaryElementView();
-	
 
 	// Barometer
 	BarometerView barometer = new BarometerView();
 	BarometerModel barometerModel = new BarometerModel();
-	
+
 	// Questions
 	QuestionView question = new QuestionView();
 	QuestionYesNoView questionYesNo = new QuestionYesNoView();
 	QuestionSmileyView questionSmiley = new QuestionSmileyView();
 	QuestionModel questionModel = new QuestionModel();
-	
-	//Notification
+
+	// Notification
 	NotificationView notification = new NotificationView();
 	NotificationModel notificationModel = new NotificationModel();
 	
+	// NotificationUI
+	PushNotificationUI pNotificationUI;
+
 	@Override
 	protected void init(VaadinRequest vaadinRequest) {
 
@@ -124,12 +128,12 @@ public class MyUI extends UI {
 		navigator.addView("list", list);
 		navigator.addView("element", element);
 		navigator.addView("barometer", barometer);
-		
+
 		navigator.addView("question", question);
 		navigator.addView("questionsyesno", questionYesNo);
 		navigator.addView("questionssmiley", questionSmiley);
-		
-		navigator.addView("notification",notification);
+
+		navigator.addView("notification", notification);
 
 		new BasePresenter(model, start);
 		new DiaryPresenter(diaryModel, diary);
@@ -139,11 +143,15 @@ public class MyUI extends UI {
 		new ActivityPresenter(activity, activityView);
 		new DiaryElementListPresenter(list);
 		new DiaryElementPresenter(diaryElement, element);
-		
+
 		new BarometerPresenter(barometerModel, barometer);
 		new QuestionPresenter(questionModel, question);
 		new QuestionPresenter(questionModel, questionYesNo);
 		new QuestionPresenter(questionModel, questionSmiley);
+
+		// NotificationUI launch with his concurrent Thread
+		pNotificationUI = new PushNotificationUI(UI.getCurrent(), layout);
+		pNotificationUI.start();
 
 	}
 

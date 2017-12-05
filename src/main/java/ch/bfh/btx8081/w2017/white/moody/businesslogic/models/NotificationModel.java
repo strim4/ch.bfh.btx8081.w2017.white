@@ -2,7 +2,7 @@ package ch.bfh.btx8081.w2017.white.moody.businesslogic.models;
 
 import java.util.List;
 
-import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Notification;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Anotification;
 
 /**
  * @author Milena Tardo
@@ -14,7 +14,7 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Notification;
 
 public class NotificationModel extends BaseModel{
 	
-	private List<Notification> notifications;
+	private List<Anotification> notifications;
 	
 	public NotificationModel() {
 		super();
@@ -30,9 +30,9 @@ public class NotificationModel extends BaseModel{
 	*/
 	
 	// finds particular notification inside of the list by its id
-	public Notification findById(int id)
+	public Anotification findById(int id)
 	{
-		for(Notification notification: notifications)
+		for(Anotification notification: notifications)
 		{
 			if(notification.getId() == id)
 			{
@@ -43,7 +43,7 @@ public class NotificationModel extends BaseModel{
 		return null;
 	}
 	
-	public void setNotification(Notification notification){
+	public void setNotification(Anotification notification){
 		notifications.add(notification);
 	}
 }
