@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
 import java.io.File;
 
+import com.vaadin.addon.charts.Chart;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
@@ -60,9 +61,9 @@ public class StatisticView extends BaseView {
 		contentRow.addComponents(buttonMonat, button6Monate, buttonJahr);
 		content.addComponent(contentRow);
 
-		//Chart statisticChart = new Chart();
-		//super.content.addComponent(statisticChart);
-		//super.content.setComponentAlignment(statisticChart, Alignment.MIDDLE_CENTER);
+		Chart statisticChart = new Chart();
+		super.content.addComponent(statisticChart);
+		super.content.setComponentAlignment(statisticChart, Alignment.MIDDLE_CENTER);
 
 		Button buttonHome = new Button("");
 		buttonHome.setId("buttonHome");
