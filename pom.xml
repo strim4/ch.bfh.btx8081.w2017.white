@@ -65,12 +65,20 @@
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-themes</artifactId>
-		</dependency>
-		<dependency>
-      <groupId>com.vaadin</groupId>
-      <artifactId>vaadin-charts</artifactId>
-      <version>4.0.1</version>
-   </dependency>
+			</dependency>
+		<!-- https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink -->
+<dependency>
+    <groupId>org.eclipse.persistence</groupId>
+    <artifactId>eclipselink</artifactId>
+    <version>2.5.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>9.4.1212</version>
+</dependency>
+
 	</dependencies>
 
 	<build>
