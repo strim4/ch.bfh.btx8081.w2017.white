@@ -20,7 +20,7 @@ import ch.bfh.btx8081.w2017.white.moody.MyUI;
 /**
  * BaseView class sets the basic layout for the web-app.
  * @author Chantal
- * Last edit: 03.12.17
+ * Last edit: 07.12.17
  */
 
 @SuppressWarnings("serial")
@@ -77,13 +77,31 @@ public class BaseView extends VerticalLayout implements MoodyView{
         this.headerLine.setComponentAlignment(titleLayout, Alignment.MIDDLE_CENTER);
         this.headerLine.setSpacing(true);
    
+        VerticalLayout standardbuttons = new VerticalLayout();
+        this.headerLine.addComponent(standardbuttons);
+   
+        //Button for going to start-view
+        Button home = new Button("", new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				getUI().getNavigator().navigateTo(Views.START_VIEW);
+			}
+		});
+        home.setIcon(VaadinIcons.HOME);
+        
 		//Button for general settings
-		Button buttonSettings = new Button("");
-		buttonSettings.addClickListener(this);
+		Button buttonSettings = new Button("", new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				getUI().getNavigator().navigateTo(Views.START_VIEW);//sobald vorhanden auf Settings-View wechseln
+			}
+		});
 		buttonSettings.setId("buttonSettings");
 		buttonSettings.setIcon(VaadinIcons.COG);
-		this.headerLine.addComponent(buttonSettings);
-		this.headerLine.setComponentAlignment(buttonSettings, Alignment.MIDDLE_RIGHT);
+		standardbuttons.addComponents(home, buttonSettings);
+		standardbuttons.setComponentAlignment(home, Alignment.MIDDLE_RIGHT);
+		standardbuttons.setComponentAlignment(buttonSettings, Alignment.MIDDLE_RIGHT);
+
 	}
 
     protected void setLayouts(float headerRatio, float contentRatio, float navigationRatio, float verticalNavicationRatio) {
