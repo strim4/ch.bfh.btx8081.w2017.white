@@ -18,23 +18,26 @@ import javax.persistence.Entity;
 @DiscriminatorValue(value = "PE")
 public class DiaryPic extends DiaryElement implements Serializable {
 
-	//private BufferedImage image;
+	private byte[] imageFile;
 	private String description;
 
-	public DiaryPic(int id, String name, String description, BufferedImage image, Date creationDate) throws IOException {
-		super(id, name, creationDate);
-		this.description = description;
-		//this.image = ImageIO.read(new File(name + ".png"));
-
+	public DiaryPic(String name,  byte[] imageFile, Date creationDate, String entrydate) throws IOException {
+		super(name, creationDate, entrydate);
+		
+		this.imageFile = imageFile;
 	}
 
 	public DiaryPic() {
 	}
 
-	/*public BufferedImage getImage() {
-		return image;
+	public byte[] getImage() {
+		return imageFile;
 	}
-*/
+	
+	public void setImage(byte[] imageFile) {
+		this.imageFile = imageFile;
+	}                      
+
 	public String getDescription() {
 		return description;
 	}

@@ -79,9 +79,17 @@ Sprint 3: 9 Stunden / Teammitglied
 Die Ergebnisse werden am 23.11.2017 in Form einer 5-minütigen Präsentation vorgestellt.
 
 
-TASK5 von 23.11.- 01.05.
+TASK5 von 23.11. - 01.12.
 ____________________
 Umsetzung des 1. Sprints. 
 Einteilung via Scrum Plan.
 
-Die Ergebnisse werden am 1.12.2017 präsentiert.
+Die Ergebnisse werden am 1.12.2017 dem Product Owner präsentiert.
+
+1.12. Start Sprint 2 - Tasks verteilt, Deadline 22.12.17
+
+TASK6 von 01.12.- 15.12.
+____________________
+Umsetzung der Datenbank und Update des Klassendiagramms
+
+Die Ergebnisse werden am 15.12.2017 dem Product Owner präsentiert

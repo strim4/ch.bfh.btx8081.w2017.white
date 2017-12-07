@@ -1,10 +1,12 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
-import com.vaadin.server.ThemeResource;
+import java.io.File;
+
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.Button.ClickEvent;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPresenter;
 
 /**
@@ -18,15 +20,17 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPrese
 public class NotificationView extends BaseView {
 
 	private NotificationPresenter presenter = null;
+	
+	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+	
+	private static final String BUTTON_HOME = "HOME";
 
 	private static final String BUTTON_WIDTH = "160px";
-	private static final String BUTTON_HEIGHT = "160px";
-
-	private static final String BUTTON_CLOSE = "CLOSE";
+	private static final String BUTTON_HEIGHT = "160px";	
 
 	public NotificationView() {
 		super();
-
+		super.setLayouts(0.35f, 0.65f, 0, 0);
 		this.createButtons();
 	}
 
@@ -37,16 +41,12 @@ public class NotificationView extends BaseView {
 		super.content.addComponent(notification);
 		super.content.setComponentAlignment(notification, Alignment.MIDDLE_CENTER);
 
-		Button buttonNotification = new Button("", new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-			}
-		});
-
-		buttonNotification.setWidth(BUTTON_WIDTH);
-		buttonNotification.setHeight(BUTTON_HEIGHT);
-		buttonNotification.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_CLOSE);
-		super.content.addComponent(buttonNotification);
-		super.content.setComponentAlignment(buttonNotification, Alignment.BOTTOM_RIGHT);
+		Button buttonHome = new Button("");
+		buttonHome.setId("buttonHome");
+		buttonHome.setWidth(BUTTON_WIDTH);
+		buttonHome.setHeight(BUTTON_HEIGHT);
+		buttonHome.setIcon(new FileResource(new File (basepath +"/VAADIN/images/HomeIcon.png")));
+		super.content.addComponent(buttonHome);
+		super.content.setComponentAlignment(buttonHome, Alignment.MIDDLE_CENTER);
 	}
 }

@@ -6,12 +6,13 @@ import java.util.Date;
  * @author Milena
  * @author Zoran 
  * Notification Class 
- * Last Edit: 28.11.17
+ * Last Edit: 05.12.17
  * 
  * it represents the Superclass for all Notifications
  */
 
-public abstract class Notification {
+// the name fo the Class cannot be Notification (same as Notification Class of vaadin)
+public abstract class Anotification {
 
 	protected int id;
 	protected String title;
@@ -20,7 +21,7 @@ public abstract class Notification {
 	protected boolean isSent;
 	protected String description;
 
-	public Notification() {
+	public Anotification() {
 		this.id = -1;
 		this.title = "Der Titel";
 		this.date = new Date();
@@ -28,7 +29,7 @@ public abstract class Notification {
 		this.description = "Die Beschreibung";
 	}
 
-	public Notification(String title, String description) {
+	public Anotification(String title, String description) {
 		this.title = title;
 		this.date = new Date();
 		this.id = -1;

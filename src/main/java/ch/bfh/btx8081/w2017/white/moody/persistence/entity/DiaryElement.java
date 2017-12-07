@@ -12,23 +12,31 @@ import javax.persistence.*;
  * Provides common attributes for subclasses
  */
 
+@SuppressWarnings("serial")
 @Entity
 @Table
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type")
-public abstract class DiaryElement implements Serializable  {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@DiscriminatorColumn(name = "type")
+public class DiaryElement implements Serializable  {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private  int id;
 	private  String name;
+	private String entrydate;
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date creationDate;
 
 
-	public DiaryElement(int id, String name, Date creationDate) {
-		this.id = id;
+	
+	public DiaryElement(String name, Date creationDate, String entrydate) {
+
+
 		this.name = name;
+		this.entrydate = entrydate;
 		this.creationDate = new Date(creationDate.getTime());
+		
 		
 
 	}
@@ -51,6 +59,14 @@ public abstract class DiaryElement implements Serializable  {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public void setEntryDate(String entrydate) {
+		this.entrydate = entrydate;
+	}
+	
+	public String getEntryDate() {
+		return entrydate;
 	}
 	
 	  public Date getCreationDate() {

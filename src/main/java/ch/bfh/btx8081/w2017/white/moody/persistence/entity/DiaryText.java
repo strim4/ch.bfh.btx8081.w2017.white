@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryTextView;
+
 /**
  * @author Moritz
  * expression of a diaryelement with an additional note
@@ -18,8 +20,9 @@ public class DiaryText extends DiaryElement implements Serializable{
 	
 	private String note;
 
-	public DiaryText(int id, String name,  String note, Date creationDate) {
-		super(id, name, creationDate);
+
+	public DiaryText(String name,  String note, String entrydate, Date creationDate ) {
+		super( name, creationDate, entrydate);
 		this.note = note;
 		
 	}

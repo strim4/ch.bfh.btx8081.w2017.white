@@ -1,54 +1,84 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
-import com.vaadin.server.ThemeResource;
-import com.vaadin.ui.Alignment;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.GridLayout;
-import com.vaadin.ui.Label;
+import java.io.File;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button.ClickEvent;
 
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
+import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
+
+import com.vaadin.ui.*;
+
 /**
- * This Class shows a list of the recorded Diary Elements.
+ * This Class shows a list of the recorded Diary Elements. vaa
  * 
- * @author Chantal
- * Last Edit: 29.11.17
+ * @author Chantal Last Edit: 03.12.17
  */
 
 @SuppressWarnings("serial")
-public class DiaryElementListView extends DiaryView{
-	
-	private static final String BUTTON_BACK = "BACK";
-	
-	private static final String BUTTON_WIDTH = "160px";
-	private static final String BUTTON_HEIGHT = "160px";
+public class DiaryElementListView extends BaseView implements MoodyView {
 
-	public DiaryElementListView(){
+	private List<ViewListener> listeners = new ArrayList<ViewListener>();
+
+	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+
+	Button show;
+
+	Button buttonBack;
+	private DBManager dbm = new DBManager();
+
+	public DiaryElementListView() {
+
 		super();
-		super.setTitle("Alte Eintraege");
-		
-		//TODO Jedes Listenelement als Button zum Öffnen des alten Eintrages --> DiaryElementView
-		
+		super.setTitle("Alte Einträge");
 		this.createButtons();
 	}
-	
-	private void createButtons(){
+
+	private void createButtons() {
+
+		// TODO Jedes Listenelement als Button zum Öffnen des alten Eintrages -->
+		// DiaryElementView
 		
-		Button buttonBack = new Button("Zurück");//Text entfernen, sobald Icon funktioniert
-		//buttonBack.addClickListener(this);
+		Label dtTitle = new Label("Alle Texteinträge aus dem Tagebuch");
+		super.content.addComponent(dtTitle);
+		super.content.setComponentAlignment(dtTitle, Alignment.MIDDLE_CENTER);
+
+		Grid<DiaryText> griddt = new Grid<>();
+		griddt.addColumn(DiaryText::getName).setCaption("Name");
+		griddt.addColumn(DiaryText::getNote).setCaption("Eintrag");
+		griddt.addColumn(DiaryText::getEntryDate).setCaption("Datum");
+		super.content.addComponent(griddt);
+		super.content.setComponentAlignment(griddt, Alignment.MIDDLE_CENTER);
+
+		
+		griddt.setItems((Collection<DiaryText>) dbm.showd());
+
+		Button buttonBack = new Button("");
+		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
-		buttonBack.setWidth(BUTTON_WIDTH);
-		buttonBack.setHeight(BUTTON_HEIGHT);
-		//buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);
+		buttonBack.setWidth("380px");
+		buttonBack.setHeight("120px");
+		buttonBack.setIcon(new FileResource(new File(basepath + "/VAADIN/images/backIcon.png")));
 		super.content.addComponent(buttonBack);
 		super.content.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
 
-//		GridLayout layout = new GridLayout(1, 2);
-//		Label diarylist = new Label("Alte Eintraege");
-//		layout.addComponent(diarylist, 1, 1);
-//		
-//		//TODO Jedes Listenelement als Button zum Öffnen des alten Eintrages --> DiaryElementView
-//		
-//		Button back = new Button("Zurueck"); // Back to DiaryView
-//		layout.addComponent(back, 1, 2);
+	}
+
+	@Override
+	public void addListener(ViewListener listener) {
+		listeners.add(listener);
+	}
+
+	@Override
+	public void buttonClick(ClickEvent event) {
+		for (ViewListener listener : this.listeners) {
+			listener.buttonClick(event);
+		}
 	}
 }

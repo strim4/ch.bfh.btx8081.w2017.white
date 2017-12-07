@@ -3,7 +3,13 @@ package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
 import java.util.Date;
 
 /**
+<<<<<<< .mine
+ * @author Roberto
+ * Profile (including name, contact details)
+ * Last edit: 29.11.17
+=======
  * @author Roberto Profile (including name, contact details) Last edit: 28.11.17
+>>>>>>> .r128
  */
 
 public class Profile {
@@ -12,8 +18,11 @@ public class Profile {
 	private String lastName;
 	private Date birthdate;
 	private char gender;
-	private String address;
+	// private String address; bin nicht sicher ob das auch gebraucht wird.
 	private String houseDoctor;
+	private String houseDoctorPhone;
+	private String emergencyContact;
+	private String emergencyContactPhone;
 	// private String desease; bin nicht sicher ob das auch gebraucht wird.
 	// private String therapy; bin nicht sicher ob das auch gebraucht wird.
 
@@ -40,12 +49,24 @@ public class Profile {
 		return gender;
 	}
 
-	public String getAddress() {
-		return address;
-	}
+	/*
+	 * public String getAddress() { return address; }
+	 */
 
 	public String getHouseDoctor() {
 		return houseDoctor;
+	}
+	
+	public String getHouseDoctorPhone() {
+		return houseDoctorPhone;
+	}
+	
+	public String getEmergencyContact() {
+		return emergencyContact;
+	}
+	
+	public String getEmergencyContactPhone() {
+		return emergencyContactPhone;
 	}
 	/*
 	 * public String getDesease() { return desease; }
@@ -75,12 +96,24 @@ public class Profile {
 		this.gender = gender;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	/*
+	 * public void setAddress(String address) { this.address = address; }
+	 */
 
 	public void setHouseDoctor(String houseDoctor) {
 		this.houseDoctor = houseDoctor;
+	}
+	
+	public void setHouseDoctorPhone(String houseDoctorPhone) {
+		this.houseDoctorPhone = houseDoctorPhone;
+	}
+	
+	public void setEmergencyContact(String emergencyContact) {
+		this.emergencyContact = emergencyContact;
+	}
+	
+	public void setEmergencyContactPhone(String emergencyContactPhone) {
+		this.emergencyContactPhone = emergencyContactPhone;
 	}
 
 	/*
