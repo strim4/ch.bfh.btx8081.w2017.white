@@ -11,7 +11,7 @@ import com.vaadin.ui.HorizontalLayout;
  * Last Edit: 01.12.17
  */
 
-public class QuestionYesNoView extends QuestionView {
+public class QuestionYesNoView extends QuestionnaireView {
 
 	private static final String BUTTON_WIDTH = "160px";
 	private static final String BUTTON_HEIGHT = "160px";

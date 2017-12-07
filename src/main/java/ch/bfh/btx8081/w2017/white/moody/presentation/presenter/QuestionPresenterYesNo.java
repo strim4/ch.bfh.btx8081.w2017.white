@@ -5,8 +5,8 @@ import com.vaadin.ui.Button.ClickEvent;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BaseModel;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.BaseView;
 
-public class QuestionPresenterYesNo extends QuestionPresenter{
-	
+public class QuestionPresenterYesNo { // extends QuestionnairePresenter{
+/*
 	public QuestionPresenterYesNo(BaseModel model, BaseView view) {
 		super(model, view);
 		
@@ -23,5 +23,5 @@ public class QuestionPresenterYesNo extends QuestionPresenter{
 			break;
 		}
 	}
-
+*/
 }

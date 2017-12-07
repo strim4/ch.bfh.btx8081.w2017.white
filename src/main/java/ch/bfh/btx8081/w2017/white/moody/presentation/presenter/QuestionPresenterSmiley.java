@@ -6,8 +6,8 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BaseModel;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.BaseView;
 
 @SuppressWarnings("serial")
-public class QuestionPresenterSmiley extends QuestionPresenter{
-	
+public class QuestionPresenterSmiley { // extends QuestionnairePresenter{
+/*
 	public QuestionPresenterSmiley(BaseModel model, BaseView view) {
 		super(model, view);
 	}
@@ -29,5 +29,5 @@ public class QuestionPresenterSmiley extends QuestionPresenter{
 			break;
 		}
 	}
-	
+*/
 }

@@ -16,9 +16,11 @@ import com.vaadin.ui.Button.ClickEvent;
  * Last Edit: 01.12.17
  */
 
-public class QuestionSmileyView extends QuestionView {
+public class QuestionSmileyView extends QuestionnaireView {
 	
 	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+	
+	//String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 	
 	private static final String BUTTON_WIDTH = "160px";
 	private static final String BUTTON_HEIGHT = "160px";
