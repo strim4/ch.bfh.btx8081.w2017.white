@@ -27,6 +27,9 @@ public class DiaryElementListPresenter implements ViewListener{
 		String buttonID = event.getButton().getId();
 		
 		switch(buttonID) {
+		case "show":
+			
+			break;
 		case "buttonBack":
 			view.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
 			break;

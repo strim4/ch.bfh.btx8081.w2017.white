@@ -15,8 +15,8 @@ import javax.persistence.*;
 @SuppressWarnings("serial")
 @Entity
 @Table
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@DiscriminatorColumn(name = "type")
 public class DiaryElement implements Serializable  {
 
 	@Id
@@ -59,6 +59,14 @@ public class DiaryElement implements Serializable  {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public void setEntryDate(String entrydate) {
+		this.entrydate = entrydate;
+	}
+	
+	public String getEntryDate() {
+		return entrydate;
 	}
 	
 	  public Date getCreationDate() {

@@ -1,7 +1,12 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +18,7 @@ import com.vaadin.ui.DateField;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Upload;
 import com.vaadin.ui.Button.ClickEvent;
@@ -32,6 +38,7 @@ public class DiaryPicView extends BaseView implements MoodyView{
 	
 	private static final String BUTTON_WIDTH = "120px";
 	private static final String BUTTON_HEIGHT = "120px";
+	private byte[] data;
 
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 	
@@ -44,6 +51,9 @@ public class DiaryPicView extends BaseView implements MoodyView{
 	Button buttonBack;
 	private TextField name;
 	private Label lname;
+	byte[] fileContent;
+	
+
 	
 	public DiaryPicView(){
 		
@@ -85,13 +95,33 @@ public class DiaryPicView extends BaseView implements MoodyView{
 			
 			public File file;
 			public OutputStream receiveUpload(String filename, String mimeType) {
-				//TODO create and return a file output stream
-				return null;
+				FileOutputStream fos = null;
+
+            try {
+                file = new File("C:\\Users\\mitzu\\Desktop\\moody" + filename);
+                
+                fos = new FileOutputStream(file);
+                fileContent = Files.readAllBytes(file.toPath());
+            } catch (final IOException e) {
+               
+                return null;
+            }
+
+            return fos; 	
 			}
 
 			@Override
 			public void uploadSucceeded(SucceededEvent event) {
 				image.setSource(new FileResource(file));	
+				Path path = Paths.get("C:\\Users\\mitzu\\Desktop\\moody"  );
+			
+				try {
+					data = Files.readAllBytes(path);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			}
 		};
 		
@@ -143,6 +173,13 @@ public class DiaryPicView extends BaseView implements MoodyView{
      
 		String d =  date.getValue().toString();
 		return d;
+     
+	} 
+	
+	public byte[] getPicValue() {
+	     
+		
+		return fileContent;
      
 	} 
 
