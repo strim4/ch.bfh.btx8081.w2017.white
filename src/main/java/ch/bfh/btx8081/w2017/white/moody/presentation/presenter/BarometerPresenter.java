@@ -34,7 +34,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 			//TODO add links
 			switch(buttonID) {
 			case "buttonQuestions":
-				view.getUI().getNavigator().navigateTo(Views.QUESTION_VIEW);
+				view.getUI().getNavigator().navigateTo(Views.QUESTIONNAIRE_VIEW);
 				break;
 			case "buttonBack":
 				view.getUI().getNavigator().navigateTo(Views.START_VIEW);
