@@ -29,8 +29,10 @@ public class Views {
 	
 	public static final String QUESTIONYESNO_VIEW = "questionyesno";
 	
+	public static final String QUESTIONNAIRE_VIEW = "questionnaire";
+
 	public static final String QUESTION_VIEW = "question";
-	
+
 	public static final String BAROMETER_VIEW = "barometer";
 	
 	public static final String STATISTIC_VIEW = "statistic";
