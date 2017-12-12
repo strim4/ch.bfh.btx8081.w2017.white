@@ -28,10 +28,9 @@ public class NotificationPresenter  implements ViewListener{
 	public void buttonClick(ClickEvent event) {
 
 		String buttonID = event.getButton().getId();
-		notificationView.getUI().getNavigator().navigateTo(Views.START_VIEW);
 		switch (buttonID) {
 		case "buttonGelesen":
-			
+			notificationView.getUI().getNavigator().navigateTo(Views.START_VIEW);
 			break;
 		}
 	}
