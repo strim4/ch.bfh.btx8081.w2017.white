@@ -17,6 +17,7 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BaseModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.DiaryModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionModel;
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.StatisticModel;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryElement;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
@@ -29,7 +30,9 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryElementPrese
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryPicPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryTextPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.StatisticPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ActivityView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.BarometerView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.BaseView;
@@ -76,7 +79,6 @@ public class MyUI extends UI {
 	// Diary
 	DiaryView diary = new DiaryView();
 	DiaryModel diaryModel = new DiaryModel();
-
 	DiaryTextView text = new DiaryTextView();
 	DiaryText diaryText = new DiaryText();
 	DiaryPicView pic = new DiaryPicView();
@@ -102,8 +104,8 @@ public class MyUI extends UI {
 	NotificationModel notificationModel = new NotificationModel();
 	
 	//Statistic
-	StatisticView statistic = new StatisticView();
-	// StatisticModel statisticModel = new StatisticModel(); ist noch nicht erstellt; freischalten sobald es erstellt ist
+	StatisticView statistic = new StatisticView();	
+	StatisticModel statisticModel = new StatisticModel();
 	
 	// NotificationUI
 	PushNotificationUI pNotificationUI;
@@ -125,7 +127,6 @@ public class MyUI extends UI {
 		navigator.addView("base", view);
 		navigator.addView("", start);
 		navigator.addView("diary", diary);
-
 		navigator.addView("text", text);
 		navigator.addView("picture", pic);
 		navigator.addView("activity", activityView);
@@ -133,7 +134,7 @@ public class MyUI extends UI {
 		navigator.addView("element", element);
 		navigator.addView("barometer", barometer);
 
-		// navigator.addView("question", question); Begründung siehe oben
+		// navigator.addView("question", question); Begrï¿½ndung siehe oben
 		navigator.addView("questionyesno", questionYesNo);
 		navigator.addView("questionsmiley", questionSmiley);
 
@@ -151,11 +152,12 @@ public class MyUI extends UI {
 		new DiaryElementPresenter(diaryElement, element);
 
 		new BarometerPresenter(barometerModel, barometer);
-		// new QuestionPresenter(questionModel, question); Begründung siehe oben
+		// new QuestionPresenter(questionModel, question); Begrï¿½ndung siehe oben
 		new QuestionPresenter(questionModel, questionYesNo);
 		new QuestionPresenter(questionModel, questionSmiley);
+		new NotificationPresenter(notificationModel, notification);
 		
-		//new StatisticPresenter(statisticModel, statistic); ist noch nicht erstellt; freischalten sobald es erstellt ist
+		new StatisticPresenter(statisticModel, statistic);
 	
 
 		// NotificationUI launch with his concurrent Thread
