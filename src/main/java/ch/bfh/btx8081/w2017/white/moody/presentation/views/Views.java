@@ -37,6 +37,17 @@ public class Views {
 	
 	public static final String STATISTIC_VIEW = "statistic";
 	
+	public static final String PROFILE_VIEW = "profile";
+	
+	public static final String SETTINGS_VIEW = "settings";
+	
+	public static final String CONTANCT_VIEW = "contact";
+	
+	public static final String EXERCISES_VIEW = "exercises";
+	
+	public static final String INFORMATIONS_VIEW = "informations";
+	
+	public static final String TIPS_VIEW = "tips";
 	
 	//TODO restliche Views einbauen
 
