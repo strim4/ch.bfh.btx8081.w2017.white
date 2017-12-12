@@ -10,7 +10,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
  * NotificationsPresenter Class
  * 
  * @author Sandra
- * LastEdit: 28.11.17
+ * LastEdit: 12.12.17
  */
 
 public class NotificationPresenter  implements ViewListener{
@@ -28,10 +28,10 @@ public class NotificationPresenter  implements ViewListener{
 	public void buttonClick(ClickEvent event) {
 
 		String buttonID = event.getButton().getId();
-
+		notificationView.getUI().getNavigator().navigateTo(Views.START_VIEW);
 		switch (buttonID) {
-		case "buttonHome":
-			notificationView.getUI().getNavigator().navigateTo(Views.START_VIEW);
+		case "buttonGelesen":
+			
 			break;
 		}
 	}
