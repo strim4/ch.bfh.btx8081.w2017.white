@@ -1,7 +1,11 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
@@ -20,6 +24,8 @@ public class BarometerView extends BaseView implements MoodyView{
 	private static final String BUTTON_WIDTH = "160px";
 	private static final String BUTTON_HEIGHT = "160px";
 	
+	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+	
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 	
 	public BarometerView(){
@@ -34,26 +40,39 @@ public class BarometerView extends BaseView implements MoodyView{
 	
 	
 	private void createButtons(){
+		//HorizontalLayout newBarometerElement = new HorizontalLayout();
+		//super.content.addComponent(newBarometerElement);
+		//super.content.setComponentAlignment(newBarometerElement, Alignment.MIDDLE_CENTER);
+
 		
-		HorizontalLayout newBarometerElement = new HorizontalLayout();
-		super.content.addComponent(newBarometerElement);
-		super.content.setComponentAlignment(newBarometerElement, Alignment.MIDDLE_CENTER);
-		
-		Button buttonQuestions = new Button("Taegliche Fragen");//Text entfernen, sobal Icon funktioniert
+		Button buttonQuestions = new Button("Taegliche Fragen");//Text entfernen, sobald Icon funktioniert
 		buttonQuestions.addClickListener(this);
 		buttonQuestions.setId("buttonQuestions");
 		buttonQuestions.setWidth("500px");
 		buttonQuestions.setHeight(BUTTON_HEIGHT);
 		//buttonQuestions.setIcon(new ThemeResource("images/Questions.png"), BUTTON_TEXT); Es besteht noch kein Image
-		newBarometerElement.addComponent(buttonQuestions);
-		newBarometerElement.setComponentAlignment(buttonQuestions, Alignment.MIDDLE_CENTER);
+		//newBarometerElement.addComponent(buttonQuestions);
+		//newBarometerElement.setComponentAlignment(buttonQuestions, Alignment.MIDDLE_CENTER);
+		super.content.addComponent(buttonQuestions);
+		super.content.setComponentAlignment(buttonQuestions, Alignment.MIDDLE_CENTER);
+		
+		Button buttonStatistic = new Button("Auswertung");
+		buttonStatistic.addClickListener(this);
+		buttonStatistic.setId("buttonStatistic");
+		buttonStatistic.setWidth("500px");
+		buttonStatistic.setHeight(BUTTON_HEIGHT);
+		//buttonQuestions.setIcon(new ThemeResource("images/Statistic.png"), BUTTON_TEXT); Es besteht noch kein Image
+		//newBarometerElement.addComponent(buttonStatistic);
+		//newBarometerElement.setComponentAlignment(buttonStatistic, Alignment.MIDDLE_CENTER);
+		super.content.addComponent(buttonStatistic);
+		super.content.setComponentAlignment(buttonStatistic, Alignment.MIDDLE_CENTER);
 	
-		Button buttonBack = new Button("Zurueck");//Text entfernen, sobal Icon funktioniert
+		Button buttonBack = new Button("");
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
 		buttonBack.setWidth("500px");
 		buttonBack.setHeight(BUTTON_HEIGHT);
-		//buttonBack.setIcon(new ThemeResource("images/backIcon.png"), BUTTON_BACK);
+		buttonBack.setIcon(new FileResource(new File(basepath + "/VAADIN/images/backIcon.png")));
 		super.content.addComponent(buttonBack);
 		super.content.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
 	
