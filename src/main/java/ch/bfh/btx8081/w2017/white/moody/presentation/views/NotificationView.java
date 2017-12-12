@@ -1,9 +1,8 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
-import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.vaadin.server.FileResource;
-import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
@@ -14,22 +13,21 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPrese
  * recive everyday a notification.
  * 
  * @author Sandra
- * Last Edit: 28.11.17
+ * Last Edit: 12.12.17
  */
 
-public class NotificationView extends BaseView {
+public class NotificationView extends BaseView implements MoodyView{
 
 	private NotificationPresenter presenter = null;
 	
-	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
-	
-	private static final String BUTTON_HOME = "HOME";
+	private static final String BUTTON_GELESEN = "gelesen";
 
 	private static final String BUTTON_WIDTH = "160px";
 	private static final String BUTTON_HEIGHT = "160px";	
-
+	
 	public NotificationView() {
 		super();
+		super.setTitle("");
 		super.setLayouts(0.35f, 0.65f, 0, 0);
 		this.createButtons();
 	}
@@ -41,12 +39,12 @@ public class NotificationView extends BaseView {
 		super.content.addComponent(notification);
 		super.content.setComponentAlignment(notification, Alignment.MIDDLE_CENTER);
 
-		Button buttonHome = new Button("");
-		buttonHome.setId("buttonHome");
-		buttonHome.setWidth(BUTTON_WIDTH);
-		buttonHome.setHeight(BUTTON_HEIGHT);
-		buttonHome.setIcon(new FileResource(new File (basepath +"/VAADIN/images/HomeIcon.png")));
-		super.content.addComponent(buttonHome);
-		super.content.setComponentAlignment(buttonHome, Alignment.MIDDLE_CENTER);
+		Button buttonGelesen = new Button(BUTTON_GELESEN);
+		buttonGelesen.addClickListener(this);
+		buttonGelesen.setId("buttonGelesen");
+		buttonGelesen.setWidth(BUTTON_WIDTH);
+		buttonGelesen.setHeight(BUTTON_HEIGHT);
+		super.content.addComponent(buttonGelesen);
+		super.content.setComponentAlignment(buttonGelesen, Alignment.MIDDLE_CENTER);
 	}
 }
