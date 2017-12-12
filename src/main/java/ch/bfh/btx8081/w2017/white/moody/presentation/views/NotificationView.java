@@ -42,7 +42,7 @@ public class NotificationView extends BaseView implements MoodyView{
 		Button buttonGelesen = new Button(BUTTON_GELESEN);
 		buttonGelesen.addClickListener(this);
 		buttonGelesen.setId("buttonGelesen");
-		buttonGelesen.setWidth(BUTTON_WIDTH);
+		buttonGelesen.setWidth("500px");
 		buttonGelesen.setHeight(BUTTON_HEIGHT);
 		super.content.addComponent(buttonGelesen);
 		super.content.setComponentAlignment(buttonGelesen, Alignment.MIDDLE_CENTER);
