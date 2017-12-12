@@ -16,7 +16,9 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BarometerModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BaseModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.DiaryModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationModel;
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ProfileModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionModel;
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SettingsModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.StatisticModel;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryElement;
@@ -25,27 +27,38 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ActivityPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.BarometerPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.BasePresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ContactPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryElementListPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryElementPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryPicPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryTextPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ExercisesPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.InformationsPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SettingsPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.StatisticPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.TipsPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ActivityView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.BarometerView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.BaseView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.ContactView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryElementListView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryElementView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryPicView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryTextView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.ExercisesView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.InformationsView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.NotificationView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.ProfileView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionSmileyView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionYesNoView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.SettingsView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.StartView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.StatisticView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.TipsView;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser
@@ -57,7 +70,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.StatisticView;
  * initialize non-component functionality.
  * 
  * @author Moritz
- * @author Chantal
+ * @author Chantal Last edit: 12.12.17
  * @author Milena Last edit: 30.11.17
  * @author Zoran Last edit: 05.12.2017
  */
@@ -76,6 +89,12 @@ public class MyUI extends UI {
 	BaseView view = new BaseView();
 	StartView start = new StartView();
 
+	// Settings
+	SettingsView settings = new SettingsView();
+	SettingsModel settingsModel = new SettingsModel();
+	ProfileView profile = new ProfileView();
+	ProfileModel profileModel = new ProfileModel();
+	
 	// Diary
 	DiaryView diary = new DiaryView();
 	DiaryModel diaryModel = new DiaryModel();
@@ -89,6 +108,18 @@ public class MyUI extends UI {
 	DiaryElement diaryElement = new DiaryElement();
 	DiaryElementView element = new DiaryElementView();
 
+	//Exercises
+	ExercisesView exercises = new ExercisesView();
+	
+	//Informations
+	InformationsView informations = new InformationsView();
+	
+	//Tips
+	TipsView tips = new TipsView();
+	
+	//Contact
+	ContactView contact = new ContactView();
+	
 	// Barometer
 	BarometerView barometer = new BarometerView();
 	BarometerModel barometerModel = new BarometerModel();
@@ -132,9 +163,14 @@ public class MyUI extends UI {
 		navigator.addView("activity", activityView);
 		navigator.addView("list", list);
 		navigator.addView("element", element);
+		navigator.addView("contact", contact);
+		navigator.addView("exercises", exercises);
+		navigator.addView("exercises", exercises);
+		navigator.addView("informations", informations);
+		navigator.addView("tips", tips);
 		navigator.addView("barometer", barometer);
 
-		// navigator.addView("question", question); Begr�ndung siehe oben
+		// navigator.addView("question", question); Begruendung siehe oben
 		navigator.addView("questionyesno", questionYesNo);
 		navigator.addView("questionsmiley", questionSmiley);
 
@@ -143,16 +179,24 @@ public class MyUI extends UI {
 		navigator.addView("statistic", statistic);
 
 		new BasePresenter(model, start);
+		new SettingsPresenter(settingsModel, settings);
+		
 		new DiaryPresenter(diaryModel, diary);
-
 		new DiaryTextPresenter(diaryText, text);
 		new DiaryPicPresenter(diaryPic, pic);
 		new ActivityPresenter(activity, activityView);
 		new DiaryElementListPresenter(list);
 		new DiaryElementPresenter(diaryElement, element);
 
+		new ContactPresenter(contact);
+		new ExercisesPresenter(exercises);
+		new InformationsPresenter(informations);
+		new TipsPresenter(tips);
+		
+		new StatisticPresenter(statisticModel, statistic);
+
 		new BarometerPresenter(barometerModel, barometer);
-		// new QuestionPresenter(questionModel, question); Begr�ndung siehe oben
+		// new QuestionPresenter(questionModel, question); Begruendung siehe oben
 		new QuestionPresenter(questionModel, questionYesNo);
 		new QuestionPresenter(questionModel, questionSmiley);
 		new NotificationPresenter(notificationModel, notification);
