@@ -22,12 +22,13 @@ public class NotificationView extends BaseView implements MoodyView{
 	
 	private static final String BUTTON_GELESEN = "gelesen";
 
-	private static final String BUTTON_WIDTH = "160px";
-	private static final String BUTTON_HEIGHT = "160px";	
+	private static final String BUTTON_WIDTH = "120px";
+	private static final String BUTTON_HEIGHT = "120px";	
 	
 	public NotificationView() {
 		super();
-		super.setTitle("");
+		// super.setTitle(""); Darf hier nicht stehen! Der User muss aktiv gelesen bestätigen, er darf nicht
+		// einfach mit HOME auf die Startansicht zurückkehren
 		super.setLayouts(0.35f, 0.65f, 0, 0);
 		this.createButtons();
 	}
@@ -42,7 +43,7 @@ public class NotificationView extends BaseView implements MoodyView{
 		Button buttonGelesen = new Button(BUTTON_GELESEN);
 		buttonGelesen.addClickListener(this);
 		buttonGelesen.setId("buttonGelesen");
-		buttonGelesen.setWidth("500px");
+		buttonGelesen.setWidth("380px");
 		buttonGelesen.setHeight(BUTTON_HEIGHT);
 		super.content.addComponent(buttonGelesen);
 		super.content.setComponentAlignment(buttonGelesen, Alignment.MIDDLE_CENTER);

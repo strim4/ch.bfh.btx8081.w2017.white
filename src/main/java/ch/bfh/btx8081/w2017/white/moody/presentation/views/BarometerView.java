@@ -21,8 +21,8 @@ import com.vaadin.ui.Button.ClickEvent;
 @SuppressWarnings("serial")
 public class BarometerView extends BaseView implements MoodyView{
 	
-	private static final String BUTTON_WIDTH = "160px";
-	private static final String BUTTON_HEIGHT = "160px";
+	private static final String BUTTON_WIDTH = "120px";
+	private static final String BUTTON_HEIGHT = "120px";
 	
 	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 	
@@ -48,7 +48,7 @@ public class BarometerView extends BaseView implements MoodyView{
 		Button buttonQuestions = new Button("Taegliche Fragen");//Text entfernen, sobald Icon funktioniert
 		buttonQuestions.addClickListener(this);
 		buttonQuestions.setId("buttonQuestions");
-		buttonQuestions.setWidth("500px");
+		buttonQuestions.setWidth("380px");
 		buttonQuestions.setHeight(BUTTON_HEIGHT);
 		//buttonQuestions.setIcon(new ThemeResource("images/Questions.png"), BUTTON_TEXT); Es besteht noch kein Image
 		//newBarometerElement.addComponent(buttonQuestions);
@@ -59,7 +59,7 @@ public class BarometerView extends BaseView implements MoodyView{
 		Button buttonStatistic = new Button("Auswertung");
 		buttonStatistic.addClickListener(this);
 		buttonStatistic.setId("buttonStatistic");
-		buttonStatistic.setWidth("500px");
+		buttonStatistic.setWidth("380px");
 		buttonStatistic.setHeight(BUTTON_HEIGHT);
 		//buttonQuestions.setIcon(new ThemeResource("images/Statistic.png"), BUTTON_TEXT); Es besteht noch kein Image
 		//newBarometerElement.addComponent(buttonStatistic);
@@ -70,7 +70,7 @@ public class BarometerView extends BaseView implements MoodyView{
 		Button buttonBack = new Button("");
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
-		buttonBack.setWidth("500px");
+		buttonBack.setWidth("380px");
 		buttonBack.setHeight(BUTTON_HEIGHT);
 		buttonBack.setIcon(new FileResource(new File(basepath + "/VAADIN/images/backIcon.png")));
 		super.content.addComponent(buttonBack);

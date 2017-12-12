@@ -25,8 +25,8 @@ public class StatisticView extends BaseView implements MoodyView {
 
 	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 
-	private static final String BUTTON_WIDTH = "160px";
-	private static final String BUTTON_HEIGHT = "160px";
+	private static final String BUTTON_WIDTH = "120px";
+	private static final String BUTTON_HEIGHT = "120px";
 
 	private static final String BUTTON_MONAT = "Monat";
 	private static final String BUTTON_6MONATE = "6 Monate";
@@ -79,7 +79,7 @@ public class StatisticView extends BaseView implements MoodyView {
 		Button buttonBack = new Button("");
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
-		buttonBack.setWidth("500px");
+		buttonBack.setWidth("380px");
 		buttonBack.setHeight(BUTTON_HEIGHT);
 		buttonBack.setIcon(new FileResource(new File(basepath + "/VAADIN/images/backIcon.png")));
 		super.addComponent(buttonBack);
