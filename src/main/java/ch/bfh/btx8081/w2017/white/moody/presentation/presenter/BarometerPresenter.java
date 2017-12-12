@@ -36,6 +36,9 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 			case "buttonQuestions":
 				view.getUI().getNavigator().navigateTo(Views.QUESTIONNAIRE_VIEW);
 				break;
+			case "buttonStatistic":
+				view.getUI().getNavigator().navigateTo(Views.STATISTIC_VIEW);
+				break;
 			case "buttonBack":
 				view.getUI().getNavigator().navigateTo(Views.START_VIEW);
 				break;
