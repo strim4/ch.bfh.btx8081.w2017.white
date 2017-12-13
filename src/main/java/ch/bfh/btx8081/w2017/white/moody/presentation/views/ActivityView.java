@@ -34,7 +34,7 @@ public class ActivityView extends BaseView implements MoodyView{
 	
 	Label dateL;
 	private DateField date;
-	private ComboBox<String> comboBox;
+	private ComboBox<String> comboBox;//TODO Typ ändern auf Activity
 	Button newActivity;
 	Button buttonSave;
 	Button buttonDelete;
@@ -63,8 +63,6 @@ public class ActivityView extends BaseView implements MoodyView{
 		datePosition.addComponent(date);
 		datePosition.setComponentAlignment(date, Alignment.MIDDLE_CENTER);
 		
-		
-		
 		HorizontalLayout activityChoice = new HorizontalLayout();
 		super.content.addComponent(activityChoice);
 		super.content.setComponentAlignment(activityChoice, Alignment.MIDDLE_CENTER);
@@ -72,7 +70,7 @@ public class ActivityView extends BaseView implements MoodyView{
 //		//Aktivitaet auswaehlen wird noch angepasst --> Datenbank
 		comboBox = new ComboBox<>("Aktivität");
 		comboBox.setItems("Spazieren", "TV schauen", "Wandern",
-		        "Klettern", "Schwimmen", "Ski fahren", "Kino");
+		        "Klettern", "Schwimmen", "Ski fahren", "Kino");//TODO hier Daten aus Datenbank beziehen
 		comboBox.setWidth("360px");
 		activityChoice.addComponent(comboBox);
 		activityChoice.setComponentAlignment(comboBox, Alignment.MIDDLE_CENTER);
@@ -106,14 +104,14 @@ public class ActivityView extends BaseView implements MoodyView{
 		menue.addComponent(buttonSave);
 		menue.setComponentAlignment(buttonSave, Alignment.MIDDLE_CENTER);
 	
-		Button buttonDelete = new Button("");
+/*		Button buttonDelete = new Button("");
 		buttonDelete.addClickListener(this);
 		buttonDelete.setId("buttonDelete");
 		buttonDelete.setWidth(BUTTON_WIDTH);
 		buttonDelete.setHeight(BUTTON_HEIGHT);
 		buttonDelete.setIcon(new FileResource(new File(basepath + "/VAADIN/images/deleteIcon.png")));
 		menue.addComponent(buttonDelete);
-		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);
+		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);*/
 	
 		Button buttonBack = new Button("");
 		buttonBack.addClickListener(this);
