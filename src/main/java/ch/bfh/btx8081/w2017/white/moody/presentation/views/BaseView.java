@@ -20,7 +20,7 @@ import ch.bfh.btx8081.w2017.white.moody.MyUI;
 /**
  * BaseView class sets the basic layout for the web-app.
  * @author Chantal
- * Last edit: 07.12.17
+ * Last edit: 10.12.17
  */
 
 @SuppressWarnings("serial")
@@ -93,7 +93,7 @@ public class BaseView extends VerticalLayout implements MoodyView{
 		Button buttonSettings = new Button("", new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
-				getUI().getNavigator().navigateTo(Views.START_VIEW);//sobald vorhanden auf Settings-View wechseln
+				getUI().getNavigator().navigateTo(Views.SETTINGS_VIEW);
 			}
 		});
 		buttonSettings.setId("buttonSettings");
