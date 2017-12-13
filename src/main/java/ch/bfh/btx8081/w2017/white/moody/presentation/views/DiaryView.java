@@ -17,7 +17,7 @@ import com.vaadin.ui.Button.ClickEvent;
  * or open the list of the already recorded Diary Elements.
  * 
  * @author Chantal
- * Last Edit: 03.12.17
+ * Last Edit: 12.12.17
  */
 
 @SuppressWarnings("serial")
@@ -40,6 +40,9 @@ public class DiaryView extends BaseView implements MoodyView{
 		
 		super();
 		super.setTitle("Tagebuch");
+		Label input = new Label("Erstelle einen neuen Eintrag: ");
+		super.content.addComponent(input);
+		super.content.setComponentAlignment(input, Alignment.MIDDLE_CENTER);
 		this.createButtons();
 		super.setLayouts(0.35f, 0.65f, 0, 0);
 	}
@@ -69,7 +72,7 @@ public class DiaryView extends BaseView implements MoodyView{
 		newDiaryElement.addComponent(buttonPic);
 		newDiaryElement.setComponentAlignment(buttonPic, Alignment.MIDDLE_CENTER);
 	
-		Button buttonActivity = new Button("");
+		Button buttonActivity = new Button("Alte Eintraege");
 		buttonActivity.addClickListener(this);
 		buttonActivity.setId("buttonActivity");
 		buttonActivity.setWidth(BUTTON_WIDTH);
