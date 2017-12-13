@@ -42,13 +42,10 @@ public class ActivityPresenter implements ViewListener{
 		case "buttonSave":
 			Activity a = new Activity(view.getNameValue(), view.getActivityValue(), view.getDateValue(), new Date());
 			DBManager dbm = new DBManager();
-		dbm.persistObject(a);
+			dbm.persistObject(a);
 			break;
 		case "buttonBack":
 			view.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
-			break;
-		case "buttonDelete":
-			//Lösch-Methode
 			break;
 		}
 	}
