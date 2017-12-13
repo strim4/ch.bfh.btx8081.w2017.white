@@ -18,7 +18,6 @@ import com.vaadin.ui.DateField;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.Notification;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Upload;
 import com.vaadin.ui.Button.ClickEvent;
@@ -38,6 +37,7 @@ public class DiaryPicView extends BaseView implements MoodyView{
 	
 	private static final String BUTTON_WIDTH = "120px";
 	private static final String BUTTON_HEIGHT = "120px";
+	@SuppressWarnings("unused")
 	private byte[] data;
 
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
@@ -68,7 +68,7 @@ public class DiaryPicView extends BaseView implements MoodyView{
 		HorizontalLayout datePosition = new HorizontalLayout();
 		super.content.addComponent(datePosition);
 		super.content.setComponentAlignment(datePosition, Alignment.MIDDLE_CENTER);
-		Label dateL = new Label("Datum auswählen: ");
+		Label dateL = new Label("Datum auswaehlen: ");
 		datePosition.addComponent(dateL);
 		datePosition.setComponentAlignment(dateL, Alignment.MIDDLE_CENTER);
 		
@@ -144,14 +144,14 @@ public class DiaryPicView extends BaseView implements MoodyView{
 		menue.addComponent(buttonSave);
 		menue.setComponentAlignment(buttonSave, Alignment.MIDDLE_CENTER);
 	
-		Button buttonDelete = new Button("");
+/*		Button buttonDelete = new Button("");
 		buttonDelete.addClickListener(this);
 		buttonDelete.setId("buttonDelete");
 		buttonDelete.setWidth(BUTTON_WIDTH);
 		buttonDelete.setHeight(BUTTON_HEIGHT);
 		buttonDelete.setIcon(new FileResource(new File(basepath + "/VAADIN/images/deleteIcon.png")));
 		menue.addComponent(buttonDelete);
-		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);
+		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);*/
 	
 		Button buttonBack = new Button("");
 		buttonBack.addClickListener(this);
