@@ -36,6 +36,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryTextPresente
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ExercisesPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.InformationsPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ProfilePresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SettingsPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.StatisticPresenter;
@@ -169,6 +170,8 @@ public class MyUI extends UI {
 		navigator.addView("informations", informations);
 		navigator.addView("tips", tips);
 		navigator.addView("barometer", barometer);
+		navigator.addView("settings", settings);
+		navigator.addView("profile", profile);
 
 		// navigator.addView("question", question); Begruendung siehe oben
 		navigator.addView("questionyesno", questionYesNo);
@@ -180,6 +183,7 @@ public class MyUI extends UI {
 
 		new BasePresenter(model, start);
 		new SettingsPresenter(settingsModel, settings);
+		new ProfilePresenter(profileModel, profile);
 		
 		new DiaryPresenter(diaryModel, diary);
 		new DiaryTextPresenter(diaryText, text);

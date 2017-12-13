@@ -9,6 +9,7 @@ import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.Button.ClickEvent;
 
 /**
@@ -72,7 +73,7 @@ public class DiaryView extends BaseView implements MoodyView{
 		newDiaryElement.addComponent(buttonPic);
 		newDiaryElement.setComponentAlignment(buttonPic, Alignment.MIDDLE_CENTER);
 	
-		Button buttonActivity = new Button("Alte Eintraege");
+		Button buttonActivity = new Button("");
 		buttonActivity.addClickListener(this);
 		buttonActivity.setId("buttonActivity");
 		buttonActivity.setWidth(BUTTON_WIDTH);
@@ -81,7 +82,7 @@ public class DiaryView extends BaseView implements MoodyView{
 		newDiaryElement.addComponent(buttonActivity);
 		newDiaryElement.setComponentAlignment(buttonActivity, Alignment.MIDDLE_CENTER);
 	
-		Button buttonList = new Button("");
+		Button buttonList = new Button("Alte Eintraege");
 		buttonList.addClickListener(this);
 		buttonList.setId("buttonList");
 		buttonList.setWidth("380px");
