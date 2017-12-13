@@ -5,6 +5,7 @@
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryElement</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText</class>
+		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://127.0.0.1:5432/Moody"/>
 			<property name="javax.persistence.jdbc.user" value="postgres"/>
