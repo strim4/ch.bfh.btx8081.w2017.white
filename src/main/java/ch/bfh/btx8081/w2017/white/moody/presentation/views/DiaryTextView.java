@@ -1,9 +1,7 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
 import java.io.File;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.vaadin.server.FileResource;
@@ -20,7 +18,7 @@ import com.vaadin.ui.DateField;
 /**
  * This class shows the creation of a new Diary Text Element.
  * 
- * @author Chantal Last edit: 03.12.17
+ * @author Chantal Last edit: 10.12.17
  */
 
 @SuppressWarnings("serial")
@@ -53,7 +51,7 @@ public class DiaryTextView extends BaseView implements MoodyView {
 		HorizontalLayout datePosition = new HorizontalLayout();
 		super.content.addComponent(datePosition);
 		super.content.setComponentAlignment(datePosition, Alignment.MIDDLE_CENTER);
-		Label dateL = new Label("Datum auswählen: ");
+		Label dateL = new Label("Datum auswaehlen: ");
 		datePosition.addComponent(dateL);
 		datePosition.setComponentAlignment(dateL, Alignment.MIDDLE_CENTER);
 
@@ -90,14 +88,14 @@ public class DiaryTextView extends BaseView implements MoodyView {
 		menue.addComponent(buttonSave);
 		menue.setComponentAlignment(buttonSave, Alignment.MIDDLE_CENTER);
 
-		Button buttonDelete = new Button("");
+/*		Button buttonDelete = new Button("");
 		buttonDelete.addClickListener(this);
 		buttonDelete.setId("buttonDelete");
 		buttonDelete.setWidth(BUTTON_WIDTH);
 		buttonDelete.setHeight(BUTTON_HEIGHT);
 		buttonDelete.setIcon(new FileResource(new File(basepath + "/VAADIN/images/deleteIcon.png")));
 		menue.addComponent(buttonDelete);
-		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);
+		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);*/
 
 		Button buttonBack = new Button("");
 		buttonBack.addClickListener(this);
