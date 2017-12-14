@@ -2,9 +2,12 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.presenter;
 
 import java.util.Date;
 
+import com.vaadin.shared.Position;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
+
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ActivityView;
@@ -33,6 +36,7 @@ public class ActivityPresenter implements ViewListener{
 		view.addListener(this);
 	}
 	
+	@SuppressWarnings("static-access")
 	public void buttonClick(ClickEvent event) {
 		
 		String buttonID = event.getButton().getId();
@@ -40,12 +44,15 @@ public class ActivityPresenter implements ViewListener{
 		//TODO add links
 		switch(buttonID) {
 		case "newActivity":
-			//Neue Activity in die Auswahl aufnehmen und auswählen
+			
 			view.getUI().getNavigator().navigateTo(Views.POPUP_VIEW);
 		case "buttonSave":
 			Activity a = new Activity(view.getNameValue(), view.getActivityValue(), view.getDateValue(), new Date());
 			DBManager dbm = new DBManager();
 			dbm.persistObject(a);
+			Notification saved = new Notification("");
+			saved.setPosition(Position.BOTTOM_CENTER);
+			saved.show("Eintrag gespeichert");
 			break;
 		case "buttonBack":
 			view.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);

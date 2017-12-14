@@ -2,7 +2,9 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Stream;
 
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
@@ -13,6 +15,11 @@ import com.vaadin.ui.DateField;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
+
+
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
+import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
+
 import com.vaadin.ui.Button.ClickEvent;
 
 /**
@@ -41,6 +48,8 @@ public class ActivityView extends BaseView implements MoodyView{
 	Button buttonBack;
 	private TextField name;
 	private Label lname;
+	private TextField activity;
+	private DBManager dbm;
 	
 	public ActivityView(){
 		
@@ -68,12 +77,18 @@ public class ActivityView extends BaseView implements MoodyView{
 		super.content.setComponentAlignment(activityChoice, Alignment.MIDDLE_CENTER);
 		
 //		//Aktivitaet auswaehlen wird noch angepasst --> Datenbank
-		comboBox = new ComboBox<>("Aktivität");
-		comboBox.setItems("Spazieren", "TV schauen", "Wandern",
+		/*comboBox = new ComboBox<>("Aktivität");
+	/*	comboBox.setItems("Spazieren", "TV schauen", "Wandern",
 		        "Klettern", "Schwimmen", "Ski fahren", "Kino");//TODO hier Daten aus Datenbank beziehen
+		comboBox.setItems((Stream<String>) dbm.showae());
 		comboBox.setWidth("360px");
 		activityChoice.addComponent(comboBox);
-		activityChoice.setComponentAlignment(comboBox, Alignment.MIDDLE_CENTER);
+		activityChoice.setComponentAlignment(comboBox, Alignment.MIDDLE_CENTER); 
+		
+		activity = new TextField();
+		activity.setWidth("500px");
+		super.content.addComponent(activity);
+		super.content.setComponentAlignment(activity, Alignment.MIDDLE_CENTER); */
 
 		Button newActivity = new Button("Neu");
 		newActivity.addClickListener(this);
@@ -127,6 +142,11 @@ public class ActivityView extends BaseView implements MoodyView{
 	public String getActivityValue() {
 		String a = comboBox.getValue();
 		return a;
+	}
+	
+	public String getActivity() {
+		String ac = activity.getValue();
+		return ac;
 	}
 	
 	

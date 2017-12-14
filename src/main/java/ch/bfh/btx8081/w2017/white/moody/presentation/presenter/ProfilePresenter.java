@@ -39,14 +39,14 @@ public class ProfilePresenter implements ViewListener {
 		switch(buttonID) {
 		case "buttonSave":
 			//TODO watch that Button works
-/*			Profile p = new Profile(view.getFirstNameValue(), view.getLastNameValue(), 
+		Profile p = new Profile(view.getFirstNameValue(), view.getLastNameValue(), 
 					view.getDateValue(), view.getGender(), view.getDoctor(), 
 					view.getDoctorPhone(), view.getContact(), view.getContactPhone());
 			DBManager dbm = new DBManager();
 			dbm.persistObject(p);
 			Notification saved = new Notification("");
 			saved.setPosition(Position.BOTTOM_CENTER);
-			saved.show("Eintrag gespeichert");*/
+			saved.show("Eintrag gespeichert");
 			break;
 		case "buttonBack":
 			view.getUI().getNavigator().navigateTo(Views.START_VIEW);

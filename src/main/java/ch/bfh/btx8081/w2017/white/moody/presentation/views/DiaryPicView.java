@@ -98,7 +98,7 @@ public class DiaryPicView extends BaseView implements MoodyView{
 				FileOutputStream fos = null;
 
             try {
-                file = new File("C:\\Users\\mitzu\\Desktop\\moody" + filename);
+                file = new File("C:\\Users\\mitzu\\Desktop\\" + filename);
                 
                 fos = new FileOutputStream(file);
                 fileContent = Files.readAllBytes(file.toPath());
@@ -113,7 +113,7 @@ public class DiaryPicView extends BaseView implements MoodyView{
 			@Override
 			public void uploadSucceeded(SucceededEvent event) {
 				image.setSource(new FileResource(file));	
-				Path path = Paths.get("C:\\Users\\mitzu\\Desktop\\moody"  );
+				Path path = Paths.get("C:\\Users\\mitzu\\Desktop\\" + file  );
 			
 				try {
 					data = Files.readAllBytes(path);

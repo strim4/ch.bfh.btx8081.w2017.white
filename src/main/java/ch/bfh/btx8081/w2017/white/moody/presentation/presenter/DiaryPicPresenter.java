@@ -3,6 +3,8 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.presenter;
 import java.io.IOException;
 import java.util.Date;
 
+import com.vaadin.shared.Position;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
@@ -30,6 +32,7 @@ public class DiaryPicPresenter implements ViewListener {
 		view.addListener(this);
 	}
 
+	@SuppressWarnings("static-access")
 	public void buttonClick(ClickEvent event) {
 
 		String buttonID = event.getButton().getId();
@@ -42,6 +45,9 @@ public class DiaryPicPresenter implements ViewListener {
 				dp = new DiaryPic(view.getNameValue(), view.getPicValue(), new Date(), view.getDateValue());
 				DBManager dbm = new DBManager();
 				dbm.persistObject(dp);
+				Notification saved = new Notification("");
+				saved.setPosition(Position.BOTTOM_CENTER);
+				saved.show("Eintrag gespeichert");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

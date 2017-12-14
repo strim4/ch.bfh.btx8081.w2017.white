@@ -10,6 +10,8 @@ import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button.ClickEvent;
 
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 
@@ -54,10 +56,33 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		griddt.addColumn(DiaryText::getNote).setCaption("Eintrag");
 		griddt.addColumn(DiaryText::getEntryDate).setCaption("Datum");
 		super.content.addComponent(griddt);
-		super.content.setComponentAlignment(griddt, Alignment.MIDDLE_CENTER);
-
-		
 		griddt.setItems((Collection<DiaryText>) dbm.showd());
+		super.content.setComponentAlignment(griddt, Alignment.MIDDLE_CENTER);
+		
+		Label dpTitle = new Label("Alle Bildereinträge aus dem Tagebuch");
+		super.content.addComponent(dpTitle);
+		super.content.setComponentAlignment(dpTitle, Alignment.MIDDLE_CENTER);
+
+		Grid<DiaryPic> griddp = new Grid<>();
+		griddp.addColumn(DiaryPic::getName).setCaption("Name");
+		griddp.addColumn(DiaryPic::getImage).setCaption("Bild");
+		griddp.addColumn(DiaryPic::getEntryDate).setCaption("Datum");
+		super.content.addComponent(griddp);
+		griddp.setItems((Collection<DiaryPic>) dbm.showp());
+		super.content.setComponentAlignment(griddp, Alignment.MIDDLE_CENTER);
+		
+		Label daTitle = new Label("Alle Aktivitäten aus dem Tagebuch");
+		super.content.addComponent(daTitle);
+		super.content.setComponentAlignment(daTitle, Alignment.MIDDLE_CENTER);
+
+		Grid<Activity> gridda = new Grid<>();
+		gridda.addColumn(Activity::getName).setCaption("Name");
+		gridda.addColumn(Activity::getDescription).setCaption("Beschreibung");
+		gridda.addColumn(Activity::getEntryDate).setCaption("Datum");
+		super.content.addComponent(gridda);
+		gridda.setItems((Collection<Activity>) dbm.showa());
+		super.content.setComponentAlignment(gridda, Alignment.MIDDLE_CENTER);
+		
 
 		Button buttonBack = new Button("");
 		buttonBack.addClickListener(this);

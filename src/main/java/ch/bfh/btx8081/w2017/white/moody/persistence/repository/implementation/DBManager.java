@@ -4,7 +4,11 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
+
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
 
 public class DBManager {
 	
@@ -38,9 +42,30 @@ public List<DiaryText> showd() {
 	Query q = em.createQuery("select dt from DiaryText dt");
 	 List<DiaryText> dt = q.getResultList();
 	 return dt;
-/*	System.out.println("" + dt.size() + " persons:");
-	for (DiaryText p : dt)
-	System.out.println(p); */
+
 }
+
+public List<Profile> showpr() {
+	Query q = em.createQuery("select pr from Profile pr");
+	 List<Profile> pr = q.getResultList();
+	 return pr;
+
+}
+
+
+public List<Activity> showa() {
+	Query q = em.createQuery("select a from Activity a");
+	 List<Activity> a = q.getResultList();
+	 return a;
+
+}
+public List<DiaryPic> showp() {
+	Query q = em.createQuery("select p from DiaryPic p");
+	 List<DiaryPic> p = q.getResultList();
+	 return p;
+
+}
+
+
 	
 }
