@@ -16,6 +16,8 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
  * 
  * @author Chantal
  * Last edit: 30.11.17
+ * @author Roberto
+ * Last edit: 13.12.17
  */
 
 @SuppressWarnings("serial")
@@ -39,6 +41,7 @@ public class ActivityPresenter implements ViewListener{
 		switch(buttonID) {
 		case "newActivity":
 			//Neue Activity in die Auswahl aufnehmen und auswählen
+			view.getUI().getNavigator().navigateTo(Views.POPUP_VIEW);
 		case "buttonSave":
 			Activity a = new Activity(view.getNameValue(), view.getActivityValue(), view.getDateValue(), new Date());
 			DBManager dbm = new DBManager();
