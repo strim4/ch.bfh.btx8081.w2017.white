@@ -6,14 +6,24 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.AdviceMessage;
  * @author Roberto Tangarife
  * Model for advice messages
  * Stores the advice messages.
- * Last Edit: 26.11.17
+ * Last Edit: 13.12.17
  */
 
 public class AdviceMessageModel extends BaseModel{
 	
+private AdviceMessage adviceMessage;
 	
+	public AdviceMessageModel() {
+		
+		adviceMessage = new AdviceMessage();
+		
+	}
 	
-}//Habe da Mal noch diese Klammer hinzugefügt, dass es keinen Fehler mehr anzeigt :), danke ;)
-
+	public AdviceMessage getAdviceMessage() {
+		return adviceMessage;
+	}
 	
-
+	public void setAdviceMessage(AdviceMessage adviceMessage) {
+		this.adviceMessage = adviceMessage;
+	}
+}
