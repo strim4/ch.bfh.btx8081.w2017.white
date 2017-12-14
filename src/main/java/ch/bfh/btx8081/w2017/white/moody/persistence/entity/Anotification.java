@@ -2,20 +2,35 @@ package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+
+
 /**
  * @author Milena
  * @author Zoran 
- * Notification Class 
- * Last Edit: 05.12.17
+ * Notification Class Last Edit: 14.12.17
  * 
  * it represents the Superclass for all Notifications
  */
 
-// the name fo the Class cannot be Notification (same as Notification Class of vaadin)
+// the name fo the Class cannot be Notification (same as Notification Class of
+// vaadin)
+
+//@Entity
+//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Anotification {
 
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected int id;
 	protected String title;
+	protected String type;
 	protected Date date;
 	// it allows to check if notification has been sent
 	protected boolean isSent;
@@ -35,6 +50,12 @@ public abstract class Anotification {
 		this.id = -1;
 		this.isSent = false;
 		this.description = description;
+	}
+
+	public Anotification(int id, String title, String type) {
+		this.id = id;
+		this.title= title;
+		this.type = type;
 	}
 
 	public String getTitle() {
@@ -67,6 +88,18 @@ public abstract class Anotification {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public void setSent(boolean isSent) {
+		this.isSent = isSent;
 	}
 
 	public void setIsSent(boolean isSent) {
