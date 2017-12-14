@@ -49,6 +49,8 @@ public class Views {
 	
 	public static final String TIPS_VIEW = "tips";
 	
+	public static final String POPUP_VIEW = "popup";
+	
 	//TODO restliche Views einbauen
 
 }
