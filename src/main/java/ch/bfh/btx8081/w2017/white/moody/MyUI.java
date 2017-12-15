@@ -136,8 +136,8 @@ public class MyUI extends UI {
 	NotificationModel notificationModel = new NotificationModel();
 	
 	//Statistic
-	StatisticView statistic = new StatisticView();	
-	StatisticModel statisticModel = new StatisticModel();
+	//StatisticView statistic = new StatisticView();	
+	//StatisticModel statisticModel = new StatisticModel();
 	
 	// NotificationUI
 	PushNotificationUI pNotificationUI;
@@ -179,7 +179,7 @@ public class MyUI extends UI {
 
 		navigator.addView("notification", notification);
 		
-		navigator.addView("statistic", statistic);
+		//navigator.addView("statistic", statistic);
 
 		new BasePresenter(model, start);
 		new SettingsPresenter(settingsModel, settings);
@@ -197,7 +197,8 @@ public class MyUI extends UI {
 		new InformationsPresenter(informations);
 		new TipsPresenter(tips);
 		
-		new StatisticPresenter(statisticModel, statistic);
+		//new StatisticPresenter(statisticModel, statistic); warum ist das wieder da? Es gibt keinen Statisticpresenter mehr.
+		// den musste ich raus nehmen! Siehe ein paar Zeilen weiter unten...
 
 		new BarometerPresenter(barometerModel, barometer);
 		// new QuestionPresenter(questionModel, question); Begruendung siehe oben
@@ -205,7 +206,7 @@ public class MyUI extends UI {
 		new QuestionPresenter(questionModel, questionSmiley);
 		new NotificationPresenter(notificationModel, notification);
 		
-		new StatisticPresenter(statisticModel, statistic);
+		//new StatisticPresenter(statisticModel, statistic);
 	
 
 		// NotificationUI launch with his concurrent Thread
