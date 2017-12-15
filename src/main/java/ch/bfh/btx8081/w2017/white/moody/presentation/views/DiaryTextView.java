@@ -51,7 +51,7 @@ public class DiaryTextView extends BaseView implements MoodyView {
 		HorizontalLayout datePosition = new HorizontalLayout();
 		super.content.addComponent(datePosition);
 		super.content.setComponentAlignment(datePosition, Alignment.MIDDLE_CENTER);
-		Label dateL = new Label("Datum auswaehlen: ");
+		Label dateL = new Label("Datum auswählen: ");
 		datePosition.addComponent(dateL);
 		datePosition.setComponentAlignment(dateL, Alignment.MIDDLE_CENTER);
 

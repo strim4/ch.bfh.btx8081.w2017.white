@@ -41,11 +41,10 @@ public class ActivityPresenter implements ViewListener{
 		
 		String buttonID = event.getButton().getId();
 		
-		//TODO add links
 		switch(buttonID) {
 		case "newActivity":
-			
 			view.getUI().getNavigator().navigateTo(Views.POPUP_VIEW);
+			
 		case "buttonSave":
 			Activity a = new Activity(view.getNameValue(), view.getActivityValue(), view.getDateValue(), new Date());
 			DBManager dbm = new DBManager();
