@@ -17,7 +17,7 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 
 
-import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 
 import com.vaadin.ui.Button.ClickEvent;
@@ -58,6 +58,7 @@ public class ActivityView extends BaseView implements MoodyView{
 		this.createButtons();
 	}
 	
+	@SuppressWarnings("unchecked")
 	private void createButtons(){
 		
 		HorizontalLayout datePosition = new HorizontalLayout();
@@ -77,18 +78,18 @@ public class ActivityView extends BaseView implements MoodyView{
 		super.content.setComponentAlignment(activityChoice, Alignment.MIDDLE_CENTER);
 		
 //		//Aktivitaet auswaehlen wird noch angepasst --> Datenbank
-		/*comboBox = new ComboBox<>("Aktivität");
-	/*	comboBox.setItems("Spazieren", "TV schauen", "Wandern",
+		comboBox = new ComboBox<>("Aktivität");
+		comboBox.setItems("Spazieren", "TV schauen", "Wandern",
 		        "Klettern", "Schwimmen", "Ski fahren", "Kino");//TODO hier Daten aus Datenbank beziehen
-		comboBox.setItems((Stream<String>) dbm.showae());
+//		comboBox.setItems((Stream<String>) dbm.showa());
 		comboBox.setWidth("360px");
 		activityChoice.addComponent(comboBox);
 		activityChoice.setComponentAlignment(comboBox, Alignment.MIDDLE_CENTER); 
 		
-		activity = new TextField();
-		activity.setWidth("500px");
-		super.content.addComponent(activity);
-		super.content.setComponentAlignment(activity, Alignment.MIDDLE_CENTER); */
+//		activity = new TextField();
+//		activity.setWidth("500px");
+//		super.content.addComponent(activity);
+//		super.content.setComponentAlignment(activity, Alignment.MIDDLE_CENTER);
 
 		Button newActivity = new Button("Neu");
 		newActivity.addClickListener(this);
