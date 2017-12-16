@@ -40,8 +40,8 @@ public class ProfilePresenter implements ViewListener {
 		case "buttonSave":
 			//TODO watch that Button works
 		Profile p = new Profile(view.getFirstNameValue(), view.getLastNameValue(), 
-					view.getDateValue(), view.getGender(), view.getDoctor(), 
-					view.getDoctorPhone(), view.getContact(), view.getContactPhone());
+					view.getDoctor(), view.getDoctorPhone(), view.getContact(), 
+					view.getContactPhone());
 			DBManager dbm = new DBManager();
 			dbm.persistObject(p);
 			Notification saved = new Notification("");
