@@ -40,8 +40,6 @@ public class ProfileView extends BaseView implements MoodyView {
 
 	private TextField firstNameTF;
 	private TextField lastNameTF;
-	private DateField birthdateTF;
-	private NativeSelect<String> selectGender;
 	private TextField houseDoctorTF;
 	private TextField houseDoctorPhoneTF;
 	private TextField emergencyContactTF;
@@ -65,7 +63,7 @@ public class ProfileView extends BaseView implements MoodyView {
 		super.content.addComponent(firstNameTF);
 		super.content.setComponentAlignment(firstNameTF, Alignment.MIDDLE_CENTER);
 
-		 lastNameTF = new TextField("Nachname");
+		lastNameTF = new TextField("Nachname");
 		lastNameTF.setWidth("500px");
 		super.content.addComponent(lastNameTF);
 		super.content.setComponentAlignment(lastNameTF, Alignment.MIDDLE_CENTER);
@@ -74,25 +72,14 @@ public class ProfileView extends BaseView implements MoodyView {
 		super.content.addComponent(horizontal);
 		super.content.setComponentAlignment(horizontal, Alignment.MIDDLE_CENTER);
 
-		 birthdateTF = new DateField("Geburtsdatum");
-		birthdateTF.setWidth("280px");
-
-		 selectGender = new NativeSelect<>("Geschlecht");
-		selectGender.setItems("maennlich", "weiblich");
-		selectGender.setEmptySelectionAllowed(false);
-		selectGender.setWidth("200px");
-		horizontal.addComponents(birthdateTF, selectGender);
-		horizontal.setComponentAlignment(birthdateTF, Alignment.MIDDLE_CENTER);
-		horizontal.setComponentAlignment(selectGender, Alignment.MIDDLE_CENTER);
-
 		HorizontalLayout houseDoctor = new HorizontalLayout();
 		super.content.addComponent(houseDoctor);
 		super.content.setComponentAlignment(houseDoctor, Alignment.MIDDLE_CENTER);
 
-		 houseDoctorTF = new TextField("Arzt");
+		houseDoctorTF = new TextField("Arzt");
 		houseDoctorTF.setWidth("280px");
 
-		 houseDoctorPhoneTF = new TextField("Telefon des Arztes");
+		houseDoctorPhoneTF = new TextField("Telefon des Arztes");
 		houseDoctorPhoneTF.setWidth("200px");
 		houseDoctor.addComponents(houseDoctorTF, houseDoctorPhoneTF);
 
@@ -100,10 +87,10 @@ public class ProfileView extends BaseView implements MoodyView {
 		super.content.addComponent(contact);
 		super.content.setComponentAlignment(contact, Alignment.MIDDLE_CENTER);
 
-		 emergencyContactTF = new TextField("Notfallkontakt");
+		emergencyContactTF = new TextField("Notfallkontakt");
 		emergencyContactTF.setWidth("280px");
 
-		 emergencyContactPhoneTF = new TextField("Telefon des Notfallkontaktes");
+		emergencyContactPhoneTF = new TextField("Telefon des Notfallkontaktes");
 		emergencyContactPhoneTF.setWidth("200px");
 		contact.addComponents(emergencyContactTF, emergencyContactPhoneTF);
 
@@ -139,16 +126,6 @@ public class ProfileView extends BaseView implements MoodyView {
 	public String getLastNameValue() {
 		String cont = lastNameTF.getValue();
 		return cont;
-	}
-
-	public String getDateValue() {
-		String d = birthdateTF.getValue().toString();
-		return d;
-	}
-
-	public String getGender() {
-		String sex = selectGender.getValue().toString();
-		return sex;
 	}
 
 	public String getDoctor() {
