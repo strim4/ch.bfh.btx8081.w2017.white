@@ -12,7 +12,7 @@ import javax.persistence.Table;
  * @author Chantal
  * Last edit: 12.12.17
  * @author Roberto
- * Profile (including name, contact details)
+ * Profile (including name, contact details and emergency contact)
  * Last edit: 29.11.17
 =======
  * @author Roberto Profile (including name, contact details) Last edit: 28.11.17
@@ -28,24 +28,16 @@ public class Profile implements Serializable{
 	private int id;
 	private String firstName;
 	private String lastName;
-	private String birthdate;
-	private String gender;
-	// private String address; bin nicht sicher ob das auch gebraucht wird.
 	private String houseDoctor;
 	private String houseDoctorPhone;
 	private String emergencyContact;
 	private String emergencyContactPhone;
-	// private String desease; bin nicht sicher ob das auch gebraucht wird.
-	// private String therapy; bin nicht sicher ob das auch gebraucht wird.
-
-	public Profile(String firstName, String lastName, String birthdate, 
-			String gender, String houseDoctor, String houseDoctorPhone,
+	
+	public Profile(String firstName, String lastName, String houseDoctor, String houseDoctorPhone,
 			String emergencyContact, String emergencyContactPhone) {
 		
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.birthdate = birthdate;
-		this.gender = gender;
 		this.houseDoctor = houseDoctor;
 		this.houseDoctorPhone = houseDoctorPhone;
 		this.emergencyContact = emergencyContact;
@@ -65,18 +57,6 @@ public class Profile implements Serializable{
 		return lastName;
 	}
 
-	public String getBirthdate() {
-		return birthdate;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	/*
-	 * public String getAddress() { return address; }
-	 */
-
 	public String getHouseDoctor() {
 		return houseDoctor;
 	}
@@ -92,13 +72,6 @@ public class Profile implements Serializable{
 	public String getEmergencyContactPhone() {
 		return emergencyContactPhone;
 	}
-	/*
-	 * public String getDesease() { return desease; }
-	 */
-
-	/*
-	 * public String getTherapy() { return therapy; }
-	 */
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -107,18 +80,6 @@ public class Profile implements Serializable{
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
-	public void setBirthdate(String birthdate) {
-		this.birthdate = birthdate;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	/*
-	 * public void setAddress(String address) { this.address = address; }
-	 */
 
 	public void setHouseDoctor(String houseDoctor) {
 		this.houseDoctor = houseDoctor;
@@ -136,21 +97,11 @@ public class Profile implements Serializable{
 		this.emergencyContactPhone = emergencyContactPhone;
 	}
 
-	/*
-	 * public void setDesease(String desease) { this.desease = desease; }
-	 */
-
-	/*
-	 * public void setTherapy(String therapy) { this.therapy = therapy; }
-	 */
-	
 	@Override
 	public String toString() {
 		return "Profile{" +
 				"firstName='" + getFirstName() + '\'' +
 				", lastName='" + getLastName() + '\'' +
-				", birthdate='" + getBirthdate() + '\'' +
-				", gender='" + getGender() + '\'' +
 				", houseDoctor='" + getHouseDoctor() + '\'' +
 				", houseDoctorPhone='" + getHouseDoctorPhone() + '\'' +
 				", emergencyContact='" + getEmergencyContact() + '\'' +
