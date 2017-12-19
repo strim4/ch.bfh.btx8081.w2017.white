@@ -17,6 +17,7 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ProfileModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SettingsModel;
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.WarningNotificationModel;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryElement;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
@@ -37,6 +38,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ProfilePresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SettingsPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.TipsPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.WarningNotificationPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ActivityView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.BarometerView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.BaseView;
@@ -55,6 +57,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionYesNoView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.SettingsView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.StartView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.TipsView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.WarningNotificationView;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser
@@ -69,7 +72,9 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.TipsView;
  * @author Chantal Last edit: 12.12.17
  * @author Milena Last edit: 30.11.17
  * @author Zoran Last edit: 05.12.2017
+ * @author Sandra Last edit: 19.12.2017
  */
+
 @Push
 @SuppressWarnings("serial")
 @Theme("mytheme")
@@ -134,6 +139,9 @@ public class MyUI extends UI {
 	//StatisticView statistic = new StatisticView();	
 	//StatisticModel statisticModel = new StatisticModel();
 	
+	WarningNotificationView warningNotification = new WarningNotificationView();
+	WarningNotificationModel warningNotificationModel = new WarningNotificationModel();
+	
 	// NotificationUI
 	PushNotificationUI pNotificationUI;
 
@@ -174,6 +182,8 @@ public class MyUI extends UI {
 
 		navigator.addView("notification", notification);
 		
+		navigator.addView("warningNotification", warningNotification);
+		
 		//navigator.addView("statistic", statistic);
 
 		new BasePresenter(model, start);
@@ -200,6 +210,8 @@ public class MyUI extends UI {
 		new QuestionPresenter(questionModel, questionYesNo);
 		new QuestionPresenter(questionModel, questionSmiley);
 		new NotificationPresenter(notificationModel, notification);
+		
+		new WarningNotificationPresenter(warningNotificationModel, warningNotification);
 		
 		//new StatisticPresenter(statisticModel, statistic);
 	
