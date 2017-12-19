@@ -2,15 +2,15 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import org.vaadin.highcharts.HighChart;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Component;
 
 /**
  * This class is the view of the Mood-Barometer
@@ -32,7 +32,7 @@ public class BarometerView extends BaseView implements MoodyView {
 	private static final String BUTTON_JAHR = "Jahr";
 	private static final String BUTTON_BACK = "BACK";
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
-	
+	private HighChart chart = new HighChart();
 	
 	//	private static final String IMAGE_WIDTH = "60px";
 	//private static final String IMAGE_HEIGHT = "60px";
@@ -69,51 +69,9 @@ public class BarometerView extends BaseView implements MoodyView {
 		// Alignment.MIDDLE_CENTER);
 		super.content.addComponent(buttonQuestions);
 		super.content.setComponentAlignment(buttonQuestions, Alignment.MIDDLE_CENTER);
-	
-		//Label labelGraf = new Label("Hier wird in Zukunft die Grafik der Auswertung angezeigt");
 		
-		
-		//protected Component getPlotlyApi() {
-		//PlotlyApi plotlyApi = new PlotlyApi();
-		//plotlyApi.setWidth("380px");
-		//plotlyApi.setHeight(BUTTON_HEIGHT);
-		//super.content.addComponent(plotlyApi);
-		//super.content.setComponentAlignment(plotlyApi, Alignment.MIDDLE_CENTER);
-		//LineData Line1 = new LineData("Random Line 1 ");
-		 //    	 categories: [@SuppressWarnings("serial")
-	
-	
-		    	//	private void Image() {		    			
-	// Image imageVerySad = new Image("");
-	//	imageVerySad.setWidth(IMAGE_WIDTH);
-	//imageVerySad.setHeight(IMAGE_HEIGHT);
-	//imageVerySad.setIcon(new FileResource(new File (basepath +"/VAADIN/images/VerySadIcon.png")));
-		    			
-	//Image imageSad = new Image("");
-	//	imageSad.setWidth(IMAGE_WIDTH);
-	//	imageSad.setHeight(IMAGE_HEIGHT);
-	//	imageSad.setIcon(new FileResource(new File (basepath +"/VAADIN/images/SadIcon.png")));
-		    			
-	//	Image imageNeutral = new Image("");
-	//	imageNeutral.setWidth(IMAGE_WIDTH);
-	//imageNeutral.setHeight(IMAGE_HEIGHT);
-	//imageNeutral.setIcon(new FileResource(new File (basepath +"/VAADIN/images/SmileyIcon.png")));
-		    			
-	//Image imageHappy = new Image("");
-	//imageHappy.setWidth(IMAGE_WIDTH);
-	//imageHappy.setHeight(IMAGE_HEIGHT);
-	//imageHappy.setIcon(new FileResource(new File (basepath +"/VAADIN/images/HappyIcon.png")));
-		    			
-	//	Image imageVeryHappy = new Image("");
-	//	imageVeryHappy.setWidth(IMAGE_WIDTH);
-	//	imageVeryHappy.setHeight(IMAGE_HEIGHT);
-	//imageVeryHappy.setIcon(new FileResource(new File (basepath +"/VAADIN/images/VeryHappyIcon.png")));
-// ]
-		     
-		   
-		
-		
-		
+		super.content.addComponent(chart);
+		super.content.setComponentAlignment(chart, Alignment.MIDDLE_CENTER);
 		
 		Button buttonMonat = new Button("Monat");
 		buttonMonat.addClickListener(this);
@@ -146,7 +104,68 @@ public class BarometerView extends BaseView implements MoodyView {
 		buttonBack.setIcon(new FileResource(new File(basepath + "/VAADIN/images/backIcon.png")));
 		super.content.addComponent(buttonBack);
 		super.content.setComponentAlignment(buttonBack, Alignment.MIDDLE_CENTER);
-	}
+	}	
+	
+	public void showChart(String type, int[] data) {
+		 // Note: Logic (if/else) should be refactored to at least presenter if not model
+		 // Note: categories should be generated dynamically based on current month/day
+		 // Beware of JavaScript merged into java strings abomination
+		 if (type =="year") {
+		  chart.setHcjs("var options = { "
+		   + "title: { text: 'mood diagram' }, "
+		   + "xAxis: {categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']}, "
+		   + "series: [{ name: 'Yearly mood', data: " + Arrays.toString(data) + "}] };");
+		  }
+		 else if (type == "6month") {
+		  chart.setHcjs("var options = { "
+		    + "title: { text: 'mood diagram' }, "
+		    + "xAxis: {categories: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']}, "
+		    + "series: [{ name: 'Half yearly mood', data: " + Arrays.toString(data) + "}] };");
+		 }
+		 else if (type == "month") {
+		  chart.setHcjs("var options = { "
+		    + "title: { text: 'mood diagram' }, "
+		    + "series: [{ name: 'Monthly mood', data: " + Arrays.toString(data) + "}] };");
+		  }
+		 } 
+	
+	//VERSUCH eine Statistik einzufügen =>	
+		//protected Component getPlotlyApi() {
+		//PlotlyApi plotlyApi = new PlotlyApi();
+		//plotlyApi.setWidth("380px");
+		//plotlyApi.setHeight(BUTTON_HEIGHT);
+		//super.content.addComponent(plotlyApi);
+		//super.content.setComponentAlignment(plotlyApi, Alignment.MIDDLE_CENTER);
+		//LineData Line1 = new LineData("Random Line 1 ");
+		 //    	 categories: [@SuppressWarnings("serial")
+	
+	//ICONS, welche links bei der Statistik eingefügt werden sollten=>
+		    	//	private void Image() {		    			
+	// Image imageVerySad = new Image("");
+//		imageVerySad.setWidth(IMAGE_WIDTH);
+	//imageVerySad.setHeight(IMAGE_HEIGHT);
+	//imageVerySad.setIcon(new FileResource(new File (basepath +"/VAADIN/images/VerySadIcon.png")));
+		    			
+	//Image imageSad = new Image("");
+//		imageSad.setWidth(IMAGE_WIDTH);
+//		imageSad.setHeight(IMAGE_HEIGHT);
+//		imageSad.setIcon(new FileResource(new File (basepath +"/VAADIN/images/SadIcon.png")));
+		    			
+//		Image imageNeutral = new Image("");
+//		imageNeutral.setWidth(IMAGE_WIDTH);
+	//imageNeutral.setHeight(IMAGE_HEIGHT);
+	//imageNeutral.setIcon(new FileResource(new File (basepath +"/VAADIN/images/SmileyIcon.png")));
+		    			
+	//Image imageHappy = new Image("");
+	//imageHappy.setWidth(IMAGE_WIDTH);
+	//imageHappy.setHeight(IMAGE_HEIGHT);
+	//imageHappy.setIcon(new FileResource(new File (basepath +"/VAADIN/images/HappyIcon.png")));
+		    			
+//		Image imageVeryHappy = new Image("");
+//		imageVeryHappy.setWidth(IMAGE_WIDTH);
+//		imageVeryHappy.setHeight(IMAGE_HEIGHT);
+	//imageVeryHappy.setIcon(new FileResource(new File (basepath +"/VAADIN/images/VeryHappyIcon.png")));
+	//]
 
 	@Override
 	public void addListener(ViewListener listener) {
