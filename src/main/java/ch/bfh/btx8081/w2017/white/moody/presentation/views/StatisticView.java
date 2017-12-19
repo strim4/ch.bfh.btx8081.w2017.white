@@ -11,6 +11,9 @@ import com.vaadin.ui.Label;
 
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.StatisticPresenter;
 
+//Diese Klasse wird aktuell nicht mehr benötigt
+//Bitte noch nicht löschen; Danke Sandra
+
 /**
  * This class is the view of the Statistics screen on this screen the user can
  * define his statistics for a month a half year and a year.

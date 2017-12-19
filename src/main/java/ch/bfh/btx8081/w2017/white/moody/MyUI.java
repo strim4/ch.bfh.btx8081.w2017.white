@@ -1,7 +1,6 @@
 package ch.bfh.btx8081.w2017.white.moody;
 
 import javax.servlet.annotation.WebServlet;
-
 import com.vaadin.annotations.Push;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
@@ -11,7 +10,6 @@ import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.navigator.Navigator.ComponentContainerViewDisplay;
-
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BarometerModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BaseModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.DiaryModel;
@@ -19,7 +17,6 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ProfileModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SettingsModel;
-import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.StatisticModel;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryElement;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
@@ -39,7 +36,6 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPrese
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ProfilePresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SettingsPresenter;
-import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.StatisticPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.TipsPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ActivityView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.BarometerView;
@@ -58,7 +54,6 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionSmileyView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionYesNoView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.SettingsView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.StartView;
-import ch.bfh.btx8081.w2017.white.moody.presentation.views.StatisticView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.TipsView;
 
 /**

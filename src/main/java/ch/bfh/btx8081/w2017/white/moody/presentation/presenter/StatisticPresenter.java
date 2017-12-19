@@ -6,6 +6,9 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.StatisticView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 
+//Diese Klasse wird aktuell nicht mehr benötigt
+//Bitte noch nicht löschen; Danke Sandra
+
 /* *
  * StatisticPresenter Class
  * 

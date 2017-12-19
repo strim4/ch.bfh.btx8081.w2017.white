@@ -35,7 +35,7 @@ public class Views {
 
 	public static final String BAROMETER_VIEW = "barometer";
 	
-	public static final String STATISTIC_VIEW = "statistic";
+	//public static final String STATISTIC_VIEW = "statistic";
 	
 	public static final String PROFILE_VIEW = "profile";
 	

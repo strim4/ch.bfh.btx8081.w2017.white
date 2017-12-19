@@ -10,11 +10,13 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Component;
 
 /**
  * This class is the view of the Mood-Barometer
  * 
  * @author Milena Last Edit: 01.12.17
+ * Sandra Last Edit: 19.12.2017
  */
 
 @SuppressWarnings("serial")
@@ -30,6 +32,16 @@ public class BarometerView extends BaseView implements MoodyView {
 	private static final String BUTTON_JAHR = "Jahr";
 	private static final String BUTTON_BACK = "BACK";
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
+	
+	
+	//	private static final String IMAGE_WIDTH = "60px";
+	//private static final String IMAGE_HEIGHT = "60px";
+	
+	//private static final String IMAGE_VERYSAD = "VERYSAD";
+	//private static final String IMAGE_SAD = "SAD";
+	//private static final String IMAGE_NEUTRAL = "NEUTRAL";
+	//private static final String IMAGE_HAPPY = "HAPPY";
+	//private static final String IMAGE_VERYHAPPY = "VERYHAPPY";
 
 	public BarometerView() {
 		super();
@@ -57,17 +69,51 @@ public class BarometerView extends BaseView implements MoodyView {
 		// Alignment.MIDDLE_CENTER);
 		super.content.addComponent(buttonQuestions);
 		super.content.setComponentAlignment(buttonQuestions, Alignment.MIDDLE_CENTER);
-
-		Label labelGraf = new Label("Hier wird in Zukunft die Grafik der Auswertung angezeigt");
-		labelGraf.setWidth("380px");
-		labelGraf.setHeight(BUTTON_HEIGHT);
-		super.content.addComponent(labelGraf);
-		super.content.setComponentAlignment(labelGraf, Alignment.MIDDLE_CENTER);
-		// Chart statisticChart = new Chart();
-		// super.content.addComponent(statisticChart);
-		// super.content.setComponentAlignment(statisticChart, Alignment.MIDDLE_CENTER);
-		// Mit Chart geht das nicht, dazu braucht es eine Lizenz....
-		// L�sung m�ssen wir besprechen...
+	
+		//Label labelGraf = new Label("Hier wird in Zukunft die Grafik der Auswertung angezeigt");
+		
+		
+		//protected Component getPlotlyApi() {
+		//PlotlyApi plotlyApi = new PlotlyApi();
+		//plotlyApi.setWidth("380px");
+		//plotlyApi.setHeight(BUTTON_HEIGHT);
+		//super.content.addComponent(plotlyApi);
+		//super.content.setComponentAlignment(plotlyApi, Alignment.MIDDLE_CENTER);
+		//LineData Line1 = new LineData("Random Line 1 ");
+		 //    	 categories: [@SuppressWarnings("serial")
+	
+	
+		    	//	private void Image() {		    			
+	// Image imageVerySad = new Image("");
+	//	imageVerySad.setWidth(IMAGE_WIDTH);
+	//imageVerySad.setHeight(IMAGE_HEIGHT);
+	//imageVerySad.setIcon(new FileResource(new File (basepath +"/VAADIN/images/VerySadIcon.png")));
+		    			
+	//Image imageSad = new Image("");
+	//	imageSad.setWidth(IMAGE_WIDTH);
+	//	imageSad.setHeight(IMAGE_HEIGHT);
+	//	imageSad.setIcon(new FileResource(new File (basepath +"/VAADIN/images/SadIcon.png")));
+		    			
+	//	Image imageNeutral = new Image("");
+	//	imageNeutral.setWidth(IMAGE_WIDTH);
+	//imageNeutral.setHeight(IMAGE_HEIGHT);
+	//imageNeutral.setIcon(new FileResource(new File (basepath +"/VAADIN/images/SmileyIcon.png")));
+		    			
+	//Image imageHappy = new Image("");
+	//imageHappy.setWidth(IMAGE_WIDTH);
+	//imageHappy.setHeight(IMAGE_HEIGHT);
+	//imageHappy.setIcon(new FileResource(new File (basepath +"/VAADIN/images/HappyIcon.png")));
+		    			
+	//	Image imageVeryHappy = new Image("");
+	//	imageVeryHappy.setWidth(IMAGE_WIDTH);
+	//	imageVeryHappy.setHeight(IMAGE_HEIGHT);
+	//imageVeryHappy.setIcon(new FileResource(new File (basepath +"/VAADIN/images/VeryHappyIcon.png")));
+// ]
+		     
+		   
+		
+		
+		
 		
 		Button buttonMonat = new Button("Monat");
 		buttonMonat.addClickListener(this);
@@ -83,7 +129,7 @@ public class BarometerView extends BaseView implements MoodyView {
 
 		Button buttonJahr = new Button("Jahr");
 		buttonJahr.addClickListener(this);
-		buttonJahr.setId("buttonNeutral");
+		buttonJahr.setId("buttonJahr");
 		buttonJahr.setWidth(BUTTON_WIDTH);
 		buttonJahr.setHeight(BUTTON_HEIGHT);
 
