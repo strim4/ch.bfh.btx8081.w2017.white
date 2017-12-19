@@ -31,12 +31,12 @@ public class PopupView extends BaseView implements MoodyView {
         layout.addComponent(hinzufügen);
     }
 
-    @Override
+    //@Override
     public final Component getPopupComponent() {
         return layout;
     }
 
-    @Override
+    //@Override
     public final String getMinimizedValueAsHTML() {
         return textField.getValue();
     }

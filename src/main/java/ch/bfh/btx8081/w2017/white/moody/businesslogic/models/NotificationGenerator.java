@@ -3,29 +3,41 @@ package ch.bfh.btx8081.w2017.white.moody.businesslogic.models;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Anotification;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.TextNotification;
 import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.PushMessages;
 
 /**
  * 
  * @author Zoran it allows the notifications to be pushed upon the different
- *         time of the day Depending on number of Messages, it can be used a
- *         List instead of Array Last Edit: 13.12.2017
+ *         time of the day
+ *         The Randomisation depends on number of the Messages in the ArrayList of the chosen key
+ *         inside of the hashMap
+ *         Last Edit: 19.12.2017
  *
  */
 public class NotificationGenerator {
+
+	// with full persistence (where Messages as entity are presaved in DB) no
+	// ArrayList or
+	// Hashmap is needed, messages would be directly called from DB by its type(Time
+	// of Day) and Title
 
 	private ArrayList<String> morning = new ArrayList<String>();
 	private ArrayList<String> noon = new ArrayList<String>();
 	private ArrayList<String> evening = new ArrayList<String>();
 	private ArrayList<String> night = new ArrayList<String>();
+	private DBManager dbmanager;
 
 	private HashMap<String, ArrayList<String>> messages = new HashMap<String, ArrayList<String>>();
 
 	public NotificationGenerator() {
+
+		dbmanager = new DBManager();
 
 		morning.add("Just do it , dont waste your time thinking about it");
 		morning.add("You are the nicest person in the whole world");
@@ -57,7 +69,7 @@ public class NotificationGenerator {
 			return "MORNING";
 		} else if (hour > 12 && hour <= 18) {
 			return "NOON";
-		} else if (hour > 18 && hour <= 22) {
+		} else if (hour > 18 && hour < 22) {
 			return "EVENING";
 		} else {
 			// could be set to continue; if no need for message at night
@@ -68,15 +80,19 @@ public class NotificationGenerator {
 
 	public Anotification getNotif() {
 
-//		DBManager manager = new DBManager();
-
 		int currentTimeHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
 		String periodOfDay = getPeriodOfDay(currentTimeHour);
 
 		Random random = new Random();
 
-		int randomNumber = random.nextInt(3);
+		List<PushMessages> pushMessages = dbmanager.getPushMessages(periodOfDay);
+
+		// it ensures that the random number is not out of bounds of the chosen list
+		int randomNumber = random.nextInt(messages.get(periodOfDay).size());
+
+		// int randomNumber = (pushMessages.size()== 0) ? 0:
+		// random.nextInt(pushMessages.size());
 
 		String title = "";
 
@@ -88,7 +104,7 @@ public class NotificationGenerator {
 
 		TextNotification notification = new TextNotification(title, "It's a good day to have a good day");
 
-	//	manager.persistObject(notification);
+		dbmanager.persistObject(notification);
 
 		return notification;
 

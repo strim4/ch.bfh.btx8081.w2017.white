@@ -13,9 +13,12 @@ public class NotificationGeneratorTest {
 	@Test
 	public void testGetPeriodOfDay() {
 		
-		int currentTimeHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-		
-		assertEquals("NIGHT", ng.getPeriodOfDay(currentTimeHour));
+		//for the testing time of day, expected Input is: MORNING or NOON or EVENING or NIGHT
+
+		assertEquals("MORNING", ng.getPeriodOfDay(9));
+		assertEquals("NOON", ng.getPeriodOfDay(13));
+		assertEquals("EVENING", ng.getPeriodOfDay(19));
+		assertEquals("NIGHT", ng.getPeriodOfDay(23));
 		
 		
 	}

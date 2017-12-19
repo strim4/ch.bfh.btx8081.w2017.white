@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -9,29 +10,38 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 /**
  * @author Milena
- * @author Zoran 
- * Notification Class Last Edit: 14.12.17
+ * @author Zoran
  * 
- * it represents the Superclass for all Notifications
+ *         Notification Class Last Edit: 19.12.17
+ * 
+ *         it represents the Superclass for all Notifications
  */
 
-// the name fo the Class cannot be Notification (same as Notification Class of
-// vaadin)
+// the name of the Class cannot be Notification (same as Notification Class of
+// Vaadin)
 
-//@Entity
-//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class Anotification {
+@SuppressWarnings("serial")
+@Entity
+@Table
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class Anotification implements Serializable {
 
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected int id;
+	
 	protected String title;
 	protected String type;
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	protected Date date;
+	
 	// it allows to check if notification has been sent
 	protected boolean isSent;
 	protected String description;
@@ -46,15 +56,19 @@ public abstract class Anotification {
 
 	public Anotification(String title, String description) {
 		this.title = title;
+		
+		//this is only for controlling purposes
 		this.date = new Date();
 		this.id = -1;
 		this.isSent = false;
+		//
+		
 		this.description = description;
 	}
 
 	public Anotification(int id, String title, String type) {
 		this.id = id;
-		this.title= title;
+		this.title = title;
 		this.type = type;
 	}
 

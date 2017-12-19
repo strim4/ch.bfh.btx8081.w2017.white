@@ -9,6 +9,7 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.PushMessages;
 
 public class DBManager {
 	
@@ -64,6 +65,12 @@ public List<DiaryPic> showp() {
 	 List<DiaryPic> p = q.getResultList();
 	 return p;
 
+}
+
+public List<PushMessages> getPushMessages(String type){
+	Query q = em.createQuery("select m from PushMessages m where m.type =:type");
+	q.setParameter("type", type);
+	return q.getResultList();
 }
 
 
