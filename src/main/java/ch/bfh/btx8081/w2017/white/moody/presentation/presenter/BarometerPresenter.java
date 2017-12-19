@@ -11,12 +11,17 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
  * Activity Presenter class does the connection from the Activity to the
  * ActivityView.
  * 
- * @author Milena Last edit: 30.11.17
- * Sandra Last edit 19.12.2017
+ * @author Milena Last edit: 30.11.17 Sandra Last edit 19.12.2017
  */
 
 @SuppressWarnings("serial")
 public class BarometerPresenter implements ViewListener {
+
+	// Note: Dummy data - should be generated dynamically in the model
+	private int[] dummyDataYear = new int[] { 1, 3, 2, 4, 5, 4, 3, 4, 4, 3, 2, 3 };
+	private int[] dummyData6Month = new int[] { 3, 4, 4, 3, 2, 3 };
+	private int[] dummyDataMonth = new int[] { 1, 3, 2, 4, 5, 4, 3, 4, 4, 3, 4, 3, 2, 2, 2, 2, 5, 4, 3, 4, 4, 3, 2, 4,
+			1, 3, 2, 4, 5, 3, 3 };
 
 	@SuppressWarnings("unused")
 	private BarometerModel model;
@@ -25,6 +30,7 @@ public class BarometerPresenter implements ViewListener {
 	public BarometerPresenter(BarometerModel model, BarometerView view) {
 		this.model = model;
 		this.view = view;
+		view.showChart("year", dummyDataYear);
 		view.addListener(this);
 	}
 
@@ -41,13 +47,13 @@ public class BarometerPresenter implements ViewListener {
 		// view.getUI().getNavigator().navigateTo(Views.STATISTIC_VIEW);
 		// break;
 		case "buttonMonat":
-			// view muss noch gemacht werden, sobald klar ist, was angezeigt werden soll
-			break;
-		case "button6Monate":
-			// view muss noch gemacht werden, sobald klar ist, was angezeigt werden soll
-			break;
+			view.showChart("month", dummyDataMonth);
+			  break;
+				case "button6Monate":
+			view.showChart("6month", dummyData6Month);
+			  break;
 		case "buttonJahr":
-			// view muss noch gemacht werden, sobald klar ist, was angezeigt werden soll
+			view.showChart("year", dummyDataYear);
 			break;
 		case "buttonBack":
 			view.getUI().getNavigator().navigateTo(Views.START_VIEW);
