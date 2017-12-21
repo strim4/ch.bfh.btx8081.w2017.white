@@ -180,7 +180,6 @@ public class MyUI extends UI {
 		navigator.addView("barometer", barometer);
 		navigator.addView("settings", settings);
 		navigator.addView("profile", profile);
-		navigator.addView("subwindow", subwindow);
 
 		// navigator.addView("question", question); Begruendung siehe oben
 		navigator.addView("questionyesno", questionYesNo);
@@ -199,7 +198,7 @@ public class MyUI extends UI {
 		new DiaryPresenter(diaryModel, diary);
 		new DiaryTextPresenter(diaryText, text);
 		new DiaryPicPresenter(diaryPic, pic);
-		new ActivityPresenter(activity, activityView);
+		new ActivityPresenter(activity, activityView, this);
 		new DiaryElementListPresenter(list);
 		new DiaryElementPresenter(diaryElement, element);
 
@@ -207,7 +206,7 @@ public class MyUI extends UI {
 		new ExercisesPresenter(exercises);
 		new InformationsPresenter(informations);
 		new TipsPresenter(tips);
-		new SubWindowPresenter(subwindow);
+		//new SubWindowPresenter(subwindow);
 		
 		//new StatisticPresenter(statisticModel, statistic); warum ist das wieder da? Es gibt keinen Statisticpresenter mehr.
 		// den musste ich raus nehmen! Siehe ein paar Zeilen weiter unten...
