@@ -37,6 +37,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPrese
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ProfilePresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SettingsPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SubWindowPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.TipsPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.WarningNotificationPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ActivityView;
@@ -56,6 +57,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionSmileyView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionYesNoView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.SettingsView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.StartView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.SubWindowView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.TipsView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.WarningNotificationView;
 
@@ -139,6 +141,9 @@ public class MyUI extends UI {
 	//StatisticView statistic = new StatisticView();	
 	//StatisticModel statisticModel = new StatisticModel();
 	
+	// Subwindow
+	SubWindowView subwindow = new SubWindowView();
+	
 	WarningNotificationView warningNotification = new WarningNotificationView();
 	WarningNotificationModel warningNotificationModel = new WarningNotificationModel();
 	
@@ -175,6 +180,7 @@ public class MyUI extends UI {
 		navigator.addView("barometer", barometer);
 		navigator.addView("settings", settings);
 		navigator.addView("profile", profile);
+		navigator.addView("subwindow", subwindow);
 
 		// navigator.addView("question", question); Begruendung siehe oben
 		navigator.addView("questionyesno", questionYesNo);
@@ -201,6 +207,7 @@ public class MyUI extends UI {
 		new ExercisesPresenter(exercises);
 		new InformationsPresenter(informations);
 		new TipsPresenter(tips);
+		new SubWindowPresenter(subwindow);
 		
 		//new StatisticPresenter(statisticModel, statistic); warum ist das wieder da? Es gibt keinen Statisticpresenter mehr.
 		// den musste ich raus nehmen! Siehe ein paar Zeilen weiter unten...
@@ -215,6 +222,7 @@ public class MyUI extends UI {
 		
 		//new StatisticPresenter(statisticModel, statistic);
 	
+		
 
 		// NotificationUI launch with his concurrent Thread
 		pNotificationUI = new PushNotificationUI(UI.getCurrent(), layout);
