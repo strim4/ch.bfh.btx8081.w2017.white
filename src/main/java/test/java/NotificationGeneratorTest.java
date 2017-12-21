@@ -1,10 +1,14 @@
-package ch.bfh.btx8081.w2017.white.moody.businesslogic.models;
+package test.java;
+
+
 
 import static org.junit.Assert.*;
 
 import java.util.Calendar;
 
 import org.junit.Test;
+
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationGenerator;
 
 public class NotificationGeneratorTest {
 
