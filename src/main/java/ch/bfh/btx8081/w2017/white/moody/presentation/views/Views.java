@@ -49,7 +49,7 @@ public class Views {
 	
 	public static final String TIPS_VIEW = "tips";
 	
-	public static final String POPUP_VIEW = "popup";
+	public static final String SUBWINDOW_VIEW = "subwindow";
 	
 	//TODO restliche Views einbauen
 
