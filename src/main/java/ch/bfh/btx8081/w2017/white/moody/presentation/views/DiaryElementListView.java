@@ -1,14 +1,19 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
-
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.imageio.ImageIO;
+
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.renderers.ImageRenderer;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
@@ -65,6 +70,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 
 		Grid<DiaryPic> griddp = new Grid<>();
 		griddp.addColumn(DiaryPic::getName).setCaption("Name");
+				
 		griddp.addColumn(DiaryPic::getImage).setCaption("Bild");
 		griddp.addColumn(DiaryPic::getEntryDate).setCaption("Datum");
 		super.content.addComponent(griddp);

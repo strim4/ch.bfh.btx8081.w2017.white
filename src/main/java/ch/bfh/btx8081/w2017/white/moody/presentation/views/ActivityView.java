@@ -145,10 +145,7 @@ public class ActivityView extends BaseView implements MoodyView{
 		return a;
 	}
 	
-	public String getActivity() {
-		String ac = activity.getValue();
-		return ac;
-	}
+	
 	
 	
 	public String getNameValue() {
