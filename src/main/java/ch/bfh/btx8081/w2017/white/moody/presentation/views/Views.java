@@ -4,7 +4,7 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.views;
  * MoodyView interface
  * @author Chantal
  * @author Milena
- * Last edit: 30.11.17
+ * Last edit: 21.12.17
  */
 
 public class Views {
@@ -50,6 +50,8 @@ public class Views {
 	public static final String TIPS_VIEW = "tips";
 	
 	public static final String SUBWINDOW_VIEW = "subwindow";
+	
+	public static final String WARNINGNOTIFICATION_VIEW = "warningNotification";
 	
 	//TODO restliche Views einbauen
 
