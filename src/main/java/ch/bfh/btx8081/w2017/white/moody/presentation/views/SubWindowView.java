@@ -26,7 +26,7 @@ public class SubWindowView extends Window {
 	    vl.addComponent(new Button("Hinzufügen"));
 	    this.center();
 	    vl.setHeight("150px");
-	    vl.setWidth("35	0px");
+	    vl.setWidth("350px");
 	}
 	
 	
