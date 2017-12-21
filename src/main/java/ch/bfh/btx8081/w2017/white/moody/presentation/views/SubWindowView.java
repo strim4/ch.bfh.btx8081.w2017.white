@@ -22,6 +22,7 @@ public class SubWindowView extends Window {
 		VerticalLayout vl = new VerticalLayout();
 		this.setContent(vl);
 		vl.addComponent(new Label("Neue Aktivität hinzufügen:"));
+		vl.addComponent(new TextField());
 	    vl.addComponent(new Button("Hinzufügen"));
 	    this.center();
 	}
