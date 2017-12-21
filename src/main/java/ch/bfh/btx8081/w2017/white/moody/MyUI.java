@@ -33,7 +33,6 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryTextPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ExercisesPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.InformationsPresenter;
-import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.NotificationPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ProfilePresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SettingsPresenter;
@@ -51,7 +50,6 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryTextView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ExercisesView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.InformationsView;
-import ch.bfh.btx8081.w2017.white.moody.presentation.views.NotificationView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ProfileView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionSmileyView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionYesNoView;
@@ -97,7 +95,7 @@ public class MyUI extends UI {
 	SettingsModel settingsModel = new SettingsModel();
 	ProfileView profile = new ProfileView();
 	ProfileModel profileModel = new ProfileModel();
-	
+
 	// Diary
 	DiaryView diary = new DiaryView();
 	DiaryModel diaryModel = new DiaryModel();
@@ -111,42 +109,38 @@ public class MyUI extends UI {
 	DiaryElement diaryElement = new DiaryElement();
 	DiaryElementView element = new DiaryElementView();
 
-	//Exercises
+	// Exercises
 	ExercisesView exercises = new ExercisesView();
-	
-	//Informations
+
+	// Informations
 	InformationsView informations = new InformationsView();
-	
-	//Tips
+
+	// Tips
 	TipsView tips = new TipsView();
-	
-	//Contact
+
+	// Contact
 	ContactView contact = new ContactView();
-	
+
 	// Barometer
 	BarometerView barometer = new BarometerView();
 	BarometerModel barometerModel = new BarometerModel();
 
 	// Questions
-	// QuestionView question = new QuestionView(); Wird nicht gebraucht, da dem User nur Yes/No und Smiley angezeigt werden
+	// QuestionView question = new QuestionView(); Wird nicht gebraucht, da dem User
+	// nur Yes/No und Smiley angezeigt werden
 	QuestionYesNoView questionYesNo = new QuestionYesNoView();
 	QuestionSmileyView questionSmiley = new QuestionSmileyView();
 	QuestionModel questionModel = new QuestionModel();
 
 	// Notification
-	NotificationView notification = new NotificationView();
 	NotificationModel notificationModel = new NotificationModel();
-	
-	//Statistic
-	//StatisticView statistic = new StatisticView();	
-	//StatisticModel statisticModel = new StatisticModel();
-	
+
 	// Subwindow
 	SubWindowView subwindow = new SubWindowView();
-	
+
 	WarningNotificationView warningNotification = new WarningNotificationView();
 	WarningNotificationModel warningNotificationModel = new WarningNotificationModel();
-	
+
 	// NotificationUI
 	PushNotificationUI pNotificationUI;
 
@@ -185,16 +179,12 @@ public class MyUI extends UI {
 		navigator.addView("questionyesno", questionYesNo);
 		navigator.addView("questionsmiley", questionSmiley);
 
-		navigator.addView("notification", notification);
-		
 		navigator.addView("warningNotification", warningNotification);
-		
-		//navigator.addView("statistic", statistic);
 
 		new BasePresenter(model, start);
 		new SettingsPresenter(settingsModel, settings);
 		new ProfilePresenter(profileModel, profile);
-		
+
 		new DiaryPresenter(diaryModel, diary);
 		new DiaryTextPresenter(diaryText, text);
 		new DiaryPicPresenter(diaryPic, pic);
@@ -206,27 +196,18 @@ public class MyUI extends UI {
 		new ExercisesPresenter(exercises);
 		new InformationsPresenter(informations);
 		new TipsPresenter(tips);
-		//new SubWindowPresenter(subwindow);
-		
-		//new StatisticPresenter(statisticModel, statistic); warum ist das wieder da? Es gibt keinen Statisticpresenter mehr.
-		// den musste ich raus nehmen! Siehe ein paar Zeilen weiter unten...
+		// new SubWindowPresenter(subwindow);
 
 		new BarometerPresenter(barometerModel, barometer);
 		// new QuestionPresenter(questionModel, question); Begruendung siehe oben
 		new QuestionPresenter(questionModel, questionYesNo);
 		new QuestionPresenter(questionModel, questionSmiley);
-		new NotificationPresenter(notificationModel, notification);
-		
+
 		new WarningNotificationPresenter(warningNotificationModel, warningNotification);
-		
-		//new StatisticPresenter(statisticModel, statistic);
-	
-		
 
 		// NotificationUI launch with his concurrent Thread
 		pNotificationUI = new PushNotificationUI(UI.getCurrent(), layout);
 		pNotificationUI.start();
-
 	}
 
 	@WebServlet(urlPatterns = "/*", name = "Moody", asyncSupported = true)
