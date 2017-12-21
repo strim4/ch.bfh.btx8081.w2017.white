@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.vaadin.shared.Position;
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
@@ -43,7 +44,8 @@ public class ActivityPresenter implements ViewListener{
 		
 		switch(buttonID) {
 		case "newActivity":
-			view.getUI().getNavigator().navigateTo(Views.POPUP_VIEW);
+			view.getUI().getNavigator().navigateTo(Views.SUBWINDOW_VIEW);
+			break;
 			
 		case "buttonSave":
 			Activity a = new Activity(view.getNameValue(), view.getActivityValue(), view.getDateValue(), new Date());
