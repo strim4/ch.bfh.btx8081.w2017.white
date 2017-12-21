@@ -38,7 +38,6 @@ public class ProfilePresenter implements ViewListener {
 		
 		switch(buttonID) {
 		case "buttonSave":
-			//TODO watch that Button works
 		Profile p = new Profile(view.getFirstNameValue(), view.getLastNameValue(), 
 					view.getDoctor(), view.getDoctorPhone(), view.getContact(), 
 					view.getContactPhone());
@@ -49,7 +48,7 @@ public class ProfilePresenter implements ViewListener {
 			saved.show("Eintrag gespeichert");
 			break;
 		case "buttonBack":
-			view.getUI().getNavigator().navigateTo(Views.START_VIEW);
+			view.getUI().getNavigator().navigateTo(Views.SETTINGS_VIEW);
 			break;
 		}
 		
