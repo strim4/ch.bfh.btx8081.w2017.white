@@ -80,7 +80,7 @@ public class ActivityView extends BaseView implements MoodyView{
 //		//Aktivitaet auswaehlen wird noch angepasst --> Datenbank
 		comboBox = new ComboBox<>("Aktivität");
 		comboBox.setItems("Spazieren", "TV schauen", "Wandern",
-		        "Klettern", "Schwimmen", "Ski fahren", "Kino");//TODO hier Daten aus Datenbank beziehen
+		        "Klettern", "Schwimmen", "Ski fahren", "Kino", "Jogging");//TODO hier Daten aus Datenbank beziehen
 //		comboBox.setItems((Stream<String>) dbm.showa());
 		comboBox.setWidth("360px");
 		activityChoice.addComponent(comboBox);
