@@ -23,7 +23,7 @@ public class SubWindowView extends Window {
 		this.setContent(vl);
 		vl.addComponent(new Label("Neue Aktivität hinzufügen:"));
 		vl.addComponent(new TextField());
-	    vl.addComponent(new Button("Hinzufügen"));
+	    vl.addComponent(new Button("Hinzufügen", event -> close()));
 	    this.center();
 	    vl.setHeight("150px");
 	    vl.setWidth("350px");
