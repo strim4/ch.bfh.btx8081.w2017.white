@@ -55,7 +55,7 @@ public class ProfileView extends BaseView implements MoodyView {
 
 		firstNameTF = new TextField("Vorname");
 		firstNameTF.setWidth("500px");
-		firstNameTF.setData(dbm.showpr());
+		firstNameTF.setData(dbm.getpr());
 		firstNameTF.selectAll();
 		firstNameTF.setValue(DESIGN_ATTR_PLAIN_TEXT);
 		//firstNameTF.setValue(Profile::getFirstName);

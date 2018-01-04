@@ -30,7 +30,7 @@ class PersistanceTest {
 		
 		dbm.persistObject(dte);
 		
-		System.out.println(dbm.showd());
+		System.out.println(dbm.getd());
 	
 
        

@@ -61,7 +61,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		griddt.addColumn(DiaryText::getNote).setCaption("Eintrag");
 		griddt.addColumn(DiaryText::getEntryDate).setCaption("Datum");
 		super.content.addComponent(griddt);
-		griddt.setItems((Collection<DiaryText>) dbm.showd());
+		griddt.setItems((Collection<DiaryText>) dbm.getd());
 		super.content.setComponentAlignment(griddt, Alignment.MIDDLE_CENTER);
 		
 		Label dpTitle = new Label("Alle Bildereinträge aus dem Tagebuch");
@@ -74,7 +74,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		griddp.addColumn(DiaryPic::getImageByte).setCaption("Bild");
 		griddp.addColumn(DiaryPic::getEntryDate).setCaption("Datum");
 		super.content.addComponent(griddp);
-		griddp.setItems((Collection<DiaryPic>) dbm.showp());
+		griddp.setItems((Collection<DiaryPic>) dbm.getp());
 		super.content.setComponentAlignment(griddp, Alignment.MIDDLE_CENTER);
 		
 		Label daTitle = new Label("Alle Aktivitäten aus dem Tagebuch");
@@ -86,7 +86,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		gridda.addColumn(Activity::getDescription).setCaption("Beschreibung");
 		gridda.addColumn(Activity::getEntryDate).setCaption("Datum");
 		super.content.addComponent(gridda);
-		gridda.setItems((Collection<Activity>) dbm.showa());
+		gridda.setItems((Collection<Activity>) dbm.geta());
 		super.content.setComponentAlignment(gridda, Alignment.MIDDLE_CENTER);
 		
 

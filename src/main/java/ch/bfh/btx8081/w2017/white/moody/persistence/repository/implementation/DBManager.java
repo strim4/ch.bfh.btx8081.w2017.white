@@ -33,10 +33,7 @@ private DBManager() {
 	this.em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
 }
 
-protected List<?> getResultSet(String queryText) {
-	Query query = this.em.createQuery(queryText);
-	return query.getResultList();
-}
+
 
 public void persistObject(SEntity sentity) {
 
@@ -51,14 +48,14 @@ public void persistObject(SEntity sentity) {
 	
 }
 
-public List<DiaryText> showd() {
+public List<DiaryText> getd() {
 	Query q = em.createQuery("select dt from DiaryText dt");
 	 List<DiaryText> dt = q.getResultList();
 	 return dt;
 
 }
 
-public List<Profile> showpr() {
+public List<Profile> getpr() {
 	Query q = em.createQuery("select pr from Profile pr");
 	 List<Profile> pr = q.getResultList();
 	 return pr;
@@ -66,13 +63,13 @@ public List<Profile> showpr() {
 }
 
 
-public List<Activity> showa() {
+public List<Activity> geta() {
 	Query q = em.createQuery("select a from Activity a");
 	 List<Activity> a = q.getResultList();
 	 return a;
 
 }
-public List<DiaryPic> showp() {
+public List<DiaryPic> getp() {
 	Query q = em.createQuery("select p from DiaryPic p");
 	 List<DiaryPic> p = q.getResultList();
 	 return p;
