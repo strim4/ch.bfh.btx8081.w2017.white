@@ -10,7 +10,7 @@ import java.util.*;
  *
  */
 
-public class Questionnaire {
+public class Questionnaire implements SEntity {
 
     // todo: delete question elements
 

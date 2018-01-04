@@ -16,7 +16,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryTextView;
 @Entity
 @DiscriminatorValue(value = "TE")
 
-public class DiaryText extends DiaryElement implements Serializable{
+public class DiaryText extends DiaryElement implements Serializable, SEntity{
 	
 	private String note;
 

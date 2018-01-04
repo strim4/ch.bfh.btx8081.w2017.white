@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table
-public class ImageNotification extends Anotification {
+public class ImageNotification extends Anotification implements SEntity {
 
 
 	@GeneratedValue(strategy = GenerationType.AUTO)

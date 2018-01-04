@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class PushMessages {
+public class PushMessages implements SEntity {
 	private String message;
 
 	@Id

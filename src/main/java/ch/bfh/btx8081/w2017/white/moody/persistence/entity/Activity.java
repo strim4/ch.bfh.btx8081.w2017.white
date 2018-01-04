@@ -13,7 +13,7 @@ import javax.persistence.Entity;
  */
 @Entity
 @DiscriminatorValue(value = "AE")
-public class Activity extends DiaryElement implements Serializable {
+public class Activity extends DiaryElement implements Serializable, SEntity {
 	
 	private String description;
 

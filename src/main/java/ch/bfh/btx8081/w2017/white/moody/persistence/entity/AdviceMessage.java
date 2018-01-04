@@ -4,7 +4,7 @@ package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
  * @author Roberto Advice messages Last edit: 28.11.17
  */
 
-public class AdviceMessage {
+public class AdviceMessage implements SEntity {
 
 	private String advice;
 	private int adviceId;

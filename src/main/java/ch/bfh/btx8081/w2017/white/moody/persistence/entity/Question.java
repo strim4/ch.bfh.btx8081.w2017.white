@@ -16,7 +16,7 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type")
 */
-public class Question {
+public class Question implements SEntity {
 
     // attributes
  //   @Id

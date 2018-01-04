@@ -21,7 +21,7 @@ import javax.persistence.Table;
 @SuppressWarnings("serial")
 @Entity
 @Table
-public class Profile implements Serializable{
+public class Profile implements Serializable, SEntity{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

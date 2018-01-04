@@ -17,7 +17,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table
-public class TextNotification extends Anotification{
+public class TextNotification extends Anotification implements SEntity{
 	
 	
 	@GeneratedValue(strategy = GenerationType.AUTO)

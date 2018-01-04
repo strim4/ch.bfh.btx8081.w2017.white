@@ -12,6 +12,7 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.PushMessages;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.SEntity;
 
 public class DBManager {
 	
@@ -37,13 +38,13 @@ protected List<?> getResultSet(String queryText) {
 	return query.getResultList();
 }
 
-public void persistObject(Object object) {
+public void persistObject(SEntity sentity) {
 
 	EntityTransaction entityTransaction = this.em.getTransaction();
 	
 	entityTransaction.begin();
 	
-	this.em.persist(object);
+	this.em.persist(sentity);
 	this.em.flush();
 	
 	entityTransaction.commit();

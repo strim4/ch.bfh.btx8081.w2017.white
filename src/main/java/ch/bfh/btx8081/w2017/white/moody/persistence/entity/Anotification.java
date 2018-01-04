@@ -30,7 +30,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Table
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Anotification implements Serializable {
+public class Anotification implements Serializable, SEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

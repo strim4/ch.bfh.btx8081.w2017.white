@@ -21,7 +21,7 @@ import com.vaadin.ui.Image;
  */
 @Entity
 @DiscriminatorValue(value = "PE")
-public class DiaryPic extends DiaryElement implements Serializable {
+public class DiaryPic extends DiaryElement implements Serializable, SEntity {
 
 	private byte[] imageFile;
 	private String description;
