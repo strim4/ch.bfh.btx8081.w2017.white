@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.atmosphere.config.service.Singleton;
+
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
@@ -13,15 +15,24 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.PushMessages;
 
 public class DBManager {
 	
+	private static DBManager dbm = null;
+	
+	public static DBManager getInstance() {
+		if(dbm == null) {
+			dbm = new DBManager();
+		}
+		return dbm;
+	}
+	
 private  EntityManager em;
 
 private static final String PERSISTENCE_UNIT_NAME = "ch.bfh.btx8081.w2017.white";
 
-public DBManager() {
+private DBManager() {
 	this.em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
 }
 
-public List<?> getResultSet(String queryText) {
+protected List<?> getResultSet(String queryText) {
 	Query query = this.em.createQuery(queryText);
 	return query.getResultList();
 }

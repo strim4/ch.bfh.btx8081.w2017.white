@@ -43,8 +43,11 @@ public class DiaryPicPresenter implements ViewListener {
 			DiaryPic dp;
 			try {
 				dp = new DiaryPic(view.getNameValue(), view.getPicValue(), new Date(), view.getDateValue());
+				  DBManager dbm = DBManager.getInstance( );
+				  dbm.persistObject(dp);
+			     /* tmp.demoMethod( );
 				DBManager dbm = new DBManager();
-				dbm.persistObject(dp);
+				dbm.persistObject(dp); */
 				Notification saved = new Notification("");
 				saved.setPosition(Position.BOTTOM_CENTER);
 				saved.show("Eintrag gespeichert");

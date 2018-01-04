@@ -32,7 +32,7 @@ public class ProfileView extends BaseView implements MoodyView {
 
 	private static final String BUTTON_WIDTH = "120px";
 	private static final String BUTTON_HEIGHT = "120px";
-	private DBManager dbm = new DBManager();
+	private DBManager dbm = DBManager.getInstance( );
 
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 

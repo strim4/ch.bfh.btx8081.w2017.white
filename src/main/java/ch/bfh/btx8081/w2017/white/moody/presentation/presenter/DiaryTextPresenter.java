@@ -39,7 +39,8 @@ public class DiaryTextPresenter implements ViewListener{
 		switch(buttonID) {
 		case "buttonSave":			
 			DiaryText dt = new DiaryText(view.getNameValue(), view.getTFValue(), view.getDateValue(), new Date());
-			DBManager dbm = new DBManager();		
+			//DBManager dbm = new DBManager();
+			DBManager dbm = DBManager.getInstance( );
 			dbm.persistObject(dt);
 			Notification saved = new Notification("");
 			saved.setPosition(Position.BOTTOM_CENTER);

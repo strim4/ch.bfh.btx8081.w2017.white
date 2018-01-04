@@ -1,4 +1,4 @@
-package test.java;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 
+
 /**
  * Created by Moritz on 21.12.2017.
  */
@@ -18,7 +19,7 @@ class PersistanceTest {
 	
 	@Test
    public void persistDiaryTextElement() throws Exception {
-		DBManager dbm = new DBManager();	
+		DBManager dbm = DBManager.getInstance( );	
 		
 		DiaryText dte = new DiaryText();
 		

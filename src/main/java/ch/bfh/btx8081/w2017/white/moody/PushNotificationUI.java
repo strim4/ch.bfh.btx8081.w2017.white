@@ -70,7 +70,7 @@ public class PushNotificationUI extends Thread {
 			// it can be set to (true) for endless thread
 			while (count < 4) {
 				// the time delay between the notifications is been set here (how often per day)
-				Thread.sleep(10000);
+				Thread.sleep(100000000);
 
 				ui.access(new Runnable() {
 					@Override

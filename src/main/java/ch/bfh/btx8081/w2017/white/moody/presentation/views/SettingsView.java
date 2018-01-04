@@ -25,7 +25,7 @@ public class SettingsView extends BaseView implements MoodyView{
 	
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 	
-	private DBManager dbm = new DBManager();
+	private DBManager dbm = DBManager.getInstance( );
 	private Button buttonProfileNew = new Button("Neues Profil erstellen");
 	private Grid<Profile> gridpr = new Grid<>();
 	

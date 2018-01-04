@@ -31,13 +31,13 @@ public class NotificationGenerator {
 	private ArrayList<String> noon = new ArrayList<String>();
 	private ArrayList<String> evening = new ArrayList<String>();
 	private ArrayList<String> night = new ArrayList<String>();
-	private DBManager dbmanager;
+	private DBManager dbm = DBManager.getInstance();
 
 	private HashMap<String, ArrayList<String>> messages = new HashMap<String, ArrayList<String>>();
 
 	public NotificationGenerator() {
 
-		dbmanager = new DBManager();
+	
 
 		morning.add("Just do it , dont waste your time thinking about it");
 		morning.add("You are the nicest person in the whole world");
@@ -86,7 +86,7 @@ public class NotificationGenerator {
 
 		Random random = new Random();
 
-		List<PushMessages> pushMessages = dbmanager.getPushMessages(periodOfDay);
+		List<PushMessages> pushMessages = dbm.getPushMessages(periodOfDay);
 
 		// it ensures that the random number is not out of bounds of the chosen list
 		int randomNumber = random.nextInt(messages.get(periodOfDay).size());
@@ -104,7 +104,7 @@ public class NotificationGenerator {
 
 		TextNotification notification = new TextNotification(title, "It's a good day to have a good day");
 
-		dbmanager.persistObject(notification);
+		dbm.persistObject(notification);
 
 		return notification;
 

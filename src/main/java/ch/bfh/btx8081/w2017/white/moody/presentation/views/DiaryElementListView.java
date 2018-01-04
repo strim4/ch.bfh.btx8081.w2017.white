@@ -38,8 +38,8 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 	Button show;
 
 	Button buttonBack;
-	private DBManager dbm = new DBManager();
-
+	
+	private DBManager dbm = DBManager.getInstance( );
 	public DiaryElementListView() {
 
 		super();
@@ -71,7 +71,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		Grid<DiaryPic> griddp = new Grid<>();
 		griddp.addColumn(DiaryPic::getName).setCaption("Name");
 				
-		griddp.addColumn(DiaryPic::getImage).setCaption("Bild");
+		griddp.addColumn(DiaryPic::getImageByte).setCaption("Bild");
 		griddp.addColumn(DiaryPic::getEntryDate).setCaption("Datum");
 		super.content.addComponent(griddp);
 		griddp.setItems((Collection<DiaryPic>) dbm.showp());

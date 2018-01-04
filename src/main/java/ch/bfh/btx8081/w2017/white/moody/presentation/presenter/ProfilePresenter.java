@@ -41,7 +41,8 @@ public class ProfilePresenter implements ViewListener {
 		Profile p = new Profile(view.getFirstNameValue(), view.getLastNameValue(), 
 					view.getDoctor(), view.getDoctorPhone(), view.getContact(), 
 					view.getContactPhone());
-			DBManager dbm = new DBManager();
+			//DBManager dbm = new DBManager();
+		DBManager dbm = DBManager.getInstance( );
 			dbm.persistObject(p);
 			Notification saved = new Notification("");
 			saved.setPosition(Position.BOTTOM_CENTER);

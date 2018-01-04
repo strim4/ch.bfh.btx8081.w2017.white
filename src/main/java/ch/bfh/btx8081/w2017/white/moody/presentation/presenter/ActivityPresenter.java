@@ -53,7 +53,8 @@ public class ActivityPresenter implements ViewListener{
 			break;
 		case "buttonSave":
 			Activity a = new Activity(view.getNameValue(), view.getActivityValue(), view.getDateValue(), new Date());
-			DBManager dbm = new DBManager();
+			//DBManager dbm = new DBManager();
+			DBManager dbm = DBManager.getInstance( );
 			dbm.persistObject(a);
 			Notification saved = new Notification("");
 			saved.setPosition(Position.BOTTOM_CENTER);
