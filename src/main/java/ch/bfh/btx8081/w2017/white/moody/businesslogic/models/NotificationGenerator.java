@@ -1,68 +1,35 @@
 package ch.bfh.btx8081.w2017.white.moody.businesslogic.models;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Anotification;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.PushMessages;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.TextNotification;
 import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
-import ch.bfh.btx8081.w2017.white.moody.persistence.entity.PushMessages;
 
 /**
  * 
- * @author Zoran it allows the notifications to be pushed upon the different
- *         time of the day
- *         The Randomisation depends on number of the Messages in the ArrayList of the chosen key
- *         inside of the hashMap
- *         Last Edit: 19.12.2017
+ * @author Zoran
+ * 			This Class allows the notifications to be pushed upon the
+ *         different time of the day. The Randomisation depends of number of the
+ *         Messages in the PushMessages List. The previous code had the messages
+ *         generated inside of the code lines. With the DB integration the
+ *         messages are now presaved in DB and when needed they are called in
+ *         form of the particular List and used in code. 
+ *         Last Edit: 11.01.2018
+ * 
  *
  */
 public class NotificationGenerator {
 
-	// with full persistence (where Messages as entity are presaved in DB) no
-	// ArrayList or
-	// Hashmap is needed, messages would be directly called from DB by its type(Time
-	// of Day) and Title
-
-	private ArrayList<String> morning = new ArrayList<String>();
-	private ArrayList<String> noon = new ArrayList<String>();
-	private ArrayList<String> evening = new ArrayList<String>();
-	private ArrayList<String> night = new ArrayList<String>();
-	private DBManager dbm = DBManager.getInstance();
-
-	private HashMap<String, ArrayList<String>> messages = new HashMap<String, ArrayList<String>>();
-
 	public NotificationGenerator() {
-
-	
-
-		morning.add("Just do it , dont waste your time thinking about it");
-		morning.add("You are the nicest person in the whole world");
-		morning.add("Enjoy the good luck a companion brings you.");
-
-		noon.add(
-				"Hidden in a valley beside an open stream- This will be the type of place where you will find your dream.");
-		noon.add("What ever you're goal is in life, embrace it visualize it, and for it will be yours.");
-		noon.add("You will become great if you believe in yourself.");
-
-		evening.add("Never give up. You're not a failure if you don't give up.");
-		evening.add("It is now, and in this world, that we must live.");
-		evening.add("Adversity is the parent of virtue.");
-
-		night.add("good night see ya tomorrow");
-		night.add("its a good night isnt it");
-		night.add("good night my friend sleep tight");
-
-		messages.put("MORNING", morning);
-		messages.put("NOON", noon);
-		messages.put("EVENING", evening);
-		messages.put("NIGHT", night);
 
 	}
 
+	// The Method that returns the Description of the Time of the day in form of
+	// String
 	public String getPeriodOfDay(int hour) {
 
 		if (hour > 5 && hour <= 12) {
@@ -80,31 +47,25 @@ public class NotificationGenerator {
 
 	public Anotification getNotif() {
 
+		// Interpretation of the time of the day in hour form (int)
 		int currentTimeHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
 		String periodOfDay = getPeriodOfDay(currentTimeHour);
 
 		Random random = new Random();
 
-		List<PushMessages> pushMessages = dbm.getPushMessages(periodOfDay);
+		// the Push messages are presaved in DB. It gets the List of push messages out
+		// of DB for the current period of day
+		List<PushMessages> pushMessages = DBManager.getInstance().getPushMessages(periodOfDay);
 
-		// it ensures that the random number is not out of bounds of the chosen list
-		int randomNumber = random.nextInt(messages.get(periodOfDay).size());
+		// it randomise the integer value that has the same size as the size of the list
+		// of push messages
+		int randomNumber = (pushMessages.size() == 0) ? 0 : random.nextInt(pushMessages.size());
 
-		// int randomNumber = (pushMessages.size()== 0) ? 0:
-		// random.nextInt(pushMessages.size());
-
-		String title = "";
-
-		if (messages.containsKey(periodOfDay)) {
-			title = messages.get(periodOfDay).get(randomNumber);
-		} else {
-			title = "no messages defined";
-		}
+		// it gets the random message out of the list for the current time of day
+		String title = pushMessages.get(randomNumber).getMessage();
 
 		TextNotification notification = new TextNotification(title, "It's a good day to have a good day");
-
-		dbm.persistObject(notification);
 
 		return notification;
 
