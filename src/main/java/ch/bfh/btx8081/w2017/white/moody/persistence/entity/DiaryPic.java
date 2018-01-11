@@ -15,6 +15,8 @@ import javax.xml.transform.stream.StreamSource;
 import com.vaadin.server.StreamResource;
 import com.vaadin.ui.Image;
 
+import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
+
 /**
  * @author Moritz expression of a diaryelement with an additional picture
  * 
@@ -33,6 +35,16 @@ public class DiaryPic extends DiaryElement implements Serializable, SEntity {
 	}
 
 	public DiaryPic() {
+	}
+	
+public void creatDp(String name, byte[] imageFile,  Date creationDate, String entrydate) throws IOException {
+		
+		DiaryPic dp = new DiaryPic(name, imageFile, new Date(), entrydate);
+		DBManager dbm = DBManager.getInstance( );
+		dbm.persistObject(dp);
+		
+		
+		
 	}
 
 	public byte[] getImageByte() {

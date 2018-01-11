@@ -13,8 +13,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 
 /**
  * 
- * @author Chantal
- * Last edit: 10.12.17
+ * @author Chantal Last edit: 10.12.17
  */
 
 @SuppressWarnings("serial")
@@ -23,27 +22,25 @@ public class ProfilePresenter implements ViewListener {
 	@SuppressWarnings("unused")
 	private ProfileModel model;
 	private ProfileView view;
-	
+
 	public ProfilePresenter(ProfileModel model, ProfileView view) {
 		this.model = model;
 		this.view = view;
 		view.addListener(this);
 	}
-	
+
 	@SuppressWarnings("static-access")
-	@Override	
+	@Override
 	public void buttonClick(ClickEvent event) {
-		
+
 		String buttonID = event.getButton().getId();
-		
-		switch(buttonID) {
+
+		switch (buttonID) {
 		case "buttonSave":
-		Profile p = new Profile(view.getFirstNameValue(), view.getLastNameValue(), 
-					view.getDoctor(), view.getDoctorPhone(), view.getContact(), 
-					view.getContactPhone());
-			//DBManager dbm = new DBManager();
-		DBManager dbm = DBManager.getInstance( );
-			dbm.persistObject(p);
+			Profile p = new Profile();
+			p.creatPr(view.getFirstNameValue(), view.getLastNameValue(), view.getDoctor(), view.getDoctorPhone(),
+					view.getContact(), view.getContactPhone());
+
 			Notification saved = new Notification("");
 			saved.setPosition(Position.BOTTOM_CENTER);
 			saved.show("Eintrag gespeichert");
@@ -52,7 +49,7 @@ public class ProfilePresenter implements ViewListener {
 			view.getUI().getNavigator().navigateTo(Views.SETTINGS_VIEW);
 			break;
 		}
-		
+
 	}
 
 }

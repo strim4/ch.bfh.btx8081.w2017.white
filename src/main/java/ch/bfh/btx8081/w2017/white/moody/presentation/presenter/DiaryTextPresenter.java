@@ -14,34 +14,33 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 
 /**
  * DiaryTextPresenter class
- * @author Chantal
- * Last edit: 10.12.17
+ * 
+ * @author Chantal Last edit: 10.12.17
  */
 
 @SuppressWarnings("serial")
-public class DiaryTextPresenter implements ViewListener{
+public class DiaryTextPresenter implements ViewListener {
 
 	@SuppressWarnings("unused")
 	private DiaryText model;
 	private DiaryTextView view;
-	
+
 	public DiaryTextPresenter(DiaryText model, DiaryTextView view) {
 		this.model = model;
 		this.view = view;
 		view.addListener(this);
 	}
-	
+
 	@SuppressWarnings("static-access")
 	public void buttonClick(ClickEvent event) {
-		
+
 		String buttonID = event.getButton().getId();
-		
-		switch(buttonID) {
-		case "buttonSave":			
-			DiaryText dt = new DiaryText(view.getNameValue(), view.getTFValue(), view.getDateValue(), new Date());
-			//DBManager dbm = new DBManager();
-			DBManager dbm = DBManager.getInstance( );
-			dbm.persistObject(dt);
+
+		switch (buttonID) {
+		case "buttonSave":
+
+			DiaryText dt = new DiaryText();
+			dt.creatDt(view.getNameValue(), view.getTFValue(), view.getDateValue(), new Date());
 			Notification saved = new Notification("");
 			saved.setPosition(Position.BOTTOM_CENTER);
 			saved.show("Eintrag gespeichert");

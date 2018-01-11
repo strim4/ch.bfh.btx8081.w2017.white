@@ -124,6 +124,8 @@ public class DiaryTextView extends BaseView implements MoodyView {
 		return d;
      
 	} 
+	
+
 
 	@Override
 	public void addListener(ViewListener listener) {

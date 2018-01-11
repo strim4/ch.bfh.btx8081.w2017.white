@@ -1,11 +1,15 @@
 package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 
 /**
 <<<<<<< .mine
@@ -46,6 +50,17 @@ public class Profile implements Serializable, SEntity{
 	}
 	
 	public Profile() {
+		
+	}
+	
+	public void creatPr(String firstName, String lastName, String houseDoctor, String houseDoctorPhone,
+			String emergencyContact, String emergencyContactPhone) {
+		
+		Profile pr = new Profile(firstName, lastName, houseDoctor, houseDoctorPhone, emergencyContact, emergencyContactPhone);
+		DBManager dbm = DBManager.getInstance( );
+		dbm.persistObject(pr);
+		
+		
 		
 	}
 

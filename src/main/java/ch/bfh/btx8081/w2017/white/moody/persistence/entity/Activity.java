@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
+import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
+
 /**
  * @author Moritz
  * expression of a diaryelement with an additional description of the activity
@@ -23,6 +25,15 @@ public class Activity extends DiaryElement implements Serializable, SEntity {
 	}
 	
 	public Activity() {}
+	
+	public void creatAc(String name,  String description, String entrydate , Date creationDate) {
+
+		Activity ac = new Activity(name, description, entrydate, new Date());
+		DBManager dbm = DBManager.getInstance();
+		dbm.persistObject(ac);
+
+	}
+
 
 	public String getDescription() {
 		return description;
