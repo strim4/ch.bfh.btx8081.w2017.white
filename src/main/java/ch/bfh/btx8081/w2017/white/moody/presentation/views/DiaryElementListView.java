@@ -19,6 +19,7 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryElementListPresenter;
 
 import com.vaadin.ui.*;
 
@@ -32,6 +33,7 @@ import com.vaadin.ui.*;
 public class DiaryElementListView extends BaseView implements MoodyView {
 
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
+	private DiaryElementListPresenter delp = new DiaryElementListPresenter(this);
 
 	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 
@@ -39,7 +41,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 
 	Button buttonBack;
 	
-	private DBManager dbm = DBManager.getInstance( );
+	
 	public DiaryElementListView() {
 
 		super();
@@ -61,7 +63,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		griddt.addColumn(DiaryText::getNote).setCaption("Eintrag");
 		griddt.addColumn(DiaryText::getEntryDate).setCaption("Datum");
 		super.content.addComponent(griddt);
-		griddt.setItems((Collection<DiaryText>) dbm.getd());
+		griddt.setItems((Collection<DiaryText>) delp.getd());
 		super.content.setComponentAlignment(griddt, Alignment.MIDDLE_CENTER);
 		
 		Label dpTitle = new Label("Alle Bildereinträge aus dem Tagebuch");
@@ -74,7 +76,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		griddp.addColumn(DiaryPic::getImageByte).setCaption("Bild");
 		griddp.addColumn(DiaryPic::getEntryDate).setCaption("Datum");
 		super.content.addComponent(griddp);
-		griddp.setItems((Collection<DiaryPic>) dbm.getp());
+		griddp.setItems((Collection<DiaryPic>) delp.getp());
 		super.content.setComponentAlignment(griddp, Alignment.MIDDLE_CENTER);
 		
 		Label daTitle = new Label("Alle Aktivitäten aus dem Tagebuch");
@@ -86,7 +88,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		gridda.addColumn(Activity::getDescription).setCaption("Beschreibung");
 		gridda.addColumn(Activity::getEntryDate).setCaption("Datum");
 		super.content.addComponent(gridda);
-		gridda.setItems((Collection<Activity>) dbm.geta());
+		gridda.setItems((Collection<Activity>) delp.geta());
 		super.content.setComponentAlignment(gridda, Alignment.MIDDLE_CENTER);
 		
 

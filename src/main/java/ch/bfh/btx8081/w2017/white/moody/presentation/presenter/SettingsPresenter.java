@@ -1,8 +1,14 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.presenter;
 
+import java.util.List;
+
+import javax.persistence.Query;
+
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SettingsModel;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
+import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.SettingsView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
@@ -22,6 +28,18 @@ public class SettingsPresenter implements ViewListener{
 		this.model = model;
 		this.view = view;
 		view.addListener(this);
+	}
+	
+	public SettingsPresenter( SettingsView view) {
+		
+		this.view = view;
+		view.addListener(this);
+	}
+	
+	public List<Profile> getpr() {
+		DBManager dbm = DBManager.getInstance( );
+		return dbm.getpr();
+
 	}
 	@Override
 	public void buttonClick(ClickEvent event) {

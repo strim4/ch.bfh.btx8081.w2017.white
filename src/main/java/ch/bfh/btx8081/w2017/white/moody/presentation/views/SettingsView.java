@@ -11,6 +11,7 @@ import com.vaadin.ui.Grid;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
 import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SettingsPresenter;
 
 /**
  * 
@@ -25,7 +26,7 @@ public class SettingsView extends BaseView implements MoodyView{
 	
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 	
-	private DBManager dbm = DBManager.getInstance( );
+	private SettingsPresenter sp = new SettingsPresenter(this);
 	private Button buttonProfileNew = new Button("Neues Profil erstellen");
 	private Grid<Profile> gridpr = new Grid<>();
 	
@@ -42,7 +43,7 @@ public class SettingsView extends BaseView implements MoodyView{
 		
 		gridpr.addColumn(Profile::getFirstName).setCaption("Vorname");
 		gridpr.addColumn(Profile::getLastName).setCaption("Nachname");
-		gridpr.setItems((Collection<Profile>) dbm.getpr());
+		gridpr.setItems((Collection<Profile>) sp.getpr());
 		gridpr.setHeight("80px");
 		super.content.addComponents(buttonProfileNew, gridpr);
 		super.content.setComponentAlignment(buttonProfileNew, Alignment.MIDDLE_CENTER);
