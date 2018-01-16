@@ -1,6 +1,6 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
-import com.vaadin.shared.ui.ContentMode;
+import java.util.List;
 
 /**
  * This class is the view of the WarningNotification screen on this screen the user
@@ -14,14 +14,16 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
-import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.WarningNotificationPresenter;
+
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.PushMessages;
+import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 
 public class WarningNotificationView extends BaseView implements MoodyView{
 	
-	private WarningNotificationPresenter presenter = null;
+	//private WarningNotificationPresenter presenter = null;
 	
-	private static final String BUTTON_TELEFON = "Telefon";
-	private static final String BUTTON_SMS = "SMS";
+	//private static final String BUTTON_TELEFON = "Telefon";
+	//private static final String BUTTON_SMS = "SMS";
 	private static final String BUTTON_GELESEN = "gelesen";
 
 	private static final String BUTTON_WIDTH = "87px";
@@ -35,11 +37,12 @@ public class WarningNotificationView extends BaseView implements MoodyView{
 		this.createButtons();
 	}
 
-	@SuppressWarnings("serial")
+	//@SuppressWarnings("serial")
 	private void createButtons() {
+		
+		String firstname = DBManager.getInstance().getFirstName();
 
-		Label warningNotification = new Label("Hallo <<name>> \nDu hast nun während 7 Tagen Deine täglichen Fragen negativ beantwortet. \nBitte nimm mit Deinem Arzt oder mit Deiner Bezugsperson Kontakt auf.");
-		// der <<name>> ist der Name des Users und sollte aus der DB geholt werden können :)
+		Label warningNotification = new Label("Hallo " + firstname + " Du hast nun während 7 Tagen Deine täglichen Fragen negativ beantwortet. \nBitte nimm mit Deinem Arzt oder mit Deiner Bezugsperson Kontakt auf.");
 		warningNotification.setWidth("380px");
 		//warningNotification.setHeight("");
 		super.content.addComponent(warningNotification);

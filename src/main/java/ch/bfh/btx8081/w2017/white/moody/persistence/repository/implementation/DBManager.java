@@ -7,11 +7,7 @@ import java.util.List;
  */
 
 import javax.persistence.*;
-
-import org.atmosphere.config.service.Singleton;
-
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
-
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
@@ -19,74 +15,99 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.PushMessages;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.SEntity;
 
 public class DBManager {
-	
+
 	private static DBManager dbm = null;
-	
+
 	public static DBManager getInstance() {
-		if(dbm == null) {
+		if (dbm == null) {
 			dbm = new DBManager();
 		}
 		return dbm;
 	}
-	
-private  EntityManager em;
 
-private static final String PERSISTENCE_UNIT_NAME = "ch.bfh.btx8081.w2017.white";
+	private EntityManager em;
 
-private DBManager() {
-	this.em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
-}
+	private static final String PERSISTENCE_UNIT_NAME = "ch.bfh.btx8081.w2017.white";
 
+	private DBManager() {
+		this.em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
+	}
 
+	public void persistObject(SEntity sentity) {
 
-public void persistObject(SEntity sentity) {
+		EntityTransaction entityTransaction = this.em.getTransaction();
 
-	EntityTransaction entityTransaction = this.em.getTransaction();
-	
-	entityTransaction.begin();
-	
-	this.em.persist(sentity);
-	this.em.flush();
-	
-	entityTransaction.commit();
-	
-}
+		entityTransaction.begin();
 
-public List<DiaryText> getd() {
-	Query q = em.createQuery("select dt from DiaryText dt");
-	 List<DiaryText> dt = q.getResultList();
-	 return dt;
+		this.em.persist(sentity);
+		this.em.flush();
 
-}
+		entityTransaction.commit();
+	}
 
-public List<Profile> getpr() {
+	public List<DiaryText> getd() {
+		Query q = em.createQuery("select dt from DiaryText dt");
+		List<DiaryText> dt = q.getResultList();
+		return dt;
+	}
 
-	Query q = em.createQuery("select pr from Profile pr");
-	 List<Profile> pr = q.getResultList();
-	 return pr;
+	public List<Profile> getpr() {
 
-}
+		Query q = em.createQuery("select pr from Profile pr");
+		List<Profile> pr = q.getResultList();
+		return pr;
+	}
 
+	public String getFirstName() {
+		Query q = em.createQuery("select firstname from Profile firstname");
+		List<Profile> prfirstname = q.getResultList();
+		String firstname = prfirstname.get(0).getFirstName();
+		return firstname;
+	}
 
-public List<Activity> geta() {
-	Query q = em.createQuery("select a from Activity a");
-	 List<Activity> a = q.getResultList();
-	 return a;
+	public String getHouseDoctor() {
+		Query q = em.createQuery("select housedoctor from Profile housedoctor");
+		List<Profile> prhousedoctor = q.getResultList();
+		String housedoctor = prhousedoctor.get(0).getHouseDoctor();
+		return housedoctor;
+	}
 
-}
-public List<DiaryPic> getp() {
-	Query q = em.createQuery("select p from DiaryPic p");
-	 List<DiaryPic> p = q.getResultList();
-	 return p;
+	public String getHouseDoctorPhone() {
+		Query q = em.createQuery("select housedoctorphone from Profile housedoctorphone");
+		List<Profile> prhousedoctorphone = q.getResultList();
+		String housedoctorphone = prhousedoctorphone.get(0).getHouseDoctorPhone();
+		return housedoctorphone;
+	}
 
-}
+	public String getEmergencyContact() {
+		Query q = em.createQuery("select emergencycontact from Profile emergencycontact");
+		List<Profile> premergencycontact = q.getResultList();
+		String emergencycontact = premergencycontact.get(0).getEmergencyContact();
+		return emergencycontact;
+	}
 
-public List<PushMessages> getPushMessages(String type){
-	Query q = em.createQuery("select m from PushMessages m where m.type =:type");
-	q.setParameter("type", type);
-	return q.getResultList();
-}
+	public String getEmergencyContactPhone() {
+		Query q = em.createQuery("select emergencycontactphone from Profile emergencycontactphone");
+		List<Profile> premergencycontactphone = q.getResultList();
+		String emergencycontactphone = premergencycontactphone.get(0).getEmergencyContactPhone();
+		return emergencycontactphone;
+	}
 
+	public List<Activity> geta() {
+		Query q = em.createQuery("select a from Activity a");
+		List<Activity> a = q.getResultList();
+		return a;
+	}
 
-	
+	public List<DiaryPic> getp() {
+		Query q = em.createQuery("select p from DiaryPic p");
+		List<DiaryPic> p = q.getResultList();
+		return p;
+	}
+
+	public List<PushMessages> getPushMessages(String type) {
+		Query q = em.createQuery("select m from PushMessages m where m.type =:type");
+		q.setParameter("type", type);
+		return q.getResultList();
+	}
 }
