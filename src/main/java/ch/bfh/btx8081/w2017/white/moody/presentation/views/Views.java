@@ -1,10 +1,10 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
 /**
- * MoodyView interface
+ * The Class Views contains all shortcuts for the views.
  * @author Chantal
  * @author Milena
- * Last edit: 21.12.17
+ * Last edit: 15.01.18
  */
 
 public class Views {
@@ -18,8 +18,6 @@ public class Views {
 	public static final String DIARYPIC_VIEW = "picture";
 	
 	public static final String ACTIVITY_VIEW = "activity";
-	
-	public static final String DIARYELEMENT_VIEW = "diaryElement";
 	
 	public static final String DIARYELEMENTLIST_VIEW = "list";
 	
@@ -52,7 +50,5 @@ public class Views {
 	public static final String SUBWINDOW_VIEW = "subwindow";
 	
 	public static final String WARNINGNOTIFICATION_VIEW = "warningNotification";
-	
-	//TODO restliche Views einbauen
 
 }

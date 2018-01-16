@@ -48,7 +48,10 @@ public class DiaryView extends BaseView implements MoodyView{
 		super.setLayouts(0.35f, 0.65f, 0, 0);
 	}
 	
-	
+	/**
+	 * The private method createButtons construct the layout 
+	 * of this page with the buttons.
+	 */
 	private void createButtons(){
 		
 		HorizontalLayout newDiaryElement = new HorizontalLayout();
@@ -102,12 +105,17 @@ public class DiaryView extends BaseView implements MoodyView{
 	
 	}
 	
+    /**
+     * The public method addListener adds objects to the listener.
+     */
 	@Override
 	public void addListener(ViewListener listener) {
 		listeners.add(listener);	
 	}
 
-
+	/**
+	 * The public method buttonClick handles the click event.
+	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		for (ViewListener listener : this.listeners) {

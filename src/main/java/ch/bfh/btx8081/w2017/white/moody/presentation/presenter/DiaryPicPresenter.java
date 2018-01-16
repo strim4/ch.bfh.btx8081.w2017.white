@@ -8,7 +8,6 @@ import com.vaadin.ui.Notification;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
-import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryPicView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
@@ -16,7 +15,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 /**
  * DiaryPicture Presenter
  * 
- * @author Chantal Last edit: 12.12.17
+ * @author Chantal Last edit: 16.01.18
  */
 
 @SuppressWarnings("serial")
@@ -32,6 +31,9 @@ public class DiaryPicPresenter implements ViewListener {
 		view.addListener(this);
 	}
 
+	/**
+	 * The public method buttonClick handles the events of the buttons save and back.
+	 */
 	@SuppressWarnings("static-access")
 	public void buttonClick(ClickEvent event) {
 
@@ -49,7 +51,6 @@ public class DiaryPicPresenter implements ViewListener {
 				saved.setPosition(Position.BOTTOM_CENTER);
 				saved.show("Eintrag gespeichert");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;

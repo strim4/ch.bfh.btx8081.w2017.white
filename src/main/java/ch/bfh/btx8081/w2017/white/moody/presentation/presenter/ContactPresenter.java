@@ -6,9 +6,9 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.ContactView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
 
 /**
- * 
+ * ContactPresenter Class
  * @author Chantal
- * Last edit: 10.12.17
+ * Last edit: 16.01.18
  */
 @SuppressWarnings("serial")
 public class ContactPresenter implements ViewListener{
@@ -20,6 +20,9 @@ public class ContactPresenter implements ViewListener{
 		this.view = view;
 	}
 	
+	/**
+	 * The public method buttonClick handles the events.
+	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		// TODO Auto-generated method stub

@@ -24,6 +24,9 @@ public class TipsView extends BaseView implements MoodyView {
 		this.createFutureContent();
 	}
 	
+	/**
+	 * The private method createFutureContent is for the following content.
+	 */
 	private void createFutureContent() {
 		
 		Label future = new Label("Auf dieser Seite kommen bald nuetzliche Tipps ;)");
@@ -32,12 +35,17 @@ public class TipsView extends BaseView implements MoodyView {
 		
 	}
 	
+    /**
+     * The public method addListener adds objects to the listener.
+     */
 	@Override
 	public void addListener(ViewListener listener) {
 		listeners.add(listener);	
 	}
 
-
+	/**
+	 * The public method buttonClick handles the click event.
+	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		for (ViewListener listener : this.listeners) {

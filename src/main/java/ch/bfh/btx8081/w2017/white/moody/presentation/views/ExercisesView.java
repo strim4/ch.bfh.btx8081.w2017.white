@@ -8,9 +8,9 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.Button.ClickEvent;
 
 /**
- * 
+ * The Exercises View shows a relaxing breath exercise.
  * @author Chantal
- * Last Edit: 10.12.17
+ * Last Edit: 16.01.18
  */
 @SuppressWarnings("serial")
 public class ExercisesView extends BaseView implements MoodyView {
@@ -24,20 +24,29 @@ public class ExercisesView extends BaseView implements MoodyView {
 		this.createFutureContent();
 	}
 	
+	/**
+	 * The private method createFutureContent is for the following content.
+	 */
 	private void createFutureContent() {
 		
 		Label future = new Label("Auf dieser Seite kommen bald hilfreihe Anleitungen zu Entspannungsuebeungen ;)");
 		super.content.addComponent(future);
 		super.content.setComponentAlignment(future, Alignment.MIDDLE_CENTER);
 		
+		//TODO Exercise Content with Video
 	}
 	
+    /**
+     * The public method addListener adds objects to the listener.
+     */
 	@Override
 	public void addListener(ViewListener listener) {
 		listeners.add(listener);	
 	}
 
-
+	/**
+	 * The public method buttonClick handles the click event.
+	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		for (ViewListener listener : this.listeners) {

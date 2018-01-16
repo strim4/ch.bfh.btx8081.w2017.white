@@ -7,7 +7,6 @@ import com.vaadin.ui.Notification;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
-import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryTextView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
@@ -15,7 +14,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 /**
  * DiaryTextPresenter class
  * 
- * @author Chantal Last edit: 10.12.17
+ * @author Chantal Last edit: 14.01.18
  */
 
 @SuppressWarnings("serial")
@@ -31,6 +30,9 @@ public class DiaryTextPresenter implements ViewListener {
 		view.addListener(this);
 	}
 
+	/**
+	 * The public method buttonClick handles the events of the buttons save and back.
+	 */
 	@SuppressWarnings("static-access")
 	public void buttonClick(ClickEvent event) {
 

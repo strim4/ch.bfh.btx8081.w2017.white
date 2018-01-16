@@ -37,7 +37,7 @@ import com.vaadin.ui.VerticalLayout;
 /**
  * This class shows the creation of a new Diary Picture Element.
  * 
- * @author Chantal Last edit: 03.12.17
+ * @author Chantal Last edit: 16.01.18
  */
 
 @SuppressWarnings("serial")
@@ -45,7 +45,6 @@ public class DiaryPicView extends BaseView implements MoodyView {
 
 	private static final String BUTTON_WIDTH = "120px";
 	private static final String BUTTON_HEIGHT = "120px";
-	
 
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 
@@ -68,6 +67,9 @@ public class DiaryPicView extends BaseView implements MoodyView {
 
 	}
 
+	/**
+	 * The private method createButtons create the layout of this page with the buttons
+	 */
 	private void createButtons() {
 
 		HorizontalLayout datePosition = new HorizontalLayout();
@@ -161,17 +163,6 @@ public class DiaryPicView extends BaseView implements MoodyView {
 		menue.addComponent(buttonSave);
 		menue.setComponentAlignment(buttonSave, Alignment.MIDDLE_CENTER);
 
-		/*
-		 * Button buttonDelete = new Button("");
-		 * buttonDelete.addClickListener(this);
-		 * buttonDelete.setId("buttonDelete");
-		 * buttonDelete.setWidth(BUTTON_WIDTH);
-		 * buttonDelete.setHeight(BUTTON_HEIGHT); buttonDelete.setIcon(new
-		 * FileResource(new File(basepath + "/VAADIN/images/deleteIcon.png")));
-		 * menue.addComponent(buttonDelete);
-		 * menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);
-		 */
-
 		Button buttonBack = new Button("");
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
@@ -183,11 +174,19 @@ public class DiaryPicView extends BaseView implements MoodyView {
 
 	}
 
+	/**
+	 * The public method getNameValue gives the value of name of the activity
+	 * @return - value of the name 
+	 */
 	public String getNameValue() {
 		String cont = name.getValue();
 		return cont;
 	}
 
+	/**
+	 * The public method getDateValue gives the recording date
+	 * @return - recording date
+	 */
 	public String getDateValue() {
 
 		String d = date.getValue().toString();
@@ -195,17 +194,27 @@ public class DiaryPicView extends BaseView implements MoodyView {
 
 	}
 
+	/**
+	 * The public method getPicValue gives the picture file
+	 * @return - picture file
+	 */
 	public byte[] getPicValue() {
 
 		return fileContent;
 
 	}
 
+    /**
+     * The public method addListener adds objects to the listener.
+     */
 	@Override
 	public void addListener(ViewListener listener) {
 		listeners.add(listener);
 	}
 
+	/**
+	 * The public method buttonClick handles the click event.
+	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		for (ViewListener listener : this.listeners) {

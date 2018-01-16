@@ -14,7 +14,6 @@ import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
-
 import ch.bfh.btx8081.w2017.white.moody.MyUI;
 
 /**
@@ -47,6 +46,9 @@ public class BaseView extends VerticalLayout implements MoodyView{
 			
 	}
 	
+	/**
+	 * The protected method setBaseStyle sets the basic layout of the web-app with the logo on each page.
+	 */
 	protected void setBaseStyle(){
 	
 		this.setWidth(MyUI.WIDTH);
@@ -62,6 +64,11 @@ public class BaseView extends VerticalLayout implements MoodyView{
 	
 	}
 	
+	/**
+	 * The protected method setTitle defines the layout of the header with the title 
+	 * and with the buttons for home and settings.
+	 * @param title - head title for each page
+	 */
     protected void setTitle(String title) {
 
         Label titleLabel = new Label(title);
@@ -104,7 +111,16 @@ public class BaseView extends VerticalLayout implements MoodyView{
 
 	}
 
-    protected void setLayouts(float headerRatio, float contentRatio, float navigationRatio, float verticalNavicationRatio) {
+    /**
+     * The protected method setLayout defines the layout of the web-app with header and content 
+     * and defines the ratios.
+     * @param headerRatio - ratio of the header layout
+     * @param contentRatio - ratio of the content layout
+     * @param navigationRatio - ratio of the navigation layout
+     * @param verticalNavicationRatio - ratio of the verticalNavication layout
+     */
+    protected void setLayouts(float headerRatio, float contentRatio, 
+    		float navigationRatio, float verticalNavicationRatio) {
 
         this.content.setMargin(true);
         this.content.setSpacing(true);
@@ -132,10 +148,16 @@ public class BaseView extends VerticalLayout implements MoodyView{
         }
     }
     
+    /**
+     * The public method addListener adds objects to the listener.
+     */
 	public void addListener(ViewListener listener){
 		listeners.add(listener);
 	}
 	
+	/**
+	 * The public method buttonClick handles the click event.
+	 */
 	public void buttonClick(ClickEvent event){
 		for(ViewListener listener : this.listeners){
 			listener.buttonClick(event);

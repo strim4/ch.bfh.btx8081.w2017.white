@@ -10,13 +10,12 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Grid;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
-import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SettingsPresenter;
 
 /**
- * 
+ * SettingsView Class
  * @author Chantal
- * Last edit: 10.12.17
+ * Last edit: 16.01.18
  */
 
 @SuppressWarnings("serial")
@@ -35,6 +34,11 @@ public class SettingsView extends BaseView implements MoodyView{
 		super.setTitle("Einstellungen");
 		this.createLayout();
 	}
+	
+	/**
+	 * The private method createLayout construct the layout 
+	 * of this page with the buttons.
+	 */
 	public void createLayout() {
 		
 		buttonProfileNew.addClickListener(this);
@@ -51,11 +55,17 @@ public class SettingsView extends BaseView implements MoodyView{
 	
 	}
 	
+    /**
+     * The public method addListener adds objects to the listener.
+     */
 	@Override
 	public void addListener(ViewListener listener) {
 		listeners.add(listener);
 	}
 	
+	/**
+	 * The public method buttonClick handles the click event.
+	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		for(ViewListener listener: this.listeners) {

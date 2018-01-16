@@ -5,13 +5,10 @@ import java.util.Date;
 import com.vaadin.shared.Position;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
-import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 
-import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
-import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ActivityView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.SubWindowView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
@@ -21,7 +18,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
  * Activity Presenter class does the connection from the Activity to the ActivityView.
  * 
  * @author Chantal
- * Last edit: 30.11.17
+ * Last edit: 16.01.18
  * @author Roberto
  * Last edit: 13.12.17
  */
@@ -41,6 +38,9 @@ public class ActivityPresenter implements ViewListener{
 		view.addListener(this);
 	}
 	
+	/**
+	 * The public method buttonClick handles the events of the buttons new, save and back.
+	 */
 	@SuppressWarnings("static-access")
 	public void buttonClick(ClickEvent event) {
 		

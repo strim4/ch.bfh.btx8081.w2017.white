@@ -26,7 +26,7 @@ import com.vaadin.ui.Button.ClickEvent;
  * This class shows the creation of a new Activity in the Diary.
  * 
  * @author Chantal
- * Last edit: 03.12.17
+ * Last edit: 16.01.18
  */
 
 @SuppressWarnings("serial")
@@ -58,6 +58,10 @@ public class ActivityView extends BaseView implements MoodyView{
 		this.createButtons();
 	}
 	
+	/**
+	 * The private method createButtons construct the layout 
+	 * of this page with the buttons.
+	 */
 	@SuppressWarnings("unchecked")
 	private void createButtons(){
 		
@@ -120,15 +124,6 @@ public class ActivityView extends BaseView implements MoodyView{
 		menue.addComponent(buttonSave);
 		menue.setComponentAlignment(buttonSave, Alignment.MIDDLE_CENTER);
 	
-/*		Button buttonDelete = new Button("");
-		buttonDelete.addClickListener(this);
-		buttonDelete.setId("buttonDelete");
-		buttonDelete.setWidth(BUTTON_WIDTH);
-		buttonDelete.setHeight(BUTTON_HEIGHT);
-		buttonDelete.setIcon(new FileResource(new File(basepath + "/VAADIN/images/deleteIcon.png")));
-		menue.addComponent(buttonDelete);
-		menue.setComponentAlignment(buttonDelete, Alignment.MIDDLE_CENTER);*/
-	
 		Button buttonBack = new Button("");
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
@@ -140,19 +135,28 @@ public class ActivityView extends BaseView implements MoodyView{
 	
 	}
 	
+	/**
+	 * The public method getActivityValue gives the value of the selected activity.
+	 * @return - value of activity
+	 */
 	public String getActivityValue() {
 		String a = comboBox.getValue();
 		return a;
 	}
 	
-	
-	
-	
+	/**
+	 * The public method getNameValue gives the value of name of the activity
+	 * @return - value of the name 
+	 */
 	public String getNameValue() {
 		String cont = name.getValue();
 		return cont;
 	}
 
+	/**
+	 * the public method getDateValue gives the recording date
+	 * @return - recording date
+	 */
 	public String getDateValue() {
      
 		String d =  date.getValue().toString();
@@ -160,12 +164,17 @@ public class ActivityView extends BaseView implements MoodyView{
      
 	} 
 	
+    /**
+     * The public method addListener adds objects to the listener.
+     */
 	@Override
 	public void addListener(ViewListener listener) {
 		listeners.add(listener);	
 	}
 
-
+	/**
+	 * The public method buttonClick handles the click event.
+	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		for (ViewListener listener : this.listeners) {

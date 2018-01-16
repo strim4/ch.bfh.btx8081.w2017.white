@@ -19,7 +19,6 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SettingsModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.WarningNotificationModel;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
-import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryElement;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ActivityPresenter;
@@ -27,7 +26,6 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.BarometerPresente
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.BasePresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ContactPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryElementListPresenter;
-import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryElementPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryPicPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryTextPresenter;
@@ -44,7 +42,6 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.BarometerView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.BaseView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ContactView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryElementListView;
-import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryElementView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryPicView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryTextView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryView;
@@ -69,8 +66,8 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.WarningNotificationVi
  * initialize non-component functionality.
  * 
  * @author Moritz
- * @author Chantal Last edit: 12.12.17
- * @author Milena Last edit: 30.11.17
+ * @author Chantal Last edit: 14.01.2018
+ * @author Milena Last edit: 30.11.2017
  * @author Zoran Last edit: 05.12.2017
  * @author Sandra Last edit: 19.12.2017
  */
@@ -90,7 +87,7 @@ public class MyUI extends UI {
 	BaseView view = new BaseView();
 	StartView start = new StartView();
 
-	// Settings
+	// Settings and Profile
 	SettingsView settings = new SettingsView();
 	SettingsModel settingsModel = new SettingsModel();
 	ProfileView profile = new ProfileView();
@@ -106,8 +103,6 @@ public class MyUI extends UI {
 	ActivityView activityView = new ActivityView();
 	Activity activity = new Activity();
 	DiaryElementListView list = new DiaryElementListView();
-	DiaryElement diaryElement = new DiaryElement();
-	DiaryElementView element = new DiaryElementView();
 
 	// Exercises
 	ExercisesView exercises = new ExercisesView();
@@ -165,7 +160,6 @@ public class MyUI extends UI {
 		navigator.addView("picture", pic);
 		navigator.addView("activity", activityView);
 		navigator.addView("list", list);
-		navigator.addView("element", element);
 		navigator.addView("contact", contact);
 		navigator.addView("exercises", exercises);
 		navigator.addView("exercises", exercises);
@@ -190,7 +184,6 @@ public class MyUI extends UI {
 		new DiaryPicPresenter(diaryPic, pic);
 		new ActivityPresenter(activity, activityView, this);
 		new DiaryElementListPresenter(list);
-		new DiaryElementPresenter(diaryElement, element);
 
 		new ContactPresenter(contact);
 		new ExercisesPresenter(exercises);

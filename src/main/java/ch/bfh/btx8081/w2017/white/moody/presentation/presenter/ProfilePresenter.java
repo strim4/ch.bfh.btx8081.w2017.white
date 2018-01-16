@@ -6,14 +6,13 @@ import com.vaadin.ui.Notification;
 
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ProfileModel;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
-import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ProfileView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 
 /**
- * 
- * @author Chantal Last edit: 10.12.17
+ * Profile Presenter Class
+ * @author Chantal Last edit: 16.01.18
  */
 
 @SuppressWarnings("serial")
@@ -29,6 +28,9 @@ public class ProfilePresenter implements ViewListener {
 		view.addListener(this);
 	}
 
+	/**
+	 * The public method buttonClick handles the events of the buttons save and back.
+	 */
 	@SuppressWarnings("static-access")
 	@Override
 	public void buttonClick(ClickEvent event) {

@@ -10,7 +10,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 /**
  * Base Presenter Class
  * @author Chantal
- * Last edit: 10.12.17
+ * Last edit: 16.01.18
  *
  */
 @SuppressWarnings("serial")
@@ -26,6 +26,9 @@ public class BasePresenter implements ViewListener{
 		view.addListener(this);
 	}
 
+	/**
+	 * The public method buttonClick handles the events of the buttons of the main view.
+	 */
 	public void buttonClick(ClickEvent event) {
 		
 		String buttonID = event.getButton().getId();

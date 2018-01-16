@@ -6,9 +6,9 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.TipsView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
 
 /**
- * 
+ * Tips Presenter Class
  * @author Chantal
- * Last edit: 10.12.17
+ * Last edit: 16.01.18
  */
 @SuppressWarnings("serial")
 public class TipsPresenter implements ViewListener{
@@ -20,6 +20,9 @@ public class TipsPresenter implements ViewListener{
 		this.view = view;
 	}
 	
+	/**
+	 * The public method buttonClick handles the events of the buttons.
+	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		// TODO Auto-generated method stub
