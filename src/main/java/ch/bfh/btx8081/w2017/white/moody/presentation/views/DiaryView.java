@@ -19,6 +19,7 @@ import com.vaadin.ui.Button.ClickEvent;
  * 
  * @author Chantal
  * Last Edit: 12.12.17
+ * * @author Moritz 
  */
 
 @SuppressWarnings("serial")

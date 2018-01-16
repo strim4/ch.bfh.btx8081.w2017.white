@@ -16,6 +16,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
  * DiaryPicture Presenter
  * 
  * @author Chantal Last edit: 16.01.18
+ * * @author Moritz 
  */
 
 @SuppressWarnings("serial")

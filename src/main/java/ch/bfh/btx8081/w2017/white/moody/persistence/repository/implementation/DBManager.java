@@ -2,6 +2,10 @@ package ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation;
 
 import java.util.List;
 
+/**
+ *  @author Moritz 
+ */
+
 import javax.persistence.*;
 
 import org.atmosphere.config.service.Singleton;
@@ -56,6 +60,7 @@ public List<DiaryText> getd() {
 }
 
 public List<Profile> getpr() {
+
 	Query q = em.createQuery("select pr from Profile pr");
 	 List<Profile> pr = q.getResultList();
 	 return pr;

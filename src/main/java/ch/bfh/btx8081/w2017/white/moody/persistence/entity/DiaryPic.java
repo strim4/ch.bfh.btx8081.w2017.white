@@ -1,6 +1,7 @@
 package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
 
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,6 +11,8 @@ import java.util.Date;
 import javax.imageio.ImageIO;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
+import javax.persistence.Transient;
 import javax.xml.transform.stream.StreamSource;
 
 import com.vaadin.server.StreamResource;
@@ -25,8 +28,11 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DB
 @DiscriminatorValue(value = "PE")
 public class DiaryPic extends DiaryElement implements Serializable, SEntity {
 
+	@Lob
 	private byte[] imageFile;
 	private String description;
+	
+
 
 	public DiaryPic(String name,  byte[] imageFile, Date creationDate, String entrydate) throws IOException {
 		super(name, creationDate, entrydate);
@@ -51,32 +57,23 @@ public void creatDp(String name, byte[] imageFile,  Date creationDate, String en
 		return imageFile;
 	}
 	
+	public BufferedImage getImag()   {
+		BufferedImage img = null;
+		try {
+			img = ImageIO.read(new ByteArrayInputStream(this.getImageByte()));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return img;
+		
+
+		
+	}
+	
 	/*
 	
-	public Image getImage() {
-		StreamSource streamSource = new StreamResource.StreamSource() {
-			public InputStream getStream() {
-				return (imageFile == null) ? null : new ByteArrayInoutStream(imageFile);
-				
-			}
-		}
-		
-		return new Image(null, new StreamResource(streamSource, "streamedSourceFromByteArray"));
-				
-	}
 	
-	public void setImage(byte[] imageFile) {
-		this.imageFile = imageFile;
-	}                      
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 /*	@Override
 	public String toString() {
 		return "Picture Element{" +

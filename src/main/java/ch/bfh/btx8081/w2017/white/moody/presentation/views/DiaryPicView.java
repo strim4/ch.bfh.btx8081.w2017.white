@@ -38,6 +38,7 @@ import com.vaadin.ui.VerticalLayout;
  * This class shows the creation of a new Diary Picture Element.
  * 
  * @author Chantal Last edit: 16.01.18
+ * * @author Moritz 
  */
 
 @SuppressWarnings("serial")

@@ -21,6 +21,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
  * Last edit: 16.01.18
  * @author Roberto
  * Last edit: 13.12.17
+ * * @author Moritz 
  */
 
 @SuppressWarnings("serial")

@@ -20,6 +20,7 @@ import com.vaadin.ui.DateField;
  * This class shows the creation of a new Diary Text Element.
  * 
  * @author Chantal Last edit: 16.01.18
+ * * @author Moritz 
  */
 
 @SuppressWarnings("serial")

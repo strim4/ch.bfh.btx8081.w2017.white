@@ -15,6 +15,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
  * DiaryTextPresenter class
  * 
  * @author Chantal Last edit: 14.01.18
+ * * @author Moritz 
  */
 
 @SuppressWarnings("serial")

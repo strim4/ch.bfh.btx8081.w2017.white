@@ -16,6 +16,7 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DB
 /**
  * Profile View
  * @author Chantal Last edit: 16.01.18
+ * * @author Moritz 
  */
 
 @SuppressWarnings("serial")

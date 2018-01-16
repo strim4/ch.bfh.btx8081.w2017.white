@@ -19,6 +19,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
  * The DiaryElementListPresenter handles the events from the DiaryElementListView.
  * @author Chantal
  * Last edit: 14.01.2018
+ * * @author Moritz 
  */
 
 @SuppressWarnings("serial")
