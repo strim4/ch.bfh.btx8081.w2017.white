@@ -48,7 +48,7 @@ public class SettingsView extends BaseView implements MoodyView{
 		gridpr.addColumn(Profile::getFirstName).setCaption("Vorname");
 		gridpr.addColumn(Profile::getLastName).setCaption("Nachname");
 		gridpr.setItems((Collection<Profile>) sp.getpr());
-		gridpr.setHeight("80px");
+		gridpr.setHeight("160px");
 		super.content.addComponents(buttonProfileNew, gridpr);
 		super.content.setComponentAlignment(buttonProfileNew, Alignment.MIDDLE_CENTER);
 		super.content.setComponentAlignment(gridpr, Alignment.MIDDLE_CENTER);
