@@ -4,7 +4,7 @@ import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Button.ClickEvent;
 
 /**
- * MoodyView interface
+ * ViewListener interface
  * @author Chantal
  * Last edit: 30.11.17
  */
