@@ -10,7 +10,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 /**
  * @author Chantal
  * DiaryPresenter Class
- * Last Edit: 29.11.17
+ * Last Edit: 16.01.18
  */
 @SuppressWarnings("serial")
 public class DiaryPresenter implements ViewListener{
@@ -25,6 +25,9 @@ public class DiaryPresenter implements ViewListener{
 		diaryView.addListener(this);
 	}
 	
+	/**
+	 * The public method buttonClick handles the events of the buttons of this page.
+	 */
 	public void buttonClick(ClickEvent event){
 		
 		String buttonID = event.getButton().getId();
