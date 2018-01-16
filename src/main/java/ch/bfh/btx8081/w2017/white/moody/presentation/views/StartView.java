@@ -44,6 +44,10 @@ public class StartView extends BaseView implements MoodyView{
 		super.setLayouts(0.35f, 0.65f, 0, 0);
 	}
 	
+	/**
+	 * The private method createButtons construct the layout 
+	 * of this page with the buttons.
+	 */
 	private void createButtons(){
 		
 		HorizontalLayout row1 = new HorizontalLayout();
@@ -115,10 +119,16 @@ public class StartView extends BaseView implements MoodyView{
 
 	}
 
+    /**
+     * The public method addListener adds objects to the listener.
+     */
 	public void addListener(ViewListener listener){
 		listeners.add(listener);
 	}
 	
+	/**
+	 * The public method buttonClick handles the click event.
+	 */
 	public void buttonClick(ClickEvent event){
 		for(ViewListener listener : this.listeners){
 			listener.buttonClick(event);
