@@ -12,6 +12,7 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.navigator.Navigator.ComponentContainerViewDisplay;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BarometerModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BaseModel;
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ContactModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.DiaryModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ProfileModel;
@@ -115,6 +116,7 @@ public class MyUI extends UI {
 
 	// Contact
 	ContactView contact = new ContactView();
+	ContactModel contactModel = new ContactModel();
 
 	// Barometer
 	BarometerView barometer = new BarometerView();
@@ -185,7 +187,7 @@ public class MyUI extends UI {
 		new ActivityPresenter(activity, activityView, this);
 		new DiaryElementListPresenter(list);
 
-		new ContactPresenter(contact);
+		new ContactPresenter(contactModel, contact);
 		new ExercisesPresenter(exercises);
 		new InformationsPresenter(informations);
 		new TipsPresenter(tips);
