@@ -1,6 +1,7 @@
 package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -14,23 +15,21 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
- * @author Milena
- * Answer of the daily question
- * Last Edit: 10.12.2017
- *
+ *Answer of the daily  questions Last Edit: 17.01.2018
+ * @author Milena 
  */
 
 @SuppressWarnings("serial")
 @Entity
 @Table
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class QuestionResults implements Serializable,SEntity{
-	
+public class QuestionResults implements Serializable, SEntity {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private int questionId;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date entryDate;
 
@@ -38,10 +37,13 @@ public class QuestionResults implements Serializable,SEntity{
 		this.questionId = questionId;
 		this.entryDate = new Date(entryDate.getTime());
 	}
-	
-	public QuestionResults(){}
 
+	public QuestionResults() {}
 	
+	public int getId(){
+		return id;
+	}
+
 	public int getQuestionId() {
 		return questionId;
 	}
@@ -49,11 +51,15 @@ public class QuestionResults implements Serializable,SEntity{
 	public Date getEntryDate() {
 		return entryDate;
 	}
-	
-	public String toString(){
-			return "Question Id: "+ questionId+", entryDate: "+ entryDate;
-			 
-	}
-	
-}
 
+	public Calendar getEntryDateCal() {
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(entryDate);
+		return cal;
+	}
+
+	public String toString() {
+		return "Question Id: " + questionId + ", entryDate: " + entryDate;
+	}
+
+}

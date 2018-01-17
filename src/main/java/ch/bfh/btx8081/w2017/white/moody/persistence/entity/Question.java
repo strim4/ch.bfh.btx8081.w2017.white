@@ -10,29 +10,32 @@ import javax.persistence.*;
  *
  */
 
-/*@SuppressWarnings("serial")
+@SuppressWarnings("serial")
 @Entity
 @Table
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type")
-*/
 public class Question implements SEntity {
 
     // attributes
- //   @Id
- //   @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String questionText;
-    private QuestionAnswer questionAnswer;
+ //   private QuestionAnswer questionAnswer;
+    private int questionAnswer;
     private String result;
 
     // constructor
     public Question(){}
 
-    public Question(String questionText, QuestionAnswer questionAnswer){
+ /*   public Question(String questionText, QuestionAnswer questionAnswer){
         this.questionText = questionText;
         this.questionAnswer = questionAnswer;
     }
+  */
+    public Question(String questionText, int questionAnswer) {
+		this.questionText = questionText;
+		this.questionAnswer = questionAnswer;
+	}
 
     // methods
     public int getId(){
@@ -59,7 +62,8 @@ public class Question implements SEntity {
         this.result = result;
     }
 
-    public QuestionAnswer getQuestionAnswer() {
+ /*   public QuestionAnswer getQuestionAnswer() {
         return questionAnswer;
     }
+   */
 }

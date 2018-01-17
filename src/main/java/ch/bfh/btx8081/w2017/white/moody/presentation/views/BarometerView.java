@@ -3,6 +3,7 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import org.vaadin.highcharts.HighChart;
 import com.vaadin.server.FileResource;
@@ -10,15 +11,18 @@ import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Image;
+import com.vaadin.ui.Label;
+import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 
 /**
  * This class is the view of the Mood-Barometer
  * 
- * @author Milena Last Edit: 01.12.17 Sandra Last Edit: 19.12.2017
+ * @author Milena Last Edit: 17.01.2018 Sandra Last Edit: 19.12.2017
  */
 
-//@SuppressWarnings("serial")
+// @SuppressWarnings("serial")
 public class BarometerView extends BaseView {
 
 	private static final long serialVersionUID = -6026931252073823269L;
@@ -33,6 +37,11 @@ public class BarometerView extends BaseView {
 	private static final String BUTTON_BACK = "BACK";
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 	private HighChart chart = new HighChart();
+	private VerticalLayout pictures = new VerticalLayout();
+	private HorizontalLayout pChart = new HorizontalLayout();
+
+	Label strain = new Label();
+	Label strainTxt = new Label("Deine Aktuelle Belastung:");
 
 	// private static final String IMAGE_WIDTH = "60px";
 	// private static final String IMAGE_HEIGHT = "60px";
@@ -57,7 +66,10 @@ public class BarometerView extends BaseView {
 		// super.content.setComponentAlignment(newBarometerElement,
 		// Alignment.MIDDLE_CENTER);
 
-		Button buttonQuestions = new Button("Taegliche Fragen");// Text entfernen, sobald Icon funktioniert
+		Button buttonQuestions = new Button("Taegliche Fragen");// Text
+																// entfernen,
+																// sobald Icon
+																// funktioniert
 		buttonQuestions.addClickListener(this);
 		buttonQuestions.setId("buttonQuestions");
 		buttonQuestions.setWidth("380px");
@@ -70,8 +82,37 @@ public class BarometerView extends BaseView {
 		super.content.addComponent(buttonQuestions);
 		super.content.setComponentAlignment(buttonQuestions, Alignment.MIDDLE_CENTER);
 
-		super.content.addComponent(chart);
-		super.content.setComponentAlignment(chart, Alignment.MIDDLE_CENTER);
+		Image vh = getImage("veryhappyIcon.png");
+
+		pictures.addComponent(vh);
+		pictures.setComponentAlignment(vh, Alignment.MIDDLE_LEFT);
+
+		Image h = getImage("happyIcon.png");
+		pictures.addComponent(h);
+		pictures.setComponentAlignment(h, Alignment.MIDDLE_LEFT);
+
+		Image n = getImage("happyIcon.png");
+		pictures.addComponent(n);
+		pictures.setComponentAlignment(n, Alignment.MIDDLE_LEFT);
+
+		Image s = getImage("happyIcon.png");
+		pictures.addComponent(s);
+		pictures.setComponentAlignment(s, Alignment.MIDDLE_LEFT);
+
+		Image vs = getImage("happyIcon.png");
+		pictures.addComponent(vs);
+		pictures.setComponentAlignment(vs, Alignment.MIDDLE_LEFT);
+
+		pChart.addComponent(pictures);
+		pChart.addComponent(chart);
+		super.content.addComponent(pChart);
+		super.content.setComponentAlignment(pChart, Alignment.MIDDLE_CENTER);
+
+		super.content.addComponent(strainTxt);
+		super.content.setComponentAlignment(strainTxt, Alignment.MIDDLE_CENTER);
+
+		super.content.addComponent(strain);
+		super.content.setComponentAlignment(strain, Alignment.MIDDLE_CENTER);
 
 		Button buttonMonat = new Button("Monat");
 		buttonMonat.addClickListener(this);
@@ -107,21 +148,74 @@ public class BarometerView extends BaseView {
 	}
 
 	public void showChart(String type, int[] data) {
-		// Note: Logic (if/else) should be refactored to at least presenter if not model
-		// Note: categories should be generated dynamically based on current month/day
+		// Note: Logic (if/else) should be refactored to at least presenter if
+		// not model
+		// Note: categories should be generated dynamically based on current
+		// month/day
 		// Beware of JavaScript merged into java strings abomination
 		if (type.equals("year")) {
 			chart.setHcjs("var options = { " + "title: { text: 'mood diagram' }, "
-					+ "xAxis: {categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']}, "
-					+ "series: [{ name: 'Yearly mood', data: " + Arrays.toString(data) + "}] };");
+					+ "xAxis: {categories:[" + getChartString("year") + "]},"
+					+ "series: [{ name: 'Yearly mood', data: "+ Arrays.toString(data) + "}] };");
 		} else if (type.equals("6month")) {
 			chart.setHcjs("var options = { " + "title: { text: 'mood diagram' }, "
-					+ "xAxis: {categories: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']}, "
+					+ "xAxis: {categories:[" + getChartString("6month") + "]},"
 					+ "series: [{ name: 'Half yearly mood', data: " + Arrays.toString(data) + "}] };");
 		} else if (type.equals("month")) {
 			chart.setHcjs("var options = { " + "title: { text: 'mood diagram' }, "
 					+ "series: [{ name: 'Monthly mood', data: " + Arrays.toString(data) + "}] };");
 		}
+	}
+
+	public void showStrain(String strainNow) {
+		strain.setCaption(strainNow);
+	}
+
+	private String getChartString(String type) {
+		Calendar date = Calendar.getInstance();
+		int month = date.get(Calendar.MONTH);
+		String[] names = new String[] { "'Jan'", "'Feb'", "'Mar'", "'Apr'", "'May'", "'Jun'", "'Jul'", "'Aug'", "'Sep'",
+				"'Oct'", "'Nov'", "'Dec'" };
+		String xAxis = "";
+		switch (type) {
+		case "6month":
+			for (int i = 0; i < 6; i++) {
+				if (month > 0) {
+					xAxis = names[month] + xAxis;
+					month--;
+				} else {
+					xAxis = names[month] + xAxis;
+					month = 11;
+				}
+				if (i < 5) {
+					xAxis = ", " + xAxis;
+				}
+			}
+			break;
+		case "year":
+			for (int i = 0; i < 12; i++) {
+				if (month > 0) {
+					xAxis = names[month] + xAxis;
+					month--;
+				} else {
+					xAxis = names[month] + xAxis;
+					month = 11;
+				}
+				if (i < 11) {
+					xAxis = ", " + xAxis;
+				}
+			}
+			break;
+		}
+		return xAxis;
+	}
+
+	private Image getImage(String name) {
+		FileResource resource = new FileResource(new File(basepath + "/VAADIN/images/" + name));
+		Image image = new Image("", resource);
+		image.setHeight("40px");
+		image.setWidth("40px");
+		return image;
 	}
 
 	// VERSUCH eine Statistik einzufügen =>

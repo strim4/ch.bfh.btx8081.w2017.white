@@ -1,6 +1,5 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
-
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Question;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionAnswer;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Questionnaire;
@@ -16,34 +15,33 @@ import java.util.List;
  * everyday 4 questions to answer.
  * 
  * @author Sandra
- * @author Silvan
- * Last Edit: 2017-12-07
+ * @author Silvan Last Edit: 2017-12-07
  */
 
 public class QuestionnaireView extends BaseView implements MoodyView {
 
 	private QuestionnairePresenter presenter = null;
 
+	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 
-    private List<ViewListener> listeners = new ArrayList<ViewListener>();
-
-    // test
-    private Label lname;
-
+	// test
+	private Label lname;
 
 	public QuestionnaireView() {
 
-        super();
+		super();
 
-        //test
-        QuestionAnswer myAnswerX = new QuestionAnswer();
-        Question myQuestionA = new Question("Fragetext1", myAnswerX);
-        Question myQuestionB = new Question("Fragetext2", myAnswerX);
+		// test
+		// QuestionAnswer myAnswerX = new QuestionAnswer();
+		// Question myQuestionA = new Question("Fragetext1", myAnswerX);
+		// Question myQuestionB = new Question("Fragetext2", myAnswerX);
+		Question myQuestionA = new Question("Fragetext1", 1);
+		Question myQuestionB = new Question("Fragetext2", 1);
 
-        Questionnaire newQA = new Questionnaire();
+		Questionnaire newQA = new Questionnaire();
 
-        newQA.addQuestion(myQuestionA);
-        newQA.addQuestion(myQuestionB);
+		newQA.addQuestion(myQuestionA);
+		newQA.addQuestion(myQuestionB);
 
 		super.setTitle("taegliche Fragen");
 
@@ -69,11 +67,9 @@ public class QuestionnaireView extends BaseView implements MoodyView {
 		super.content.setComponentAlignment(questionsText, Alignment.MIDDLE_LEFT);
 	}
 
-
-    @Override
-    public void addListener(ViewListener listener) {
-        listeners.add(listener);
-    }
-
+	@Override
+	public void addListener(ViewListener listener) {
+		listeners.add(listener);
+	}
 
 }
