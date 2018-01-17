@@ -17,8 +17,8 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.DiaryModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ProfileModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionModel;
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SchwellenwertUserReaktionModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SettingsModel;
-import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.WarningNotificationModel;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
@@ -35,7 +35,6 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.InformationsPrese
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ProfilePresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SettingsPresenter;
-import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SubWindowPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.TipsPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.WarningNotificationPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ActivityView;
@@ -136,7 +135,7 @@ public class MyUI extends UI {
 	SubWindowView subwindow = new SubWindowView();
 
 	WarningNotificationView warningNotification = new WarningNotificationView();
-	WarningNotificationModel warningNotificationModel = new WarningNotificationModel();
+	SchwellenwertUserReaktionModel schwellenwertUserReaktionModel = new SchwellenwertUserReaktionModel();
 
 	// NotificationUI
 	PushNotificationUI pNotificationUI;
@@ -198,7 +197,7 @@ public class MyUI extends UI {
 		new QuestionPresenter(questionModel, questionYesNo);
 		new QuestionPresenter(questionModel, questionSmiley);
 
-		new WarningNotificationPresenter(warningNotificationModel, warningNotification);
+		new WarningNotificationPresenter(schwellenwertUserReaktionModel, warningNotification);
 
 		// NotificationUI launch with his concurrent Thread
 		pNotificationUI = new PushNotificationUI(UI.getCurrent(), layout);

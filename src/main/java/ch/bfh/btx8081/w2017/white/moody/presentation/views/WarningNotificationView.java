@@ -1,6 +1,10 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.views;
 
-import java.util.List;
+import com.vaadin.ui.Alignment;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Label;
+import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 
 /**
  * This class is the view of the WarningNotification screen on this screen the user
@@ -10,16 +14,13 @@ import java.util.List;
  * Last Edit: 19.12.17
  */
 
-import com.vaadin.ui.Alignment;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
-
-import ch.bfh.btx8081.w2017.white.moody.persistence.entity.PushMessages;
-import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
-
 public class WarningNotificationView extends BaseView implements MoodyView{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	//private WarningNotificationPresenter presenter = null;
 	
 	//private static final String BUTTON_TELEFON = "Telefon";

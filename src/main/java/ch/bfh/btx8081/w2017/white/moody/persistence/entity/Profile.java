@@ -1,31 +1,27 @@
 package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
 
 import java.io.Serializable;
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 
 /**
-<<<<<<< .mine
- * @author Chantal
- * Last edit: 12.12.17
- * @author Roberto
- * Profile (including name, contact details and emergency contact)
- * Last edit: 29.11.17
-=======
+ * <<<<<<< .mine
+ * 
+ * @author Chantal Last edit: 12.12.17
+ * @author Roberto Profile (including name, contact details and emergency
+ *         contact) Last edit: 29.11.17 =======
  * @author Roberto Profile (including name, contact details) Last edit: 28.11.17
->>>>>>> .r128
+ *         >>>>>>> .r128
  */
+
 @SuppressWarnings("serial")
 @Entity
 @Table
-public class Profile implements Serializable, SEntity{
+public class Profile implements Serializable, SEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,32 +32,32 @@ public class Profile implements Serializable, SEntity{
 	private String houseDoctorPhone;
 	private String emergencyContact;
 	private String emergencyContactPhone;
-	
+
 	public Profile(String firstName, String lastName, String houseDoctor, String houseDoctorPhone,
 			String emergencyContact, String emergencyContactPhone) {
-		
+
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.houseDoctor = houseDoctor;
 		this.houseDoctorPhone = houseDoctorPhone;
 		this.emergencyContact = emergencyContact;
 		this.emergencyContactPhone = emergencyContactPhone;
-		
 	}
-	
+
 	public Profile() {
-		
 	}
-	
+
 	public void creatPr(String firstName, String lastName, String houseDoctor, String houseDoctorPhone,
 			String emergencyContact, String emergencyContactPhone) {
-		
-		Profile pr = new Profile(firstName, lastName, houseDoctor, houseDoctorPhone, emergencyContact, emergencyContactPhone);
-		DBManager dbm = DBManager.getInstance( );
+
+		Profile pr = new Profile(firstName, lastName, houseDoctor, houseDoctorPhone, emergencyContact,
+				emergencyContactPhone);
+		DBManager dbm = DBManager.getInstance();
 		dbm.persistObject(pr);
-		
-		
-		
+	}
+
+	public int getId() {
+	return id;
 	}
 
 	public String getFirstName() {
@@ -75,15 +71,15 @@ public class Profile implements Serializable, SEntity{
 	public String getHouseDoctor() {
 		return houseDoctor;
 	}
-	
+
 	public String getHouseDoctorPhone() {
 		return houseDoctorPhone;
 	}
-	
+
 	public String getEmergencyContact() {
 		return emergencyContact;
 	}
-	
+
 	public String getEmergencyContactPhone() {
 		return emergencyContactPhone;
 	}
@@ -99,28 +95,24 @@ public class Profile implements Serializable, SEntity{
 	public void setHouseDoctor(String houseDoctor) {
 		this.houseDoctor = houseDoctor;
 	}
-	
+
 	public void setHouseDoctorPhone(String houseDoctorPhone) {
 		this.houseDoctorPhone = houseDoctorPhone;
 	}
-	
+
 	public void setEmergencyContact(String emergencyContact) {
 		this.emergencyContact = emergencyContact;
 	}
-	
+
 	public void setEmergencyContactPhone(String emergencyContactPhone) {
 		this.emergencyContactPhone = emergencyContactPhone;
 	}
 
 	@Override
 	public String toString() {
-		return "Profile{" +
-				"firstName='" + getFirstName() + '\'' +
-				", lastName='" + getLastName() + '\'' +
-				", houseDoctor='" + getHouseDoctor() + '\'' +
-				", houseDoctorPhone='" + getHouseDoctorPhone() + '\'' +
-				", emergencyContact='" + getEmergencyContact() + '\'' +
-				", emergencyContactPhone='" + getEmergencyContactPhone() + 
-				'}';
+		return "Profile{" + "firstName='" + getFirstName() + '\'' + ", lastName='" + getLastName() + '\''
+				+ ", houseDoctor='" + getHouseDoctor() + '\'' + ", houseDoctorPhone='" + getHouseDoctorPhone() + '\''
+				+ ", emergencyContact='" + getEmergencyContact() + '\'' + ", emergencyContactPhone='"
+				+ getEmergencyContactPhone() + '}';
 	}
 }

@@ -7,6 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * This class is the persistence of the WarningNotification screen on this screen the user
+ * recive a warningnotification if his answers werent negativ during 7 days.
+ * 
+ * @author Sandra
+ * Last Edit: 18.01.2018
+ */
+
 //@SuppressWarnings("serial")
 @Entity
 @Table

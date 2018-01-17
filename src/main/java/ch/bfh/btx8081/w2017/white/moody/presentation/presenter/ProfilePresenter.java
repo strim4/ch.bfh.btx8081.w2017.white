@@ -3,7 +3,6 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.presenter;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.shared.Position;
 import com.vaadin.ui.Notification;
-
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ProfileModel;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ProfileView;

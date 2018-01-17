@@ -1,11 +1,6 @@
 package ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation;
 
 import java.util.List;
-
-/**
- *  @author Moritz 
- */
-
 import javax.persistence.*;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
@@ -16,6 +11,13 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Question;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResultsEmoji;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResultsYesNo;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.SEntity;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.SchwellenwertUserReaktion;
+
+/**
+ *  @author Moritz 
+ *  @author Sandra; habe alles angepasst für mich, damit es Daten aus dem Profil herausliest
+ *  last Edit: 17.01.2018
+ */
 
 public class DBManager {
 
@@ -55,10 +57,16 @@ public class DBManager {
 	}
 
 	public List<Profile> getpr() {
-
 		Query q = em.createQuery("select pr from Profile pr");
 		List<Profile> pr = q.getResultList();
 		return pr;
+	}
+	
+	public int getId() {
+	Query q = em.createQuery("select id from Profile id");
+	List<Profile> prid = q.getResultList();
+	int id = prid.get(0).getId();
+		return id;
 	}
 
 	public String getFirstName() {
@@ -94,6 +102,12 @@ public class DBManager {
 		List<Profile> premergencycontactphone = q.getResultList();
 		String emergencycontactphone = premergencycontactphone.get(0).getEmergencyContactPhone();
 		return emergencycontactphone;
+	}
+	
+	public List<SchwellenwertUserReaktion> getsur() {
+		Query q = em.createQuery("select sur from SchwellenwertUserReaktion sur");
+		List<SchwellenwertUserReaktion> sur = q.getResultList();
+		return sur;
 	}
 
 	public List<Activity> geta() {

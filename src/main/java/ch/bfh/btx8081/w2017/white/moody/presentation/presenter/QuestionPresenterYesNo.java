@@ -1,9 +1,11 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.presenter;
 
-import com.vaadin.ui.Button.ClickEvent;
-
-import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BaseModel;
-import ch.bfh.btx8081.w2017.white.moody.presentation.views.BaseView;
+/**
+ * Diese Klasse wird leider nicht benutzt...
+ * 
+ * @author Sandra
+ * Last Edit: Dezember 2017
+ */
 
 public class QuestionPresenterYesNo { // extends QuestionnairePresenter{
 /*
