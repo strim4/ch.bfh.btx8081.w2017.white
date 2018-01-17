@@ -12,6 +12,9 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.PushMessages;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Question;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResultsEmoji;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResultsYesNo;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.SEntity;
 
 public class DBManager {
@@ -109,5 +112,23 @@ public class DBManager {
 		Query q = em.createQuery("select m from PushMessages m where m.type =:type");
 		q.setParameter("type", type);
 		return q.getResultList();
+	}
+	
+	public List<QuestionResultsYesNo> getQuestionResultsYesNo() {
+		Query q = em.createQuery("select qryn from QuestionResultsYesNo qryn");
+		List<QuestionResultsYesNo> qryn = q.getResultList();
+		return qryn;
+	}
+
+	public List<QuestionResultsEmoji> getQuestionResultsEmoji() {
+		Query q = em.createQuery("select qre from QuestionResultsEmoji qre");
+		List<QuestionResultsEmoji> qre = q.getResultList();
+		return qre;
+	}
+
+	public List<Question> getQuestion() {
+		Query q = em.createQuery("select qe from Question qe");
+		List<Question> qe = q.getResultList();
+		return qe;
 	}
 }
