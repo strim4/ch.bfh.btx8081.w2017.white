@@ -29,11 +29,6 @@ public class QuestionnairePresenter implements ViewListener {
     }
 
 
-	//Warum ein zweiter Konstruktor?
-//	public QuestionnairePresenter(QuestionModel questionModel, QuestionView questionView) {
-//		super(questionModel, questionView);
-//	}
-
 	public void buttonClick(ClickEvent event) {
 
 		String buttonID = event.getButton().getId();
