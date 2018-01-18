@@ -46,41 +46,45 @@ public class ComputeResultEmoji {
 
 	private int computeMonthAverage(Calendar date) {
 		int[] month = computeMonth(date);
+		int actData = 0;
 		int points = 0;
 		for (int i = 0; i < month.length; i++) {
 			points = points + month[i];
+			actData=actData+1;
 		}
-		int result = points/ month.length;
+		int result = points/ actData;
 		return result;
 	}
 
 	public int[] computeSixMonths(Calendar date) {
 		date.set(Calendar.DAY_OF_MONTH, 1);
 		int[] sixMonths = new int[6];
+		int month = date.get(Calendar.MONTH);
 		for (int i = 5; i >= 0; i--) {
 			sixMonths[i] = computeMonthAverage(date);
-			int month = date.get(Calendar.MONTH);
 			if (month > 0) {
-				date.set(Calendar.MONTH, month - 1);
+				month= month-1;
 			} else {
 				date.set(Calendar.YEAR, date.get(Calendar.YEAR) - 1);
-				date.set(Calendar.MONTH, 11);
+				month= 11;
 			}
+			date.set(Calendar.MONTH, month);
 		}
 		return sixMonths;
 	}
 
 	public int[] computeYear(Calendar date) {
 		int[] year = new int[12];
+		int month = date.get(Calendar.MONTH);
 		for (int i = 11; i >= 0; i--) {
 			year[i] = computeMonthAverage(date);
-			int month = date.get(Calendar.MONTH);
 			if (month > 0) {
-				date.set(Calendar.MONTH, month - 1);
+				month= month-1;
 			} else {
-				date.set(Calendar.MONTH, 11);
 				date.set(Calendar.YEAR, date.get(Calendar.YEAR) - 1);
+				month= 11;
 			}
+			date.set(Calendar.MONTH, month);
 		}
 		return year;
 	}
