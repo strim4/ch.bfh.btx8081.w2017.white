@@ -5,6 +5,7 @@ import java.io.File;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinService;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Button.ClickEvent;
@@ -13,17 +14,20 @@ import com.vaadin.ui.Button.ClickEvent;
  * This class is the view of the smiley question.
  * 
  * @author Sandra
- * Last Edit: 01.12.17
+ * Last Edit: 18.01.2018
  */
 
 public class QuestionSmileyView extends QuestionnaireView {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 	
-	//String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
-	
-	private static final String BUTTON_WIDTH = "160px";
-	private static final String BUTTON_HEIGHT = "160px";
+	private static final String BUTTON_WIDTH = "120px";
+	private static final String BUTTON_HEIGHT = "120px";
 	
 	private static final String BUTTON_VERYSAD = "VERYSAD";
 	private static final String BUTTON_SAD = "SAD";
@@ -73,5 +77,6 @@ public class QuestionSmileyView extends QuestionnaireView {
 		HorizontalLayout contentRow = new HorizontalLayout();
 		contentRow.addComponents(buttonVerySad, buttonSad, buttonNeutral, buttonHappy, buttonVeryHappy);
 		content.addComponent(contentRow);
+		content.setComponentAlignment(contentRow, Alignment.MIDDLE_CENTER);
 	}
 }
