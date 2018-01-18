@@ -53,7 +53,7 @@ public class InformationsView extends BaseView implements MoodyView {
 		Label symp = new Label("Symptome einer Depression");
 		Label text2 = new Label("Depressive Stimmung: Ich leide fast den ganzen Tag sowie fast jeden Wochentag unter gedrückter, depressiver Stimmung. "
 				+ "Meine Stimmung ist dabei nicht von irgendwelchen bestimmten Umständen oder Ereignissen beeinflusst. Interessensverlust und "
-				+ "Freudlosigkeit: Aktivitäten, die ich sonst gerne gemacht habe, machen mir nun keine Freude mehr bzw. interessieren mich nicht mehr."
+				+ "Freudlosigkeit: Aktivitäten, die ich sonst gerne gemacht habe, machen mir nun keine Freude mehr bzw. interessieren mich nicht mehr. "
 				+ "Antriebsmangel und erhöhte Ermüdbarkeit: Ich ermüde viel leichter als sonst und/oder meine Energie, mein Antrieb sind deutlich verringert.");
 		text2.setWidth(1040, UNITS_PIXELS);
 		porg.setContent(text2);
