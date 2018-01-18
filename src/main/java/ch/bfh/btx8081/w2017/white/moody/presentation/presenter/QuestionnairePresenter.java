@@ -21,6 +21,8 @@ public class QuestionnairePresenter implements ViewListener {
 
     private QuestionnaireModel model;
     private QuestionnaireView view;
+    
+    
 
     public QuestionnairePresenter(QuestionnaireModel model, QuestionnaireView view) {
         this.model = model;
