@@ -11,8 +11,6 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Button.ClickEvent;
 
-import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
-
 /**
  * Profile View
  * @author Chantal Last edit: 16.01.18
@@ -24,7 +22,6 @@ public class ProfileView extends BaseView implements MoodyView {
 
 	private static final String BUTTON_WIDTH = "120px";
 	private static final String BUTTON_HEIGHT = "120px";
-	private DBManager dbm = DBManager.getInstance( );
 
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 
@@ -55,9 +52,6 @@ public class ProfileView extends BaseView implements MoodyView {
 	public void dataEntry() {
 
 		firstNameTF.setWidth("500px");
-		firstNameTF.setData(dbm.getpr());
-		firstNameTF.selectAll();
-		firstNameTF.setValue(DESIGN_ATTR_PLAIN_TEXT);
 		super.content.addComponent(firstNameTF);
 		super.content.setComponentAlignment(firstNameTF, Alignment.MIDDLE_CENTER);
 
