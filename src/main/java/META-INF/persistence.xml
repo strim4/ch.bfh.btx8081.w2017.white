@@ -13,6 +13,7 @@
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResultsYesNo</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.SchwellenwertUserReaktion</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile</class>
+		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.WarningNotification</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.Question</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://147.87.116.213:5432/Moody"/>
