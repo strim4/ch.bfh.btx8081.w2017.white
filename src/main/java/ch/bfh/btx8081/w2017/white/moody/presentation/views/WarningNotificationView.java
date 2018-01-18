@@ -20,13 +20,7 @@ public class WarningNotificationView extends BaseView implements MoodyView{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	//private WarningNotificationPresenter presenter = null;
-	
-	//private static final String BUTTON_TELEFON = "Telefon";
-	//private static final String BUTTON_SMS = "SMS";
 	private static final String BUTTON_GELESEN = "gelesen";
-
 	private static final String BUTTON_WIDTH = "87px";
 	private static final String BUTTON_HEIGHT = "87px";	
 	
@@ -45,7 +39,6 @@ public class WarningNotificationView extends BaseView implements MoodyView{
 
 		Label warningNotification = new Label("Hallo " + firstname + " Du hast nun während 7 Tagen Deine täglichen Fragen negativ beantwortet. \nBitte nimm mit Deinem Arzt oder mit Deiner Bezugsperson Kontakt auf.");
 		warningNotification.setWidth("380px");
-		//warningNotification.setHeight("");
 		super.content.addComponent(warningNotification);
 		super.content.setComponentAlignment(warningNotification, Alignment.MIDDLE_CENTER);
 
