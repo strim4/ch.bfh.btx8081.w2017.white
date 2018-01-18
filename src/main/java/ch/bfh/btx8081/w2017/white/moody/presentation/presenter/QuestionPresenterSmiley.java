@@ -1,5 +1,10 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.presenter;
 
+import com.vaadin.ui.Button.ClickEvent;
+
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionnaireModel;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionnaireView;
+
 /**
  * Diese Klasse wird leider nicht benutzt...
  * 
@@ -8,10 +13,14 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.presenter;
  */
 
 @SuppressWarnings("serial")
-public class QuestionPresenterSmiley { // extends QuestionnairePresenter{
-/*
-	public QuestionPresenterSmiley(BaseModel model, BaseView view) {
-		super(model, view);
+public class QuestionPresenterSmiley extends QuestionnairePresenter{
+
+	private QuestionnaireModel questionnaireModel;
+	private QuestionnaireView questionnaireView;
+
+	public QuestionPresenterSmiley(QuestionnaireModel questionnaireModel, QuestionnaireView questionnaireView) {
+		super(questionnaireModel, questionnaireView);
+		questionnaireView.addListener(this);
 	}
 	
 	public void buttonClick(ClickEvent event) {
@@ -31,5 +40,4 @@ public class QuestionPresenterSmiley { // extends QuestionnairePresenter{
 			break;
 		}
 	}
-*/
 }
