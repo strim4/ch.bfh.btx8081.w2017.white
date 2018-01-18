@@ -13,6 +13,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.PopupView;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 
@@ -42,6 +43,13 @@ public class BarometerView extends BaseView {
 
 	Label strain = new Label();
 	Label strainTxt = new Label("Deine Aktuelle Belastung:");
+	
+	private Button buttonYes;
+	private Button buttonNo;
+	private Label question;
+	
+	private VerticalLayout layout;
+	private PopupView popup;
 
 	// private static final String IMAGE_WIDTH = "60px";
 	// private static final String IMAGE_HEIGHT = "60px";
@@ -56,31 +64,42 @@ public class BarometerView extends BaseView {
 		super();
 		super.setTitle("Barometer");
 		super.setLayouts(0.35f, 0.65f, 0, 0);
+		this.createQuestions();
 		this.createButtons();
 	}
 
+	private void createQuestions() {
+		
+		buttonYes = new Button("JA");
+		buttonYes.addClickListener(this);
+		buttonYes.setId("buttonYes");
+		buttonYes.setWidth("70px");
+		
+		buttonNo = new Button("NO");
+		buttonNo.addClickListener(this);
+		buttonNo.setId("buttonNo");
+		buttonNo.setWidth("70px");
+		
+		question = new Label("Fühlten Sie sich fast durchgängig traurig, niedergeschlagen oder hilflos?");
+		
+		HorizontalLayout contentRow = new HorizontalLayout();
+		contentRow.addComponents(buttonYes, buttonNo);
+		
+		layout = new VerticalLayout();
+		layout.addComponents(question, contentRow);
+		
+		popup = new PopupView ("Fragen beantworten", layout);
+		super.content.addComponent(popup);
+		super.content.setComponentAlignment(popup, Alignment.MIDDLE_CENTER);
+		
+	}
+	
 	@SuppressWarnings("serial")
 	private void createButtons() {
 		// HorizontalLayout newBarometerElement = new HorizontalLayout();
 		// super.content.addComponent(newBarometerElement);
 		// super.content.setComponentAlignment(newBarometerElement,
 		// Alignment.MIDDLE_CENTER);
-
-		Button buttonQuestions = new Button("Taegliche Fragen");// Text
-																// entfernen,
-																// sobald Icon
-																// funktioniert
-		buttonQuestions.addClickListener(this);
-		buttonQuestions.setId("buttonQuestions");
-		buttonQuestions.setWidth("380px");
-		buttonQuestions.setHeight(BUTTON_HEIGHT);
-		// buttonQuestions.setIcon(new ThemeResource("images/Questions.png"),
-		// BUTTON_TEXT); Es besteht noch kein Image
-		// newBarometerElement.addComponent(buttonQuestions);
-		// newBarometerElement.setComponentAlignment(buttonQuestions,
-		// Alignment.MIDDLE_CENTER);
-		super.content.addComponent(buttonQuestions);
-		super.content.setComponentAlignment(buttonQuestions, Alignment.MIDDLE_CENTER);
 
 		Image vh = getImage("veryhappyIcon.png");
 		pictures.addComponent(vh);
