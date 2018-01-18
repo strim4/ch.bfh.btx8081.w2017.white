@@ -18,7 +18,11 @@ import com.vaadin.ui.TextField;
 
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.ActivityEntries;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ActivityPresenter;
 
 import com.vaadin.ui.Button.ClickEvent;
 
@@ -59,6 +63,7 @@ public class ActivityView extends BaseView implements MoodyView{
 		this.createButtons();
 	}
 	
+	ActivityPresenter ap = new ActivityPresenter(this);
 	/**
 	 * The private method createButtons construct the layout 
 	 * of this page with the buttons.
@@ -84,9 +89,13 @@ public class ActivityView extends BaseView implements MoodyView{
 		
 //		//Aktivitaet auswaehlen wird noch angepasst --> Datenbank
 		comboBox = new ComboBox<>("Aktivität");
-		comboBox.setItems("Spazieren", "TV schauen", "Wandern",
-		        "Klettern", "Schwimmen", "Ski fahren", "Kino", "Jogging");//TODO hier Daten aus Datenbank beziehen
-//		comboBox.setItems((Stream<String>) dbm.showa());
+		/*comboBox.setItems("Spazieren", "TV schauen", "Wandern",
+		        "Klettern", "Schwimmen", "Ski fahren", "Kino", "Jogging");//TODO hier Daten aus Datenbank beziehen */
+		comboBox.setItems(ap.ActivityName());
+		
+		
+		//comboBox.setItems( ap.ActivityName());
+		
 		comboBox.setWidth("360px");
 		activityChoice.addComponent(comboBox);
 		activityChoice.setComponentAlignment(comboBox, Alignment.MIDDLE_CENTER); 

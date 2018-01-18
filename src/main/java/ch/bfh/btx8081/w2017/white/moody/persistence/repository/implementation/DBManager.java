@@ -1,8 +1,11 @@
 package ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import javax.persistence.*;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.ActivityEntries;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
@@ -109,7 +112,21 @@ public class DBManager {
 		List<SchwellenwertUserReaktion> sur = q.getResultList();
 		return sur;
 	}
+	
+	public List<String> ActivityName() {
+		Query q = em.createQuery("select name from ActivityEntries name");
+		List<ActivityEntries> name = q.getResultList();
+		List<String> aname = new ArrayList();
+		for(int i = 0; i < name.size(); i++) {
+			String aaname = name.get(i).getName();
+			aname.add(aaname);
+			
+		}
+		return aname;
+	}
 
+	
+	
 	public List<Activity> geta() {
 		Query q = em.createQuery("select a from Activity a");
 		List<Activity> a = q.getResultList();

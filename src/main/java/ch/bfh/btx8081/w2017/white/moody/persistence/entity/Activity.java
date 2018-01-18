@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2017.white.moody.persistence.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -14,7 +15,7 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DB
  * 
  */
 @Entity
-@DiscriminatorValue(value = "AE")
+
 public class Activity extends DiaryElement implements Serializable, SEntity {
 	
 	private String description;
@@ -26,6 +27,8 @@ public class Activity extends DiaryElement implements Serializable, SEntity {
 	
 	public Activity() {}
 	
+	
+	
 	public void creatAc(String name,  String description, String entrydate , Date creationDate) {
 
 		Activity ac = new Activity(name, description, entrydate, new Date());
@@ -34,6 +37,7 @@ public class Activity extends DiaryElement implements Serializable, SEntity {
 
 	}
 
+	
 
 	public String getDescription() {
 		return description;

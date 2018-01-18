@@ -1,6 +1,8 @@
 package ch.bfh.btx8081.w2017.white.moody.presentation.presenter;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import com.vaadin.shared.Position;
 import com.vaadin.ui.Notification;
@@ -8,7 +10,7 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
-
+import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ActivityView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.SubWindowView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
@@ -39,6 +41,11 @@ public class ActivityPresenter implements ViewListener{
 		view.addListener(this);
 	}
 	
+	public ActivityPresenter(ActivityView view) {
+	
+		this.view = view;
+			}
+	
 	/**
 	 * The public method buttonClick handles the events of the buttons new, save and back.
 	 */
@@ -64,5 +71,13 @@ public class ActivityPresenter implements ViewListener{
 			view.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
 			break;
 		}
+	}
+	
+	
+	public List<String> ActivityName(){
+		DBManager dbm = DBManager.getInstance();
+		return dbm.ActivityName();
+
+		
 	}
 }
