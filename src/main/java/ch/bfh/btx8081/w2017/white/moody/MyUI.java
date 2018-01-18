@@ -16,7 +16,7 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ContactModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.DiaryModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ProfileModel;
-import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionModel;
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionnaireModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SchwellenwertUserReaktionModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SettingsModel;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
@@ -33,7 +33,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.DiaryTextPresente
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ExercisesPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.InformationsPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.ProfilePresenter;
-import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionPresenter;
+import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.QuestionnairePresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SettingsPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.TipsPresenter;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.WarningNotificationPresenter;
@@ -50,6 +50,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.InformationsView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ProfileView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionSmileyView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionYesNoView;
+import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionnaireView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.SettingsView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.StartView;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.SubWindowView;
@@ -69,7 +70,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.WarningNotificationVi
  * @author Chantal Last edit: 14.01.2018
  * @author Milena Last edit: 30.11.2017
  * @author Zoran Last edit: 05.12.2017
- * @author Sandra Last edit: 19.12.2017
+ * @author Sandra Last edit: 18.01.2018
  */
 
 @Push
@@ -122,11 +123,10 @@ public class MyUI extends UI {
 	BarometerModel barometerModel = new BarometerModel();
 
 	// Questions
-	// QuestionView question = new QuestionView(); Wird nicht gebraucht, da dem User
-	// nur Yes/No und Smiley angezeigt werden
+	QuestionnaireView questionnaire = new QuestionnaireView();
 	QuestionYesNoView questionYesNo = new QuestionYesNoView();
 	QuestionSmileyView questionSmiley = new QuestionSmileyView();
-	QuestionModel questionModel = new QuestionModel();
+	QuestionnaireModel questionnaireModel = new QuestionnaireModel();
 
 	// Notification
 	NotificationModel notificationModel = new NotificationModel();
@@ -170,7 +170,7 @@ public class MyUI extends UI {
 		navigator.addView("settings", settings);
 		navigator.addView("profile", profile);
 
-		// navigator.addView("question", question); Begruendung siehe oben
+		navigator.addView("questionnaire", questionnaire);
 		navigator.addView("questionyesno", questionYesNo);
 		navigator.addView("questionsmiley", questionSmiley);
 
@@ -193,9 +193,9 @@ public class MyUI extends UI {
 		// new SubWindowPresenter(subwindow);
 
 		new BarometerPresenter(barometerModel, barometer);
-		// new QuestionPresenter(questionModel, question); Begruendung siehe oben
-		new QuestionPresenter(questionModel, questionYesNo);
-		new QuestionPresenter(questionModel, questionSmiley);
+		new QuestionnairePresenter(questionnaireModel, questionnaire);
+		new QuestionnairePresenter(questionnaireModel, questionYesNo);
+		new QuestionnairePresenter(questionnaireModel, questionSmiley);
 
 		new WarningNotificationPresenter(schwellenwertUserReaktionModel, warningNotification);
 
