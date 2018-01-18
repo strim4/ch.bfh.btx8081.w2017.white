@@ -20,30 +20,19 @@ public class Question implements SEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String questionText;
- //   private QuestionAnswer questionAnswer;
-    private int questionAnswer;
-    private String result;
+    private String result; //which answer indicates NO depression : Yes or No
 
     // constructor
     public Question(){}
 
- /*   public Question(String questionText, QuestionAnswer questionAnswer){
-        this.questionText = questionText;
-        this.questionAnswer = questionAnswer;
-    }
-  */
-    public Question(String questionText, int questionAnswer) {
+    public Question(String questionText, String result) {
 		this.questionText = questionText;
-		this.questionAnswer = questionAnswer;
+		this.result=result;
 	}
 
     // methods
     public int getId(){
         return id;
-    }
-
-    public void setId(int id){
-        this.id = id;
     }
 
     public String getQuestionText(){
@@ -61,9 +50,5 @@ public class Question implements SEntity {
     public void setResult(String result) {
         this.result = result;
     }
-
- /*   public QuestionAnswer getQuestionAnswer() {
-        return questionAnswer;
-    }
-   */
+    
 }
