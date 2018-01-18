@@ -47,6 +47,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 	private DiaryElementListPresenter delp = new DiaryElementListPresenter(this);
 	//private Collection<DiaryText> diaryTexts;
+	//private Collection<Activity> activities;
 
 	private String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 
@@ -99,6 +100,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		.setCaption("Datum")
 		.setEditorComponent(dateEditor, DiaryText::setEntryDate)
 		.setExpandRatio(0);
+		griddt.setItems((Collection<DiaryText>) delp.getd());
 		griddt.addColumn(diaryTexts -> "Delete",
 			      new ButtonRenderer(clickEvent -> {
 //			          diaryTexts.remove(clickEvent.getItem());
@@ -106,7 +108,6 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 			    }))
 		.setExpandRatio(0);		
 		super.content.addComponents(textMenue, griddt);
-		griddt.setItems((Collection<DiaryText>) delp.getd());
 		super.content.setComponentAlignment(textMenue, Alignment.MIDDLE_CENTER);
 		super.content.setComponentAlignment(griddt, Alignment.MIDDLE_CENTER);
 		super.content.setSizeFull();
@@ -135,6 +136,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		griddp.addColumn(DiaryPic::getImageByte).setCaption("Bild");
 		griddp.addColumn(DiaryPic::getEntryDate).setCaption("Datum");
 		griddp.setSizeFull();
+		griddp.setHeight("300px");
 		super.content.addComponents(picMenue, griddp);
 		griddp.setItems((Collection<DiaryPic>) delp.getp());
 		super.content.setComponentAlignment(picMenue, Alignment.MIDDLE_CENTER);
@@ -142,6 +144,7 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		
 	}
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void createActivityList() {
 		
 		daTitle = new Label("Alle Aktivitäten aus dem Tagebuch");
@@ -152,15 +155,37 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		newActivity.setId("newActivity");
 
 		Grid<Activity> gridda = new Grid<>();
-		gridda.addColumn(Activity::getName).setCaption("Name");
-		gridda.addColumn(Activity::getDescription).setCaption("Beschreibung");
-		gridda.addColumn(Activity::getEntryDate).setCaption("Datum");
+		gridda.addColumn(Activity::getName)
+		.setCaption("Name")
+		.setEditorComponent(nameEditor, Activity::setName)
+		.setExpandRatio(1);
+		gridda.addColumn(Activity::getDescription)
+		.setCaption("Beschreibung")
+		.setEditorComponent(noteEditor, Activity::setDescription)
+		.setExpandRatio(2);
+		gridda.addColumn(Activity::getEntryDate)
+		.setCaption("Datum")
+		.setEditorComponent(dateEditor, Activity::setEntryDate)
+		.setExpandRatio(0);
 		gridda.setSizeFull();
 		super.content.addComponents(activityMenue, gridda);
 		gridda.setItems((Collection<Activity>) delp.geta());
 		super.content.setComponentAlignment(gridda, Alignment.MIDDLE_CENTER);
 		super.content.setComponentAlignment(activityMenue, Alignment.MIDDLE_CENTER);
+		gridda.addColumn(activities -> "Delete",
+			      new ButtonRenderer(clickEvent -> {
+//			          activities.remove(clickEvent.getItem());
+//			          griddt.setItems((Collection<Activity>) delp.getd());
+			    }))
+		.setExpandRatio(0);	
 		
+		gridda.addItemClickListener(new ItemClickListener<Activity>() {
+			public void itemClick(ItemClick<Activity> event) {
+				if (event.getMouseEventDetails().isDoubleClick()) {
+					gridda.getEditor().setEnabled(true);
+				}
+			}
+		});
 	}
 
 	private void createButtons() {
