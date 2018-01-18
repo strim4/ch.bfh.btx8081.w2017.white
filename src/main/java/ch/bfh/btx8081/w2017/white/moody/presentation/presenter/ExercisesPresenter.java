@@ -39,7 +39,6 @@ public class ExercisesPresenter implements ViewListener {
 			
 		case "buttonPause":
 			view.video.pause();
-			view.getUI().getNavigator().navigateTo(Views.EXERCISES_VIEW);
 			Notification pause = new Notification("");
 			pause.setPosition(Position.MIDDLE_CENTER);
 			Notification.show("Excercise Paused");

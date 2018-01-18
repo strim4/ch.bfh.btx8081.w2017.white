@@ -45,11 +45,11 @@ public class ExercisesView extends BaseView implements MoodyView {
 		super.content.addComponent(welcomeLabel);
 		super.content.setComponentAlignment(welcomeLabel, Alignment.TOP_CENTER);
 
-		FileResource fileResource = new FileResource(new File(basepath + "/VAADIN/videos/Atemuebung.mp4"));
+		FileResource fileResource = new FileResource(new File(basepath + "/VAADIN/videos/Atemuebung.ogg"));
 		video = new Video();
 		video.setSource(fileResource);
-		video.setWidth("400px"); // Set size of the video player's display area on screen
-		video.setHeight("300px");
+		video.setWidth("480px"); // Set size of the video player's display area on screen
+		video.setHeight("320px");
 		video.setPoster(new FileResource(new File(basepath + "/VAADIN/images/moodyLogo.png")));
 		video.isVisible();
 		video.setHtmlContentAllowed(true);
@@ -62,16 +62,14 @@ public class ExercisesView extends BaseView implements MoodyView {
 		buttonPlay.setId("buttonPlay");
 		buttonPlay.setWidth("120px");
 		buttonPlay.setHeight("120px");
-		// super.content.addComponent(buttonPlay);
-		// super.content.setComponentAlignment(buttonPlay, Alignment.BOTTOM_LEFT);
+		
 
 		buttonPause = new Button("Pause");
 		buttonPause.addClickListener(this);
 		buttonPause.setId("buttonPause");
 		buttonPause.setWidth("120px");
 		buttonPause.setHeight("120px");
-		// super.content.addComponent(buttonPause);
-		// super.content.setComponentAlignment(buttonPause, Alignment.BOTTOM_CENTER);
+		
 
 		HorizontalLayout buttons = new HorizontalLayout();
 		super.content.addComponent(buttons);
