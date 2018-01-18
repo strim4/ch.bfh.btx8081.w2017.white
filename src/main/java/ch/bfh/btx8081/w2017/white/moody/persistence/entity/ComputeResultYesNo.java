@@ -43,7 +43,6 @@ public class ComputeResultYesNo {
 	private double computeDayResult(Calendar date) {
 		double result = 0;
 		int pos = searchPos(date);
-
 		if (pos < 0) {
 			int points = 0;
 			int qNumber = 0;
@@ -60,6 +59,7 @@ public class ComputeResultYesNo {
 	private double computeMonthDouble(Calendar date) {
 		int days = computeDaysInMonth(date);
 		int pos = searchPosFirstDay(date);
+		int actDays=0;
 		double points = 0;
 		for (int i = 1; i <= days; i++) {
 			date.set(Calendar.DAY_OF_MONTH, i);
@@ -71,26 +71,28 @@ public class ComputeResultYesNo {
 					if (day.get(Calendar.MONTH) == date.get(Calendar.MONTH)) {
 						points = points + computeDayResult(day);
 						pos = pos + 1;
+						actDays= actDays+1;
 					}
 				}
 			}
 		}
-		double month = points / days;
+		double month = points / actDays;
 		return month;
 	}
 
 	public double computeSixMonthsDouble(Calendar date) {
 		date.set(Calendar.DAY_OF_MONTH, 1);
 		double result = 0;
+		int month = date.get(Calendar.MONTH);
 		for (int i = 5; i >= 0; i--) {
 			result = result + computeMonthDouble(date);
-			int month = date.get(Calendar.MONTH);
 			if (month > 0) {
-				date.set(Calendar.MONTH, month - 1);
+				month= month-1;
 			} else {
 				date.set(Calendar.YEAR, date.get(Calendar.YEAR) - 1);
-				date.set(Calendar.MONTH, 11);
+				month=11;
 			}
+			date.set(Calendar.MONTH, month);
 		}
 		return result;
 	}
@@ -98,15 +100,16 @@ public class ComputeResultYesNo {
 	public double computeYearDouble(Calendar date) {
 		date.set(Calendar.DAY_OF_MONTH, 1);
 		double result = 0;
+		int month = date.get(Calendar.MONTH);
 		for (int i = 12; i >= 0; i--) {
 			result = result + computeMonthDouble(date);
-			int month = date.get(Calendar.MONTH);
 			if (month > 0) {
-				date.set(Calendar.MONTH, month - 1);
+				month=month-1;
 			} else {
 				date.set(Calendar.YEAR, date.get(Calendar.YEAR) - 1);
-				date.set(Calendar.MONTH, 11);
+				month=11;
 			}
+			date.set(Calendar.MONTH, month);
 		}
 		return result;
 	}
