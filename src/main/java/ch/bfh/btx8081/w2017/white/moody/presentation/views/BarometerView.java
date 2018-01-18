@@ -13,7 +13,6 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.PopupView;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 
@@ -30,12 +29,8 @@ public class BarometerView extends BaseView {
 	private static final String BUTTON_WIDTH = "120px";
 	private static final String BUTTON_HEIGHT = "120px";
 
-	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+	private String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 
-	private static final String BUTTON_MONAT = "Monat";
-	private static final String BUTTON_6MONATE = "6 Monate";
-	private static final String BUTTON_JAHR = "Jahr";
-	private static final String BUTTON_BACK = "BACK";
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 	private HighChart chart = new HighChart();
 	private VerticalLayout pictures = new VerticalLayout();
@@ -43,63 +38,24 @@ public class BarometerView extends BaseView {
 
 	Label strain = new Label();
 	Label strainTxt = new Label("Deine Aktuelle Belastung:");
-	
-	private Button buttonYes;
-	private Button buttonNo;
-	private Label question;
-	
-	private VerticalLayout layout;
-	private PopupView popup;
-
-	// private static final String IMAGE_WIDTH = "60px";
-	// private static final String IMAGE_HEIGHT = "60px";
-
-	// private static final String IMAGE_VERYSAD = "VERYSAD";
-	// private static final String IMAGE_SAD = "SAD";
-	// private static final String IMAGE_NEUTRAL = "NEUTRAL";
-	// private static final String IMAGE_HAPPY = "HAPPY";
-	// private static final String IMAGE_VERYHAPPY = "VERYHAPPY";
 
 	public BarometerView() {
 		super();
 		super.setTitle("Barometer");
 		super.setLayouts(0.35f, 0.65f, 0, 0);
-		this.createQuestions();
 		this.createButtons();
 	}
 
-	private void createQuestions() {
-		
-		buttonYes = new Button("JA");
-		buttonYes.addClickListener(this);
-		buttonYes.setId("buttonYes");
-		buttonYes.setWidth("70px");
-		
-		buttonNo = new Button("NO");
-		buttonNo.addClickListener(this);
-		buttonNo.setId("buttonNo");
-		buttonNo.setWidth("70px");
-		
-		question = new Label("Fühlten Sie sich fast durchgängig traurig, niedergeschlagen oder hilflos?");
-		
-		HorizontalLayout contentRow = new HorizontalLayout();
-		contentRow.addComponents(buttonYes, buttonNo);
-		
-		layout = new VerticalLayout();
-		layout.addComponents(question, contentRow);
-		
-		popup = new PopupView ("Fragen beantworten", layout);
-		super.content.addComponent(popup);
-		super.content.setComponentAlignment(popup, Alignment.MIDDLE_CENTER);
-		
-	}
 	
 	@SuppressWarnings("serial")
 	private void createButtons() {
-		// HorizontalLayout newBarometerElement = new HorizontalLayout();
-		// super.content.addComponent(newBarometerElement);
-		// super.content.setComponentAlignment(newBarometerElement,
-		// Alignment.MIDDLE_CENTER);
+		
+		Button buttonQuestions = new Button("Taegliche Fragen");
+		buttonQuestions.addClickListener(this);
+		buttonQuestions.setId("buttonQuestions");
+		super.content.addComponent(buttonQuestions);
+		super.content.setComponentAlignment(buttonQuestions, Alignment.MIDDLE_CENTER);
+
 
 		Image vh = getImage("veryhappyIcon.png");
 		pictures.addComponent(vh);
@@ -237,49 +193,6 @@ public class BarometerView extends BaseView {
 		image.setWidth("40px");
 		return image;
 	}
-
-	// VERSUCH eine Statistik einzufügen =>
-	// protected Component getPlotlyApi() {
-	// PlotlyApi plotlyApi = new PlotlyApi();
-	// plotlyApi.setWidth("380px");
-	// plotlyApi.setHeight(BUTTON_HEIGHT);
-	// super.content.addComponent(plotlyApi);
-	// super.content.setComponentAlignment(plotlyApi, Alignment.MIDDLE_CENTER);
-	// LineData Line1 = new LineData("Random Line 1 ");
-	// categories: [@SuppressWarnings("serial")
-
-	// ICONS, welche links bei der Statistik eingefügt werden sollten=>
-	// private void Image() {
-	// Image imageVerySad = new Image("");
-	// imageVerySad.setWidth(IMAGE_WIDTH);
-	// imageVerySad.setHeight(IMAGE_HEIGHT);
-	// imageVerySad.setIcon(new FileResource(new File (basepath
-	// +"/VAADIN/images/VerySadIcon.png")));
-
-	// Image imageSad = new Image("");
-	// imageSad.setWidth(IMAGE_WIDTH);
-	// imageSad.setHeight(IMAGE_HEIGHT);
-	// imageSad.setIcon(new FileResource(new File (basepath
-	// +"/VAADIN/images/SadIcon.png")));
-
-	// Image imageNeutral = new Image("");
-	// imageNeutral.setWidth(IMAGE_WIDTH);
-	// imageNeutral.setHeight(IMAGE_HEIGHT);
-	// imageNeutral.setIcon(new FileResource(new File (basepath
-	// +"/VAADIN/images/SmileyIcon.png")));
-
-	// Image imageHappy = new Image("");
-	// imageHappy.setWidth(IMAGE_WIDTH);
-	// imageHappy.setHeight(IMAGE_HEIGHT);
-	// imageHappy.setIcon(new FileResource(new File (basepath
-	// +"/VAADIN/images/HappyIcon.png")));
-
-	// Image imageVeryHappy = new Image("");
-	// imageVeryHappy.setWidth(IMAGE_WIDTH);
-	// imageVeryHappy.setHeight(IMAGE_HEIGHT);
-	// imageVeryHappy.setIcon(new FileResource(new File (basepath
-	// +"/VAADIN/images/VeryHappyIcon.png")));
-	// ]
 
 	@Override
 	public void addListener(ViewListener listener) {
