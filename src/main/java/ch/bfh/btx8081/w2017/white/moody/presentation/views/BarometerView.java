@@ -83,28 +83,29 @@ public class BarometerView extends BaseView {
 		super.content.setComponentAlignment(buttonQuestions, Alignment.MIDDLE_CENTER);
 
 		Image vh = getImage("veryhappyIcon.png");
-
 		pictures.addComponent(vh);
-		pictures.setComponentAlignment(vh, Alignment.MIDDLE_LEFT);
+		pictures.setComponentAlignment(vh, Alignment.MIDDLE_CENTER);
 
 		Image h = getImage("happyIcon.png");
 		pictures.addComponent(h);
-		pictures.setComponentAlignment(h, Alignment.MIDDLE_LEFT);
+		pictures.setComponentAlignment(h, Alignment.MIDDLE_CENTER);
 
-		Image n = getImage("happyIcon.png");
+		Image n = getImage("SmileyIcon.png");
 		pictures.addComponent(n);
-		pictures.setComponentAlignment(n, Alignment.MIDDLE_LEFT);
+		pictures.setComponentAlignment(n, Alignment.MIDDLE_CENTER);
 
-		Image s = getImage("happyIcon.png");
+		Image s = getImage("sadIcon.png");
 		pictures.addComponent(s);
-		pictures.setComponentAlignment(s, Alignment.MIDDLE_LEFT);
+		pictures.setComponentAlignment(s, Alignment.MIDDLE_CENTER);
 
-		Image vs = getImage("happyIcon.png");
+		Image vs = getImage("verysadIcon.png");
 		pictures.addComponent(vs);
-		pictures.setComponentAlignment(vs, Alignment.MIDDLE_LEFT);
+		pictures.setComponentAlignment(vs, Alignment.MIDDLE_CENTER);
 
 		pChart.addComponent(pictures);
 		pChart.addComponent(chart);
+		pChart.setComponentAlignment(pictures, Alignment.MIDDLE_CENTER);
+		pChart.setComponentAlignment(chart, Alignment.MIDDLE_CENTER);
 		super.content.addComponent(pChart);
 		super.content.setComponentAlignment(pChart, Alignment.MIDDLE_CENTER);
 
