@@ -7,8 +7,12 @@ import java.util.List;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Grid.ItemClick;
+import com.vaadin.ui.components.grid.ItemClickListener;
 import com.vaadin.ui.Grid;
+import com.vaadin.ui.TextField;
 
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile;
 import ch.bfh.btx8081.w2017.white.moody.presentation.presenter.SettingsPresenter;
 
@@ -26,8 +30,16 @@ public class SettingsView extends BaseView implements MoodyView{
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 	
 	private SettingsPresenter sp = new SettingsPresenter(this);
-	private Button buttonProfileNew = new Button("Neues Profil erstellen");
 	private Grid<Profile> gridpr = new Grid<>();
+	
+	private Button buttonProfileNew;
+	
+	private TextField firstNameEditor = new TextField();
+	private TextField lastNameEditor = new TextField();
+	private TextField doctorEditor = new TextField();
+	private TextField doctorPhoneEditor = new TextField();
+	private TextField contactEditor = new TextField();
+	private TextField contactPhoneEditor = new TextField();
 	
 	public SettingsView() {
 		super();
@@ -41,18 +53,42 @@ public class SettingsView extends BaseView implements MoodyView{
 	 */
 	public void createLayout() {
 		
+		buttonProfileNew = new Button("Neues Profil erstellen");
 		buttonProfileNew.addClickListener(this);
 		buttonProfileNew.setId("profile");
 		buttonProfileNew.setWidth(BUTTON_WIDTH);
 		
-		gridpr.addColumn(Profile::getFirstName).setCaption("Vorname");
-		gridpr.addColumn(Profile::getLastName).setCaption("Nachname");
+		gridpr.addColumn(Profile::getFirstName)
+		.setCaption("Vorname")
+		.setEditorComponent(firstNameEditor, Profile::setFirstName);
+		gridpr.addColumn(Profile::getLastName)
+		.setCaption("Nachname")
+		.setEditorComponent(lastNameEditor, Profile::setLastName);
+		gridpr.addColumn(Profile::getHouseDoctor)
+		.setCaption("Arzt")
+		.setEditorComponent(doctorEditor, Profile::setHouseDoctor);
+		gridpr.addColumn(Profile::getHouseDoctorPhone)
+		.setCaption("Telefon-Arzt")
+		.setEditorComponent(doctorPhoneEditor, Profile::setHouseDoctorPhone);
+		gridpr.addColumn(Profile::getEmergencyContact)
+		.setCaption("Kontakt")
+		.setEditorComponent(contactEditor, Profile::setEmergencyContact);
+		gridpr.addColumn(Profile::getEmergencyContactPhone)
+		.setCaption("Telefon-Kontakt")
+		.setEditorComponent(contactPhoneEditor, Profile::setEmergencyContactPhone);
 		gridpr.setItems((Collection<Profile>) sp.getpr());
-		gridpr.setHeight("160px");
+		gridpr.setHeight("80px");
+		gridpr.setWidth("1000px");
 		super.content.addComponents(buttonProfileNew, gridpr);
 		super.content.setComponentAlignment(buttonProfileNew, Alignment.MIDDLE_CENTER);
 		super.content.setComponentAlignment(gridpr, Alignment.MIDDLE_CENTER);
-	
+		gridpr.addItemClickListener(new ItemClickListener<Profile>() {
+			public void itemClick(ItemClick<Profile> event) {
+				if (event.getMouseEventDetails().isDoubleClick()) {
+					gridpr.getEditor().setEnabled(true);
+				}
+			}
+		});
 	}
 	
     /**

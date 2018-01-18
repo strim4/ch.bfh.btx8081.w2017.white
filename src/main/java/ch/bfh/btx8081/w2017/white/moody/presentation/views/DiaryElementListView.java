@@ -17,6 +17,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Grid.ItemClick;
 import com.vaadin.ui.Grid.SelectionMode;
 import com.vaadin.ui.components.grid.ItemClickListener;
+import com.vaadin.ui.renderers.ButtonRenderer;
 import com.vaadin.ui.renderers.ImageRenderer;
 
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
@@ -33,112 +34,138 @@ import com.vaadin.ui.*;
  * It contains a list with the text elements, the pictures and the activities.
  * 
  * @author Chantal 
- * Last Edit: 14.01.2018
+ * Last Edit: 17.01.2018
  */
 
 @SuppressWarnings("serial")
 public class DiaryElementListView extends BaseView implements MoodyView {
 
+	private HorizontalLayout textMenue = new HorizontalLayout();
+	private HorizontalLayout picMenue = new HorizontalLayout();
+	private HorizontalLayout activityMenue = new HorizontalLayout();
+	
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 	private DiaryElementListPresenter delp = new DiaryElementListPresenter(this);
+	//private Collection<DiaryText> diaryTexts;
 
-	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+	private String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 
-	private Button buttonBack = new Button("");
-	private HorizontalLayout text = new HorizontalLayout();
-	private DiaryTextView textView = new DiaryTextView();
+	private Label dtTitle;
+	private Label dpTitle;
+	private Label daTitle;
+	
+	private Button newText;
+	private Button newPic;
+	private Button newActivity;
+	private Button buttonBack;
+	
+	private TextField nameEditor = new TextField();
+	private TextField noteEditor = new TextField();
+	private TextField dateEditor = new TextField();
 	
 	public DiaryElementListView() {
 
 		super();
 		super.setTitle("Alte Einträge");
 		this.createDiaryTextList();
-		super.content.addComponent(text);
 		this.createDiaryPictureList();
 		this.createActivityList();
 		this.createButtons();
 		
 	}
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void createDiaryTextList() {
 		
-		Label dtTitle = new Label("Alle Texteinträge aus dem Tagebuch");
-		super.content.addComponent(dtTitle);
-		super.content.setComponentAlignment(dtTitle, Alignment.MIDDLE_CENTER);
+		dtTitle = new Label("Alle Texteinträge aus dem Tagebuch");
+		newText = new Button("Neu");
+		textMenue.addComponents(dtTitle, newText);
+		textMenue.setComponentAlignment(dtTitle, Alignment.MIDDLE_CENTER);
+		newText.addClickListener(this);
+		newText.setId("newText");
 
 		Grid<DiaryText> griddt = new Grid<>();
 		griddt.setSelectionMode(SelectionMode.SINGLE);
-		griddt.setSizeFull();
-		griddt.addColumn(DiaryText::getName).setCaption("Name");
-		griddt.addColumn(DiaryText::getNote).setCaption("Eintrag");
-		griddt.addColumn(DiaryText::getEntryDate).setCaption("Datum");
-		text.addComponent(griddt);
+		griddt.setSizeFull();		
+		griddt.addColumn(DiaryText::getName)
+		.setCaption("Name")
+		.setEditorComponent(nameEditor, DiaryText::setName)
+		.setExpandRatio(1);
+		griddt.addColumn(DiaryText::getNote)
+		.setCaption("Eintrag")
+		.setEditorComponent(noteEditor, DiaryText::setNote)
+		.setExpandRatio(2);		
+		griddt.addColumn(DiaryText::getEntryDate)
+		.setCaption("Datum")
+		.setEditorComponent(dateEditor, DiaryText::setEntryDate)
+		.setExpandRatio(0);
+		griddt.addColumn(diaryTexts -> "Delete",
+			      new ButtonRenderer(clickEvent -> {
+//			          diaryTexts.remove(clickEvent.getItem());
+//			          griddt.setItems((Collection<DiaryText>) delp.getd());
+			    }))
+		.setExpandRatio(0);		
+		super.content.addComponents(textMenue, griddt);
 		griddt.setItems((Collection<DiaryText>) delp.getd());
-		text.setComponentAlignment(griddt, Alignment.MIDDLE_CENTER);
-
-		text.addComponent(textView);
-		text.setSizeFull();
-		text.setExpandRatio(griddt, 1);
-		textView.setVisible(false);
+		super.content.setComponentAlignment(textMenue, Alignment.MIDDLE_CENTER);
+		super.content.setComponentAlignment(griddt, Alignment.MIDDLE_CENTER);
+		super.content.setSizeFull();
 		
 		griddt.addItemClickListener(new ItemClickListener<DiaryText>() {
 			public void itemClick(ItemClick<DiaryText> event) {
 				if (event.getMouseEventDetails().isDoubleClick()) {
-					textView.getUI().getNavigator().navigateTo(Views.DIARYTEXT_VIEW);
+					griddt.getEditor().setEnabled(true);
 				}
 			}
 		});
-		
-//		griddt.asSingleSelect().addValueChangeListener(event -> {
-//			if(event.getValue() == null) {
-//				textView.setVisible(false);
-//			} else {
-//				textView.setDiaryText(event.getValue());
-//			}
-//		});
-		
-		//SingleSelect<DiaryText> selection = griddt.asSingleSelect();
-
-//		selection.addValueChangeListener(listener);
 		
 	}
 	
 	private void createDiaryPictureList() {
 		
-		Label dpTitle = new Label("Alle Bildereinträge aus dem Tagebuch");
-		super.content.addComponent(dpTitle);
-		super.content.setComponentAlignment(dpTitle, Alignment.MIDDLE_CENTER);
+		dpTitle = new Label("Alle Bildereinträge aus dem Tagebuch");
+		newPic = new Button("Neu");
+		picMenue.addComponents(dpTitle, newPic);
+		picMenue.setComponentAlignment(dpTitle, Alignment.MIDDLE_CENTER);
+		newPic.addClickListener(this);
+		newPic.setId("newPic");
 
 		Grid<DiaryPic> griddp = new Grid<>();
 		griddp.addColumn(DiaryPic::getName).setCaption("Name");
 		griddp.addColumn(DiaryPic::getImageByte).setCaption("Bild");
 		griddp.addColumn(DiaryPic::getEntryDate).setCaption("Datum");
 		griddp.setSizeFull();
-		super.content.addComponent(griddp);
+		super.content.addComponents(picMenue, griddp);
 		griddp.setItems((Collection<DiaryPic>) delp.getp());
+		super.content.setComponentAlignment(picMenue, Alignment.MIDDLE_CENTER);
 		super.content.setComponentAlignment(griddp, Alignment.MIDDLE_CENTER);
 		
 	}
 	
 	private void createActivityList() {
 		
-		Label daTitle = new Label("Alle Aktivitäten aus dem Tagebuch");
-		super.content.addComponent(daTitle);
-		super.content.setComponentAlignment(daTitle, Alignment.MIDDLE_CENTER);
+		daTitle = new Label("Alle Aktivitäten aus dem Tagebuch");
+		newActivity = new Button("Neu");
+		activityMenue.addComponents(daTitle, newActivity);
+		activityMenue.setComponentAlignment(daTitle, Alignment.MIDDLE_CENTER);
+		newActivity.addClickListener(this);
+		newActivity.setId("newActivity");
 
 		Grid<Activity> gridda = new Grid<>();
 		gridda.addColumn(Activity::getName).setCaption("Name");
 		gridda.addColumn(Activity::getDescription).setCaption("Beschreibung");
 		gridda.addColumn(Activity::getEntryDate).setCaption("Datum");
 		gridda.setSizeFull();
-		super.content.addComponent(gridda);
+		super.content.addComponents(activityMenue, gridda);
 		gridda.setItems((Collection<Activity>) delp.geta());
 		super.content.setComponentAlignment(gridda, Alignment.MIDDLE_CENTER);
+		super.content.setComponentAlignment(activityMenue, Alignment.MIDDLE_CENTER);
 		
 	}
 
 	private void createButtons() {
 		
+		buttonBack = new Button("");
 		buttonBack.addClickListener(this);
 		buttonBack.setId("buttonBack");
 		buttonBack.setWidth("380px");

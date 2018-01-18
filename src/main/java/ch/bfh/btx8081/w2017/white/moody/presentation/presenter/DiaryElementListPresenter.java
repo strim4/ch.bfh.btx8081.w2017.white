@@ -3,10 +3,6 @@ package ch.bfh.btx8081.w2017.white.moody.presentation.presenter;
 import java.util.List;
 
 import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Grid.ItemClick;
-import com.vaadin.ui.UI;
-import com.vaadin.ui.Window;
-
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText;
@@ -26,7 +22,6 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
 public class DiaryElementListPresenter implements ViewListener{
 
 	private DiaryElementListView view;
-	private UI parent;
 	
 	/**
 	 * The constructor of the DiaryElementListPresenter
@@ -73,6 +68,15 @@ public class DiaryElementListPresenter implements ViewListener{
 		String buttonID = event.getButton().getId();
 		
 		switch(buttonID) {
+		case "newText":
+			view.getUI().getNavigator().navigateTo(Views.DIARYTEXT_VIEW);
+			break;
+		case "newPic":
+			view.getUI().getNavigator().navigateTo(Views.DIARYPIC_VIEW);
+			break;
+		case "newActivity":
+			view.getUI().getNavigator().navigateTo(Views.ACTIVITY_VIEW);
+			break;
 		case "buttonBack":
 			view.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
 			break;
