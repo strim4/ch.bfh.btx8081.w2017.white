@@ -7,7 +7,6 @@
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryText</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.Anotification</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.TextNotification</class>
-		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.ImageNotification</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResults</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResultsEmoji</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResultsYesNo</class>

@@ -13,18 +13,18 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
 /**
  * @author Milena
  * @author Zoran
  * 
- *         Notification Class Last Edit: 19.12.17
- * 
- *         it represents the Superclass for all Notifications
+ *         Notification Class it represents the Superclass for all Notifications
+ *         Last Edit: 19.12.17
  */
 
-// the name of the Class cannot be Notification (same as Notification Class of
-// Vaadin)
+/*
+ * the name of the Class cannot be Notification (same as Notification Class of
+ * Vaadin)
+ */
 
 @SuppressWarnings("serial")
 @Entity
@@ -35,13 +35,13 @@ public class Anotification implements Serializable, SEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected int id;
-	
+
 	protected String title;
 	protected String type;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date date;
-	
+
 	// it allows to check if notification has been sent
 	protected boolean isSent;
 	protected String description;
@@ -56,13 +56,13 @@ public class Anotification implements Serializable, SEntity {
 
 	public Anotification(String title, String description) {
 		this.title = title;
-		
-		//this is only for controlling purposes
+
+		// this is only for controlling purposes
 		this.date = new Date();
 		this.id = -1;
 		this.isSent = false;
 		//
-		
+
 		this.description = description;
 	}
 

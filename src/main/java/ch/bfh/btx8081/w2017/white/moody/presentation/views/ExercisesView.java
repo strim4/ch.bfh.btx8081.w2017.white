@@ -14,9 +14,10 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.Video;
 
 /**
- * The Exercises View shows a relaxing breath exercise.
+ * The Exercises View shows a relaxing breathing exercise.
  * 
- * @author Chantal Last Edit: 16.01.18 Zoran Last Edit : 18.01.2018
+ * @author Chantal Last Edit: 16.01.2018
+ * @author Zoran Last Edit : 18.01.2018
  */
 @SuppressWarnings("serial")
 public class ExercisesView extends BaseView implements MoodyView {
@@ -24,9 +25,8 @@ public class ExercisesView extends BaseView implements MoodyView {
 	private List<ViewListener> listeners = new ArrayList<ViewListener>();
 
 	String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
-	Button buttonPlay;
-	Button buttonStop;
-	Button buttonPause;
+	private Button buttonPlay;
+	private Button buttonPause;
 	public Video video;
 
 	public ExercisesView() {
@@ -37,7 +37,8 @@ public class ExercisesView extends BaseView implements MoodyView {
 	}
 
 	/**
-	 * The private method createFutureContent is for the following content.
+	 * The private method createFutureContent prepares the video and Layout with Buttons
+	 * waiting for the user decision e.g. play, pause or go back to home screen
 	 */
 	private void createFutureContent() {
 
@@ -50,7 +51,7 @@ public class ExercisesView extends BaseView implements MoodyView {
 		video.setSource(fileResource);
 		video.setWidth("480px"); // Set size of the video player's display area on screen
 		video.setHeight("320px");
-		video.setPoster(new FileResource(new File(basepath + "/VAADIN/images/moodyLogo.png")));
+		video.setPoster(new FileResource(new File(basepath + "/VAADIN/images/exerciseIcon.png")));
 		video.isVisible();
 		video.setHtmlContentAllowed(true);
 		video.setAutoplay(false);
@@ -62,14 +63,12 @@ public class ExercisesView extends BaseView implements MoodyView {
 		buttonPlay.setId("buttonPlay");
 		buttonPlay.setWidth("120px");
 		buttonPlay.setHeight("120px");
-		
 
 		buttonPause = new Button("Pause");
 		buttonPause.addClickListener(this);
 		buttonPause.setId("buttonPause");
 		buttonPause.setWidth("120px");
 		buttonPause.setHeight("120px");
-		
 
 		HorizontalLayout buttons = new HorizontalLayout();
 		super.content.addComponent(buttons);

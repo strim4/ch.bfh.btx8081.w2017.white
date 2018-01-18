@@ -8,11 +8,9 @@ import com.vaadin.annotations.Push;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.Page;
-import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.shared.Position;
-import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
@@ -22,9 +20,8 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationGenerat
 
 /**
  * 
- * @author Zoran 
- * It enables Notifications to be launched asynchronous in a
- * separate Thread Last Edit: 05.12.2017
+ * @author Zoran It enables Notifications to be launched asynchronous in a
+ *         separate Thread Last Edit: 18.01.2018
  */
 
 @Push
@@ -42,10 +39,10 @@ public class PushNotificationUI extends Thread {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	public void startPush() {
 		// Notification with the Title (Happy Messages) and a current chosen message
-		// from generator
-		@SuppressWarnings("deprecation")
+		// from NotificationGenerator
 		String currentNotif = notifg.getNotif().getTitle();
 		Notification notif = new Notification("Happy Messages", currentNotif, Notification.TYPE_ERROR_MESSAGE);
 
@@ -67,7 +64,7 @@ public class PushNotificationUI extends Thread {
 		try {
 			// the count of push actions for the given time period (the count of Push
 			// Messages per day)
-			// it can be set to (true) for endless thread
+			// it can be set to (true) for endless thread, if so, the next thread is than obsolete
 			while (count < 4) {
 				// the time delay between the notifications is been set here (how often per day)
 				Thread.sleep(15000);

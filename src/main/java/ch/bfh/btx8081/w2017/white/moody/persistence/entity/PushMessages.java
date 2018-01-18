@@ -12,7 +12,8 @@ import javax.persistence.Table;
  * @author Zoran
  * 
  * This Class allows persistence of the push messages inside of the DB
- * Last Edit: 19.12.2017
+ * and Creation of the Table for the same Messages
+ * Last Edit: 18.01.2018
  *
  */
 

@@ -1,20 +1,21 @@
 package ch.bfh.btx8081.w2017.white.moody;
 
 import javax.servlet.annotation.WebServlet;
+
 import com.vaadin.annotations.Push;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.navigator.Navigator;
+import com.vaadin.navigator.Navigator.ComponentContainerViewDisplay;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.navigator.Navigator.ComponentContainerViewDisplay;
+
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BarometerModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.BaseModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ContactModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.DiaryModel;
-import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ProfileModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionnaireModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SchwellenwertUserReaktionModel;
@@ -69,7 +70,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.WarningNotificationVi
  * @author Moritz
  * @author Chantal Last edit: 14.01.2018
  * @author Milena Last edit: 30.11.2017
- * @author Zoran Last edit: 05.12.2017
+ * @author Zoran Last edit: 18.01.2018
  * @author Sandra Last edit: 18.01.2018
  */
 
@@ -127,9 +128,6 @@ public class MyUI extends UI {
 	QuestionYesNoView questionYesNo = new QuestionYesNoView();
 	QuestionSmileyView questionSmiley = new QuestionSmileyView();
 	QuestionnaireModel questionnaireModel = new QuestionnaireModel();
-
-	// Notification
-	NotificationModel notificationModel = new NotificationModel();
 
 	// Subwindow
 	SubWindowView subwindow = new SubWindowView();
