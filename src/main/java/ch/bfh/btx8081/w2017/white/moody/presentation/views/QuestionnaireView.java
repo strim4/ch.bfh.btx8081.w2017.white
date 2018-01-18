@@ -28,31 +28,6 @@ public class QuestionnaireView extends BaseView implements MoodyView {
 	private Label lname;
 
 	public QuestionnaireView() {
-
-		super();
-
-		// test
-		// QuestionAnswer myAnswerX = new QuestionAnswer();
-		// Question myQuestionA = new Question("Fragetext1", myAnswerX);
-		// Question myQuestionB = new Question("Fragetext2", myAnswerX);
-		Question myQuestionA = new Question("Fragetext1", 1);
-		Question myQuestionB = new Question("Fragetext2", 1);
-
-		Questionnaire newQA = new Questionnaire();
-
-		newQA.addQuestion(myQuestionA);
-		newQA.addQuestion(myQuestionB);
-
-		super.setTitle("taegliche Fragen");
-
-		super.setLayouts(0.35f, 0.65f, 0, 0);
-
-		lname = new Label(newQA.listQuestionnaire().toString());
-
-		super.content.addComponent(lname);
-		super.content.setComponentAlignment(lname, Alignment.MIDDLE_CENTER);
-
-		this.createButtons();
 	}
 
 	@SuppressWarnings("serial")
@@ -71,5 +46,10 @@ public class QuestionnaireView extends BaseView implements MoodyView {
 	public void addListener(ViewListener listener) {
 		listeners.add(listener);
 	}
+	
+	public Question getShowedQuestion(){
+		Question showQ = new Question();
+    	return showQ;
+    }
 
 }
