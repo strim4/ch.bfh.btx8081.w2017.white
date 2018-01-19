@@ -8,14 +8,14 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DB
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionnaireView;
 
 /**
- * Diese Klasse wird leider nicht benutzt...
+ * Diese Klasse wird vermutlich nicht mehr benutzt, daher kommentiere ich hier
+ * auch nichts
  * 
- * @author Sandra
- * Last Edit: 18.01.2018
+ * @author Sandra Last Edit: Dezember 2017
  */
 
 public class QuestionPresenterYesNo extends QuestionnairePresenter {
-	
+
 	private QuestionnaireModel questionnaireModel;
 	private QuestionnaireView questionnaireView;
 
@@ -31,8 +31,8 @@ public class QuestionPresenterYesNo extends QuestionnairePresenter {
 
 		switch (buttonID) {
 		case "buttonYes":
-			
-		break;
+
+			break;
 		case "buttenNo":
 			break;
 		}
