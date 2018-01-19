@@ -8,32 +8,31 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * This class is the persistence of the WarningNotification screen on this screen the user
- * recive a warningnotification if his answers werent negativ during 7 days.
+ * This class is the persistence of the WarningNotification screen on this
+ * screen the user receive a WarningNotification if his answers were negative
+ * during 7 days.
  * 
- * @author Sandra
- * Last Edit: 18.01.2018
+ * @author Sandra Last Edit: 18.01.2018
  */
 
-//@SuppressWarnings("serial")
 @Entity
 @Table
 public class WarningNotification implements Serializable {
-
+	//
 	private static final long serialVersionUID = -8728026591860370205L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private int userId;
-	private String datum;
-	private boolean gelesen;
-	private boolean telArzt;
-	private boolean smsArzt;
-	private boolean telBezugsperson;
-	private boolean smsBezugsperson;
+	private String date;
+	private boolean read;
+	private boolean telDoctor;
+	private boolean smsDoctor;
+	private boolean telContactperson;
+	private boolean smsContactperson;
 
-	public WarningNotification(int userId, String datum, boolean gelesen, boolean telArzt, boolean smsArzt,
-			boolean telBezugsperson, boolean smsBezugsperson) {
+	public WarningNotification(int userId, String date, boolean read, boolean telDoctor, boolean smsDoctor,
+			boolean telContactperson, boolean smsContactperson) {
 	}
 
 	public WarningNotification() {
@@ -47,51 +46,51 @@ public class WarningNotification implements Serializable {
 		return userId;
 	}
 
-	public void setDatum(String datum) {
-		this.datum = datum;
+	public void setDate(String date) {
+		this.date = date;
 	}
 
-	public String getDatum() {
-		return datum;
+	public String getDate() {
+		return date;
 	}
 
-	public void setGelesen(boolean gelesen) {
-		this.gelesen = gelesen;
+	public void setRead(boolean read) {
+		this.read = read;
 	}
 
-	public boolean getGelesen() {
-		return gelesen;
+	public boolean getRead() {
+		return read;
 	}
 
-	public void setTelArzt(boolean telArzt) {
-		this.telArzt = telArzt;
+	public void setTelDoctor(boolean telDoctor) {
+		this.telDoctor = telDoctor;
 	}
 
-	public boolean getTelArzt() {
-		return telArzt;
+	public boolean getTelDoctor() {
+		return telDoctor;
 	}
 
-	public void setSmsArzt(boolean smsArzt) {
-		this.smsArzt = smsArzt;
+	public void setSmsDoctor(boolean smsDoctor) {
+		this.smsDoctor = smsDoctor;
 	}
 
-	public boolean getSmsArzt() {
-		return smsArzt;
+	public boolean getSmsDoctor() {
+		return smsDoctor;
 	}
 
-	public void setTelBezugsperson(boolean telBezugsperson) {
-		this.telBezugsperson = telBezugsperson;
+	public void setTelContactperson(boolean telContactperson) {
+		this.telContactperson = telContactperson;
 	}
 
-	public boolean getTelBezugsperson() {
-		return telBezugsperson;
+	public boolean getTelContactperson() {
+		return telContactperson;
 	}
 
-	public void setSmsBezugsperson(boolean smsBezugsperson) {
-		this.smsBezugsperson = smsBezugsperson;
+	public void setSmsContactperson(boolean smsContactperson) {
+		this.smsContactperson = smsContactperson;
 	}
 
-	public boolean getSmsBezugsperson() {
-		return smsBezugsperson;
+	public boolean getSmsContactperson() {
+		return smsContactperson;
 	}
 }
