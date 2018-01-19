@@ -21,8 +21,9 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationGenerat
 /**
  * 
  * @author Zoran 
- * It enables Notifications to be launched asynchronous in a
- * separate Thread Last Edit: 18.01.2018
+ * 	It enables Notifications to be launched asynchronous in a
+ *  separate Thread
+ *  Last Edit: 18.01.2018
  */
 
 @Push
@@ -68,13 +69,13 @@ public class PushNotificationUI extends Thread {
 	public void run() {
 		try {
 			/**
-			 * the count of push actions for the given time period (the count of Push
+			 * The count of push actions for the given time period (the count of Push
 			 * Messages per day) it can be set to (true) for endless thread, if so, the next
 			 * thread is than obsolete
 			 */
 			while (count < 4) {
 				/**
-				 * the time delay between the notifications is been set here (how often per day)
+				 * The time delay between the notifications is been set here (how often per day)
 				 */
 				Thread.sleep(15000);
 
@@ -88,7 +89,7 @@ public class PushNotificationUI extends Thread {
 			}
 
 			/**
-			 * this is just the message for test purposes, to notify that push threads are
+			 * This is just the message for test purposes, to notify that push threads are
 			 * stopped
 			 */
 			ui.access(new Runnable() {

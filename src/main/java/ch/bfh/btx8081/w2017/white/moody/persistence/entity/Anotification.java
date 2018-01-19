@@ -17,10 +17,10 @@ import javax.persistence.TemporalType;
  * @author Milena
  * @author Zoran
  * 
- *         Notification Class it represents the Superclass for all Notifications
- *         the name of the Class cannot be Notification (same as Notification
- *         Class of Vaadin) 
- *         Last Edit: 19.12.17
+ * Notification Class it represents the Superclass for all Notifications
+ * the name of the Class cannot be Notification (same as Notification
+ * Class of Vaadin)
+ * Last Edit: 19.12.17
  */
 
 @SuppressWarnings("serial")

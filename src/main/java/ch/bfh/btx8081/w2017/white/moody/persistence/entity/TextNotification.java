@@ -12,7 +12,6 @@ import javax.persistence.Table;
  * @author Zoran 
  * This Class represents the Subclass of the Notification it
  * offers the possibility for Text notifications
- *
  * Last Edit: 14.12.2017
  */
 @Entity
