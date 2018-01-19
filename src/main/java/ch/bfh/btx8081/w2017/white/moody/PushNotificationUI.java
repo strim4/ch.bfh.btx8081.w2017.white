@@ -20,8 +20,9 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.NotificationGenerat
 
 /**
  * 
- * @author Zoran It enables Notifications to be launched asynchronous in a
- *         separate Thread Last Edit: 18.01.2018
+ * @author Zoran 
+ * It enables Notifications to be launched asynchronous in a
+ * separate Thread Last Edit: 18.01.2018
  */
 
 @Push
@@ -41,13 +42,17 @@ public class PushNotificationUI extends Thread {
 
 	@SuppressWarnings("deprecation")
 	public void startPush() {
-		// Notification with the Title (Happy Messages) and a current chosen message
-		// from NotificationGenerator
+		/**
+		 * Notification with the Title (Happy Messages) and a current chosen message
+		 * from NotificationGenerator
+		 */
 		String currentNotif = notifg.getNotif().getTitle();
 		Notification notif = new Notification("Happy Messages", currentNotif, Notification.TYPE_ERROR_MESSAGE);
 
-		// Here is described how long the push message is going to be displayed
-		// it can be clicked away by clicking on the message
+		/**
+		 * Here is described how long the push message is going to be displayed it can
+		 * be clicked away by clicking on the message
+		 */
 		notif.setDelayMsec(5000);
 		notif.setPosition(Position.MIDDLE_RIGHT);
 		notif.setStyleName("mystyle");
@@ -62,11 +67,15 @@ public class PushNotificationUI extends Thread {
 	@Override
 	public void run() {
 		try {
-			// the count of push actions for the given time period (the count of Push
-			// Messages per day)
-			// it can be set to (true) for endless thread, if so, the next thread is than obsolete
+			/**
+			 * the count of push actions for the given time period (the count of Push
+			 * Messages per day) it can be set to (true) for endless thread, if so, the next
+			 * thread is than obsolete
+			 */
 			while (count < 4) {
-				// the time delay between the notifications is been set here (how often per day)
+				/**
+				 * the time delay between the notifications is been set here (how often per day)
+				 */
 				Thread.sleep(15000);
 
 				ui.access(new Runnable() {
@@ -78,8 +87,10 @@ public class PushNotificationUI extends Thread {
 				});
 			}
 
-			// this is just the message for test purposes, to notify that push threads are
-			// stopped
+			/**
+			 * this is just the message for test purposes, to notify that push threads are
+			 * stopped
+			 */
 			ui.access(new Runnable() {
 				@Override
 				public void run() {

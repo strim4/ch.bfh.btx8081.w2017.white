@@ -26,8 +26,10 @@ public class NotificationGenerator {
 
 	}
 
-	// The Method that returns the Description of the Time of the day in form of a
-	// String
+	/**
+	 * The Method that returns the Description of the Time of the day in form of a
+	 * String
+	 */
 	public String getPeriodOfDay(int hour) {
 
 		if (hour > 5 && hour <= 12) {
@@ -43,29 +45,29 @@ public class NotificationGenerator {
 
 	}
 
-	/*
+	/**
 	 * this Method returns the particular Notification picked randomly out of the
 	 * List that's been created out of the messages in DB selected by the time of
 	 * the day
 	 */
 	public Anotification getNotif() {
 
-		// Interpretation of the time of the day in hour form (int)
+		//Interpretation of the time of the day in hour form (int)
 		int currentTimeHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
 		String periodOfDay = getPeriodOfDay(currentTimeHour);
 
 		Random random = new Random();
 
-		/*
+		/**
 		 * the Push messages are presaved in DB. It gets the List of push messages out
 		 * of DB for the current period of day
 		 */
 		List<PushMessages> pushMessages = DBManager.getInstance().getPushMessages(periodOfDay);
 
-		/*
-		 * it randomize the integer, that has the same numeric value as the size of the list
-		 * of push messages
+		/**
+		 * it randomize the integer, that has the same numeric value as the size of the
+		 * list of push messages
 		 */
 		int randomNumber = (pushMessages.size() == 0) ? 0 : random.nextInt(pushMessages.size());
 
