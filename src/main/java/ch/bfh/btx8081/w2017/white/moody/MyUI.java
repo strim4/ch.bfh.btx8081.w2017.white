@@ -18,7 +18,7 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ContactModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.DiaryModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ProfileModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionnaireModel;
-import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ThersholdValueUserReactionModel;
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ThresholdValueUserReactionModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SettingsModel;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
@@ -134,7 +134,7 @@ public class MyUI extends UI {
 
 	// Warningnotification
 	WarningNotificationView warningNotification = new WarningNotificationView();
-	ThersholdValueUserReactionModel thersholdValueUserReactionModel = new ThersholdValueUserReactionModel();
+	ThresholdValueUserReactionModel thresholdValueUserReactionModel = new ThresholdValueUserReactionModel();
 
 	// NotificationUI
 	PushNotificationUI pNotificationUI;
@@ -190,7 +190,7 @@ public class MyUI extends UI {
 		new QuestionnairePresenter(questionnaireModel, questionnaire);
 		new QuestionnairePresenter(questionnaireModel, questionYesNo);
 		new QuestionnairePresenter(questionnaireModel, questionSmiley);
-		new WarningNotificationPresenter(thersholdValueUserReactionModel, warningNotification);
+		new WarningNotificationPresenter(thresholdValueUserReactionModel, warningNotification);
 
 		// NotificationUI launch with his concurrent Thread
 		pNotificationUI = new PushNotificationUI(UI.getCurrent(), layout);

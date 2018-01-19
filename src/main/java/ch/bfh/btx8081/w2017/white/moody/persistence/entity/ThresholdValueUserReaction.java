@@ -11,15 +11,15 @@ import javax.persistence.Table;
 import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 
 /**
- * This class is the persistence of the ThersholdValueUserReaction.
- * All reactions of the User have to be registered in the table ThersholdValueUserReaction
+ * This class is the persistence of the ThresholdValueUserReaction.
+ * All reactions of the User have to be registered in the table ThresholdValueUserReaction
  * 
  * @author Sandra Last Edit: 18.01.2018
  */
 
 @Entity
 @Table
-public class ThersholdValueUserReaction implements Serializable, SEntity {
+public class ThresholdValueUserReaction implements Serializable, SEntity {
 
 	/**
 	 * 
@@ -32,13 +32,13 @@ public class ThersholdValueUserReaction implements Serializable, SEntity {
 	private String reaction;
 	private String date;
 
-	public ThersholdValueUserReaction(int profilID, String date, String reaction) {
+	public ThresholdValueUserReaction(int profilID, String date, String reaction) {
 		this.profilID = profilID;
 		this.date = date;
 		this.reaction = reaction;
 	}
 
-	public ThersholdValueUserReaction() {
+	public ThresholdValueUserReaction() {
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class ThersholdValueUserReaction implements Serializable, SEntity {
 	 */	
 	public void createSur(int profilID, String date, String reaction) {
 
-		ThersholdValueUserReaction sur = new ThersholdValueUserReaction(profilID, date, reaction);
+		ThresholdValueUserReaction sur = new ThresholdValueUserReaction(profilID, date, reaction);
 		DBManager dbm = DBManager.getInstance();
 		dbm.persistObject(sur);
 	}
@@ -87,7 +87,7 @@ public class ThersholdValueUserReaction implements Serializable, SEntity {
 
 	@Override
 	public String toString() {
-		return "ThersholdValueUserReaction{" + "reaetionID=" + getReactionID() + ",  profilID=" + getProfilID()
+		return "ThresholdValueUserReaction{" + "reaetionID=" + getReactionID() + ",  profilID=" + getProfilID()
 				+ ", date=" + getDate() + ", reaction='" + getReaction() + '\'' + '}';
 	}
 }

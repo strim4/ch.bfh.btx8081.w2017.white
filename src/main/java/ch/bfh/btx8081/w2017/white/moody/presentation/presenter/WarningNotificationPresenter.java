@@ -6,8 +6,8 @@ import com.vaadin.server.ExternalResource;
 import com.vaadin.server.Resource;
 import com.vaadin.server.ResourceReference;
 import com.vaadin.ui.Button.ClickEvent;
-import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ThersholdValueUserReactionModel;
-import ch.bfh.btx8081.w2017.white.moody.persistence.entity.ThersholdValueUserReaction;
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ThresholdValueUserReactionModel;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.ThresholdValueUserReaction;
 import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DBManager;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.ViewListener;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.Views;
@@ -25,7 +25,7 @@ public class WarningNotificationPresenter implements ViewListener {
 
 	private static final long serialVersionUID = -4330352225143987905L;
 	@SuppressWarnings("unused")
-	private ThersholdValueUserReactionModel thersholdValueUserReactionModel;
+	private ThresholdValueUserReactionModel thresholdValueUserReactionModel;
 	private WarningNotificationView warningNotificationView;
 	
 	String housedoctor = DBManager.getInstance().getHouseDoctor();
@@ -34,8 +34,8 @@ public class WarningNotificationPresenter implements ViewListener {
 	private String messageDoctor = "?body=Sehr%20geehrter%20Herr%20" + housedoctor + ",%20ich%20habe%20heute%20den%20Schwellenwert%20erreicht.%20Bitte%20geben%20Sie%20mir%20einen%20Notfalltermin%20Besten%20Dank%20und%20freundliche%20Grüsse%20Sandra%20Burri%20PatID%20666";
 	private String messageContactperson = "?body=Liebste%20" + emergencycontact + ",%20ich%20habe%20heute%20den%20Schwellenwert%20erreicht.%20Bitte%20komm%20mich%20besuchen%20Liebe%20Grüsse%20Sandra";
 
-	public WarningNotificationPresenter(ThersholdValueUserReactionModel thersholdValueUserReactionModel, WarningNotificationView warningNotificationView) {
-		this.thersholdValueUserReactionModel = thersholdValueUserReactionModel;
+	public WarningNotificationPresenter(ThresholdValueUserReactionModel thresholdValueUserReactionModel, WarningNotificationView warningNotificationView) {
+		this.thresholdValueUserReactionModel = thresholdValueUserReactionModel;
 		this.warningNotificationView = warningNotificationView;
 		warningNotificationView.addListener(this);
 	}
@@ -67,7 +67,7 @@ public class WarningNotificationPresenter implements ViewListener {
 		final ResourceReference sendSMSContactperson = ResourceReference.create(smsContactperson, event.getButton(), "sendSMSContactperson");
 		
 		int id = DBManager.getInstance().getId();
-		ThersholdValueUserReaction sur = new ThersholdValueUserReaction();
+		ThresholdValueUserReaction sur = new ThresholdValueUserReaction();
 		Date date = new Date();
 		
 		switch (buttonID) {

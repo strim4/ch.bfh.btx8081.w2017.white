@@ -13,7 +13,7 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Question;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResultsEmoji;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResultsYesNo;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.SEntity;
-import ch.bfh.btx8081.w2017.white.moody.persistence.entity.ThersholdValueUserReaction;
+import ch.bfh.btx8081.w2017.white.moody.persistence.entity.ThresholdValueUserReaction;
 
 /**
  * @author Moritz
@@ -188,13 +188,13 @@ public class DBManager {
 
 	/**
 	 * 
-	 * Method to select all thersholdValueUserReaction Entries from the DB and returns a List
+	 * Method to select all ThresholdValueUserReaction Entries from the DB and returns a List
 	 * containing all entries
 	 * 
 	 */
-	public List<ThersholdValueUserReaction> getsur() {
+	public List<ThresholdValueUserReaction> getsur() {
 		Query q = em.createQuery("select sur from ThersholdValueUserReaction sur");
-		List<ThersholdValueUserReaction> sur = q.getResultList();
+		List<ThresholdValueUserReaction> sur = q.getResultList();
 		return sur;
 	}
 
