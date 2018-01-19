@@ -45,17 +45,20 @@ public class BarometerView extends BaseView {
 		super.setLayouts(0.35f, 0.65f, 0, 0);
 		this.createButtons();
 	}
-
 	
+	/**
+	 * Organization of the whole BarometerView
+	 * The Statistic and the Buttons
+	 * 
+	 */
 	@SuppressWarnings("serial")
 	private void createButtons() {
-		
+
 		Button buttonQuestions = new Button("Taegliche Fragen");
 		buttonQuestions.addClickListener(this);
 		buttonQuestions.setId("buttonQuestions");
 		super.content.addComponent(buttonQuestions);
 		super.content.setComponentAlignment(buttonQuestions, Alignment.MIDDLE_CENTER);
-
 
 		Image vh = getImage("veryhappyIcon.png");
 		pictures.addComponent(vh);
@@ -130,13 +133,13 @@ public class BarometerView extends BaseView {
 		// month/day
 		// Beware of JavaScript merged into java strings abomination
 		if (type.equals("year")) {
-			chart.setHcjs("var options = { " + "title: { text: 'mood diagram' }, "
-					+ "xAxis: {categories:[" + getChartString("year") + "]},"
-					+ "series: [{ name: 'Yearly mood', data: "+ Arrays.toString(data) + "}] };");
+			chart.setHcjs("var options = { " + "title: { text: 'mood diagram' }, " + "xAxis: {categories:["
+					+ getChartString("year") + "]}," + "series: [{ name: 'Yearly mood', data: " + Arrays.toString(data)
+					+ "}] };");
 		} else if (type.equals("6month")) {
-			chart.setHcjs("var options = { " + "title: { text: 'mood diagram' }, "
-					+ "xAxis: {categories:[" + getChartString("6month") + "]},"
-					+ "series: [{ name: 'Half yearly mood', data: " + Arrays.toString(data) + "}] };");
+			chart.setHcjs("var options = { " + "title: { text: 'mood diagram' }, " + "xAxis: {categories:["
+					+ getChartString("6month") + "]}," + "series: [{ name: 'Half yearly mood', data: "
+					+ Arrays.toString(data) + "}] };");
 		} else if (type.equals("month")) {
 			chart.setHcjs("var options = { " + "title: { text: 'mood diagram' }, "
 					+ "series: [{ name: 'Monthly mood', data: " + Arrays.toString(data) + "}] };");
