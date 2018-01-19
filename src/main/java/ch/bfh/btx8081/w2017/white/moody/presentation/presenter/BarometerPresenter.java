@@ -45,7 +45,7 @@ public class BarometerPresenter implements ViewListener {
 		this.view = view;
 		int[] year = compE.computeYear(Calendar.getInstance());
 		view.showChart("year", year);
-		// view.showChart("year", dummyDataYear);
+		// view.showChart("year", dummyDataYear); change for dummydata performance
 		strain = compYN.computeMonth(Calendar.getInstance());
 		view.showStrain(strain);
 		view.addListener(this);
@@ -67,18 +67,21 @@ public class BarometerPresenter implements ViewListener {
 		case "buttonMonat":
 			int[] month = compE.computeMonth(cal);
 			view.showChart("month", month);
+			//view.showChart("month",dummyDataMonth); change for dummydata performance
 			strain = compYN.computeMonth(Calendar.getInstance());
 			view.showStrain(strain);
 			break;
 		case "button6Monate":
 			int[] sixMonth = compE.computeSixMonths(cal);
 			view.showChart("6month", sixMonth);
+			//view.showChart("6month",dummyData6Month); change for dummydata performance
 			strain = compYN.computeSixMonths(Calendar.getInstance());
 			view.showStrain(strain);
 			break;
 		case "buttonJahr":
 			int[] year = compE.computeYear(cal);
 			view.showChart("year", year);
+			//view.showChart("year",dummyDataYear); change for dummydata performance
 			strain = compYN.computeYear(Calendar.getInstance());
 			view.showStrain(strain);
 			break;
