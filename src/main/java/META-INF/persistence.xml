@@ -10,7 +10,7 @@
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResults</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResultsEmoji</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.QuestionResultsYesNo</class>
-		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.SchwellenwertUserReaktion</class>
+		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.ThersholdValueUserReaction</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.Profile</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.WarningNotification</class>
 		<class>ch.bfh.btx8081.w2017.white.moody.persistence.entity.Question</class>
