@@ -8,6 +8,7 @@ import com.vaadin.ui.HorizontalLayout;
 
 /**
  * This class is the view of YES and NO questions.
+ * Da diese Klasse vermutlich nicht benutzt wird, verzichte ich auf das Kommentieren.
  * 
  * @author Sandra
  * Last Edit: 18.01.2018
