@@ -12,6 +12,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 /**
  * This class is the view of the smiley question.
+ * Da diese Klasse vermutlich nicht benutzt wird, verzichte ich auf das Kommentieren.
  * 
  * @author Sandra
  * Last Edit: 18.01.2018
