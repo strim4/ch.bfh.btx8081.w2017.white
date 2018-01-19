@@ -71,13 +71,7 @@ public class ContactView extends BaseView implements MoodyView {
 		contentRow2.addComponents(buttonTelefonArzt, buttonTelefonBezugsperson);
 		content.addComponent(contentRow2);
 		content.setComponentAlignment(contentRow2, Alignment.MIDDLE_CENTER);
-		
-		
-		//Label future = new Label("Auf dieser Seite kommen bald die Kontaktdaten fuer Notfaelle;)");
-		//super.content.addComponent(future);
-		//super.content.setComponentAlignment(future, Alignment.MIDDLE_CENTER);
-				
-		//TODO Kontaktdaten vom Profil
+
 	}
 	
     /**

@@ -75,6 +75,9 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		
 	}
 	
+	/**
+	 * The public method createDiaryTextList shows a editable Table here Grid with the diary text elements.
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void createDiaryTextList() {
 		
@@ -106,12 +109,13 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 //			          diaryTexts.remove(clickEvent.getItem());
 //			          griddt.setItems((Collection<DiaryText>) delp.getd());
 			    }))
-		.setExpandRatio(0);		
+		.setExpandRatio(0); //delete button hinzugefuegt, Event funktioniert noch nicht		
 		super.content.addComponents(textMenue, griddt);
 		super.content.setComponentAlignment(textMenue, Alignment.MIDDLE_CENTER);
 		super.content.setComponentAlignment(griddt, Alignment.MIDDLE_CENTER);
 		super.content.setSizeFull();
 		
+		//TODO Event Handling in den Presenter verschieben
 		griddt.addItemClickListener(new ItemClickListener<DiaryText>() {
 			public void itemClick(ItemClick<DiaryText> event) {
 				if (event.getMouseEventDetails().isDoubleClick()) {
@@ -122,6 +126,9 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		
 	}
 	
+	/**
+	 * The public method createDiaryPictureList shows a Table here Grid with the diary picture elements.
+	 */
 	private void createDiaryPictureList() {
 		
 		dpTitle = new Label("Alle Bildereinträge aus dem Tagebuch");
@@ -144,6 +151,9 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		
 	}
 	
+	/**
+	 * The public method createActivityList shows a Table here Grid with the diary activity elements.
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void createActivityList() {
 		
@@ -177,8 +187,9 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 //			          activities.remove(clickEvent.getItem());
 //			          griddt.setItems((Collection<Activity>) delp.getd());
 			    }))
-		.setExpandRatio(0);	
+		.setExpandRatio(0);	//delete button hinzugefuegt, Event funktioniert noch nicht	
 		
+		//TODO Event Handling in den Presenter verschieben
 		gridda.addItemClickListener(new ItemClickListener<Activity>() {
 			public void itemClick(ItemClick<Activity> event) {
 				if (event.getMouseEventDetails().isDoubleClick()) {
@@ -188,6 +199,9 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 		});
 	}
 
+	/**
+	 * The private method createButtons creates the back button to navigate to the diary view.
+	 */
 	private void createButtons() {
 		
 		buttonBack = new Button("");
@@ -201,11 +215,17 @@ public class DiaryElementListView extends BaseView implements MoodyView {
 
 	}
 
+    /**
+     * The public method addListener adds objects to the listener.
+     */
 	@Override
 	public void addListener(ViewListener listener) {
 		listeners.add(listener);
 	}
 
+	/**
+	 * The public method buttonClick handles the click event.
+	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		for (ViewListener listener : this.listeners) {
