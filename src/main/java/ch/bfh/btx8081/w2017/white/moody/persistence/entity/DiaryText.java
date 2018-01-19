@@ -17,7 +17,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.DiaryTextView;
  */
 @SuppressWarnings("serial")
 @Entity
-@DiscriminatorValue(value = "TE")
+
 
 public class DiaryText extends DiaryElement implements Serializable, SEntity {
 
@@ -32,12 +32,15 @@ public class DiaryText extends DiaryElement implements Serializable, SEntity {
 	public DiaryText() {
 	}
 
+	/**
+	 * 
+	 * Method creates a new DiaryText entries and stores it to the DB
+	 * 
+	 */
 	public void creatDt(String name, String note, String entrydate, Date creationDate) {
-
 		DiaryText dt = new DiaryText(name, note, entrydate, new Date());
 		DBManager dbm = DBManager.getInstance();
 		dbm.persistObject(dt);
-
 	}
 
 	public String getNote() {
@@ -48,11 +51,7 @@ public class DiaryText extends DiaryElement implements Serializable, SEntity {
 		this.note = note;
 	}
 
-	public void save(DiaryText diaryText) {
-		DBManager dbm = DBManager.getInstance();
-		dbm.persistObject(diaryText);
 
-	}
 
 	@Override
 	public String toString() {

@@ -16,7 +16,7 @@ import javax.persistence.*;
 @Entity
 @Table
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-//@DiscriminatorColumn(name = "type")
+
 public class DiaryElement implements Serializable, SEntity  {
 
 	@Id

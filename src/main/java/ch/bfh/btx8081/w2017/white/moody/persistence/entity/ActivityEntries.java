@@ -46,6 +46,11 @@ public ActivityEntries() {
 		this.name = name;
 	}
 	
+	/**
+	 * 
+	 * Method creates a new Activity entry for the dropdownlist and stores it to the DB
+	 * 
+	 */
 	public void creatAcEn(String name) {
 
 		ActivityEntries ac = new ActivityEntries(name);

@@ -25,7 +25,7 @@ import ch.bfh.btx8081.w2017.white.moody.persistence.repository.implementation.DB
  * 
  */
 @Entity
-@DiscriminatorValue(value = "PE")
+
 public class DiaryPic extends DiaryElement implements Serializable, SEntity {
 
 	@Lob
@@ -43,6 +43,12 @@ public class DiaryPic extends DiaryElement implements Serializable, SEntity {
 	public DiaryPic() {
 	}
 	
+	
+	/**
+	 * 
+	 * Method creates a new DiaryPic entry and stores it to the DB
+	 * 
+	 */
 public void creatDp(String name, byte[] imageFile,  Date creationDate, String entrydate) throws IOException {
 		
 		DiaryPic dp = new DiaryPic(name, imageFile, new Date(), entrydate);
@@ -57,29 +63,7 @@ public void creatDp(String name, byte[] imageFile,  Date creationDate, String en
 		return imageFile;
 	}
 	
-	public BufferedImage getImag()   {
-		BufferedImage img = null;
-		try {
-			img = ImageIO.read(new ByteArrayInputStream(this.getImageByte()));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return img;
-		
 
-		
-	}
-	
-	/*
 	
 	
-/*	@Override
-	public String toString() {
-		return "Picture Element{" +
-
-				" id='" + getId() + '\'' + ", name='" + getName() + '\'' + ", description =" + getDescription() + '\''
-				+ ", image =" + image + '\'' + ", creationDate=" + getCreationDate() + '}';
-	}
-*/
 }

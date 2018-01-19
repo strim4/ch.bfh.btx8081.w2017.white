@@ -28,7 +28,11 @@ public class Activity extends DiaryElement implements Serializable, SEntity {
 	public Activity() {}
 	
 	
-	
+	/**
+	 * 
+	 * Method creates a new Activity entry and stores it to the DB
+	 * 
+	 */
 	public void creatAc(String name,  String description, String entrydate , Date creationDate) {
 
 		Activity ac = new Activity(name, description, entrydate, new Date());
