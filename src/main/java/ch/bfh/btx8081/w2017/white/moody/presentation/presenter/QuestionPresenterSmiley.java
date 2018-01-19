@@ -6,14 +6,14 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionnaireModel;
 import ch.bfh.btx8081.w2017.white.moody.presentation.views.QuestionnaireView;
 
 /**
- * Diese Klasse wird leider nicht benutzt...
+ * Diese Klasse wird vermutlich nicht mehr benutzt, daher kommentiere ich hier
+ * auch nichts
  * 
- * @author Sandra
- * Last Edit: Dezember 2017
+ * @author Sandra Last Edit: Dezember 2017
  */
 
 @SuppressWarnings("serial")
-public class QuestionPresenterSmiley extends QuestionnairePresenter{
+public class QuestionPresenterSmiley extends QuestionnairePresenter {
 
 	private QuestionnaireModel questionnaireModel;
 	private QuestionnaireView questionnaireView;
@@ -22,7 +22,7 @@ public class QuestionPresenterSmiley extends QuestionnairePresenter{
 		super(questionnaireModel, questionnaireView);
 		questionnaireView.addListener(this);
 	}
-	
+
 	public void buttonClick(ClickEvent event) {
 
 		String buttonID = event.getButton().getId();
@@ -32,8 +32,9 @@ public class QuestionPresenterSmiley extends QuestionnairePresenter{
 			break;
 		case "buttonSad":
 			break;
-		case "buttonNeutral":;
-		break;
+		case "buttonNeutral":
+			;
+			break;
 		case "buttonHappy":
 			break;
 		case "buttonVeryHappy":
