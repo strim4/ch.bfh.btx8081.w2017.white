@@ -18,7 +18,7 @@ import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ContactModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.DiaryModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ProfileModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.QuestionnaireModel;
-import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SchwellenwertUserReaktionModel;
+import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.ThersholdValueUserReactionModel;
 import ch.bfh.btx8081.w2017.white.moody.businesslogic.models.SettingsModel;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.Activity;
 import ch.bfh.btx8081.w2017.white.moody.persistence.entity.DiaryPic;
@@ -62,7 +62,7 @@ import ch.bfh.btx8081.w2017.white.moody.presentation.views.WarningNotificationVi
  * This UI is the application entry point. A UI may either represent a browser
  * window (or tab) or some part of an HTML page where a Vaadin application is
  * embedded.
- * <p>
+ *
  * The UI is initialized using {@link #init(VaadinRequest)}. This method is
  * intended to be overridden to add component to the user interface and
  * initialize non-component functionality.
@@ -132,8 +132,9 @@ public class MyUI extends UI {
 	// Subwindow
 	SubWindowView subwindow = new SubWindowView();
 
+	// Warningnotification
 	WarningNotificationView warningNotification = new WarningNotificationView();
-	SchwellenwertUserReaktionModel schwellenwertUserReaktionModel = new SchwellenwertUserReaktionModel();
+	ThersholdValueUserReactionModel thersholdValueUserReactionModel = new ThersholdValueUserReactionModel();
 
 	// NotificationUI
 	PushNotificationUI pNotificationUI;
@@ -167,35 +168,29 @@ public class MyUI extends UI {
 		navigator.addView("barometer", barometer);
 		navigator.addView("settings", settings);
 		navigator.addView("profile", profile);
-
 		navigator.addView("questionnaire", questionnaire);
 		navigator.addView("questionyesno", questionYesNo);
 		navigator.addView("questionsmiley", questionSmiley);
-
 		navigator.addView("warningNotification", warningNotification);
 
 		new BasePresenter(model, start);
 		new SettingsPresenter(settingsModel, settings);
 		new ProfilePresenter(profileModel, profile);
-
 		new DiaryPresenter(diaryModel, diary);
 		new DiaryTextPresenter(diaryText, text);
 		new DiaryPicPresenter(diaryPic, pic);
 		new ActivityPresenter(activity, activityView, this);
 		new DiaryElementListPresenter(list);
-
 		new ContactPresenter(contactModel, contact);
 		new ExercisesPresenter(exercises);
 		new InformationsPresenter(informations);
 		new TipsPresenter(tips);
 		// new SubWindowPresenter(subwindow);
-
 		new BarometerPresenter(barometerModel, barometer);
 		new QuestionnairePresenter(questionnaireModel, questionnaire);
 		new QuestionnairePresenter(questionnaireModel, questionYesNo);
 		new QuestionnairePresenter(questionnaireModel, questionSmiley);
-
-		new WarningNotificationPresenter(schwellenwertUserReaktionModel, warningNotification);
+		new WarningNotificationPresenter(thersholdValueUserReactionModel, warningNotification);
 
 		// NotificationUI launch with his concurrent Thread
 		pNotificationUI = new PushNotificationUI(UI.getCurrent(), layout);
